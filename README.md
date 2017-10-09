@@ -14,26 +14,35 @@
 
 * Pivotal Tracker: [project 2217856](https://www.pivotaltracker.com/n/projects/2117856)
 
+* License: MIT
+
 ### Customer Business
 
-A brief explanation of the customer's business need that the app addresses, including a link to the customer's website
-The app provides a central platform for efficient C2C trading on Berkeley campus. 
-This is a brand new project and we build it from scratch. Youtube Link [here](https://youtube.com)
+Berkeley MarketPlace provides a central platform for efficient C2C trading exclusive to the UC Berkeley community. 
+Example features include product and event posting, category subscription, keyword search and filtering, personal wishlist, etc.
+The project also aims to provide subscription 
+This is a brand new project and currently does not have website yet. 
+Youtube link is [here](https://youtu.be/-ZS0whNV32E).
 
 ### Dev Team Members (Group 5)
 
-* Amy Ge ([dev screencast](https://youtube.com))
+* Amy Ge
 
-* Ashton Teng ([dev screencast](https://youtube.com))
+* Ashton Teng
 
-* Jack Ye ([dev screencast](https://youtube.com))
+* Jack Ye
 
-* Jiazhen Chen ([dev screencast](https://youtube.com))
+* Jiazhen Chen
 
-* Shiyun Deng ([dev screencast](https://youtube.com))
+* Shuyin Deng
 
-* Yunyi Huang ([dev screencast](https://youtube.com))
+* Yunyi Huang
+
+Dev screencasts are in this [playlist](https://www.youtube.com/playlist?list=PLWkDTUUZ-qQF8KqvIy4l0qWTI5tY6DiVz)
+
 
 ## Application Roadmap
 
 not written yet.
+
+
