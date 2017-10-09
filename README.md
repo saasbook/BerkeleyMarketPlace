@@ -9,7 +9,7 @@
 https://travis-ci.org/JulieDeng/BerkeleyMarketPlace.svg?branch=master
 
 #Link to deployed app on Heroku
-
+https://berkeley-market-place.herokuapp.com/
 
 #Link to Pivotal Tracker project
 https://www.pivotaltracker.com/n/projects/2117856
