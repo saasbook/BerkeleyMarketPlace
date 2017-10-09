@@ -20,7 +20,6 @@
 
 Berkeley MarketPlace provides a central platform for efficient C2C trading exclusive to the UC Berkeley community. 
 Example features include product and event posting, category subscription, keyword search and filtering, personal wishlist, etc.
-The project also aims to provide subscription 
 This is a brand new project and currently does not have website yet. 
 Youtube link is [here](https://youtu.be/-ZS0whNV32E).
 
