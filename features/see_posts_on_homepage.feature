@@ -4,7 +4,7 @@ Feature: see posts on homepage
   I want to see all the posts.
   I can see all the posts on the homepage.
   
-Background: movies in database
+Background: posts in database
  
   Given the following posts exist:
   | title                 | release_time | price | description       | available | author_id | expiration_time | category | subcategory |
