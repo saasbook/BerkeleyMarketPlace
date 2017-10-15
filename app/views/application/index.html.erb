@@ -44,10 +44,12 @@
                     <a href="#"><%= post_info.title %></a>
                   </h4>
                   <h5>USD$ <%= post_info.price %></h5>
-                  <p class="card-text"><%= post_info.category %> / <%= post_info.subcategory %></p>
+                  <p class="card-text"><%= post_info.category %> / <%= post_info.subcategory %>
                   <% if post_info.expire_time %>
-                  <p class="card-text">Valid until: <%= post_info.expire_time %></p>
+                  <br>
+                  Valid until: <%= post_info.expire_time.strftime("%Y/%m/%d %T") %>
                   <% end %>
+                  </p>
                 </div>
               </div>
             </div>
@@ -66,10 +68,12 @@
                     <a href="#"><%= post_info.title %></a>
                   </h4>
                   <h5>USD$ <%= post_info.price %></h5>
-                  <p class="card-text"><%= post_info.category %> / <%= post_info.subcategory %></p>
+                  <p class="card-text"><%= post_info.category %> / <%= post_info.subcategory %>
                   <% if post_info.expire_time %>
-                  <p class="card-text">Valid until: <%= post_info.expire_time %></p>
+                  <br>
+                  Valid until: <%= post_info.expire_time.strftime("%Y/%m/%d %T") %>
                   <% end %>
+                  </p>
                 </div>
               </div>
             </div>
