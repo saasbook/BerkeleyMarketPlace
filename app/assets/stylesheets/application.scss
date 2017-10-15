@@ -2,15 +2,19 @@
 @import "bootstrap";
 
 body {
-  padding-top: 54px;
+  padding-top: 60px;
 }
 
 @media (min-width: 992px) {
   body {
-    padding-top: 56px;
+    padding-top: 60px;
   }
 }
 
 #navBarSearchForm input[type=text]{
     width:430px !important;
+}
+
+.card p{
+  font-size: 13px;
 }
