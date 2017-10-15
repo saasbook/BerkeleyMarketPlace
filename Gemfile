@@ -22,6 +22,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'sass-rails', '>= 3.2'
 
+# db cleaner for seed
+gem 'database_cleaner'
+
 # web console, temporarily disabled for C9 dev environment
 # group :development do
 #   gem 'web-console', '~> 2.0'

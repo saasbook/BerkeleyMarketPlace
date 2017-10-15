@@ -7,9 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 require 'time'
-require 'database_cleaner'
 
-DatabaseCleaner.clean_with(:truncation)
+if Rails.env != :production
+    require 'database_cleaner'
+    DatabaseCleaner.clean_with(:truncation)
+end
 
 item_posts = [
     {
