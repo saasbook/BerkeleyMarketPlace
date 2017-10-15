@@ -1,3 +1,4 @@
-tmp
-public
-*.sqlite3
+/tmp
+/public
+/log
+/db/*.sqlite3
