@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   end
   
   def new
+    # @user = current_user()
     # the Create Post page
   end
   
