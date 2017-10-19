@@ -6,7 +6,8 @@ class PostsController < ApplicationController
   end
   
   def show 
-    # the Detail page
+    id = params[:id]
+    @post = Post.find(id)
   end
   
   def new
