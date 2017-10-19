@@ -1,0 +1,19 @@
+
+<div class="container">
+    
+    <div class="row">
+        <div class="container">
+          <h1><%= @post.title %></h1>
+          <h2>$<%= @post.price %></h2>
+          <img src="http://placehold.it/400x400" alt="">
+          <h2>Expires at <%= @post.expire_time%></h2>
+          <p><%= @post.description %></p>
+          <h3><%= @post.category %></h3>
+          <h3><%= @post.subcategory %></h3>
+
+        </div>
+    </div>
+    
+    <a href="<%= posts_path %>">Back to Homepage</a>
+    
+</div>
