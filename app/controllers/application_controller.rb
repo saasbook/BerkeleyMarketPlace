@@ -7,12 +7,11 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery with: :null_session
   include ApplicationHelper
   
-  
-  
   def index 
     @item_posts = get_vaild_post("item")
     @job_posts = get_vaild_post("job")
     @event_posts = get_vaild_post("event")
+    @categories = Post.get_categories
   end
   
 end
