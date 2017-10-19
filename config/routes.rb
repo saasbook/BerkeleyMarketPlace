@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resource :posts, except: [:index, :destroy]
+  resources :posts, except: [:destroy]
   #post "/posts/create", to: :create, controller: 'post'
   post "/posts/new", to:"posts#create"
   # You can have the root of your site routed with "root"
