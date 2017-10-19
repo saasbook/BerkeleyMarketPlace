@@ -1,3 +1,4 @@
+@detail
 Feature: buyer can see the detail of a post
  
   As a buyer,
@@ -17,5 +18,5 @@ Scenario: go from home page to Detail page for one post
     Given I am on the Home page
     When I follow "iPhone 7 for sale"
     Then I should be on the Details page for "iPhone 7 for sale"
-    And I should see the following on the Details page for "iPhone 7 for sale": "iPhone 7 for sale" , "2017-10-14", "500", "In good condition", "available", the email associated with author_id "1" , the image "img1.jpeg",  "item", "cell_phone", the button "Add to Wish List"
+    And I should see the following on the Details page for "iPhone 7 for sale": "iPhone 7 for sale" , "2017-10-14", "500", "In good condition", "available","item", "cell_phone", 
     And I should not see the following on the Details page for "iPhone 7 for sale": "CS research assistant", "graphic designer"
