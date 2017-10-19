@@ -1,21 +1,29 @@
-
-<div class="container">
-
+<div class="container", style="padding-top:20px;padding-bottom:20px;">
+    
     <div class="row">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="<%= posts_path %>">Home</a></li>
         <li class="breadcrumb-item active"><%= @post.title %></li>
       </ol>
     </div>
-
-      <h1><%= @post.title %></h1>
-      <h2>$<%= @post.price %></h2>
-      <img src="<%= asset_path(@post.img_name) %>" alt="", style="height:300px;">
-      <h2>status: <%= if @post.available then 'available' else 'not available' end %></h2>
-      <p>Released at <%= @post.release_time%></p>
-      <p>Expires at <%= @post.expire_time%></p>
-      <p><%= @post.description %></p>
-      <h3>category: <%= @post.category %></h3>
-      <h3>subcategory: <%= @post.subcategory %></h3>
+    
+    <div class="row">
+      <div class="col-md-3">
+        <img src="<%= asset_path(@post.img_name) %>" alt="", style="height:300px;">
+      </div>
+      <div class="col-md-9">
+        <ul class="list-group">
+          <li class="list-group-item"><h1><%= @post.title %></h1></li>
+          <li class="list-group-item"><h2>$<%= @post.price %></h2></li>
+          <li class="list-group-item"><h2>status: <%= if @post.available then 'available' else 'not available' end %></h2></li>
+          <li class="list-group-item"><p>Released on <%= @post.release_time%></p></li>
+          <li class="list-group-item"><p>Expires on <%= @post.expire_time%></p></li>
+          <li class="list-group-item"><p><%= @post.description %></p></li>
+          <li class="list-group-item"><h3>category: <%= @post.category %></h3></li>
+          <li class="list-group-item"><h3>subcategory: <%= @post.subcategory %></h3></li>
+        </ul>
+      
+      </div>
+    </div>
 
 </div>
