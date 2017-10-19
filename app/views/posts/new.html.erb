@@ -1,15 +1,20 @@
 
 <div class="container">
-        <div class="col-lg-20">
+    
+    <div class="row">
+        <!--<div class="col-lg-5">-->
           <!--<img src="http://placehold.it/200x200" class="img" alt="">-->
           <!--<div class="container">-->
           <!--  <div class="form-group">-->
           <!--    <input type="file" name="img[]" class="file">-->
           <!--  </div>-->
           <!--</div>-->
+          <!--{controller = "post", action = "create"}, -->
+          <form method="post">
+             
           <div class="container">
               <div class="form-group">
-                  <label>Upload Image</label>
+                  <label for="post">Upload Image</label>
                   <div class="input-group">
                       <span class="input-group-btn">
                           <span class="btn btn-default btn-file">
@@ -23,46 +28,77 @@
           </div>
         </div>
 
-        <div class="col">
+        <!--<div class="col">-->
         <!-- /.container -->
-        <form>
-          <div class="">
-            <label for="PostNewForm">Product Title</label>
-            <input type="title" class="form-control" id="productTitle" placeholder="Enter title">
-          </div>
-          <div class="form-group">
-            <label for="productPrice">Price</label>
-            <input type="price" class="form-control" id="productPrice" placeholder="Enter price">
-          </div>
-          <div class="form-group">
-            <label for="description">Description</label>
-            <textarea class="form-control" id="description"  placeholder="Please enter the details" rows="4"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="postCategory1">Category</label>
-            <select class="selectpicker">
-              <optgroup label="Item">
-                <option>Textbook</option>
-                <option>Electronics</option>
-              </optgroup>
-              <optgroup label="Event">
-                <option>Info Session</option>
-                <option>Research opportunity</option>
-              </optgroup>
-              <option>Other</option>
-            </select>
-          </div>
+        
 
-          <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Contact Email</label>
-            <div class="col-sm-10">
-              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+       
+          <!--<div class="row">-->
+            <div class="form-group">
+              <label for="post">Product Title</label>
+              <input type="text" class="form-control" id="post_title" name="post[title]" placeholder="Enter title">
             </div>
-          </div>
-          <button type="post" class="btn btn-primary">Post</button>
+          <!--</div>-->
+          <!-- /.row -->
+          <!--<div class="row">-->
+            <div class="form-group">
+              <label for="post">Price</label>
+              <input type="text" class="form-control" id="post_price" name="post[price]" placeholder="Enter price">
+            </div>
+          <!--</div>-->
+          <!-- /.row -->
+          <!--<div class="row">-->
+            <div class="form-group">
+              <label for="post">Description</label>
+              <textarea class="form-control" id="post_description" name="post[description]"  placeholder="Please enter the details" rows="4"></textarea>
+            </div>
+          <!--</div>-->
+          <!-- /.row -->
+          <!--<div class="row">-->
+            <div class="form-group">
+              <label for="post">Category</label>
+              <select class="selectpicker" id='post_category' name="post[category]">
+                <option>item</option>
+                <option>event</option>
+                <option>other</option>
+              </select>
+            </div>
+          <!--</div>-->
+          <!-- /.row -->
+          <!--<div class="row">-->
+            <div class="form-group">
+              <label for="post">Sub Category</label>
+              <select class="selectpicker" id='post_subcategory' name="post[subcategory]">
+                <optgroup label="Item">
+                  <option>Textbook</option>
+                  <option>Electronics</option>
+                </optgroup>
+                <optgroup label="Event">
+                  <option>Info Session</option>
+                  <option>Research opportunity</option>
+                </optgroup>
+                <option>other</option>
+              </select>
+            </div>
+          <!--</div>-->
+          <!-- /.row -->
+          <!--<div class="row">-->
+            <div class="form-group row">
+              <label for="post" class="col-sm-2 col-form-label">Contact Email</label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="post_author_id" name="post[author_id]" value="email@example.com">
+              </div>
+            </div>
+          <!--</div>-->
+          <!-- /.row -->
+          <!--<div class="row">-->
+            <button class="btn btn-primary" type="submit" name="commit">Post</button>
+          <!--</div>-->
+          <!-- /.row -->
         </form>
         </div>
 
-
+      </div>
+      <!-- /.row -->
     </div>
     <!-- /.container -->
