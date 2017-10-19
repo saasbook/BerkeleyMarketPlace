@@ -3,6 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.string :price
+      t.string :img_name
       t.text :description
       t.datetime :release_time
       t.datetime :expire_time

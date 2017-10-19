@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20171014212120) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "price"
+    t.string   "img_name"
     t.text     "description"
     t.datetime "release_time"
     t.datetime "expire_time"

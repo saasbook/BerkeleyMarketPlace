@@ -14,7 +14,7 @@
             <% @item_posts.each do |post_info| %>
             <div class="col-lg-4 col-md-3 mb-3">
               <div class="card h-100">
-                <img class="card-img-top" src="http://placehold.it/400x400" alt="">
+                <img class="card-img-top" src="<%= asset_path(post_info.img_name) %>" alt="">
                 <div class="card-body">
                   <h5 class="card-title">
                     <%= link_to post_info.title, "posts/%d" % post_info.id %>
@@ -38,7 +38,7 @@
             <% @job_posts.each do |post_info| %>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/400x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="<%= asset_path(post_info.img_name) %>" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <%= link_to post_info.title, "posts/%d" % post_info.id %>
@@ -62,7 +62,7 @@
             <% @event_posts.each do |post_info| %>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/400x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="<%= asset_path(post_info.img_name) %>" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <%= link_to post_info.title, "post/%d" % post_info.id %>
