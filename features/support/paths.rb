@@ -25,7 +25,7 @@ module NavigationHelpers
       then '/movies/%d/edit' % (Post.find_by title: $1).id
       
     when /^the details page for "(.*)"/
-      then '/movies/%d' % (Post.find_by title: $1).id
+      then '/posts/%d' % (Post.find_by title: $1).id
 
 
     else

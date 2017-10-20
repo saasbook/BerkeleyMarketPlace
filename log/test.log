@@ -1,0 +1,238 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (8.9ms)[0m  [1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "price" varchar, "img_name" varchar, "description" text, "release_time" datetime, "expire_time" datetime, "author_id" integer, "category" varchar, "subcategory" varchar, "available" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (9.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (7.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171020010015')
+  [1m[36m (5.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20171014212120')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-10-20 15:46:32 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.4ms)
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 15:46:32.351456' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (1.7ms)
+  Rendered layouts/_posts_grid.html.erb (3.0ms)
+  Rendered application/index.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 7761ms (Views: 7738.1ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "iPhone 7 for sale"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "500"], ["description", "In good condition"], ["available", "t"], ["author_id", 1], ["category", "item"], ["subcategory", "cell_phone"], ["created_at", "2017-10-20 15:46:40.139951"], ["updated_at", "2017-10-20 15:46:40.139951"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "concert ticket"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "50"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2017-12-31 00:00:00.000000"], ["category", "event"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.142763"], ["updated_at", "2017-10-20 15:46:40.142763"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "CS research assistant"], ["release_time", "2017-09-08 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "f"], ["author_id", 1], ["expire_time", "2017-10-01 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.145610"], ["updated_at", "2017-10-20 15:46:40.145610"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "graphic designer"], ["release_time", "2017-09-09 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2018-10-02 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.148742"], ["updated_at", "2017-10-20 15:46:40.148742"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2017-10-20 15:46:40 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 15:46:40.157191' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (2.0ms)
+  Rendered layouts/_posts_grid.html.erb (2.2ms)
+  Rendered application/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.4ms)
+Started GET "/posts/1" for 127.0.0.1 at 2017-10-20 15:46:40 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."title" = ? LIMIT 1[0m  [["title", "iPhone 7 for sale"]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "iPhone 7 for sale"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "500"], ["description", "In good condition"], ["available", "t"], ["author_id", 1], ["category", "item"], ["subcategory", "cell_phone"], ["created_at", "2017-10-20 15:46:40.208983"], ["updated_at", "2017-10-20 15:46:40.208983"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "concert ticket"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "50"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2017-12-31 00:00:00.000000"], ["category", "event"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.211334"], ["updated_at", "2017-10-20 15:46:40.211334"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "CS research assistant"], ["release_time", "2017-09-08 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "f"], ["author_id", 1], ["expire_time", "2017-10-01 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.214024"], ["updated_at", "2017-10-20 15:46:40.214024"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "graphic designer"], ["release_time", "2017-09-09 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2018-10-02 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.216458"], ["updated_at", "2017-10-20 15:46:40.216458"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-10-20 15:46:40 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 15:46:40.220397' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (1.0ms)
+  Rendered layouts/_posts_grid.html.erb (1.1ms)
+  Rendered application/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+Started GET "/posts/4" for 127.0.0.1 at 2017-10-20 15:46:40 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."title" = ? LIMIT 1  [["title", "graphic designer"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "iPhone 7 for sale"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "500"], ["description", "In good condition"], ["available", "t"], ["author_id", 1], ["category", "item"], ["subcategory", "cell_phone"], ["created_at", "2017-10-20 15:46:40.241429"], ["updated_at", "2017-10-20 15:46:40.241429"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "concert ticket"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "50"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2017-12-31 00:00:00.000000"], ["category", "event"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.243735"], ["updated_at", "2017-10-20 15:46:40.243735"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "CS research assistant"], ["release_time", "2017-09-08 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "f"], ["author_id", 1], ["expire_time", "2017-10-01 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.245875"], ["updated_at", "2017-10-20 15:46:40.245875"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "graphic designer"], ["release_time", "2017-09-09 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2018-10-02 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.247886"], ["updated_at", "2017-10-20 15:46:40.247886"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2017-10-20 15:46:40 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 15:46:40.254201' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (1.0ms)
+  Rendered layouts/_posts_grid.html.erb (1.2ms)
+  Rendered application/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "iPhone 7 for sale"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "500"], ["description", "In good condition"], ["available", "t"], ["author_id", 1], ["category", "item"], ["subcategory", "cell_phone"], ["created_at", "2017-10-20 15:46:40.268067"], ["updated_at", "2017-10-20 15:46:40.268067"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "concert ticket"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "50"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2017-12-31 00:00:00.000000"], ["category", "event"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.270355"], ["updated_at", "2017-10-20 15:46:40.270355"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "CS research assistant"], ["release_time", "2017-09-08 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "f"], ["author_id", 1], ["expire_time", "2017-10-01 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.272471"], ["updated_at", "2017-10-20 15:46:40.272471"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "graphic designer"], ["release_time", "2017-09-09 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2018-10-02 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.274413"], ["updated_at", "2017-10-20 15:46:40.274413"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-10-20 15:46:40 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 15:46:40.277543' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (1.0ms)
+  Rendered layouts/_posts_grid.html.erb (1.2ms)
+  Rendered application/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "iPhone 7 for sale"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "500"], ["description", "In good condition"], ["available", "t"], ["author_id", 1], ["category", "item"], ["subcategory", "cell_phone"], ["created_at", "2017-10-20 15:46:40.289791"], ["updated_at", "2017-10-20 15:46:40.289791"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "concert ticket"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "50"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2017-12-31 00:00:00.000000"], ["category", "event"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.292173"], ["updated_at", "2017-10-20 15:46:40.292173"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "CS research assistant"], ["release_time", "2017-09-08 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "f"], ["author_id", 1], ["expire_time", "2017-10-01 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.294534"], ["updated_at", "2017-10-20 15:46:40.294534"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "graphic designer"], ["release_time", "2017-09-09 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2018-10-02 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.297416"], ["updated_at", "2017-10-20 15:46:40.297416"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2017-10-20 15:46:40 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 15:46:40.301682' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (1.5ms)
+  Rendered layouts/_posts_grid.html.erb (1.7ms)
+  Rendered application/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "iPhone 7 for sale"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "500"], ["description", "In good condition"], ["available", "t"], ["author_id", 1], ["category", "item"], ["subcategory", "cell_phone"], ["created_at", "2017-10-20 15:46:40.318737"], ["updated_at", "2017-10-20 15:46:40.318737"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "concert ticket"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "50"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2017-12-31 00:00:00.000000"], ["category", "event"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.322448"], ["updated_at", "2017-10-20 15:46:40.322448"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "CS research assistant"], ["release_time", "2017-09-08 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "f"], ["author_id", 1], ["expire_time", "2017-10-01 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.325206"], ["updated_at", "2017-10-20 15:46:40.325206"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "graphic designer"], ["release_time", "2017-09-09 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2018-10-02 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.327749"], ["updated_at", "2017-10-20 15:46:40.327749"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-10-20 15:46:40 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 15:46:40.331300' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (1.1ms)
+  Rendered layouts/_posts_grid.html.erb (1.2ms)
+  Rendered application/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+Started GET "/filter?category=job" for 127.0.0.1 at 2017-10-20 15:46:40 +0000
+Processing by ApplicationController#filter as JS
+  Parameters: {"category"=>"job"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-20 15:46:40.339904' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  Rendered layouts/_posts_list.html.erb (1.5ms)
+  Rendered application/filter.js.erb (2.8ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "iPhone 7 for sale"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "500"], ["description", "In good condition"], ["available", "t"], ["author_id", 1], ["category", "item"], ["subcategory", "cell_phone"], ["created_at", "2017-10-20 15:46:40.357005"], ["updated_at", "2017-10-20 15:46:40.357005"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "concert ticket"], ["release_time", "2017-10-14 00:00:00.000000"], ["price", "50"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2017-12-31 00:00:00.000000"], ["category", "event"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.360668"], ["updated_at", "2017-10-20 15:46:40.360668"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "CS research assistant"], ["release_time", "2017-09-08 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "f"], ["author_id", 1], ["expire_time", "2017-10-01 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.364193"], ["updated_at", "2017-10-20 15:46:40.364193"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("title", "release_time", "price", "description", "available", "author_id", "expire_time", "category", "subcategory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "graphic designer"], ["release_time", "2017-09-09 00:00:00.000000"], ["price", "0"], ["description", ""], ["available", "t"], ["author_id", 1], ["expire_time", "2018-10-02 00:00:00.000000"], ["category", "job"], ["subcategory", ""], ["created_at", "2017-10-20 15:46:40.367664"], ["updated_at", "2017-10-20 15:46:40.367664"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-10-20 15:46:40 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 15:46:40.373183' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (1.8ms)
+  Rendered layouts/_posts_grid.html.erb (2.0ms)
+  Rendered application/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
