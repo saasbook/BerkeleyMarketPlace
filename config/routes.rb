@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post "/posts/new", to:"posts#create"
   # You can have the root of your site routed with "root"
   root 'application#index'
+  
+  get "/filter" => 'application#filter', as: 'filter'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
