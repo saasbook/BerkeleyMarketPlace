@@ -1,104 +1,105 @@
+<%= form_for :post, :method => :post, :html => { :multipart => true} do |f|%>
+  <div>
+    <%= f.label :image%>
+    <%= f.file_field :image%>
+  </div>
 
-<div class="container">
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+ 
+  <div>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+ 
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  
+  <div>
+    <%= f.label :Category %> 
+    <%= f.select :category, [['Item','item'],['Event','event'],
+        ['Job','job']] %>
+  </div>
+  
+  <div>
+    <%= f.label :Subcategory %> 
+    <%= f.select :subcategory, [['Book','book'],['Electronics','electronics'],
+        ['Info Session','info session'],['Performance','performance'],
+        ['Research Assistant','research assistant'],['Tutor','tutor']] %>
+  </div>
+ 
+   <div>
+    <%= f.label :Email %> 
+    <%= f.text_field :author_id, value: "test@email.com" %>
+  </div>
+  
+  <%= f.submit %>
+<% end %>
+
+
+
+<!--<div class="container">-->
     
-    <div class="row">
-        <!--<div class="col-lg-5">-->
-          <!--<img src="http://placehold.it/200x200" class="img" alt="">-->
-          <!--<div class="container">-->
-          <!--  <div class="form-group">-->
-          <!--    <input type="file" name="img[]" class="file">-->
-          <!--  </div>-->
-          <!--</div>-->
-          <!--{controller = "post", action = "create"}, -->
-          <form method="post", action="create">
-             
-          <div class="container">
-              <div class="form-group">
-                  <label for="post">Upload Image</label>
-                  <div class="input-group">
-                      <span class="input-group-btn">
-                          <span class="btn btn-default btn-file">
-                              Browse… <input type="file" id="post_image" name="post[image]">
-                          </span>
-                      </span>
-                      <input type="text" class="form-control" readonly id="post_image" name="post[image]">
-                  </div>
-                  <img id='img-upload'/>
-              </div>
-          </div>
-        </div>
-
-        <!--<div class="col">-->
-        <!-- /.container -->
+<!--  <div class="row">-->
+<!--    <form method="post", action="create">-->
         
+<!--      <div class="form-group">-->
+<!--          <label for="post">Upload Image</label>-->
+<!--          <input type="file" id="post_image" name="post[image]" accept="image/png,image/gif,image/jpeg" class="form-control"/>-->
+<!--      </div>-->
 
-       
-          <!--<div class="row">-->
-            <div class="form-group">
-              <label for="post">Product Title</label>
-              <input type="text" class="form-control" id="post_title" name="post[title]" placeholder="Enter title">
-            </div>
-          <!--</div>-->
-          <!-- /.row -->
-          <!--<div class="row">-->
-            <div class="form-group">
-              <label for="post">Price</label>
-              <input type="text" class="form-control" id="post_price" name="post[price]" placeholder="Enter price">
-            </div>
-          <!--</div>-->
-          <!-- /.row -->
-          <!--<div class="row">-->
-            <div class="form-group">
-              <label for="post">Description</label>
-              <textarea class="form-control" id="post_description" name="post[description]"  placeholder="Please enter the details" rows="4"></textarea>
-            </div>
-          <!--</div>-->
-          <!-- /.row -->
-          <!--<div class="row">-->
-            <div class="form-group">
-              <label for="post">Category</label>
-              <select class="selectpicker" id='post_category' name="post[category]">
-                <option>item</option>
-                <option>event</option>
-                <option>other</option>
-              </select>
-            </div>
-          <!--</div>-->
-          <!-- /.row -->
-          <!--<div class="row">-->
-            <div class="form-group">
-              <label for="post">Sub Category</label>
-              <select class="selectpicker" id='post_subcategory' name="post[subcategory]">
-                <optgroup label="Item">
-                  <option>Textbook</option>
-                  <option>Electronics</option>
-                </optgroup>
-                <optgroup label="Event">
-                  <option>Info Session</option>
-                  <option>Research opportunity</option>
-                </optgroup>
-                <option>other</option>
-              </select>
-            </div>
-          <!--</div>-->
-          <!-- /.row -->
-          <!--<div class="row">-->
-            <div class="form-group row">
-              <label for="post" class="col-sm-2 col-form-label">Contact Email</label>
-              <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="post_author_id" name="post[author_id]" value="email@example.com">
-              </div>
-            </div>
-          <!--</div>-->
-          <!-- /.row -->
-          <!--<div class="row">-->
-            <button class="btn btn-primary" type="submit" name="commit">Post</button>
-          <!--</div>-->
-          <!-- /.row -->
-        </form>
-        </div>
+<!--      <div class="form-group">-->
+<!--        <label for="post">Product Title</label>-->
+<!--        <input type="text" class="form-control" id="post_title" name="post[title]" placeholder="Enter title">-->
+<!--      </div>-->
+      
+<!--      <div class="form-group">-->
+<!--        <label for="post">Price</label>-->
+<!--        <input type="text" class="form-control" id="post_price" name="post[price]" placeholder="Enter price">-->
+<!--      </div>-->
 
-      </div>
-      <!-- /.row -->
-    </div>
-    <!-- /.container -->
+<!--      <div class="form-group">-->
+<!--        <label for="post">Description</label>-->
+<!--        <textarea class="form-control" id="post_description" name="post[description]"  placeholder="Please enter the details" rows="4"></textarea>-->
+<!--      </div>-->
+
+<!--      <div class="form-group">-->
+<!--        <label for="post">Category</label>-->
+<!--        <select class="selectpicker" id='post_category' name="post[category]">-->
+<!--          <option>item</option>-->
+<!--          <option>event</option>-->
+<!--          <option>other</option>-->
+<!--        </select>-->
+<!--      </div>-->
+
+<!--      <div class="form-group">-->
+<!--        <label for="post">Sub Category</label>-->
+<!--        <select class="selectpicker" id='post_subcategory' name="post[subcategory]">-->
+<!--          <optgroup label="Item">-->
+<!--            <option>Textbook</option>-->
+<!--            <option>Electronics</option>-->
+<!--          </optgroup>-->
+<!--          <optgroup label="Event">-->
+<!--            <option>Info Session</option>-->
+<!--            <option>Research opportunity</option>-->
+<!--          </optgroup>-->
+<!--          <option>other</option>-->
+<!--        </select>-->
+<!--      </div>-->
+
+<!--      <div class="form-group">-->
+<!--        <label for="post" class="col-sm-2 col-form-label">Contact Email</label>-->
+<!--        <div class="col-sm-10">-->
+<!--          <input type="text" readonly class="form-control-plaintext" id="post_author_id" name="post[author_id]" value="email@example.com">-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <button class="btn btn-primary" type="submit" name="commit">Post</button>-->
+
+<!--    </form>-->
+<!--  </div>-->
+<!--</div>-->

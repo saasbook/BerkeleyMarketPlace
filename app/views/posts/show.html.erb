@@ -9,7 +9,8 @@
     
     <div class="row">
       <div class="col-md-3">
-        <img src="<%= asset_path(@post.img_name) %>" alt="", style="height:300px;">
+        <!--<img src="<!%= asset_path(@post.img_name) %>" alt="", style="height:300px;">-->
+        <img src="<%= image_tag(@post.image.url(:medium)) if @post.image.exists?%>" alt="", style="height:300px;">
       </div>
       <div class="col-md-9">
         <ul class="list-group">
