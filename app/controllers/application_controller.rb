@@ -4,17 +4,23 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  include ApplicationHelper
-  
-<<<<<<< Updated upstream
-  
-=======
->>>>>>> Stashed changes
+  #protect_from_forgery with: :null_session
+
   def index 
-    @item_posts = get_vaild_post("item")
-    @job_posts = get_vaild_post("job")
-    @event_posts = get_vaild_post("event")
+    @posts = Post.get_all_valid_posts
     @categories = Post.get_categories
+  end
+  
+  def filter
+    category = params[:category]
+    if category == "all"
+      @selected = Post.get_all_valid_posts
+    else
+      @selected = Post.get_vaild_post(category)
+    end
+    respond_to do |format|
+        format.js
+    end
   end
   
 end
