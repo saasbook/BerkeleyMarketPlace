@@ -39,6 +39,8 @@ gem 'database_cleaner'
 # end
 
 group :development, :test do
+  gem 'simplecov', :require => false
+  
   gem 'byebug'
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended

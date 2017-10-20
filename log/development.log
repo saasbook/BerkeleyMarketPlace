@@ -71,3 +71,2008 @@
   [1m[35m (0.1ms)[0m  begin transaction
   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "category", "subcategory", "price", "available", "release_time", "expire_time", "description", "img_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Taking notes for CS188 and CS189"], ["category", "job"], ["subcategory", "computer science"], ["price", "233.3"], ["available", "t"], ["release_time", "2017-10-16 15:44:31.895439"], ["expire_time", "2018-05-08 15:44:31.895470"], ["description", "some description"], ["img_name", "#"], ["created_at", "2017-10-20 15:44:32.088463"], ["updated_at", "2017-10-20 15:44:32.088463"]]
   [1m[35m (6.2ms)[0m  commit transaction
+
+
+Started GET "/" for 192.31.105.221 at 2017-10-20 20:03:03 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.3ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:03:03.967543' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (80.1ms)
+  Rendered layouts/_posts_grid.html.erb (81.9ms)
+  Rendered application/index.html.erb within layouts/application (93.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 367ms (Views: 336.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 20:03:06 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (18.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 45ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 20:03:19 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XBakoz2j2kyxI5noHPPrxKvXKlxDP4pCAj85QwWAs+miNFU6Q7LQ+6R9YNa1yKCXQd+U0qH7QIlViGLBKt1bsQ==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007feba4baef68 @tempfile=#<Tempfile:/tmp/RackMultipart20171020-3360-8kfgic.png>, @original_filename="Screen Shot 2017-10-13 at 9.27.43 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"Screen Shot 2017-10-13 at 9.27.43 PM.png\"\r\nContent-Type: image/png\r\n">, "title"=>"w", "price"=>"22", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Command :: file -b --mime '/tmp/5a882c3584701c298538481691797a6520171020-3360-1hbagbu.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/e8986e74bd619eab24b60d5851733e7920171020-3360-1akglea.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/e8986e74bd619eab24b60d5851733e7920171020-3360-1akglea.png[0]'
+Command :: convert '/tmp/e8986e74bd619eab24b60d5851733e7920171020-3360-1akglea.png[0]' -auto-orient -resize "x100" -crop "100x100+57+0" +repage '/tmp/84b194f932895b2abdfdf8ec8c8ff65e20171020-3360-gk795t'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/e8986e74bd619eab24b60d5851733e7920171020-3360-1akglea.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/e8986e74bd619eab24b60d5851733e7920171020-3360-1akglea.png[0]'
+Command :: convert '/tmp/e8986e74bd619eab24b60d5851733e7920171020-3360-1akglea.png[0]' -auto-orient -resize "150x150>" '/tmp/84b194f932895b2abdfdf8ec8c8ff65e20171020-3360-1fdipqb'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/e8986e74bd619eab24b60d5851733e7920171020-3360-1akglea.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/e8986e74bd619eab24b60d5851733e7920171020-3360-1akglea.png[0]'
+Command :: convert '/tmp/e8986e74bd619eab24b60d5851733e7920171020-3360-1akglea.png[0]' -auto-orient -resize "200x200" '/tmp/84b194f932895b2abdfdf8ec8c8ff65e20171020-3360-1i8c3m3'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/5a882c3584701c298538481691797a6520171020-3360-16q5a0o.png'
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "w"], ["price", "22"], ["description", ""], ["release_time", "2017-10-20 20:03:19.553146"], ["img_name", "#<ActionDispatch::Http::UploadedFile:0x007feba4baef68>"], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["image_file_name", "Screen_Shot_2017-10-13_at_9.27.43_PM.png"], ["image_content_type", "image/png"], ["image_file_size", 3714], ["image_updated_at", "2017-10-20 20:03:19.556064"], ["created_at", "2017-10-20 20:03:19.705892"], ["updated_at", "2017-10-20 20:03:19.705892"]]
+  [1m[36m (14.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://bmktplace-jiazhenchen.c9users.io/
+Completed 302 Found in 1632ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/" for 192.31.105.221 at 2017-10-20 20:03:21 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:03:21.258267' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (26.3ms)
+  Rendered layouts/_posts_grid.html.erb (27.2ms)
+  Rendered application/index.html.erb within layouts/application (29.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 85ms (Views: 83.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 192.31.105.221 at 2017-10-20 20:04:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.9ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:04:18.341778' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (101.8ms)
+  Rendered layouts/_posts_grid.html.erb (103.1ms)
+  Rendered application/index.html.erb within layouts/application (118.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 444ms (Views: 410.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/23" for 192.31.105.221 at 2017-10-20 20:04:20 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 23]]
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 30.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/22" for 192.31.105.221 at 2017-10-20 20:04:28 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 22]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/23" for 192.31.105.221 at 2017-10-20 20:04:33 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 23]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 192.31.105.221 at 2017-10-20 20:05:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.7ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:05:35.280040' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (97.6ms)
+  Rendered layouts/_posts_grid.html.erb (99.2ms)
+  Rendered application/index.html.erb within layouts/application (111.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 523ms (Views: 473.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-20 20:05:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.6ms)
+  [1m[35mPost Load (1.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:05:50.801254' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (87.2ms)
+  Rendered layouts/_posts_grid.html.erb (88.9ms)
+  Rendered application/index.html.erb within layouts/application (102.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 393ms (Views: 358.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 20:05:58 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (23.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 20:06:08 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FtX4OHLnlWQrvTDyAufjmUKekfTG+bXvawFf7wM51ohGnS3ke42fp3HhTH+WOe/nZCTe9xtDPdiik0k0srGltQ==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd194baa258 @tempfile=#<Tempfile:/tmp/RackMultipart20171020-4549-ph90r2.png>, @original_filename="5845e770fb0b0755fa99d7f4.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"5845e770fb0b0755fa99d7f4.png\"\r\nContent-Type: image/png\r\n">, "title"=>"Doge", "price"=>"230", "description"=>"Doge", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-8zwvq.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1a9p9ah.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1a9p9ah.png[0]'
+Command :: convert '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1a9p9ah.png[0]' -auto-orient -resize "100x" -crop "100x100+0+0" +repage '/tmp/dae3ad56937803dcc89e2e54d5bef12e20171020-4549-1wtgnwh'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1a9p9ah.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1a9p9ah.png[0]'
+Command :: convert '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1a9p9ah.png[0]' -auto-orient -resize "150x150>" '/tmp/dae3ad56937803dcc89e2e54d5bef12e20171020-4549-1yjxy35'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1a9p9ah.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1a9p9ah.png[0]'
+Command :: convert '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1a9p9ah.png[0]' -auto-orient -resize "200x200" '/tmp/dae3ad56937803dcc89e2e54d5bef12e20171020-4549-176qxjn'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1o9mjic.png'
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Doge"], ["price", "230"], ["description", "Doge"], ["release_time", "2017-10-20 20:06:08.339362"], ["img_name", "#<ActionDispatch::Http::UploadedFile:0x007fd194baa258>"], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["image_file_name", "5845e770fb0b0755fa99d7f4.png"], ["image_content_type", "image/png"], ["image_file_size", 81046], ["image_updated_at", "2017-10-20 20:06:08.342490"], ["created_at", "2017-10-20 20:06:08.891856"], ["updated_at", "2017-10-20 20:06:08.891856"]]
+  [1m[36m (15.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://bmktplace-jiazhenchen.c9users.io/
+Completed 302 Found in 3254ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-20 20:06:11 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+  [1m[35mPost Load (0.9ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:06:11.672272' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (48.8ms)
+  Rendered layouts/_posts_grid.html.erb (50.3ms)
+  Rendered application/index.html.erb within layouts/application (53.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 127ms (Views: 124.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 192.31.105.221 at 2017-10-20 20:09:11 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:09:11.512794' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (25.3ms)
+  Rendered layouts/_posts_grid.html.erb (26.5ms)
+  Rendered application/index.html.erb within layouts/application (29.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 72ms (Views: 69.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 20:09:12 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 20:12:15 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 20:15:56 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-20 20:19:41 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:19:41.340465' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (22.3ms)
+  Rendered layouts/_posts_grid.html.erb (23.1ms)
+  Rendered application/index.html.erb within layouts/application (25.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 58ms (Views: 51.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 20:19:42 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 20:20:36 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PJw3owjBESr2D9wW1+Hzm5nsIa4xgYF6feK3S5ma5ops1OJ/Aasb6axToJtDP//lv1Zurew7CU20cKGQKBKVtw==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd19725fba0 @tempfile=#<Tempfile:/tmp/RackMultipart20171020-4549-1ie9has.JPG>, @original_filename="275px-A_small_cup_of_coffee.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"275px-A_small_cup_of_coffee.JPG\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"Coffee", "price"=>"10", "description"=>"Coffee", "category"=>"item", "subcategory"=>"electronics", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Command :: file -b --mime '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1akcuq5.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-rwe8ju.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-rwe8ju.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-rwe8ju.JPG[0]' -auto-orient -resize "x100" -crop "100x100+16+0" +repage '/tmp/9e412996f0385b46322011e90179673c20171020-4549-756e7x'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-rwe8ju.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-rwe8ju.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-rwe8ju.JPG[0]' -auto-orient -resize "150x150>" '/tmp/9e412996f0385b46322011e90179673c20171020-4549-iqt7r6'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-rwe8ju.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-rwe8ju.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-rwe8ju.JPG[0]' -auto-orient -resize "200x200" '/tmp/9e412996f0385b46322011e90179673c20171020-4549-4jj59'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1kuydsl.JPG'
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Coffee"], ["price", "10"], ["description", "Coffee"], ["release_time", "2017-10-20 20:20:36.622578"], ["img_name", "#<ActionDispatch::Http::UploadedFile:0x007fd19725fba0>"], ["author_id", 0], ["category", "item"], ["subcategory", "electronics"], ["available", "t"], ["image_file_name", "275px-A_small_cup_of_coffee.JPG"], ["image_content_type", "image/jpeg"], ["image_file_size", 10819], ["image_updated_at", "2017-10-20 20:20:36.625520"], ["created_at", "2017-10-20 20:20:36.984231"], ["updated_at", "2017-10-20 20:20:36.984231"]]
+  [1m[36m (11.8ms)[0m  [1mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 2390ms (ActiveRecord: 12.4ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"application"}):
+  app/controllers/posts_controller.rb:33:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.3ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 20:25:24 +0000
+
+SyntaxError (/home/ubuntu/workspace/app/controllers/posts_controller.rb:34: syntax error, unexpected ':', expecting keyword_end
+      redirect_to: show, :id => @post.id
+                  ^
+/home/ubuntu/workspace/app/controllers/posts_controller.rb:34: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+      redirect_to: show, :id => @post.id
+                               ^):
+  app/controllers/posts_controller.rb:34: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/posts_controller.rb:34: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.5ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 20:25:43 +0000
+
+SyntaxError (/home/ubuntu/workspace/app/controllers/posts_controller.rb:34: syntax error, unexpected ':', expecting keyword_end
+      redirect_to: show
+                  ^):
+  app/controllers/posts_controller.rb:34: syntax error, unexpected ':', expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.6ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 20:26:02 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e/DaAITyzSBM7GEtCZ1+YQy7XQ8Qq4dzHeuReCnfvCcruA/cjZjH4xawHaCdQ3IfKgESDM0RD0TUeYejmFfPGg==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd188619b60 @tempfile=#<Tempfile:/tmp/RackMultipart20171020-4549-aizgx1.JPG>, @original_filename="275px-A_small_cup_of_coffee.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"275px-A_small_cup_of_coffee.JPG\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"Coffee", "price"=>"10", "description"=>"Coffee", "category"=>"item", "subcategory"=>"electronics", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Command :: file -b --mime '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1gu5sja.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1bfn41y.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1bfn41y.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1bfn41y.JPG[0]' -auto-orient -resize "x100" -crop "100x100+16+0" +repage '/tmp/36a24176ae81fc0bc0c7518e815e7ba120171020-4549-sb9uz9'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1bfn41y.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1bfn41y.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1bfn41y.JPG[0]' -auto-orient -resize "150x150>" '/tmp/36a24176ae81fc0bc0c7518e815e7ba120171020-4549-1o8kovj'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1bfn41y.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1bfn41y.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1bfn41y.JPG[0]' -auto-orient -resize "200x200" '/tmp/36a24176ae81fc0bc0c7518e815e7ba120171020-4549-5p6eoq'
+  [1m[35m (0.2ms)[0m  begin transaction
+Command :: file -b --mime '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-281rir.JPG'
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Coffee"], ["price", "10"], ["description", "Coffee"], ["release_time", "2017-10-20 20:26:02.287331"], ["img_name", "#<ActionDispatch::Http::UploadedFile:0x007fd188619b60>"], ["author_id", 0], ["category", "item"], ["subcategory", "electronics"], ["available", "t"], ["image_file_name", "275px-A_small_cup_of_coffee.JPG"], ["image_content_type", "image/jpeg"], ["image_file_size", 10819], ["image_updated_at", "2017-10-20 20:26:02.395534"], ["created_at", "2017-10-20 20:26:02.647377"], ["updated_at", "2017-10-20 20:26:02.647377"]]
+  [1m[35m (10.1ms)[0m  commit transaction
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 1878ms (ActiveRecord: 12.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=):
+  app/controllers/posts_controller.rb:11:in `show'
+  app/controllers/posts_controller.rb:34:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.6ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 20:27:38 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e/DaAITyzSBM7GEtCZ1+YQy7XQ8Qq4dzHeuReCnfvCcruA/cjZjH4xawHaCdQ3IfKgESDM0RD0TUeYejmFfPGg==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd188b48f00 @tempfile=#<Tempfile:/tmp/RackMultipart20171020-4549-1u6n3n3.JPG>, @original_filename="275px-A_small_cup_of_coffee.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"275px-A_small_cup_of_coffee.JPG\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"Coffee", "price"=>"10", "description"=>"Coffee", "category"=>"item", "subcategory"=>"electronics", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Command :: file -b --mime '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-2skkle.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1l8dott.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1l8dott.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1l8dott.JPG[0]' -auto-orient -resize "x100" -crop "100x100+16+0" +repage '/tmp/0e592532876abe6c304b8242db97e28120171020-4549-23wnbz'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1l8dott.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1l8dott.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1l8dott.JPG[0]' -auto-orient -resize "150x150>" '/tmp/0e592532876abe6c304b8242db97e28120171020-4549-1l8djgo'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1l8dott.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1l8dott.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1l8dott.JPG[0]' -auto-orient -resize "200x200" '/tmp/0e592532876abe6c304b8242db97e28120171020-4549-15y9n3s'
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-qrhox5.JPG'
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Coffee"], ["price", "10"], ["description", "Coffee"], ["release_time", "2017-10-20 20:27:38.053104"], ["img_name", "#<ActionDispatch::Http::UploadedFile:0x007fd188b48f00>"], ["author_id", 0], ["category", "item"], ["subcategory", "electronics"], ["available", "t"], ["image_file_name", "275px-A_small_cup_of_coffee.JPG"], ["image_content_type", "image/jpeg"], ["image_file_size", 10819], ["image_updated_at", "2017-10-20 20:27:38.073037"], ["created_at", "2017-10-20 20:27:38.405865"], ["updated_at", "2017-10-20 20:27:38.405865"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 1729ms (ActiveRecord: 13.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=):
+  app/controllers/posts_controller.rb:11:in `show'
+  app/controllers/posts_controller.rb:34:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.3ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-20 20:28:19 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:28:19.251683' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (32.2ms)
+  Rendered layouts/_posts_grid.html.erb (33.2ms)
+  Rendered application/index.html.erb within layouts/application (35.6ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 81ms (Views: 73.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 20:28:22 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e/DaAITyzSBM7GEtCZ1+YQy7XQ8Qq4dzHeuReCnfvCcruA/cjZjH4xawHaCdQ3IfKgESDM0RD0TUeYejmFfPGg==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd196ee43e0 @tempfile=#<Tempfile:/tmp/RackMultipart20171020-4549-t2y0v.JPG>, @original_filename="275px-A_small_cup_of_coffee.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"275px-A_small_cup_of_coffee.JPG\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"Coffee", "price"=>"10", "description"=>"Coffee", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Command :: file -b --mime '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-hb1bjj.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-axnydq.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-axnydq.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-axnydq.JPG[0]' -auto-orient -resize "x100" -crop "100x100+16+0" +repage '/tmp/8691b4e9771371904bb689123458dc2320171020-4549-1xreg0z'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-axnydq.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-axnydq.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-axnydq.JPG[0]' -auto-orient -resize "150x150>" '/tmp/8691b4e9771371904bb689123458dc2320171020-4549-o3klzv'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-axnydq.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-axnydq.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-axnydq.JPG[0]' -auto-orient -resize "200x200" '/tmp/8691b4e9771371904bb689123458dc2320171020-4549-odjba6'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-uzk47s.JPG'
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Coffee"], ["price", "10"], ["description", "Coffee"], ["release_time", "2017-10-20 20:28:22.570189"], ["img_name", "#<ActionDispatch::Http::UploadedFile:0x007fd196ee43e0>"], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["image_file_name", "275px-A_small_cup_of_coffee.JPG"], ["image_content_type", "image/jpeg"], ["image_file_size", 10819], ["image_updated_at", "2017-10-20 20:28:22.573397"], ["created_at", "2017-10-20 20:28:22.798474"], ["updated_at", "2017-10-20 20:28:22.798474"]]
+  [1m[36m (12.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 28]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/28
+Completed 302 Found in 1545ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/posts/28" for 136.152.142.96 at 2017-10-20 20:28:24 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 28]]
+  Rendered posts/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-20 20:36:32 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:36:32.895253' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (26.3ms)
+  Rendered layouts/_posts_grid.html.erb (27.2ms)
+  Rendered application/index.html.erb within layouts/application (29.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 66ms (Views: 59.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 20:36:33 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apple-touch-icon-120x120-precomposed.png" for 66.87.119.99 at 2017-10-20 20:37:41 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-120x120-precomposed.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.1ms)
+
+
+Started GET "/apple-touch-icon-120x120.png" for 66.87.119.99 at 2017-10-20 20:37:42 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-120x120.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.0ms)
+
+
+Started GET "/apple-touch-icon.png" for 66.87.119.99 at 2017-10-20 20:37:42 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.3ms)
+
+
+Started GET "/apple-touch-icon.png" for 66.87.119.99 at 2017-10-20 20:37:43 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.3ms)
+
+
+Started GET "/apple-touch-icon-precomposed.png" for 66.87.119.99 at 2017-10-20 20:37:43 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.2ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-20 20:49:49 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:49:49.392412' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (23.6ms)
+  Rendered layouts/_posts_grid.html.erb (24.8ms)
+  Rendered application/index.html.erb within layouts/application (28.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 67ms (Views: 64.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/28" for 136.152.142.96 at 2017-10-20 20:49:51 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 28]]
+  Rendered posts/show.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 20:50:04 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (22.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 136ms (Views: 135.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 20:50:14 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HszK16uTBIT5gsJIw/Jlrqx8RdbxVS3fipvVHGL5gQpOhB8LovkOR6PevsVXLGnQisYK1SzvpehDCcPH03HyNw==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd197cdbea8 @tempfile=#<Tempfile:/tmp/RackMultipart20171020-4549-gwp648.png>, @original_filename="5845e770fb0b0755fa99d7f4.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"5845e770fb0b0755fa99d7f4.png\"\r\nContent-Type: image/png\r\n">, "title"=>"Doge", "price"=>"2", "description"=>"Doge", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-115wrnd.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1j5913b.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1j5913b.png[0]'
+Command :: convert '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1j5913b.png[0]' -auto-orient -resize "100x" -crop "100x100+0+0" +repage '/tmp/241b957ecfd00b3a05f971dec8e356a420171020-4549-pe215a'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1j5913b.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1j5913b.png[0]'
+Command :: convert '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1j5913b.png[0]' -auto-orient -resize "150x150>" '/tmp/241b957ecfd00b3a05f971dec8e356a420171020-4549-w88wxv'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1j5913b.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1j5913b.png[0]'
+Command :: convert '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-1j5913b.png[0]' -auto-orient -resize "200x200" '/tmp/241b957ecfd00b3a05f971dec8e356a420171020-4549-1nhdlmu'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171020-4549-2dq65m.png'
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Doge"], ["price", "2"], ["description", "Doge"], ["release_time", "2017-10-20 20:50:14.046921"], ["img_name", "#<ActionDispatch::Http::UploadedFile:0x007fd197cdbea8>"], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["image_file_name", "5845e770fb0b0755fa99d7f4.png"], ["image_content_type", "image/png"], ["image_file_size", 81046], ["image_updated_at", "2017-10-20 20:50:14.051408"], ["created_at", "2017-10-20 20:50:14.686450"], ["updated_at", "2017-10-20 20:50:14.686450"]]
+  [1m[36m (17.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 29]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/29
+Completed 302 Found in 2536ms (ActiveRecord: 18.5ms)
+
+
+Started GET "/posts/29" for 136.152.142.96 at 2017-10-20 20:50:16 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 29]]
+  Rendered posts/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/29" for 136.152.142.96 at 2017-10-20 20:51:30 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 29]]
+  Rendered posts/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/29" for 136.152.142.96 at 2017-10-20 20:51:40 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 29]]
+  Rendered posts/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/29" for 136.152.142.96 at 2017-10-20 20:56:18 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 29]]
+  Rendered posts/show.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 62ms (Views: 42.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-20 20:56:31 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:56:31.106595' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (18.0ms)
+  Rendered layouts/_posts_grid.html.erb (19.3ms)
+  Rendered application/index.html.erb within layouts/application (22.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 57ms (Views: 53.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/24" for 136.152.142.96 at 2017-10-20 20:56:37 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 24]]
+  Rendered posts/show.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/filter?category=item" for 136.152.142.96 at 2017-10-20 20:56:49 +0000
+Processing by ApplicationController#filter as JS
+  Parameters: {"category"=>"item"}
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-20 20:56:49.903623' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  Rendered layouts/_posts_list.html.erb (11.5ms)
+  Rendered application/filter.js.erb (14.4ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/filter?category=event" for 136.152.142.96 at 2017-10-20 20:56:50 +0000
+Processing by ApplicationController#filter as JS
+  Parameters: {"category"=>"event"}
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-20 20:56:50.890562' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered layouts/_posts_list.html.erb (6.5ms)
+  Rendered application/filter.js.erb (8.0ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/filter?category=job" for 136.152.142.96 at 2017-10-20 20:56:52 +0000
+Processing by ApplicationController#filter as JS
+  Parameters: {"category"=>"job"}
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-20 20:56:52.007369' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  Rendered layouts/_posts_list.html.erb (4.6ms)
+  Rendered application/filter.js.erb (5.8ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/filter?category=all" for 136.152.142.96 at 2017-10-20 20:56:52 +0000
+Processing by ApplicationController#filter as JS
+  Parameters: {"category"=>"all"}
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 20:56:52.470459' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (15.8ms)
+  Rendered application/filter.js.erb (17.8ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 21:38:05 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/fINgvfrHFTMYa3lVaoajX0tnnKdUMnJOww7e8efGyID0PwbifoW49k/VNv8kVHelyUg/H+UAwJsu2D56MLzeg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.8ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:38:05.680788"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:38:05.684260"], ["updated_at", "2017-10-20 21:38:05.684260"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 30]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/30
+Completed 302 Found in 24ms (ActiveRecord: 15.1ms)
+
+
+Started GET "/posts/30" for 192.31.105.221 at 2017-10-20 21:38:05 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 30]]
+  Rendered posts/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:38:15 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:38:15 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-20 21:38:54 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 21:38:54.596574' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (25.0ms)
+  Rendered layouts/_posts_grid.html.erb (25.8ms)
+  Rendered application/index.html.erb within layouts/application (28.4ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 65ms (Views: 58.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 21:38:55 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:38:56 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mdqxt1PwEdcrl95mVgJDqNbsHL2anNyEQH8hDoIsVCvJkmRrWpobFHHLouvC3E/W8FZTvkcmVLOJ7TfVM6QnFg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `image' for nil:NilClass):
+  app/controllers/posts_controller.rb:18:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.6ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:39:24 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wxIORHVbI4Zw4kp6P1GLYXnj1degQuEzyAbQNoV4daCTWtuYfDEpRSq+Nverj4cfX1ma1H34aQQBlMbtNPAGnQ==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd197d4f240 @tempfile=#<Tempfile:/tmp/RackMultipart20171020-4549-1u4gvg1.jpeg>, @original_filename="bunny.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"bunny.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `image' for nil:NilClass):
+  app/controllers/posts_controller.rb:18:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.7ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:39:42 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wxIORHVbI4Zw4kp6P1GLYXnj1degQuEzyAbQNoV4daCTWtuYfDEpRSq+Nverj4cfX1ma1H34aQQBlMbtNPAGnQ==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd197845858 @tempfile=#<Tempfile:/tmp/RackMultipart20171020-4549-1h3zqzh.jpeg>, @original_filename="bunny.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"bunny.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Command :: file -b --mime '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-uny9si.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-t5peae.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-t5peae.jpeg[0]'
+Command :: convert '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-t5peae.jpeg[0]' -auto-orient -resize "x100" -crop "100x100+12+0" +repage '/tmp/3e3f9aec367ffa7c25a98d4a3df377d120171020-4549-1776ot5'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-t5peae.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-t5peae.jpeg[0]'
+Command :: convert '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-t5peae.jpeg[0]' -auto-orient -resize "150x150>" '/tmp/3e3f9aec367ffa7c25a98d4a3df377d120171020-4549-18sp2sr'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-t5peae.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-t5peae.jpeg[0]'
+Command :: convert '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-t5peae.jpeg[0]' -auto-orient -resize "200x200" '/tmp/3e3f9aec367ffa7c25a98d4a3df377d120171020-4549-1dt2bzq'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-qjnxr5.jpeg'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:39:42.926899"], ["img_name", "#<ActionDispatch::Http::UploadedFile:0x007fd197845858>"], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["image_file_name", "bunny.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 4924], ["image_updated_at", "2017-10-20 21:39:42.946426"], ["created_at", "2017-10-20 21:39:43.232174"], ["updated_at", "2017-10-20 21:39:43.232174"]]
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 31]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/31
+Completed 302 Found in 1699ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/posts/31" for 136.152.142.96 at 2017-10-20 21:39:44 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 31]]
+  Rendered posts/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 21:40:02 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-20 21:40:05 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 21:40:05.380738' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (31.6ms)
+  Rendered layouts/_posts_grid.html.erb (32.3ms)
+  Rendered application/index.html.erb within layouts/application (34.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 105ms (Views: 61.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 21:40:06 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:40:08 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XOK6N+wuHZ8LhTsSb8ApQfdcKDhCx2mNO8W5UAAC8EgMqm/r5UQXXFHZR5/7HiU/0eZnO5994bryV6+LsYqDdQ==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/posts_controller.rb:24:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.5ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:41:26 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3dOm1NDi1E2F0UyGfGxWB1Kr9tqQqQ8jU3Mh63ks1SmNm3MI2Yjejt+NMAvoslp5dBG52U0ThxSa4TcwyKSmFA==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:41:27.009671"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:41:27.073653"], ["updated_at", "2017-10-20 21:41:27.073653"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 32]]
+Redirected to 
+Completed 500 Internal Server Error in 83ms (Views: 43.9ms | ActiveRecord: 12.3ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:32:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.6ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 21:42:12 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:42:14 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Xkiiaxm+9g0GF5O1LECLi7iqHTk0ah70g1i1iJJrIOtMfdVpQzxG25EIsNAbw5QCFjndzlrIEwbn3QNk8Hfvg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.4ms)
+
+NoMethodError (undefined method `exist?' for #<Paperclip::Attachment:0x007fd197112c98>
+Did you mean?  exists?):
+  app/controllers/posts_controller.rb:24:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.4ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:42:25 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Xkiiaxm+9g0GF5O1LECLi7iqHTk0ah70g1i1iJJrIOtMfdVpQzxG25EIsNAbw5QCFjndzlrIEwbn3QNk8Hfvg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms)
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/posts_controller.rb:24:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.2ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:42:40 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Xkiiaxm+9g0GF5O1LECLi7iqHTk0ah70g1i1iJJrIOtMfdVpQzxG25EIsNAbw5QCFjndzlrIEwbn3QNk8Hfvg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:42:40.612422"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:42:40.630166"], ["updated_at", "2017-10-20 21:42:40.630166"]]
+  [1m[36m (13.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 33]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/33
+Completed 302 Found in 37ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/posts/33" for 136.152.142.96 at 2017-10-20 21:42:40 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 33]]
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 21:42:42 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:43:20 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2+FFUU4bWWJ9Cr+I4bRVyktSPLff5wc7sAoEe/vEHNqLqZCNR3FToSdWwwV1alm0behztAJdjwx5mBKgSkxv5w==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.1ms)
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/posts_controller.rb:24:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.9ms)
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mPost Load (10.8ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 28]]
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:48:48 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2+FFUU4bWWJ9Cr+I4bRVyktSPLff5wc7sAoEe/vEHNqLqZCNR3FToSdWwwV1alm0behztAJdjwx5mBKgSkxv5w==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:48:48.068843"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:48:48.090440"], ["updated_at", "2017-10-20 21:48:48.090440"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 34]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/34
+Completed 302 Found in 43ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/posts/34" for 136.152.142.96 at 2017-10-20 21:48:48 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 34]]
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 57ms (Views: 55.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 21:48:50 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-20 21:48:52 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.7ms)
+  [1m[36mPost Load (16.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 21:48:52.217290' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (78.3ms)
+  Rendered layouts/_posts_grid.html.erb (88.6ms)
+  Rendered application/index.html.erb within layouts/application (95.5ms)
+  Rendered layouts/_header.html.erb (16.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 366ms (Views: 308.3ms | ActiveRecord: 16.2ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:48:55 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6bD3EG8WwsEvneGUvYSeVSEh72VZAn2Swonf5XMKMGW5+CLMZnzIAnXBnRkpWpIrB5ugZoS49aULG8k+woJDWA==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  [1m[35m (4.8ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:48:55.664329"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:48:55.673267"], ["updated_at", "2017-10-20 21:48:55.673267"]]
+  [1m[35m (12.5ms)[0m  commit transaction
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 35]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/35
+Completed 302 Found in 31ms (ActiveRecord: 18.0ms)
+
+
+Started GET "/posts/35" for 136.152.142.96 at 2017-10-20 21:48:55 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 35]]
+  Rendered posts/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 21:49:05 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:49:06 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"td5cIwQxzUIxyeTJ9Xeojy2T53UixOTX/DnrG/2cPb7llon/DVvHgWuVmERhqaTxCymodv9+bOA1q/3ATBROgw==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:49:06.273178"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:49:06.326486"], ["updated_at", "2017-10-20 21:49:06.326486"]]
+  [1m[36m (50.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 36]]
+Redirected to 
+Completed 500 Internal Server Error in 110ms (Views: 32.2ms | ActiveRecord: 53.1ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:32:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.9ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:49:58 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 99ms (Views: 90.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:49:58 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 21:50:00 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Tr3b/HC1IgpY6A+G1drCker4FBvgyMeWtGmXA5waFIbGAb2j9PePzw9WQCybCBZraNe3o1H6dUNZv3eIS2ACg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 2.4ms)
+
+NoMethodError (undefined method `photo' for #<Post:0x007fd1976fd5e0>):
+  app/controllers/posts_controller.rb:25:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 21:50:26 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 47ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:50:28 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IfVPD0e5IXHSsIaw8anVkGdj+YV6QKrgW0dLBYTgJCdxvZrTTtMrsojs+j1ld9nuQdm2hqf6IteS1V3eNWhXGg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.6ms)
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/posts_controller.rb:25:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.5ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:51:27 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IfVPD0e5IXHSsIaw8anVkGdj+YV6QKrgW0dLBYTgJCdxvZrTTtMrsojs+j1ld9nuQdm2hqf6IteS1V3eNWhXGg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.1ms)
+
+NoMethodError (undefined method `exists?' for nil:NilClass):
+  app/controllers/posts_controller.rb:25:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.3ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:51:32 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 61ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 21:51:34 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QKQGAvgAJk8HEw+VhgrnhvCKJK0rFYVCt+0+XZZPHZW+hvebhhEs+BJN9qsvMazVGoKaI8nRT4ngWmXfuRL1zQ==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `exists?' for nil:NilClass):
+  app/controllers/posts_controller.rb:25:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.4ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:51:40 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:52:05 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IfVPD0e5IXHSsIaw8anVkGdj+YV6QKrgW0dLBYTgJCdxvZrTTtMrsojs+j1ld9nuQdm2hqf6IteS1V3eNWhXGg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:52:05.591541"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:52:05.691830"], ["updated_at", "2017-10-20 21:52:05.691830"]]
+  [1m[36m (11.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 37]]
+Redirected to 
+Completed 500 Internal Server Error in 122ms (Views: 70.2ms | ActiveRecord: 14.3ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:33:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.6ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:52:06 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:52:06 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 21:52:07 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0Xo3SlKcalN5u5ksOQbmy/yEiCkjdS1uEvmy+L9VfLkvWMbTLI1g5GzlYBKQPa2YFow2p8Gx56VFTul6kAiU4Q==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:52:07.739790"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:52:07.778519"], ["updated_at", "2017-10-20 21:52:07.778519"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 38]]
+Redirected to 
+Completed 500 Internal Server Error in 56ms (Views: 36.2ms | ActiveRecord: 12.4ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:33:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.5ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:52:26 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 30]]
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 21:52:27 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpGl1Ni44N59tJ1GyTP1gRsXqwVlY1A2/x9Gw5PtjKjws1RNpqnqaWjqZHhgCL7S8R8Vi4enmv2oqB1BvLBk8A==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:52:27.417533"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:52:27.434949"], ["updated_at", "2017-10-20 21:52:27.434949"]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 39]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/39
+Completed 302 Found in 36ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/posts/39" for 192.31.105.221 at 2017-10-20 21:52:27 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 39]]
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:52:30 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:53:03 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IfVPD0e5IXHSsIaw8anVkGdj+YV6QKrgW0dLBYTgJCdxvZrTTtMrsojs+j1ld9nuQdm2hqf6IteS1V3eNWhXGg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Redirected to 
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/posts_controller.rb:28:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.6ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:53:28 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IfVPD0e5IXHSsIaw8anVkGdj+YV6QKrgW0dLBYTgJCdxvZrTTtMrsojs+j1ld9nuQdm2hqf6IteS1V3eNWhXGg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.7ms)
+
+ActionView::MissingTemplate (Missing template posts/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :haml, :jbuilder]}. Searched in:
+  * "/home/ubuntu/workspace/app/views"
+):
+  app/controllers/posts_controller.rb:28:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (31.2ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:54:27 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    2:   <div>
+    3:     <%= f.label :image%>
+    4:     <%= f.file_field :image, id: "Image"%>
+    5:     <% if @post.image.exist? %>
+    6:         <%= render 'new' %>
+    7:     <% end %>
+    8:   </div>
+  app/views/posts/new.html.erb:5:in `block in _app_views_posts_new_html_erb___3876391413399551067_70268955962940'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb___3876391413399551067_70268955962940'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.3ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:54:27 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    2:   <div>
+    3:     <%= f.label :image%>
+    4:     <%= f.file_field :image, id: "Image"%>
+    5:     <% if @post.image.exist? %>
+    6:         <%= render 'new' %>
+    7:     <% end %>
+    8:   </div>
+  app/views/posts/new.html.erb:5:in `block in _app_views_posts_new_html_erb___3876391413399551067_70268955962940'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb___3876391413399551067_70268955962940'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.1ms)
+
+
+Started GET "/" for 192.31.105.221 at 2017-10-20 21:57:18 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 21:57:18.841645' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (33.0ms)
+  Rendered layouts/_posts_grid.html.erb (34.1ms)
+  Rendered application/index.html.erb within layouts/application (38.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 166ms (Views: 158.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:57:20 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 21:57:21 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XWD/vaTJRl8PiikN9nFmWviFzuYhdNm41xyrHLlxBK2jQg4k2thM6BrU0DNfSi0JEo1waMOwE3OAq/Celizs9Q==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:57:21.610640"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:57:21.641598"], ["updated_at", "2017-10-20 21:57:21.641598"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 40]]
+Redirected to 
+Completed 500 Internal Server Error in 46ms (Views: 28.5ms | ActiveRecord: 10.8ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:35:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.5ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 21:58:18 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XWD/vaTJRl8PiikN9nFmWviFzuYhdNm41xyrHLlxBK2jQg4k2thM6BrU0DNfSi0JEo1waMOwE3OAq/Celizs9Q==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:58:18.172007"], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:58:18.193160"], ["updated_at", "2017-10-20 21:58:18.193160"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 41]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/41
+Completed 302 Found in 38ms (ActiveRecord: 11.4ms)
+
+
+Started GET "/posts/41" for 192.31.105.221 at 2017-10-20 21:58:19 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 41]]
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:58:21 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 21:58:29 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zFLZAr8bYUZye2UTlaKeHoNfAIssyjX+8mmEFFYob9EycCibwQpr8WclnC08mdVNaVe+Bc4O/zWl3t+WeXWHiQ==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "price", "description", "release_time", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:58:29.748613"], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:58:29.750619"], ["updated_at", "2017-10-20 21:58:29.750619"]]
+  [1m[35m (10.4ms)[0m  commit transaction
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 42]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/42
+Completed 302 Found in 17ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/posts/42" for 192.31.105.221 at 2017-10-20 21:58:29 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 42]]
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:58:31 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 21:58:41 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9K3IMYhezMETGpoj+3zWr+ZM3TpVuJPv/Z2K/PKpP18Kjzmo9k/GdgZEYx1SR538DERjtLd8WSSqKtF+3fTXBw==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:58:41.956104"], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:58:42.038527"], ["updated_at", "2017-10-20 21:58:42.038527"]]
+  [1m[36m (10.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 43]]
+Redirected to 
+Completed 500 Internal Server Error in 99ms (Views: 53.6ms | ActiveRecord: 12.4ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:35:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.2ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:59:14 +0000
+
+SyntaxError (/home/ubuntu/workspace/app/controllers/posts_controller.rb:51: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/posts_controller.rb:51: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.6ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:59:14 +0000
+
+SyntaxError (/home/ubuntu/workspace/app/controllers/posts_controller.rb:51: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/posts_controller.rb:51: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.8ms)
+
+
+Started GET "/posts/41" for 192.31.105.221 at 2017-10-20 21:59:30 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 41]]
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 58ms (Views: 34.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:59:31 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 21:59:33 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CGLXiB59TItk32yCXHKNph5DQF+3nKbKCyXyWKS2QtP2QCYRYGxGPHGBlbz1Scb19Ev+0VVYbAFckqnai+uqiw==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:59:33.228570"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:59:33.264937"], ["updated_at", "2017-10-20 21:59:33.264937"]]
+  [1m[35m (10.5ms)[0m  commit transaction
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 44]]
+Redirected to 
+Completed 500 Internal Server Error in 52ms (Views: 32.3ms | ActiveRecord: 11.1ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:35:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.0ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 21:59:35 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (6.0ms)
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 21:59:53 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IfVPD0e5IXHSsIaw8anVkGdj+YV6QKrgW0dLBYTgJCdxvZrTTtMrsojs+j1ld9nuQdm2hqf6IteS1V3eNWhXGg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:59:53.346455"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:59:53.366029"], ["updated_at", "2017-10-20 21:59:53.366029"]]
+  [1m[35m (10.7ms)[0m  commit transaction
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 45]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/45
+Completed 302 Found in 37ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/posts/45" for 136.152.142.96 at 2017-10-20 21:59:53 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 45]]
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 21:59:53 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"utO/oGA6Jser0Vj7t/nzQc22g7/LfP6x54FzGoDDcxJE8U45HisscL6PocUewrgSJ749MSm4NHqwNiiYr56bSg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 21:59:53.580115"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 21:59:53.582690"], ["updated_at", "2017-10-20 21:59:53.582690"]]
+  [1m[36m (14.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 46]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/46
+Completed 302 Found in 23ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/posts/46" for 192.31.105.221 at 2017-10-20 21:59:53 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 46]]
+  Rendered posts/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 21:59:55 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-20 21:59:56 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[35mPost Load (0.8ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 21:59:56.359984' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (21.9ms)
+  Rendered layouts/_posts_grid.html.erb (23.0ms)
+  Rendered application/index.html.erb within layouts/application (25.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 65ms (Views: 62.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 22:00:01 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CGLXiB59TItk32yCXHKNph5DQF+3nKbKCyXyWKS2QtP2QCYRYGxGPHGBlbz1Scb19Ev+0VVYbAFckqnai+uqiw==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms)
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/posts_controller.rb:26:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 22:00:09 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 22:00:09 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CGLXiB59TItk32yCXHKNph5DQF+3nKbKCyXyWKS2QtP2QCYRYGxGPHGBlbz1Scb19Ev+0VVYbAFckqnai+uqiw==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/posts_controller.rb:26:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 22:00:10 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bXvGnapCkMYNjoZkoajIoLJLIq/UsxyOE2lpIIlM2LM9MxNBoyiaBVfS+uk1dsTelPFtrAkJlLna+3/7OMSrjg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/posts_controller.rb:26:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.1ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 22:00:12 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"utO/oGA6Jser0Vj7t/nzQc22g7/LfP6x54FzGoDDcxJE8U45HisscL6PocUewrgSJ749MSm4NHqwNiiYr56bSg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/posts_controller.rb:26:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 22:02:17 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"crhIagIT7eVoEmJkBMgHOrn2TdYl+I0BZzzfFKPAtcsi8J22C3nnJjJOHumQFgtEn0wC1fhCBTaursnPEkjG9g==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 22:02:17.740370"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 22:02:17.760071"], ["updated_at", "2017-10-20 22:02:17.760071"]]
+  [1m[36m (11.5ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 12.9ms)
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/posts_controller.rb:28:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.5ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 22:02:36 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"crhIagIT7eVoEmJkBMgHOrn2TdYl+I0BZzzfFKPAtcsi8J22C3nnJjJOHumQFgtEn0wC1fhCBTaursnPEkjG9g==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 22:02:36.826232"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 22:02:36.846623"], ["updated_at", "2017-10-20 22:02:36.846623"]]
+  [1m[35m (12.7ms)[0m  commit transaction
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 48]]
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts/48
+Completed 302 Found in 40ms (ActiveRecord: 14.4ms)
+
+
+Started GET "/posts/48" for 136.152.142.96 at 2017-10-20 22:02:36 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 48]]
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-20 22:03:42 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 22:03:43 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/V0omyj3wjIuxzzpJwSgO11FOZ05kEcPJvYdANONZ6CtFf1HIZ3I8XSbQGSz2qxFe/92nuQqzzjvZAvbYgUUnQ==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 22:03:43.214081"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 22:03:43.332290"], ["updated_at", "2017-10-20 22:03:43.332290"]]
+  [1m[36m (12.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 49]]
+Redirected to 
+Completed 500 Internal Server Error in 141ms (Views: 83.8ms | ActiveRecord: 16.0ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:34:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.5ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 22:04:07 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/V0omyj3wjIuxzzpJwSgO11FOZ05kEcPJvYdANONZ6CtFf1HIZ3I8XSbQGSz2qxFe/92nuQqzzjvZAvbYgUUnQ==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 22:04:07.344860"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 22:04:07.418752"], ["updated_at", "2017-10-20 22:04:07.418752"]]
+  [1m[36m (16.4ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 96ms (Views: 53.1ms | ActiveRecord: 18.0ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:35:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.7ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-20 22:05:38 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/V0omyj3wjIuxzzpJwSgO11FOZ05kEcPJvYdANONZ6CtFf1HIZ3I8XSbQGSz2qxFe/92nuQqzzjvZAvbYgUUnQ==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd196363318 @tempfile=#<Tempfile:/tmp/RackMultipart20171020-4549-1u0c5ub.jpeg>, @original_filename="bunny.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"bunny.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"Bunny", "price"=>"2", "description"=>"2", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Command :: file -b --mime '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-12rtb8g.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-aypq31.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-aypq31.jpeg[0]'
+Command :: convert '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-aypq31.jpeg[0]' -auto-orient -resize "x100" -crop "100x100+12+0" +repage '/tmp/d3628b59e13a94c93c877241002f9c7c20171020-4549-feog52'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-aypq31.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-aypq31.jpeg[0]'
+Command :: convert '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-aypq31.jpeg[0]' -auto-orient -resize "150x150>" '/tmp/d3628b59e13a94c93c877241002f9c7c20171020-4549-140gu5v'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-aypq31.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-aypq31.jpeg[0]'
+Command :: convert '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-aypq31.jpeg[0]' -auto-orient -resize "200x200" '/tmp/d3628b59e13a94c93c877241002f9c7c20171020-4549-f6emmu'
+  [1m[35m (0.2ms)[0m  begin transaction
+Command :: file -b --mime '/tmp/20ee80e63596799a1543bc9fd88d887820171020-4549-1frao14.jpeg'
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Bunny"], ["price", "2"], ["description", "2"], ["release_time", "2017-10-20 22:05:38.858648"], ["img_name", "#<ActionDispatch::Http::UploadedFile:0x007fd196363318>"], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["image_file_name", "bunny.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 4924], ["image_updated_at", "2017-10-20 22:05:38.878605"], ["created_at", "2017-10-20 22:05:39.039396"], ["updated_at", "2017-10-20 22:05:39.039396"]]
+  [1m[35m (20.3ms)[0m  commit transaction
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts
+Completed 302 Found in 1408ms (ActiveRecord: 21.8ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-20 22:05:40 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 22:05:40.344432' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (24.8ms)
+  Rendered layouts/_posts_grid.html.erb (25.8ms)
+  Rendered application/index.html.erb within layouts/application (28.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 59ms (Views: 56.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/51" for 136.152.142.96 at 2017-10-20 22:05:44 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 51]]
+  Rendered posts/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 22:05:51 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"utO/oGA6Jser0Vj7t/nzQc22g7/LfP6x54FzGoDDcxJE8U45HisscL6PocUewrgSJ749MSm4NHqwNiiYr56bSg==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 22:05:52.032958"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 22:05:52.091957"], ["updated_at", "2017-10-20 22:05:52.091957"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 74ms (Views: 37.8ms | ActiveRecord: 12.3ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:34:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.7ms)
+
+
+Started GET "/posts/new" for 192.31.105.221 at 2017-10-20 22:05:58 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 22:05:59 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6fePLiFAo+8vrJ0r7kkrSAbIbU1Tt40jwX48ktUiz/gX1X63X1GpWDryZBVHcmAb7MDTw7FzR+iWyWcQ+n8noA==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 22:05:59.774951"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 22:05:59.818697"], ["updated_at", "2017-10-20 22:05:59.818697"]]
+  [1m[35m (11.4ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 59ms (Views: 41.3ms | ActiveRecord: 11.9ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:34:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.4ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 22:06:18 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6fePLiFAo+8vrJ0r7kkrSAbIbU1Tt40jwX48ktUiz/gX1X63X1GpWDryZBVHcmAb7MDTw7FzR+iWyWcQ+n8noA==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 22:06:18.732008"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 22:06:18.775142"], ["updated_at", "2017-10-20 22:06:18.775142"]]
+  [1m[36m (10.2ms)[0m  [1mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 57ms (Views: 36.7ms | ActiveRecord: 10.6ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:34:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.7ms)
+
+
+Started POST "/posts/new" for 192.31.105.221 at 2017-10-20 22:06:22 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CGLXiB59TItk32yCXHKNph5DQF+3nKbKCyXyWKS2QtP2QCYRYGxGPHGBlbz1Scb19Ev+0VVYbAFckqnai+uqiw==", "post"=>{"title"=>"", "price"=>"", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+  Rendered posts/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["price", ""], ["description", ""], ["release_time", "2017-10-20 22:06:22.729413"], ["img_name", ""], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["created_at", "2017-10-20 22:06:22.766705"], ["updated_at", "2017-10-20 22:06:22.766705"]]
+  [1m[35m (21.1ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 62ms (Views: 35.0ms | ActiveRecord: 21.5ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:34:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.4ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-20 23:15:59 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (11.6ms)
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 23:15:59.578658' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (28.8ms)
+  Rendered layouts/_posts_grid.html.erb (34.6ms)
+  Rendered application/index.html.erb within layouts/application (48.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 82ms (Views: 80.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/51" for 98.248.145.40 at 2017-10-20 23:16:06 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 51]]
+  Rendered posts/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 63ms (Views: 54.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-20 23:16:07 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 98.248.145.40 at 2017-10-20 23:16:20 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R7yENUqaoUvcBjAX31NTrwtdVhHE9KZwUMZYxc2BvwV0RTRWUdvlJIjvn03jIGmalk6VMFI5uvEmwL7yn8m68Q==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd188aac948 @tempfile=#<Tempfile:/tmp/RackMultipart20171020-4549-1x8c9ny.JPG>, @original_filename="275px-A_small_cup_of_coffee.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"275px-A_small_cup_of_coffee.JPG\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"C1", "price"=>"222", "description"=>"", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com"}, "commit"=>"Save Post"}
+Command :: file -b --mime '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-sqvs1v.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-skp14y.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-skp14y.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-skp14y.JPG[0]' -auto-orient -resize "x100" -crop "100x100+16+0" +repage '/tmp/92a2e4f48b03771f546a791af7def87020171020-4549-azcxhu'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-skp14y.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-skp14y.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-skp14y.JPG[0]' -auto-orient -resize "150x150>" '/tmp/92a2e4f48b03771f546a791af7def87020171020-4549-ccninw'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-skp14y.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-skp14y.JPG[0]'
+Command :: convert '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-skp14y.JPG[0]' -auto-orient -resize "200x200" '/tmp/92a2e4f48b03771f546a791af7def87020171020-4549-17prkez'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/9270776674bc2c8682d39b7acf7a8a5320171020-4549-1tls36j.JPG'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "img_name", "author_id", "category", "subcategory", "available", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "C1"], ["price", "222"], ["description", ""], ["release_time", "2017-10-20 23:16:20.951695"], ["img_name", "#<ActionDispatch::Http::UploadedFile:0x007fd188aac948>"], ["author_id", 0], ["category", "item"], ["subcategory", "book"], ["available", "t"], ["image_file_name", "275px-A_small_cup_of_coffee.JPG"], ["image_content_type", "image/jpeg"], ["image_file_size", 10819], ["image_updated_at", "2017-10-20 23:16:20.954499"], ["created_at", "2017-10-20 23:16:21.291710"], ["updated_at", "2017-10-20 23:16:21.291710"]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+Redirected to https://bmktplace-jiazhenchen.c9users.io/posts
+Completed 302 Found in 1680ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/posts" for 98.248.145.40 at 2017-10-20 23:16:22 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[35mPost Load (0.9ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-20 23:16:22.727245' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (30.4ms)
+  Rendered layouts/_posts_grid.html.erb (31.6ms)
+  Rendered application/index.html.erb within layouts/application (33.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 69ms (Views: 66.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/56" for 98.248.145.40 at 2017-10-20 23:16:27 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"56"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 56]]
+  Rendered posts/show.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.2ms)

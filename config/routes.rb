@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :posts, except: [:destroy]
   #post "/posts/create", to: :create, controller: 'post'
   post "/posts/new", to:"posts#create"
+  post "/posts/create", to: "posts#create"
   # You can have the root of your site routed with "root"
   root 'application#index'
   

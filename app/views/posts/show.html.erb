@@ -14,13 +14,14 @@
       <div class="col-md-9">
         <ul class="list-group">
           <li class="list-group-item"><h1><%= @post.title %></h1></li>
+          <li class="list-group-item"><img><%= image_tag @post.image.url(:medium)%></img></li>
           <li class="list-group-item"><h2>$<%= @post.price %></h2></li>
-          <li class="list-group-item"><h2>status: <%= if @post.available then 'available' else 'not available' end %></h2></li>
-          <li class="list-group-item"><p>Released on <%= @post.release_time%></p></li>
-          <li class="list-group-item"><p>Expires on <%= @post.expire_time%></p></li>
-          <li class="list-group-item"><p><%= @post.description %></p></li>
-          <li class="list-group-item"><h3>category: <%= @post.category %></h3></li>
-          <li class="list-group-item"><h3>subcategory: <%= @post.subcategory %></h3></li>
+          <li class="list-group-item"><h2>Status: <%= if @post.available then 'available' else 'not available' end %></h2></li>
+          <li class="list-group-item"><p>Released on: <%= @post.release_time%></p></li>
+          <li class="list-group-item"><p>Expires on: <%= @post.expire_time%></p></li>
+          <li class="list-group-item"><p>Description: <%= @post.description %></p></li>
+          <li class="list-group-item"><h3>Category: <%= @post.category %></h3></li>
+          <li class="list-group-item"><h3>Subcategory: <%= @post.subcategory %></h3></li>
         </ul>
       
       </div>

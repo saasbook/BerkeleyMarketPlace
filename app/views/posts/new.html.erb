@@ -1,7 +1,7 @@
 <%= form_for :post, :method => :post, :html => { :multipart => true} do |f|%>
   <div>
     <%= f.label :image%>
-    <%= f.file_field :image%>
+    <%= f.file_field :image, id: "Image"%>
   </div>
 
   <div>
@@ -20,21 +20,21 @@
   </div>
   
   <div>
-    <%= f.label :Category %> 
+    <%= f.label :category %> 
     <%= f.select :category, [['Item','item'],['Event','event'],
-        ['Job','job']] %>
+        ['Job','job']], id: "Category" %>
   </div>
   
   <div>
-    <%= f.label :Subcategory %> 
+    <%= f.label :subcategory %> 
     <%= f.select :subcategory, [['Book','book'],['Electronics','electronics'],
         ['Info Session','info session'],['Performance','performance'],
-        ['Research Assistant','research assistant'],['Tutor','tutor']] %>
+        ['Research Assistant','research assistant'],['Tutor','tutor']], id: "Subcategory" %>
   </div>
  
    <div>
     <%= f.label :Email %> 
-    <%= f.text_field :author_id, value: "test@email.com" %>
+    <%= f.text_field :author_id, id: "Email", value: "test@email.com", readonly: true%>
   </div>
   
   <%= f.submit %>
