@@ -10096,3 +10096,1114 @@ Processing by PostsController#show as HTML
   Rendered layouts/_header.html.erb (0.1ms)
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 17:51:45 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:46.239413' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:46.244242' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:46.244434' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (606.3ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 735ms (Views: 708.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 17:51:46 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.8ms)
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:46.975611' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:46.976112' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:46.976433' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (90.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 187ms (Views: 181.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 17:51:47 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:47.170447' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:47.170699' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:47.171048' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (49.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 104ms (Views: 99.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 17:51:47 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:47.345629' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:47.345858' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:51:47.346037' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (28.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 68ms (Views: 65.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 17:58:41 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:58:42.406882' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:58:42.409546' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:58:42.409731' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (962.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 1033ms (Views: 1011.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 17:58:43 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:58:43.623522' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:58:43.624788' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:58:43.624974' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (150.7ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 217ms (Views: 213.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 17:58:46 +0000
+
+SyntaxError (/home/ubuntu/workspace/app/controllers/posts_controller.rb:5: syntax error, unexpected tSYMBEG, expecting ')'
+    :expire_time,:author_id, :category, :subcategory, :available)
+     ^
+/home/ubuntu/workspace/app/controllers/posts_controller.rb:38: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/posts_controller.rb:5: syntax error, unexpected tSYMBEG, expecting ')'
+  app/controllers/posts_controller.rb:38: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.8ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 17:58:46 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:58:46.966554' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:58:46.966953' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:58:46.967203' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (21.4ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 17:59:00 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:59:00.378913' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:59:00.379186' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:59:00.379362' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (29.8ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 355ms (Views: 201.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 17:59:01 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 140ms (Views: 139.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 17:59:01 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:59:01.607077' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:59:01.607391' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 17:59:01.607626' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (163.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 199ms (Views: 196.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-19 18:00:23 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"Jack Ye", "price"=>"2333", "description"=>"In Bad Quality", "category"=>"item", "subcategory"=>"Textbook", "author_id"=>"email@example.com"}, "commit"=>""}
+  [1m[36m (112.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "posts" ("title", "price", "description", "release_time", "author_id", "category", "subcategory", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Jack Ye"], ["price", "2333"], ["description", "In Bad Quality"], ["release_time", "2017-10-19 18:00:23.460679"], ["author_id", 0], ["category", "item"], ["subcategory", "Textbook"], ["available", "t"], ["created_at", "2017-10-19 18:00:23.590094"], ["updated_at", "2017-10-19 18:00:23.590094"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://bmktplace-jiazhenchen.c9users.io/
+Completed 302 Found in 147ms (ActiveRecord: 124.6ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:00:23 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:00:23.707092' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:00:23.707488' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:00:23.707732' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (71.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 98ms (Views: 94.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:00:23 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:00:23.923525' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:00:23.923836' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:00:23.924029' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (65.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 101ms (Views: 98.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:01:54 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (126.9ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 1160ms (Views: 1149.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:01:56 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 49ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:01:56 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (1.6ms)
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:01:56.413730' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:01:56.418965' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:01:56.419163' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (212.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 428ms (Views: 261.2ms | ActiveRecord: 138.6ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:09:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 515ms (Views: 503.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-19 18:09:48 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:09:48.661962' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:09:48.665771' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:09:48.666061' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (180.9ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 259ms (Views: 241.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:09:49 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (1.2ms)
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:09:49.032716' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:09:49.032988' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:09:49.033223' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (40.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 99ms (Views: 95.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:09:50 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:09:50 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:09:50.668529' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:09:50.668955' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:09:50.669418' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (40.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 86ms (Views: 81.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:49:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:44.327395' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:44.333287' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:44.333763' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (469.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 579ms (Views: 536.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.self-76ce83e846758fa7650117bf2098e700ec7c44fefbb7bac0862de0db7f3108cb.css?body=1" for 136.152.142.96 at 2017-10-19 18:49:44 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 136.152.142.96 at 2017-10-19 18:49:45 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 136.152.142.96 at 2017-10-19 18:49:45 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 136.152.142.96 at 2017-10-19 18:49:45 +0000
+
+
+Started GET "/assets/application.self-754b0c6ec31fbf1b6b22090b7b4ad3edb629760f7272be32047e5b7ce8691f5b.js?body=1" for 136.152.142.96 at 2017-10-19 18:49:45 +0000
+
+
+Started GET "/assets/1-77e9ef161e077929fcd97d04c9308c0e4916289d969c7aa8d5fb8fb607519729.jpg" for 136.152.142.96 at 2017-10-19 18:49:45 +0000
+
+
+Started GET "/assets/5-68c72d9a070d2719f98142ed8b274600bb335a934a28b345f7460c47e6116290.jpg" for 136.152.142.96 at 2017-10-19 18:49:45 +0000
+
+
+Started GET "/assets/2-f5747f68d3b371a849bdd0ec5d4d22618ac4d5e39d6227d8be97d3c5d3a99797.jpg" for 136.152.142.96 at 2017-10-19 18:49:45 +0000
+
+
+Started GET "/assets/7-2628df1e390c28f101d64fb32c34656b237820b1a9003641ac50a764e27538f1.jpg" for 136.152.142.96 at 2017-10-19 18:49:45 +0000
+
+
+Started GET "/assets/6-d9747c869ffda3f4f338338e5c621029c01a922284e1ee14eac54dc0f8845be0.jpg" for 136.152.142.96 at 2017-10-19 18:49:45 +0000
+
+
+Started GET "/assets/8-ef9b1e1564def4d7eec988643cb46f0655b7f4e8d78bb90b86946fbb819c1269.jpg" for 136.152.142.96 at 2017-10-19 18:49:45 +0000
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:49:45 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:45.807540' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:45.807931' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:45.808207' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (22.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 55ms (Views: 51.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:49:47 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:49:47 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:47.519873' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:47.520270' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:47.520670' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (24.5ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 52.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 73.93.142.119 at 2017-10-19 18:49:52 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:52.178328' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:52.178991' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:52.179404' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (39.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 69ms (Views: 65.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/1-77e9ef161e077929fcd97d04c9308c0e4916289d969c7aa8d5fb8fb607519729.jpg" for 73.93.142.119 at 2017-10-19 18:49:52 +0000
+
+
+Started GET "/assets/application.self-754b0c6ec31fbf1b6b22090b7b4ad3edb629760f7272be32047e5b7ce8691f5b.js?body=1" for 73.93.142.119 at 2017-10-19 18:49:52 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 73.93.142.119 at 2017-10-19 18:49:52 +0000
+
+
+Started GET "/assets/application.self-76ce83e846758fa7650117bf2098e700ec7c44fefbb7bac0862de0db7f3108cb.css?body=1" for 73.93.142.119 at 2017-10-19 18:49:52 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 73.93.142.119 at 2017-10-19 18:49:52 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 73.93.142.119 at 2017-10-19 18:49:52 +0000
+
+
+Started GET "/assets/2-f5747f68d3b371a849bdd0ec5d4d22618ac4d5e39d6227d8be97d3c5d3a99797.jpg" for 73.93.142.119 at 2017-10-19 18:49:52 +0000
+
+
+Started GET "/assets/5-68c72d9a070d2719f98142ed8b274600bb335a934a28b345f7460c47e6116290.jpg" for 73.93.142.119 at 2017-10-19 18:49:52 +0000
+
+
+Started GET "/assets/6-d9747c869ffda3f4f338338e5c621029c01a922284e1ee14eac54dc0f8845be0.jpg" for 73.93.142.119 at 2017-10-19 18:49:52 +0000
+
+
+Started GET "/assets/7-2628df1e390c28f101d64fb32c34656b237820b1a9003641ac50a764e27538f1.jpg" for 73.93.142.119 at 2017-10-19 18:49:52 +0000
+
+
+Started GET "/assets/8-ef9b1e1564def4d7eec988643cb46f0655b7f4e8d78bb90b86946fbb819c1269.jpg" for 73.93.142.119 at 2017-10-19 18:49:53 +0000
+
+
+Started GET "/" for 73.93.142.119 at 2017-10-19 18:49:53 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:53.305622' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:53.305957' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:53.306194' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (37.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 91ms (Views: 87.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 73.93.142.119 at 2017-10-19 18:49:54 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:54.048071' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:54.048389' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:49:54.048592' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (32.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 81ms (Views: 78.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/posts/2" for 73.93.142.119 at 2017-10-19 18:50:03 +0000
+
+ActionController::RoutingError (No route matches [GET] "/posts/posts/2"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.7ms)
+
+
+Started GET "/" for 73.93.142.119 at 2017-10-19 18:50:03 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:50:03.629156' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:50:03.629530' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:50:03.629726' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (23.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 60.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/2" for 73.93.142.119 at 2017-10-19 18:50:05 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 90ms (Views: 80.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for 73.93.142.119 at 2017-10-19 18:50:07 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/2" for 73.93.142.119 at 2017-10-19 18:50:11 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:50:27 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/create" for 136.152.142.96 at 2017-10-19 18:50:45 +0000
+
+ActionController::RoutingError (No route matches [POST] "/posts/create"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.5ms)
+
+
+Started GET "/posts/create" for 136.152.142.96 at 2017-10-19 18:51:42 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 29ms (ActiveRecord: 1.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=create):
+  app/controllers/posts_controller.rb:10:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.5ms)
+
+
+Started GET "/posts/create" for 136.152.142.96 at 2017-10-19 18:51:59 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=create):
+  app/controllers/posts_controller.rb:10:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (119.7ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:52:00 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 238ms (Views: 237.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:52:00 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:00.560519' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:00.560840' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:00.561098' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (33.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 61ms (Views: 58.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:52:00 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:00.785835' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:00.786123' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:00.786318' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (24.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 60ms (Views: 57.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:52:01 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:01.543393' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:01.543876' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:01.544258' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (24.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 80ms (Views: 76.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:52:01 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:01.780390' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:01.780737' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:01.780905' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (21.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 55ms (Views: 52.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/5" for 136.152.142.96 at 2017-10-19 18:52:04 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:52:04 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:04.233298' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:04.233559' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:04.233796' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (24.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:52:06 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  [1m[35mPost Load (1.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:06.044922' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:06.045174' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:06.045899' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (46.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 89ms (Views: 84.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:52:07 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 62ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:52:07 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  [1m[36mPost Load (1.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:07.525805' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:07.526100' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:52:07.527074' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (36.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 86ms (Views: 80.9ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/posts/create" for 136.152.142.96 at 2017-10-19 18:52:20 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"image"=>"", "title"=>"Jack Ye", "price"=>"23333", "description"=>"23333", "category"=>"item", "subcategory"=>"Textbook", "author_id"=>"email@example.com"}, "commit"=>""}
+Unpermitted parameter: image
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `image_content_type' for #<Post:0x007f4618cbffb0>):
+  app/controllers/posts_controller.rb:24:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.7ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:52:36 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:52:43 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apple-touch-icon-precomposed.png" for 136.152.142.96 at 2017-10-19 18:52:44 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (47.2ms)
+
+
+Started GET "/apple-touch-icon-precomposed.png" for 136.152.142.96 at 2017-10-19 18:52:44 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.7ms)
+
+
+Started GET "/apple-touch-icon.png" for 136.152.142.96 at 2017-10-19 18:52:44 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (40.6ms)
+
+
+Started GET "/apple-touch-icon.png" for 136.152.142.96 at 2017-10-19 18:52:44 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.6ms)
+
+
+Started GET "/apple-touch-icon-precomposed.png" for 136.152.142.96 at 2017-10-19 18:52:44 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (47.6ms)
+
+
+Started GET "/apple-touch-icon.png" for 136.152.142.96 at 2017-10-19 18:52:44 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.0ms)
+
+
+Started POST "/posts/create" for 136.152.142.96 at 2017-10-19 18:52:54 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"image"=>"5845e770fb0b0755fa99d7f4.png", "title"=>"Jack Ye", "price"=>"233333", "description"=>"Doge", "category"=>"item", "subcategory"=>"Textbook", "author_id"=>"email@example.com"}, "commit"=>""}
+Unpermitted parameter: image
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `image_content_type' for #<Post:0x007f4619011b78>):
+  app/controllers/posts_controller.rb:24:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.2ms)
+
+
+Started GET "/apple-touch-icon-precomposed.png" for 136.152.142.96 at 2017-10-19 18:52:55 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (44.1ms)
+
+
+Started GET "/apple-touch-icon.png" for 136.152.142.96 at 2017-10-19 18:52:55 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (45.7ms)
+
+
+Started GET "/posts/create" for 136.152.142.96 at 2017-10-19 18:55:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 28ms (ActiveRecord: 1.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=create):
+  app/controllers/posts_controller.rb:10:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.5ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:55:34 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:34.412875' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:34.413162' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:34.413373' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (340.8ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 393ms (Views: 389.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:55:34 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.0ms)
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:34.811701' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:34.811981' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:34.812222' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (20.4ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 48.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:55:34 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:34.955148' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:34.955416' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:34.955639' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (34.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 84ms (Views: 80.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:55:35 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:35.043916' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:35.044190' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "job"]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:35.044401' OR expire_time IS NULL)  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (24.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 76ms (Views: 73.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:55:36 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 77ms (Views: 75.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-19 18:55:36 +0000
+Processing by ApplicationController#index as */*
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:36.700269' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "item"]]
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:36.700600' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-19 18:55:36.700818' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/index.html.erb within layouts/application (31.4ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 71ms (Views: 67.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-19 18:55:46 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/create" for 136.152.142.96 at 2017-10-19 18:55:57 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"image"=>"5845e770fb0b0755fa99d7f4.png", "title"=>"Jack Ye", "price"=>"233", "description"=>"No", "category"=>"item", "subcategory"=>"Textbook", "author_id"=>"email@example.com"}, "commit"=>""}
+Unpermitted parameter: image
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.6ms)
+
+NoMethodError (undefined method `image_content_type' for #<Post:0x00000003de47e0>):
+  app/controllers/posts_controller.rb:24:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.8ms)
+
+
+Started GET "/posts/2" for 192.31.105.223 at 2017-10-19 22:13:29 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (2.0ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 46ms (Views: 42.2ms | ActiveRecord: 2.0ms)

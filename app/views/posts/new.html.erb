@@ -10,7 +10,7 @@
           <!--  </div>-->
           <!--</div>-->
           <!--{controller = "post", action = "create"}, -->
-          <form method="post">
+          <form method="post", action="create">
              
           <div class="container">
               <div class="form-group">
@@ -18,10 +18,10 @@
                   <div class="input-group">
                       <span class="input-group-btn">
                           <span class="btn btn-default btn-file">
-                              Browse… <input type="file" id="imgInp">
+                              Browse… <input type="file" id="post_image" name="post[image]">
                           </span>
                       </span>
-                      <input type="text" class="form-control" readonly>
+                      <input type="text" class="form-control" readonly id="post_image" name="post[image]">
                   </div>
                   <img id='img-upload'/>
               </div>

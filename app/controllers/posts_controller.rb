@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def post_params
-    params.require(:post).permit(:title, :price, :description, :release_time, 
+    params.require(:post).permit(:title, :price, :description, :release_time, :img_name,
     :expire_time,:author_id, :category, :subcategory, :available)
   end
   
@@ -17,9 +17,10 @@ class PostsController < ApplicationController
   def create
     params[:post][:release_time] = Time.now.getutc
     params[:post][:expire_time] = nil
-    #params[:post][:category] = "item"
+    params[:post][:img_name] = params[:post][:image].to_s
     params[:post][:available] = true
     # #{@post.title}
+    puts params[:post]
     @post = Post.create!(post_params)
     flash[:notice] = "Post for was successfully created."
     redirect_to :controller => 'application', :action => 'index'

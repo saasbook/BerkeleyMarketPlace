@@ -17,6 +17,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# PaperClip, for image uploading
+gem "paperclip", "~> 5.1"
+
 # Bootstrap, can only use latest beta version for this rails version
 # gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap', '~> 4.0.0.beta'
