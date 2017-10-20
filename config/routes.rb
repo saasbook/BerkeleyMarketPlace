@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#index'
   
-  get "/filter" => 'application#filter', as: 'filter'
+  get "/filter" => 'application#filter', as: 'filter', format: 'js'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

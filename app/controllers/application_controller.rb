@@ -3,7 +3,7 @@ require 'time'
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :exception unless Rails.env.test?
   #protect_from_forgery with: :null_session
 
   def index 
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
       @selected = Post.get_vaild_post(category)
     end
     respond_to do |format|
-        format.js
+      format.js
     end
   end
   
