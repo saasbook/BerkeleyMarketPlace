@@ -2,9 +2,9 @@
 
 ## Development Status
 
-* CodeClimate GPA: <a href="https://codeclimate.com/github/rails/rails"><img src="https://codeclimate.com/github/rails/rails/badges/gpa.svg" /></a>
+* CodeClimate GPA: <a href="https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace"><img src="https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace/gpa.svg" /></a>
 
-* CodeClimate test coverage: <a href="https://codeclimate.com/github/rails/rails/coverage"><img src="https://codeclimate.com/github/rails/rails/badges/coverage.svg" /></a>
+* CodeClimate test coverage: <a href="https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace"><img src="https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace/coverage.svg" /></a>
 
 * Travis CI build status: <a href="https://travis-ci.org/yezhaoqin/BerkeleyMarketPlace.svg?branch=master"><img src="https://travis-ci.org/yezhaoqin/BerkeleyMarketPlace.svg?branch=master" /></a>
 
