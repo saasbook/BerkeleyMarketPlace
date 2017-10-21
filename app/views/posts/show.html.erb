@@ -1,4 +1,4 @@
-<div class="container", style="padding-top:20px;padding-bottom:20px;">
+<div class="container", id="showPost">
     
     <div class="row">
       <ol class="breadcrumb">
@@ -14,7 +14,7 @@
       <div class="col-md-9">
         <ul class="list-group">
           <li class="list-group-item"><h1><%= @post.title %></h1></li>
-          <li class="list-group-item"><img><%= image_tag @post.image.url(:medium)%></img></li>
+          <li class="list-group-item"><img><%= image_tag @post.image.url%></img></li>
           <li class="list-group-item"><h2>$<%= @post.price %></h2></li>
           <li class="list-group-item"><h2>Status: <%= if @post.available then 'available' else 'not available' end %></h2></li>
           <li class="list-group-item"><p>Released on: <%= @post.release_time%></p></li>

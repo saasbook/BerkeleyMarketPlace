@@ -21,22 +21,26 @@ class PostsController < ApplicationController
     params[:post][:img_name] = params[:post][:image].to_s
     @post = Post.new(post_params)
     
-    # if params[:post][:img_name] == ""
-    if params[:post][:img_name] == ""
-      flash[:notice] = "Please Upload Image"
-        #render :new
+    if not @post.valid? # => false
+      @error_message = @post.errors.messages
+      if @error_message[:image].presence
+        flash[:notice] = @error_message[:image]
+      end
+      if @error_message[:price].presence
+        flash[:notice] = @error_message[:price]
+      end
       render :new
-    end
-
-    if @post.save
-      flash[:notice] = "Post for #{@post.title} was successfully created."
-      params[:id] = @post.id
-      redirect_to posts_path
     else
-      flash[:notice] = "Error creating new Post!"
-      render :new
-    end
+      if @post.save
+        flash[:notice] = "Post for #{@post.title} was successfully created."
+        params[:id] = @post.id
+        redirect_to show
+      # else
+      #   flash[:notice] = "Error creating new Post!"
+      #   render :new
+      end
     # after Create form post
+    end
   end
   
   def edit

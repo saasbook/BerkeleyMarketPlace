@@ -25,10 +25,21 @@ Scenario: create a post
   
 Scenario: didn't upload image - sad path
   Given I am on the create page
-  And I fill in "Title" with "Doggy Huang"
+  And I fill in "Title" with "Doggy Huang1"
   And I fill in "Price" with "0"
   And I fill in "Description" with "In bad quality"
   And I select "Item" from "Category"
   And I select "Book" from "Subcategory"
   When I press "Save Post"
-  Then I should see "Please Upload Image"
+  Then I should see "Please upload an image"
+  
+Scenario: didn't emter number for prices - sad path
+  Given I am on the create page
+  Then I attach the file to "Image"
+  And I fill in "Title" with "Doggy Huang2"
+  And I fill in "Price" with "aha"
+  And I fill in "Description" with "In bad quality"
+  And I select "Item" from "Category"
+  And I select "Book" from "Subcategory"
+  When I press "Save Post"
+  Then I should see "Please enter a valid price."

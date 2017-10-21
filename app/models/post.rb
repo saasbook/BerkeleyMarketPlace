@@ -1,14 +1,15 @@
 class Post < ActiveRecord::Base
 
-    #attr_accessor :title, :price, :description, :release_time, :expire_time, :author_id, :category, :subcategory, :available
+    validates :image, presence: { message: "Please upload an image" }
+    validates :price, numericality: { message: "Please enter a valid price." }
+    validates :author_id, presence: true
     has_attached_file :image,
                       :storage => :cloudinary,
                       :cloudinary_credentials => Rails.root.join("config/cloudinary.yml"),
                       :path => ':id/:style/:filename',
                       :styles => {
-                              :thumb => "100x100#",
-                              :small  => "150x150>",
-                              :medium => "200x200" }
+                              #:thumb => "100x100#",
+                              :small  => "150x150>"}
                       
                       
     validates_attachment :image,
@@ -47,5 +48,3 @@ class Post < ActiveRecord::Base
     end
     
 end
-
-# add_attachment :post, :image
