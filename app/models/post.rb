@@ -18,16 +18,25 @@ class Post < ActiveRecord::Base
     
     @@categories = {
         item: [
-            "textbook",
-            "electronics"
+            "book",
+            "electronics",
+            "music related",
+            "furniture"
         ],
         event: [
             "info session",
-            "performance"
+            "performance",
+            "sports",
+            "speech",
+            "daily life"
         ],
         job: [
             "research assistant",
-            "tutor"
+            "tutor",
+            "computer science",
+            "daily life",
+            "math",
+            "performance"
         ]
     }
     

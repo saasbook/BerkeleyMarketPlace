@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def post_params
-    params.require(:post).permit(:title, :price, :description, :release_time, :img_name,
+    params.require(:post).permit(:title, :price, :description, :release_time,
     :expire_time,:author_id, :category, :subcategory, :available, :image)
   end
   
@@ -18,7 +18,6 @@ class PostsController < ApplicationController
     params[:post][:release_time] = Time.now.getutc
     params[:post][:expire_time] = nil
     params[:post][:available] = true
-    params[:post][:img_name] = params[:post][:image].to_s
     @post = Post.new(post_params)
     
     if not @post.valid? # => false

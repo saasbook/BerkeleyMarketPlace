@@ -1,7 +1,7 @@
 <% posts.each do |post_info| %>
   <div class="col-lg-3 col-md-3 mb-3">
     <div class="card h-100">
-      <%= link_to image_tag("http://via.placeholder.com/300x300", class: "card-img-top"), "posts/%d" % post_info.id %>
+      <img class="card-img-top"><%= image_tag post_info.image.url%></img>
       <div class="card-body">
         <h5 class="card-title">
           <%= link_to post_info.title, "posts/%d" % post_info.id %>

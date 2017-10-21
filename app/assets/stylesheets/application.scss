@@ -48,3 +48,8 @@ body {
     height: auto;
     left: 0px;
 }
+
+#homepage img {
+    max-width: 300px; /* you can use % */
+    max-height: 300px;
+}

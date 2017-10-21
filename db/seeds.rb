@@ -13,126 +13,124 @@ if Rails.env != :production
     DatabaseCleaner.clean_with(:truncation)
 end
 
-item_posts = [
-    {
-        title: "iClicker2 for sale", category: "item", subcategory: "electronics", price: 233.3,
-        available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "1.jpg"
-    },
-    {
-        title: "Calculus II Solution Manual", category: "item", subcategory: "book", price: 233.3,
-        available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "2.jpg"
-    },
-    {
-        title: "Linear Algebra Solution Manual", category: "item", subcategory: "book", price: 233.3,
-        available: false, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "3.jpg"
-    },
-    {
-        title: "Old guitar, still works", category: "item", subcategory: "music related", price: 233.3,
-        available: true, release_time: Time.now - 4.days, expire_time: Time.now - 2.days,
-        description: "some description", img_name: "4.jpg"
-    },
-    {
-        title: "XBOX with 20 games bundle, just $233.3", category: "item", subcategory: "electronics", price: 233.3,
-        available: true, release_time: Time.now - 2.days,
-        description: "some description", img_name: "5.jpg"
-    },
-    {
-        title: "PS4 with 2 games bundle, just $2333.3", category: "item", subcategory: "electronics", price: 2333.3,
-        available: true, release_time: Time.now - 2.days,
-        description: "some description", img_name: "6.jpg"
-    },
-    {
-        title: "Used Tesla Model 3, no accidents at all", category: "item", subcategory: "electronics", price: 2333.3,
-        available: true, release_time: Time.now - 2.days,
-        description: "some description", img_name: "7.jpg"
-    },
-    {
-        title: "Used king bed, IKEA best seller", category: "item", subcategory: "furniture", price: 233.3,
-        available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "8.jpg"
-    },
-]
-
-job_posts = [
-    {
-        title: "Machine learning expert needed", category: "job", subcategory: "computer science", price: 233.3,
-        available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "People for house-moving, 20$/hour", category: "job", subcategory: "daily life", price: 233.3,
-        available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "Short-term Math tutor", category: "job", subcategory: "math", price: 233.3,
-        available: false, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "Pianoist for performance", category: "job", subcategory: "performance", price: 233.3,
-        available: true, release_time: Time.now - 4.days, expire_time: Time.now - 2.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "Help me eat chicken in PUBG! Highly rewarded!!", category: "job", subcategory: "daily life", price: 233.3,
-        available: true, release_time: Time.now - 4.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "Beg someone to clean the bathroom for $233.3/h", category: "job", subcategory: "daily life", price: 233.3,
-        available: true, release_time: Time.now - 4.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "Taking notes for CS188 and CS189", category: "job", subcategory: "computer science", price: 233.3,
-        available: true, release_time: Time.now - 4.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "#"
-    },
+def generate_user_posts user
     
-]
+    item_posts = [
+        {
+            title: "iClicker%d for sale" % user[:id], category: "item", subcategory: "electronics", price: 233.3,
+            available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "Calculus %d Solution Manual" % user[:id], category: "item", subcategory: "book", price: 233.3,
+            available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "Linear Algebra  %d Solution Manual" % user[:id], category: "item", subcategory: "book", price: 233.3,
+            available: false, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "Old guitar, still works for %d years" % user[:id], category: "item", subcategory: "music related", price: 233.3,
+            available: true, release_time: Time.now - 4.days, expire_time: Time.now - 2.days,
+        },
+        {
+            title: "XBOX %d with 20 games bundle, just $233.3" % user[:id], category: "item", subcategory: "electronics", price: 233.3,
+            available: true, release_time: Time.now - 2.days,
+        },
+        {
+            title: "PS%d with 2 games bundle, just $2333.3" % user[:id], category: "item", subcategory: "electronics", price: 2333.3,
+            available: true, release_time: Time.now - 2.days,
+        },
+        {
+            title: "Used Tesla Model %d, no accidents at all" % user[:id], category: "item", subcategory: "electronics", price: 2333.3,
+            available: true, release_time: Time.now - 2.days,
+        },
+        {
+            title: "Used king bed, IKEA NO.%d worst seller" % user[:id], category: "item", subcategory: "furniture", price: 233.3,
+            available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
+        },
+    ]
 
-event_posts = [
-    {
-        title: "Concert ticket in SF", category: "event", subcategory: "performance", price: 233.3,
-        available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "Berkeley VS Stanford ticket", category: "event", subcategory: "sports", price: 233.3,
-        available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "Asian life matters speech in Sproul", category: "event", subcategory: "speech", price: 233.3,
-        available: false, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "Private dinner with Google executive board", category: "event", subcategory: "info session", price: 233.3,
-        available: true, release_time: Time.now - 4.days, expire_time: Time.now - 2.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "Berkeley MarketPlace Info Session", category: "event", subcategory: "info session", price: 233.3,
-        available: true, release_time: Time.now - 4.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "Make Berkeley Great Again, public speech in People's Park", category: "event", subcategory: "speech", price: 233.3,
-        available: true, release_time: Time.now - 4.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "#"
-    },
-    {
-        title: "Date me on Valentine's day, 233.3/h rate", category: "event", subcategory: "daily life", price: 233.3,
-        available: true, release_time: Time.now - 4.days, expire_time: Time.now + 200.days,
-        description: "some description", img_name: "#"
-    },
-]
+    job_posts = [
+        {
+            title: "%d machine learning expert needed" % user[:id], category: "job", subcategory: "computer science", price: 233.3,
+            available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "%d people for house-moving, 20$/hour" % user[:id], category: "job", subcategory: "daily life", price: 233.3,
+            available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "Short-term %d Math tutor" % user[:id], category: "job", subcategory: "math", price: 233.3,
+            available: false, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "%d pianoist for performance" % user[:id], category: "job", subcategory: "performance", price: 233.3,
+            available: true, release_time: Time.now - 4.days, expire_time: Time.now - 2.days,
+        },
+        {
+            title: "Help me eat chicken in PUBG for %d time! Highly rewarded!!" % user[:id], category: "job", subcategory: "daily life", price: 233.3,
+            available: true, release_time: Time.now - 4.days,
+        },
+        {
+            title: "Beg someone to clean the bathroom for $233.3/%dh" % user[:id], category: "job", subcategory: "daily life", price: 233.3,
+            available: true, release_time: Time.now - 4.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "Taking notes for CS188 and CS189 for %d years" % user[:id], category: "job", subcategory: "computer science", price: 233.3,
+            available: true, release_time: Time.now - 4.days, expire_time: Time.now + 200.days,
+        },
+        
+    ]
+    
+    event_posts = [
+        {
+            title: "%d Concert ticket in SF" % user[:id], category: "event", subcategory: "performance", price: 233.3,
+            available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "%d Berkeley VS Stanford ticket" % user[:id], category: "event", subcategory: "sports", price: 233.3,
+            available: true, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "%d hour Asian life matters speech in Sproul" % user[:id], category: "event", subcategory: "speech", price: 233.3,
+            available: false, release_time: Time.now - 2.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "Private dinner with %d Google executive board" % user[:id], category: "event", subcategory: "info session", price: 233.3,
+            available: true, release_time: Time.now - 4.days, expire_time: Time.now - 2.days,
+        },
+        {
+            title: "Berkeley MarketPlace NO.%d Info Session" % user[:id], category: "event", subcategory: "info session", price: 233.3,
+            available: true, release_time: Time.now - 4.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "Make Berkeley Great For the %d Time, public speech in People's Park" % user[:id], category: "event", subcategory: "speech", price: 233.3,
+            available: true, release_time: Time.now - 4.days, expire_time: Time.now + 200.days,
+        },
+        {
+            title: "Date me on Valentine's day %d years later, 233.3/h rate" % user[:id], category: "event", subcategory: "daily life", price: 233.3,
+            available: true, release_time: Time.now - 4.days, expire_time: Time.now + 200.days,
+        },
+    ]
+    
+    posts = (item_posts + event_posts + job_posts)
+    image_path_list = Dir[File.join(Rails.root, "db/support/*")]
+    
+    for post_info in posts do
+        image = File.open(image_path_list.sample)
+        post_info[:image] = image
+        post_info[:author_id] = user[:id]
+        post_info[:description] = (0...2000).map { (('a'..'z').to_a + [" "])[rand(27)] }.join
+        Post.create!(post_info)
+    end
+    
+end
 
-item_posts.each { |post_info| Post.create!(post_info) }
-event_posts.each { |post_info| Post.create!(post_info) }
-job_posts.each { |post_info| Post.create!(post_info) }
+def generate_seed_user uid
+    return { id: uid, bmail: "seed-user%d@berkeley.edu" % uid }
+end
+
+for uid in 1..5 do
+    user = generate_seed_user uid
+    generate_user_posts user
+end
