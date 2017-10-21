@@ -120,7 +120,7 @@ def generate_user_posts user
         image = File.open(image_path_list.sample)
         post_info[:image] = image
         post_info[:author_id] = user[:id]
-        post_info[:description] = (0...2000).map { (('a'..'z').to_a + [" "])[rand(27)] }.join
+        post_info[:description] = (0...2000).map { (('a'..'z').to_a + Array.new(20, " "))[rand(46)] }.join
         Post.create!(post_info)
     end
     
@@ -130,7 +130,18 @@ def generate_seed_user uid
     return { id: uid, bmail: "seed-user%d@berkeley.edu" % uid }
 end
 
-for uid in 1..5 do
+
+
+
+if Rails.env != :production
+    uid_list = [1]
+else
+    uid_list = 1..5
+end
+    
+    
+for uid in uid_list do
     user = generate_seed_user uid
     generate_user_posts user
 end
+    

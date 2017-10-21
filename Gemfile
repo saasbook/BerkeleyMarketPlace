@@ -39,7 +39,8 @@ gem 'database_cleaner'
 # end
 
 group :development, :test do
-  gem 'simplecov', :require => false
+  gem 'simplecov', "~> 0.12.0", :require => false
+  gem "codeclimate-test-reporter", "~> 1.0.0"
   
   gem 'byebug'
   gem 'cucumber-rails', :require => false

@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     params[:post][:release_time] = Time.now.getutc
     params[:post][:expire_time] = nil
     params[:post][:available] = true
+    params[:post][:author_id] = 233
     @post = Post.new(post_params)
     
     if not @post.valid? # => false

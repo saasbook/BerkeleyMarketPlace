@@ -1,28 +1,31 @@
 <div class="container", id="showPost">
     
     <div class="row">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="<%= posts_path %>">Home</a> 
-        <li class="breadcrumb-item active"><%= @post.title %> 
-      </ol>
+      <div class="col-1"></div>
+      <div class="col-10">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<%= posts_path %>">Home</a> 
+            <li class="breadcrumb-item active"><%= @post.title %> 
+          </ol>
+      </div>
     </div>
     
     <div class="row">
-      <div class="col-md-3">
-        
+      <div class="col-1"></div>
+      
+      <div class="col-4">
+        <img><%= image_tag @post.image.url%></img> 
       </div>
-      <div class="col-md-9">
+      
+      <div class="col-6">
            <h1><%= @post.title %></h1> 
-           <br>
-           <img><%= image_tag @post.image.url%></img> 
-           <h2>$<%= @post.price %></h2> 
-           <h3>Category: <%= @post.category %></h3> 
-           <h3>Subcategory: <%= @post.subcategory %></h3> 
-           <h4>Status: <%= if @post.available then 'available' else 'not available' end %></h4> 
-           <p>Released on: <%= @post.release_time%></p> 
-           <p>Expires on: <%= @post.expire_time%></p> 
-           <p><span>Description:</span><br> <%= @post.description %></p> 
-           
+           <h3>Price: USD $<%= @post.price %></h3> 
+           <p><%= @post.category %> / <%= @post.subcategory %> </p> 
+           <p><%= if @post.available then 'Available' else 'Not available' end %> (released on: <%= @post.release_time%>) </p> 
+           <a href="#"> Contact: Placeholder (placeholder@berkeley.edu) </a>
+           <p></p>
+           <h3>Description</h3>
+           <p><%= @post.description %></p> 
       </div>
     </div>
 

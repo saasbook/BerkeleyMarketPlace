@@ -14,7 +14,11 @@
 <%= render "layouts/header" %>
 
 <% if flash[:notice] %>
-<div><%= flash[:notice] %></div>
+  <div class="row" id="flash">
+	   <div class="col-12">
+	     <h5><%= flash[:notice][0] %></h5>
+	   </div>
+  </div>
 <% end %>
 
 <%= yield %>
