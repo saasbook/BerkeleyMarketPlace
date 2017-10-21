@@ -2076,3 +2076,3536 @@ Processing by PostsController#show as HTML
   Rendered layouts/_header.html.erb (0.2ms)
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 00:04:27 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.7ms)
+  [1m[35mPost Load (1.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 00:04:27.776472' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (100.1ms)
+  Rendered layouts/_posts_grid.html.erb (101.4ms)
+  Rendered application/index.html.erb within layouts/application (114.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 450ms (Views: 417.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 00:04:28 +0000
+
+
+Started GET "/posts/57" for 98.248.145.40 at 2017-10-21 00:04:39 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 57]]
+  Rendered posts/show.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/51" for 98.248.145.40 at 2017-10-21 00:05:17 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 51]]
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 00:31:20 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 00:31:20.695763' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (76.8ms)
+  Rendered layouts/_posts_grid.html.erb (77.7ms)
+  Rendered application/index.html.erb within layouts/application (80.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 173ms (Views: 165.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/posts.self-a5274ffb8d66f44965d1afc86507f3459af6cd6f3c0e849cbac01598995eb62c.js?body=1" for 98.248.145.40 at 2017-10-21 00:31:21 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:31:22 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (25.0ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for :item:Symbol):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, :id, :name, { prompt: "Choose a category" }, id: "Category" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338550093940'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338550093940'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.1ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:32:00 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:33: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+/home/ubuntu/workspace/app/views/posts/new.html.erb:34: syntax error, unexpected ']', expecting ')'
+  <!--      ['Job','job']], id: "Category" );@output_bu...
+                          ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:39: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+/home/ubuntu/workspace/app/views/posts/new.html.erb:40: syntax error, unexpected ',', expecting ')'
+...'Info Session','info session'],['Performance','performance']...
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:40: syntax error, unexpected ',', expecting ')'
+...,['Performance','performance'],-->
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:41: syntax error, unexpected ',', expecting ')'
+...sistant','research assistant'],['Tutor','tutor']], id: "Subc...
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:41: syntax error, unexpected ']', expecting ')'
+... assistant'],['Tutor','tutor']], id: "Subcategory" );@output...
+...                               ^):
+  app/views/posts/new.html.erb:33: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+  app/views/posts/new.html.erb:34: syntax error, unexpected ']', expecting ')'
+  app/views/posts/new.html.erb:39: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+  app/views/posts/new.html.erb:40: syntax error, unexpected ',', expecting ')'
+  app/views/posts/new.html.erb:40: syntax error, unexpected ',', expecting ')'
+  app/views/posts/new.html.erb:41: syntax error, unexpected ',', expecting ')'
+  app/views/posts/new.html.erb:41: syntax error, unexpected ']', expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.4ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:32:18 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error ({:id=>"Category"} is not a symbol nor a string):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, { prompt: "Choose a category" }, id: "Category" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338574453600'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338574453600'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.9ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 00:32:34 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.1ms)
+  [1m[35mPost Load (1.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 00:32:34.201538' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (27.9ms)
+  Rendered layouts/_posts_grid.html.erb (28.9ms)
+  Rendered application/index.html.erb within layouts/application (31.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 58ms (Views: 55.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 00:32:34 +0000
+
+
+Started GET "/assets/posts.self-a5274ffb8d66f44965d1afc86507f3459af6cd6f3c0e849cbac01598995eb62c.js?body=1" for 98.248.145.40 at 2017-10-21 00:32:34 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:32:36 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error ({:id=>"Category"} is not a symbol nor a string):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, { prompt: "Choose a category" }, id: "Category" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338574453600'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338574453600'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:33:40 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error ({:prompt=>"Choose a category"} is not a symbol nor a string):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, :id, { prompt: "Choose a category" }, id: "Category" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338518004640'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338518004640'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.5ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 00:36:15 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+  [1m[36mPost Load (1.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 00:36:15.445883' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (158.6ms)
+  Rendered layouts/_posts_grid.html.erb (161.5ms)
+  Rendered application/index.html.erb within layouts/application (165.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 205ms (Views: 201.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:36:15 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Category):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338572856080'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338572856080'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.1ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:36:16 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Category):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338572856080'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338572856080'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.4ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:36:39 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Category):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338572856080'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338572856080'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.7ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:36:40 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Category):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338572856080'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338572856080'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.7ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:36:55 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for :item:Symbol):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, :id, :name, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338574842680'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338574842680'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.6ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:36:55 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for :item:Symbol):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, :id, :name, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338574842680'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338574842680'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.9ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:37:52 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:24: syntax error, unexpected ',', expecting =>
+... prompt: "Choose a category" }, id: "category_id" );@output_...
+...                               ^):
+  app/views/posts/new.html.erb:24: syntax error, unexpected ',', expecting =>
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.7ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:37:52 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:24: syntax error, unexpected ',', expecting =>
+... prompt: "Choose a category" }, id: "category_id" );@output_...
+...                               ^):
+  app/views/posts/new.html.erb:24: syntax error, unexpected ',', expecting =>
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.1ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:38:14 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `title' for :item:Symbol):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, :id, :title, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338514121540'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338514121540'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:38:14 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `title' for :item:Symbol):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, :id, :title, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338514121540'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338514121540'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.2ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:38:36 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `show' for :item:Symbol):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, :id, :show, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338549011460'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338549011460'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.2ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:38:36 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `show' for :item:Symbol):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, :id, :show, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338549011460'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338549011460'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.9ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:38:48 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name_with_initial' for :item:Symbol):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, :id, :name_with_initial, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338568720520'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338568720520'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:38:48 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name_with_initial' for :item:Symbol):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category_id, Post.get_categories, :id, :name_with_initial, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338568720520'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338568720520'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.2ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:44:29 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `not_defined' for :item:Symbol):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category, Post.get_categories, :id, :not_defined, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_39095600'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_39095600'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.9ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:44:29 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `not_defined' for :item:Symbol):
+    21:  
+    22:   <div>
+    23:     <%= f.label :category %>
+    24:     <%= f.collection_select :category, Post.get_categories, :id, :not_defined, { prompt: "Choose a category" }, id: "category_id" %>
+    25:   </div>
+    26:   
+    27: 
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_39095600'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_39095600'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.6ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:49:29 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (21.7ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `get_cagetories' for #<Class:0x007ff1f0781a10>
+Did you mean?  get_categories):
+    21: 
+    22:   <div>
+    23:     <%= f.label :category %> 
+    24:     <%= f.select :category, Post.get_cagetories, id: "Category" %>
+    25:   </div>
+    26:   
+    27:   <div id="subcategories_select">
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338570556560'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338570556560'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:49:29 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `get_cagetories' for #<Class:0x007ff1f0781a10>
+Did you mean?  get_categories):
+    21: 
+    22:   <div>
+    23:     <%= f.label :category %> 
+    24:     <%= f.select :category, Post.get_cagetories, id: "Category" %>
+    25:   </div>
+    26:   
+    27:   <div id="subcategories_select">
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338570556560'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338570556560'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.9ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 00:49:52 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.2ms)
+  [1m[35mPost Load (1.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 00:49:52.909464' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (51.1ms)
+  Rendered layouts/_posts_grid.html.erb (52.6ms)
+  Rendered application/index.html.erb within layouts/application (55.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 91ms (Views: 88.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:49:54 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:50:16 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:50:17 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 25ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:52:06 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:52:06 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:52:20 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:29: syntax error, unexpected tSTRING_BEG, expecting ')'
+...egory, Post.get_subcategories "Item", id: "Subcategory" );@o...
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:29: syntax error, unexpected ',', expecting ')'
+... Post.get_subcategories "Item", id: "Subcategory" );@output_...
+...                               ^):
+  app/views/posts/new.html.erb:29: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/posts/new.html.erb:29: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.6ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:52:21 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:29: syntax error, unexpected tSTRING_BEG, expecting ')'
+...egory, Post.get_subcategories "Item", id: "Subcategory" );@o...
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:29: syntax error, unexpected ',', expecting ')'
+... Post.get_subcategories "Item", id: "Subcategory" );@output_...
+...                               ^):
+  app/views/posts/new.html.erb:29: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/posts/new.html.erb:29: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:52:32 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    26:   
+    27:   <div id="subcategories_select">
+    28:     <%= f.label :subcategory %> 
+    29:     <%= f.select :subcategory, Post.get_subcategories, id: "Subcategory" %>
+    30:   </div>
+    31: 
+    32:  
+  app/models/post.rb:39:in `get_subcategories'
+  app/views/posts/new.html.erb:29:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338562825380'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338562825380'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.6ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:52:43 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    26:   
+    27:   <div id="subcategories_select">
+    28:     <%= f.label :subcategory %> 
+    29:     <%= f.select :subcategory, Post.get_subcategories, id: "Subcategory" %>
+    30:   </div>
+    31: 
+    32:  
+  app/models/post.rb:39:in `get_subcategories'
+  app/views/posts/new.html.erb:29:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338576049060'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338576049060'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.6ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:52:43 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    26:   
+    27:   <div id="subcategories_select">
+    28:     <%= f.label :subcategory %> 
+    29:     <%= f.select :subcategory, Post.get_subcategories, id: "Subcategory" %>
+    30:   </div>
+    31: 
+    32:  
+  app/models/post.rb:39:in `get_subcategories'
+  app/views/posts/new.html.erb:29:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338576049060'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338576049060'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.1ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:55:21 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (83.3ms)
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `all' for #<Hash:0x007ff1f27eed98>
+Did you mean?  all?):
+    26:   
+    27:   <div id="subcategories_select">
+    28:     <%= f.label :subcategory %> 
+    29:     <%= f.select :subcategory, Post.get_all_subcategories, id: "Subcategory" %>
+    30:   </div>
+    31: 
+    32:  
+  app/models/post.rb:39:in `get_all_subcategories'
+  app/views/posts/new.html.erb:29:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338516662500'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338516662500'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.1ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:55:23 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `all' for #<Hash:0x007ff1f28dd588>
+Did you mean?  all?):
+    26:   
+    27:   <div id="subcategories_select">
+    28:     <%= f.label :subcategory %> 
+    29:     <%= f.select :subcategory, Post.get_all_subcategories, id: "Subcategory" %>
+    30:   </div>
+    31: 
+    32:  
+  app/models/post.rb:39:in `get_all_subcategories'
+  app/views/posts/new.html.erb:29:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338516662500'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338516662500'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.4ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:57:47 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/models/post.rb:58: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/models/post.rb:58: syntax error, unexpected end-of-input, expecting keyword_end
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338516662500'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338516662500'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.5ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:57:47 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/models/post.rb:58: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/models/post.rb:58: syntax error, unexpected end-of-input, expecting keyword_end
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb__1739523085996841357_70338516662500'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1739523085996841357_70338516662500'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.2ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:58:04 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 66ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 00:58:04 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 01:02:43 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 01:02:43.783691' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (76.3ms)
+  Rendered layouts/_posts_grid.html.erb (77.8ms)
+  Rendered application/index.html.erb within layouts/application (81.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 201ms (Views: 183.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:02:43 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/posts.self-d58df2911ae2c25dfcbdab442351298a22d904420fd18a7e96c31436a1e458df.js?body=1" for 98.248.145.40 at 2017-10-21 01:02:44 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:02:51 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:02:51 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/item" for 98.248.145.40 at 2017-10-21 01:02:53 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"item"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 9ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=item):
+  app/controllers/posts_controller.rb:10:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.8ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 01:03:00 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.1ms)
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 01:03:00.349547' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (30.2ms)
+  Rendered layouts/_posts_grid.html.erb (31.1ms)
+  Rendered application/index.html.erb within layouts/application (38.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 65ms (Views: 63.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:03:00 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 98.248.145.40 at 2017-10-21 01:03:03 +0000
+
+ActionController::RoutingError (No route matches [GET] "/categories"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (49.4ms)
+
+
+Started GET "/get/categories" for 98.248.145.40 at 2017-10-21 01:03:10 +0000
+
+ActionController::RoutingError (No route matches [GET] "/get/categories"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.1ms)
+
+
+Started GET "/get/categories" for 98.248.145.40 at 2017-10-21 01:13:07 +0000
+
+ActionController::RoutingError (No route matches [GET] "/get/categories"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (109.7ms)
+
+
+Started GET "/get/categories" for 98.248.145.40 at 2017-10-21 01:14:47 +0000
+
+ActionController::RoutingError (No route matches [GET] "/get/categories"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.5ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 01:15:34 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[35mPost Load (0.8ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 01:15:34.987974' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (47.2ms)
+  Rendered layouts/_posts_grid.html.erb (48.6ms)
+  Rendered application/index.html.erb within layouts/application (51.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 109ms (Views: 100.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 01:15:35 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 01:15:35.096398' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (40.6ms)
+  Rendered layouts/_posts_grid.html.erb (41.6ms)
+  Rendered application/index.html.erb within layouts/application (44.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 79ms (Views: 77.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:15:36 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:15:45 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get/categories" for 98.248.145.40 at 2017-10-21 01:15:49 +0000
+
+ActionController::RoutingError (No route matches [GET] "/get/categories"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.0ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 01:15:53 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  [1m[35mPost Load (0.9ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 01:15:53.249065' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (30.8ms)
+  Rendered layouts/_posts_grid.html.erb (31.6ms)
+  Rendered application/index.html.erb within layouts/application (33.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 66ms (Views: 64.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:15:53 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 01:20:51 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 01:20:51.195955' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (32.7ms)
+  Rendered layouts/_posts_grid.html.erb (34.1ms)
+  Rendered application/index.html.erb within layouts/application (36.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 62.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:20:51 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:21:11 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:22:48 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 85ms (Views: 83.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/posts.self-97aaddad814590e47a254e79446b00eb0b79902580538fca5f54d0e8ae41dcc8.js?body=1" for 98.248.145.40 at 2017-10-21 01:22:48 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:28:54 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 82ms (Views: 81.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/posts.self-2fab2b0110d72300f1569018b2fe5ccfcd6c249cc59a285c16ffe0d6a651fd52.js?body=1" for 98.248.145.40 at 2017-10-21 01:28:54 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:46:37 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:46:44 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:46:45 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:46:46 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:46:50 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:46:50 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 01:46:51 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  [1m[35mPost Load (0.9ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 01:46:51.224379' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (39.4ms)
+  Rendered layouts/_posts_grid.html.erb (40.2ms)
+  Rendered application/index.html.erb within layouts/application (43.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 80ms (Views: 77.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 01:46:51 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 01:46:51 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 01:46:51.841305' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (33.5ms)
+  Rendered layouts/_posts_grid.html.erb (34.3ms)
+  Rendered application/index.html.erb within layouts/application (36.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 64ms (Views: 61.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/1" for 98.248.145.40 at 2017-10-21 01:46:58 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/2" for 98.248.145.40 at 2017-10-21 01:47:00 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/5" for 98.248.145.40 at 2017-10-21 01:47:03 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/8" for 98.248.145.40 at 2017-10-21 01:47:06 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered posts/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 60ms (Views: 58.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/7" for 98.248.145.40 at 2017-10-21 01:47:10 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered posts/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/7" for 98.248.145.40 at 2017-10-21 01:47:13 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered posts/show.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 95ms (Views: 93.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/20" for 98.248.145.40 at 2017-10-21 01:47:16 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 20]]
+  Rendered posts/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/21" for 98.248.145.40 at 2017-10-21 01:47:46 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 21]]
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/36" for 98.248.145.40 at 2017-10-21 01:48:05 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 36]]
+  Rendered posts/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/35" for 98.248.145.40 at 2017-10-21 01:48:08 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 35]]
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 01:49:45 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[35mPost Load (2.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 01:49:45.239481' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (55.9ms)
+  Rendered layouts/_posts_grid.html.erb (56.7ms)
+  Rendered application/index.html.erb within layouts/application (61.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 96ms (Views: 92.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 02:50:24 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.4ms)
+  [1m[35mPost Load (1.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 02:50:24.674807' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (113.1ms)
+  Rendered layouts/_posts_grid.html.erb (114.7ms)
+  Rendered application/index.html.erb within layouts/application (126.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 537ms (Views: 503.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 02:50:28 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (20.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 02:56:42 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 79ms (Views: 78.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 02:56:42 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 02:56:42 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 02:56:42 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 02:56:42 +0000
+
+
+Started GET "/assets/posts.self-23e1b3c878f8cffba2cfeed0ab5fdcbf682bd7fad2aee6376b6ca163ed4f6c34.js?body=1" for 98.248.145.40 at 2017-10-21 02:56:42 +0000
+
+
+Started GET "/assets/application.self-754b0c6ec31fbf1b6b22090b7b4ad3edb629760f7272be32047e5b7ce8691f5b.js?body=1" for 98.248.145.40 at 2017-10-21 02:56:42 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 02:56:43 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 02:56:43 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 02:56:43 +0000
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 02:56:43 +0000
+
+
+Started GET "/assets/posts.self-23e1b3c878f8cffba2cfeed0ab5fdcbf682bd7fad2aee6376b6ca163ed4f6c34.js?body=1" for 98.248.145.40 at 2017-10-21 02:56:43 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 02:56:43 +0000
+
+
+Started GET "/assets/application.self-754b0c6ec31fbf1b6b22090b7b4ad3edb629760f7272be32047e5b7ce8691f5b.js?body=1" for 98.248.145.40 at 2017-10-21 02:56:44 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 02:57:04 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 02:57:05 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 02:57:05 +0000
+
+
+Started GET "/assets/posts.self-23e1b3c878f8cffba2cfeed0ab5fdcbf682bd7fad2aee6376b6ca163ed4f6c34.js?body=1" for 98.248.145.40 at 2017-10-21 02:57:05 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 02:57:05 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 02:57:05 +0000
+
+
+Started GET "/assets/application.self-754b0c6ec31fbf1b6b22090b7b4ad3edb629760f7272be32047e5b7ce8691f5b.js?body=1" for 98.248.145.40 at 2017-10-21 02:57:05 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 02:57:06 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 02:57:06 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 02:57:06 +0000
+
+
+Started GET "/assets/posts.self-23e1b3c878f8cffba2cfeed0ab5fdcbf682bd7fad2aee6376b6ca163ed4f6c34.js?body=1" for 98.248.145.40 at 2017-10-21 02:57:06 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 02:57:06 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 02:57:06 +0000
+
+
+Started GET "/assets/application.self-754b0c6ec31fbf1b6b22090b7b4ad3edb629760f7272be32047e5b7ce8691f5b.js?body=1" for 98.248.145.40 at 2017-10-21 02:57:06 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:06:52 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (couldn't find file 'post' with type 'application/javascript'
+Checked in these paths: 
+  /home/ubuntu/workspace/app/assets/images
+  /home/ubuntu/workspace/app/assets/javascripts
+  /home/ubuntu/workspace/app/assets/stylesheets
+  /home/ubuntu/workspace/vendor/assets/javascripts
+  /home/ubuntu/workspace/vendor/assets/stylesheets
+  /usr/local/rvm/gems/ruby-2.3.4/gems/cloudinary-1.8.1/vendor/assets/html
+  /usr/local/rvm/gems/ruby-2.3.4/gems/cloudinary-1.8.1/vendor/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/popper_js-1.11.1/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/bootstrap-4.0.0.beta/assets/stylesheets
+  /usr/local/rvm/gems/ruby-2.3.4/gems/bootstrap-4.0.0.beta/assets/javascripts):
+    4:   <title>Berkeley MarketPlace</title>
+    5:   
+    6:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    7:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    8: 
+    9:   <%= csrf_meta_tags %>
+   10:   <meta charset="UTF-8">
+  app/assets/javascripts/application.js:16
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2334425445557022505_32609720'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.6ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:06:53 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (couldn't find file 'post' with type 'application/javascript'
+Checked in these paths: 
+  /home/ubuntu/workspace/app/assets/images
+  /home/ubuntu/workspace/app/assets/javascripts
+  /home/ubuntu/workspace/app/assets/stylesheets
+  /home/ubuntu/workspace/vendor/assets/javascripts
+  /home/ubuntu/workspace/vendor/assets/stylesheets
+  /usr/local/rvm/gems/ruby-2.3.4/gems/cloudinary-1.8.1/vendor/assets/html
+  /usr/local/rvm/gems/ruby-2.3.4/gems/cloudinary-1.8.1/vendor/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/popper_js-1.11.1/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/bootstrap-4.0.0.beta/assets/stylesheets
+  /usr/local/rvm/gems/ruby-2.3.4/gems/bootstrap-4.0.0.beta/assets/javascripts):
+    4:   <title>Berkeley MarketPlace</title>
+    5:   
+    6:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    7:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    8: 
+    9:   <%= csrf_meta_tags %>
+   10:   <meta charset="UTF-8">
+  app/assets/javascripts/application.js:16
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2334425445557022505_32609720'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.3ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 03:07:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.3ms)
+  [1m[35mPost Load (1.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 03:07:56.108334' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (94.0ms)
+  Rendered layouts/_posts_grid.html.erb (95.5ms)
+  Rendered application/index.html.erb within layouts/application (106.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 502ms (Views: 470.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/posts.self-1d136a61dbaa6382912992cb138154d6f626102f39fb0d6ef9b4d0fa8afd7ec9.js?body=1" for 98.248.145.40 at 2017-10-21 03:07:56 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:08:04 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (17.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:24:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (35.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 429ms (Views: 417.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:25:00 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:25:00 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:25:00 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:25:00 +0000
+
+
+Started GET "/assets/application.self-9aebfb3d6adf12507d9237daf8b2915e56304a026d62cee297f1789d9025c33f.js?body=1" for 98.248.145.40 at 2017-10-21 03:25:00 +0000
+
+
+Started GET "/assets/posts.self-1d136a61dbaa6382912992cb138154d6f626102f39fb0d6ef9b4d0fa8afd7ec9.js?body=1" for 98.248.145.40 at 2017-10-21 03:25:00 +0000
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 03:25:53 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+  [1m[35mPost Load (1.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 03:25:53.359302' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (73.7ms)
+  Rendered layouts/_posts_grid.html.erb (74.9ms)
+  Rendered application/index.html.erb within layouts/application (78.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 150ms (Views: 136.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:25:56 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 03:27:00 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.3ms)
+  [1m[35mPost Load (1.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 03:27:00.425653' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (98.3ms)
+  Rendered layouts/_posts_grid.html.erb (100.0ms)
+  Rendered application/index.html.erb within layouts/application (110.6ms)
+Completed 500 Internal Server Error in 365ms (ActiveRecord: 2.3ms)
+
+ActionView::Template::Error (couldn't find file 'posts' with type 'application/javascript'
+Checked in these paths: 
+  /home/ubuntu/workspace/app/assets/images
+  /home/ubuntu/workspace/app/assets/javascripts
+  /home/ubuntu/workspace/app/assets/stylesheets
+  /home/ubuntu/workspace/vendor/assets/javascripts
+  /home/ubuntu/workspace/vendor/assets/stylesheets
+  /usr/local/rvm/gems/ruby-2.3.4/gems/cloudinary-1.8.1/vendor/assets/html
+  /usr/local/rvm/gems/ruby-2.3.4/gems/cloudinary-1.8.1/vendor/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/popper_js-1.11.1/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/bootstrap-4.0.0.beta/assets/stylesheets
+  /usr/local/rvm/gems/ruby-2.3.4/gems/bootstrap-4.0.0.beta/assets/javascripts):
+    3: <head>
+    4:   <title>Berkeley MarketPlace</title>
+    5:   
+    6:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    7:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    8: 
+    9:   <%= csrf_meta_tags %>
+  app/assets/javascripts/application.js:16
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___4132008285406992362_35043780'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (17.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.4ms)
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 03:27:20 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.3ms)
+  [1m[35mPost Load (1.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 03:27:21.118873' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (103.0ms)
+  Rendered layouts/_posts_grid.html.erb (104.7ms)
+  Rendered application/index.html.erb within layouts/application (116.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 589ms (Views: 538.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/application.self-2a01922fe78ab4e0bccfded5808b9e3c40decd7bfb7c36a6ae2aa4f234473647.js?body=1" for 98.248.145.40 at 2017-10-21 03:27:21 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:27:25 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (28.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 74ms (Views: 72.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:28:25 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:28:44 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 72ms (Views: 71.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:28:44 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:28:44 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:28:44 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:28:44 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:28:44 +0000
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 03:29:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.3ms)
+  [1m[35mPost Load (1.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 03:29:10.923339' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (90.4ms)
+  Rendered layouts/_posts_grid.html.erb (91.9ms)
+  Rendered application/index.html.erb within layouts/application (102.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 425ms (Views: 392.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:29:18 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (17.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 43ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 98.248.145.40 at 2017-10-21 03:32:33 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 03:32:33.340007' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (30.5ms)
+  Rendered layouts/_posts_grid.html.erb (31.3ms)
+  Rendered application/index.html.erb within layouts/application (33.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 110ms (Views: 107.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-545708a9bd3ff53eb014c2f7a049537f0befb5a4e1b227aaaaafcc8623fe25e9.js?body=1" for 98.248.145.40 at 2017-10-21 03:32:33 +0000
+
+
+Started GET "/posts/1" for 98.248.145.40 at 2017-10-21 03:32:40 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 63ms (Views: 57.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 98.248.145.40 at 2017-10-21 03:44:29 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 03:44:29.541642' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (34.9ms)
+  Rendered layouts/_posts_grid.html.erb (36.0ms)
+  Rendered application/index.html.erb within layouts/application (38.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 68ms (Views: 65.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:44:29 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:44:29 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:44:29 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:44:29 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:44:29 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:44:31 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (20.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    27:   <div id="subcategories_select">
+    28:     <%= f.label :subcategory %> 
+    29:     <!--<%= f.select :subcategory, Post.get_all_subcategories, id: "Subcategory" %>-->
+    30:     <%= f.select :subcategory, Post.get_subcategories("item"), id: "Subcategory" %>
+    31:   </div>
+    32: 
+    33:  
+  app/views/posts/new.html.erb:30:in `block in _app_views_posts_new_html_erb___3195629551051769943_27317980'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb___3195629551051769943_27317980'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.7ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:45:32 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    27:   <div id="subcategories_select">
+    28:     <%= f.label :subcategory %> 
+    29:     <!--<%= f.select :subcategory, Post.get_all_subcategories, id: "Subcategory" %>-->
+    30:     <%= f.select :subcategory, Post.get_subcategories(":item"), id: "Subcategory" %>
+    31:   </div>
+    32: 
+    33:  
+  app/views/posts/new.html.erb:30:in `block in _app_views_posts_new_html_erb___3195629551051769943_70008474238780'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb___3195629551051769943_70008474238780'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.5ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:47:41 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:47:42 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:47:42 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:47:42 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:47:42 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:47:42 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:48:10 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    26:   
+    27:   <div id="subcategories_select">
+    28:     <%= f.label :subcategory %> 
+    29:     <%= f.select :subcategory, Post.get_all_subcategories, id: "Subcategory" %>
+    30:   </div>
+    31: 
+    32:  
+  app/views/posts/new.html.erb:29:in `block in _app_views_posts_new_html_erb___3195629551051769943_70008479568760'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb___3195629551051769943_70008479568760'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.2ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:48:30 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `item' for #<Hash:0x000000038c6a60>):
+    26:   
+    27:   <div id="subcategories_select">
+    28:     <%= f.label :subcategory %> 
+    29:     <%= f.select :subcategory, Post.get_all_subcategories, id: "Subcategory" %>
+    30:   </div>
+    31: 
+    32:  
+  app/models/post.rb:44:in `get_all_subcategories'
+  app/views/posts/new.html.erb:29:in `block in _app_views_posts_new_html_erb___3195629551051769943_70008479568760'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb___3195629551051769943_70008479568760'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.7ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:49:02 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined local variable or method `keys' for #<Class:0x007f582cf77a48>):
+    26:   
+    27:   <div id="subcategories_select">
+    28:     <%= f.label :subcategory %> 
+    29:     <%= f.select :subcategory, Post.get_all_subcategories, id: "Subcategory" %>
+    30:   </div>
+    31: 
+    32:  
+  app/models/post.rb:41:in `block in get_all_subcategories'
+  app/models/post.rb:40:in `each'
+  app/models/post.rb:40:in `get_all_subcategories'
+  app/views/posts/new.html.erb:29:in `block in _app_views_posts_new_html_erb___3195629551051769943_70008479568760'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb___3195629551051769943_70008479568760'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.4ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:49:13 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:49:13 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:13 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:13 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:13 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:13 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:49:39 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 29ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:39 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:39 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:39 +0000
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:49:39 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:39 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:49:45 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:49:45 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:45 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:45 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:45 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:49:45 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:50:24 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:50:24 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:50:24 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:50:24 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:50:24 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:50:24 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:50:35 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:50:35 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:50:36 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:50:36 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:50:36 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:50:36 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:51:12 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:51:12 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:51:12 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:51:12 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:51:12 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:51:12 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:52:43 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    26:   
+    27:   <div id="subcategories_select">
+    28:     <%= f.label :subcategory %> 
+    29:     <%= f.select :subcategory, Post.get_all_subcategories, id: "Subcategory" %>
+    30:   </div>
+    31: 
+    32:  
+  app/views/posts/new.html.erb:29:in `block in _app_views_posts_new_html_erb___3195629551051769943_70008479568760'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb___3195629551051769943_70008479568760'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.2ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:53:11 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:53:11 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:53:11 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:53:11 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:53:11 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:53:11 +0000
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 03:56:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.6ms)
+  [1m[35mPost Load (1.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 03:56:59.711224' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (95.6ms)
+  Rendered layouts/_posts_grid.html.erb (97.1ms)
+  Rendered application/index.html.erb within layouts/application (108.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 409ms (Views: 374.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:57:03 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (16.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:57:25 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:57:25 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:57:26 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:57:26 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:57:26 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:57:26 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:58:40 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:1: syntax error, unexpected ','
+...> { :multipart => true} do |f|, id = "create_form");@output_...
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:1: syntax error, unexpected ')', expecting keyword_end
+...ue} do |f|, id = "create_form");@output_buffer.safe_append='
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:120: syntax error, unexpected keyword_ensure, expecting ')'
+/home/ubuntu/workspace/app/views/posts/new.html.erb:122: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/posts/new.html.erb:1: syntax error, unexpected ','
+  app/views/posts/new.html.erb:1: syntax error, unexpected ')', expecting keyword_end
+  app/views/posts/new.html.erb:120: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/posts/new.html.erb:122: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.2ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:58:59 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:1: syntax error, unexpected '}', expecting =>
+...rt => true, id = "create_form"} do |f|@output_buffer.safe_ap...
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:120: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/posts/new.html.erb:1: syntax error, unexpected '}', expecting =>
+  app/views/posts/new.html.erb:120: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.2ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:59:26 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:59:27 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:59:27 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:59:27 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:59:27 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:59:27 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 03:59:43 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 03:59:43 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 03:59:43 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 03:59:43 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 03:59:43 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 03:59:43 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:00:08 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:00:08 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:00:08 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:00:08 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:00:08 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:00:08 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:02:58 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:02:58 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:02:58 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:02:58 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:02:58 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:02:58 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:04:01 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:04:01 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:01 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:01 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:01 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:01 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:04:08 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:04:08 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:09 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:09 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:09 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:09 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:04:27 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:04:28 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:28 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:28 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:28 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:04:28 +0000
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 04:04:58 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.2ms)
+  [1m[35mPost Load (1.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 04:04:58.427194' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (111.4ms)
+  Rendered layouts/_posts_grid.html.erb (113.1ms)
+  Rendered application/index.html.erb within layouts/application (125.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 428ms (Views: 394.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:05:03 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (19.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 51.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:06:27 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:06:27 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:06:27 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:06:28 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:06:28 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:06:28 +0000
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 04:06:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.4ms)
+  [1m[35mPost Load (1.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 04:06:51.171903' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (94.5ms)
+  Rendered layouts/_posts_grid.html.erb (96.0ms)
+  Rendered application/index.html.erb within layouts/application (106.8ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 377ms (Views: 344.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:07:04 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (18.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:08:07 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:08:07 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:07 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:07 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:07 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:07 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:08:15 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:08:16 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:16 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:16 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:16 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:16 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:08:28 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:08:28 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:28 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:28 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:28 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:08:28 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:10:15 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:10:15 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:10:16 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:10:16 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:10:16 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:10:16 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:11:05 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:11:05 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:11:05 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:11:05 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:11:05 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:11:05 +0000
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 04:14:02 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.9ms)
+  [1m[35mPost Load (1.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 04:14:02.847627' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (100.5ms)
+  Rendered layouts/_posts_grid.html.erb (102.7ms)
+  Rendered application/index.html.erb within layouts/application (116.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 406ms (Views: 372.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:14:10 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (17.9ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:14:21 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:14:21 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:14:21 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:14:22 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:14:22 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:14:22 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:16:27 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:16:27 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:16:27 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:16:28 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:16:28 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:16:28 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:16:46 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:16:46 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:16:46 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:16:46 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:16:46 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:16:46 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:17:08 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:17:08 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:17:08 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:17:08 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:17:08 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:17:08 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:22:27 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:22:27 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:22:28 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:22:28 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:22:28 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:22:28 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:31:41 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 55ms (Views: 54.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:31:41 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:31:41 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:31:41 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:31:41 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:31:41 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:31:58 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:31:59 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:32:00 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:32:03 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:32:03 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:32:04 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:32:10 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:32:11 +0000
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:32:11 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:32:11 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:32:11 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:32:11 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:34:36 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:34:37 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:34:37 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:34:37 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:34:37 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:34:37 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:43:24 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 63ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:43:24 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:43:24 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:43:25 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:43:25 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:43:25 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:43:38 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:43:38 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:43:38 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:43:38 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:43:38 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:43:38 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:44:57 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:44:58 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:44:58 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:44:58 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:44:58 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:44:58 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:47:03 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 41ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:47:03 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:47:03 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:47:03 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:47:03 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:47:03 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:53:14 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:53:14 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:53:14 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:53:14 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:53:14 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:53:14 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:54:29 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:54:29 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:54:29 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:54:29 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:54:29 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:54:29 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:56:40 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (10.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:56:41 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:56:41 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:56:41 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:56:41 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:56:41 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:57:53 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:57:54 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:57:54 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:57:58 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:57:58 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:57:58 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:59:01 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (117.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 150ms (Views: 149.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:59:01 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:01 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:01 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:01 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:01 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:59:29 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:59:29 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:30 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:30 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:30 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:30 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 04:59:43 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 04:59:43 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:43 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:43 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:43 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 04:59:43 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:01:05 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:01:17 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:01:17 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:01:17 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:01:17 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:01:17 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:01:17 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:01:48 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:01:48 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:01:49 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:01:49 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:01:49 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:01:49 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:02:26 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:02:26 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:02:26 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:02:26 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:02:26 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:02:26 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:02:29 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:02:30 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:02:30 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:02:30 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:02:30 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:02:30 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:05:33 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:05:33 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:05:34 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:05:34 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:05:34 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:05:34 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:05:48 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:05:49 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:05:50 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:05:50 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:05:50 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:05:50 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:05:50 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:06:46 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:06:46 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:06:46 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:06:46 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:06:46 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:06:46 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:08:07 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:08:07 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:08:07 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:08:07 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:08:07 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:08:07 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:09:38 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:09:39 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:09:39 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:09:39 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:09:39 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:09:39 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:10:03 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:10:03 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:03 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:03 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:03 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:03 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:10:24 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:10:25 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:25 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:25 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:25 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:25 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:10:51 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:10:51 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:52 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:52 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:52 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:10:52 +0000
+
+
+Started GET "/" for 98.248.145.40 at 2017-10-21 05:11:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.4ms)
+  [1m[35mPost Load (1.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-21 05:11:50.105491' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (98.4ms)
+  Rendered layouts/_posts_grid.html.erb (100.1ms)
+  Rendered application/index.html.erb within layouts/application (112.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 437ms (Views: 401.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:11:58 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (17.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 49ms (Views: 48.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:12:13 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:12:13 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:12:13 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:12:13 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:12:13 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:12:13 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:12:26 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:12:26 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:12:26 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:12:26 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:12:26 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:12:26 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:13:19 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (9.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:13:19 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:13:19 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:13:19 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:13:19 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:13:19 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:14:28 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 67ms (Views: 66.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:14:29 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:14:29 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:14:29 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:14:29 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:14:29 +0000
+
+
+Started GET "/posts/new" for 98.248.145.40 at 2017-10-21 05:15:54 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 98.248.145.40 at 2017-10-21 05:15:54 +0000
+
+
+Started GET "/assets/application.self-f8afb6be9c511580a6007bc66aad63646fd9e1051ba5dc6f372403fed7e3e3da.css?body=1" for 98.248.145.40 at 2017-10-21 05:15:54 +0000
+
+
+Started GET "/assets/application.self-cbc2bc52666669aa7dca3888df9b29bc3e1ae4cd383b46a4ac5d1918cad015fb.js?body=1" for 98.248.145.40 at 2017-10-21 05:15:54 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 98.248.145.40 at 2017-10-21 05:15:54 +0000
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 98.248.145.40 at 2017-10-21 05:15:54 +0000

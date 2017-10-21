@@ -35,6 +35,23 @@ class Post < ActiveRecord::Base
         @@categories.keys
     end
     
+    def self.get_all_subcategories
+        # list = []
+        # for k in @@categories.keys
+        #     list += @@categories[k]
+        # end
+        # list
+        @@categories[:item]
+    end
+    
+    def self.get_event_subcategories
+       @@categories[:event] 
+    end
+    
+    def self.get_job_subcategories
+       @@categories[:job] 
+    end
+    
     def self.get_subcategories category
         @@categories[category]
     end
@@ -46,5 +63,5 @@ class Post < ActiveRecord::Base
     def self.get_all_valid_posts
        self.where(available:true).where("expire_time > ? OR expire_time IS ?", Time.now, nil) 
     end
-    
+
 end

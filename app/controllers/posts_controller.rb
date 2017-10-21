@@ -51,4 +51,11 @@ class PostsController < ApplicationController
     # the Update Post page
   end
   
+  def get_subcategories
+    #get_subcategories category
+    @subcategories = Post.get_subcategories params[:category_id]
+    respond_to do |format|
+      format.js
+    end
+  end
 end

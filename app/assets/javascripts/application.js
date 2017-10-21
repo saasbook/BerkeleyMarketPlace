@@ -50,3 +50,16 @@ $(document).ready( function() {
 		    readURL(this);
 		}); 	
 	});
+	
+// select the element to watch for changes
+$('form').on('change', '#Category'), function() {
+  var category_id = $(this).val(); // save the category_id set in the first dropdown
+  console.log(category_id);
+
+  $.ajax({
+    url: "/post/" + category_id + "/get_subcategories", // a custom route, see routes.rb further down
+    type: "GET",
+    dataType: "script", // we expect a response in js format
+    data: { "category_id": category_id } // the only value we will need to get the subcategories
+  });
+};
