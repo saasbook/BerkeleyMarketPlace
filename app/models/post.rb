@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
                       :path => ':id/:style/:filename',
                       :styles => {
                           #:thumb => "100x100#",
-                          :small  => "150x150>"
+                        #   :small  => "150x150>"
                       },
                       :default_url => "/images/post_default.png"
                       
