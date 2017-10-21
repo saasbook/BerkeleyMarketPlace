@@ -2,8 +2,8 @@
     
     <div class="row">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="<%= posts_path %>">Home</a></li>
-        <li class="breadcrumb-item active"><%= @post.title %></li>
+        <li class="breadcrumb-item"><a href="<%= posts_path %>">Home</a> 
+        <li class="breadcrumb-item active"><%= @post.title %> 
       </ol>
     </div>
     
@@ -12,18 +12,17 @@
         
       </div>
       <div class="col-md-9">
-        <ul class="list-group">
-          <li class="list-group-item"><h1><%= @post.title %></h1></li>
-          <li class="list-group-item"><img><%= image_tag @post.image.url%></img></li>
-          <li class="list-group-item"><h2>$<%= @post.price %></h2></li>
-          <li class="list-group-item"><h2>Status: <%= if @post.available then 'available' else 'not available' end %></h2></li>
-          <li class="list-group-item"><p>Released on: <%= @post.release_time%></p></li>
-          <li class="list-group-item"><p>Expires on: <%= @post.expire_time%></p></li>
-          <li class="list-group-item"><p>Description: <%= @post.description %></p></li>
-          <li class="list-group-item"><h3>Category: <%= @post.category %></h3></li>
-          <li class="list-group-item"><h3>Subcategory: <%= @post.subcategory %></h3></li>
-        </ul>
-      
+           <h1><%= @post.title %></h1> 
+           <br>
+           <img><%= image_tag @post.image.url%></img> 
+           <h2>$<%= @post.price %></h2> 
+           <h3>Category: <%= @post.category %></h3> 
+           <h3>Subcategory: <%= @post.subcategory %></h3> 
+           <h4>Status: <%= if @post.available then 'available' else 'not available' end %></h4> 
+           <p>Released on: <%= @post.release_time%></p> 
+           <p>Expires on: <%= @post.expire_time%></p> 
+           <p><span>Description:</span><br> <%= @post.description %></p> 
+           
       </div>
     </div>
 
