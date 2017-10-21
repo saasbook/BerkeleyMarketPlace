@@ -4,35 +4,32 @@ Feature: see posts on homepage
   I want to see all the posts.
   I can see all the posts on the homepage.
   
-Background: posts in database
- 
-  Given the following posts exist:
-  | title                 | release_time | price | description       | available | author_id | expire_time | category | subcategory |
-  | iPhone 7 for sale     | 2017-10-14   | 500   | In good condition | true      | 1         |             | item     | cell_phone  |
-  | concert ticket        | 2017-10-14   | 50    |                   | true      | 1         | 2017-12-31  | event    |             |
-  | CS research assistant | 2017-9-8     | 0     |                   | false     | 1         | 2017-10-1   | job      |             |
-  | graphic designer      | 2017-9-9     | 0     |                   | true      | 1         | 2018-10-2   | job      |             |
-
 Scenario: see product posts on the Home page with price
   When I go to the home page
-  Then I should see "iPhone 7 for sale"
-  And I should see "500"
+  Then I should see "iClicker"
  
-Scenario: see event posts on the Home page
+Scenario: see filtered item posts on the Home page
   When I go to the home page
-  Then I should see "concert ticket"
+  Then I follow "item"
+  And I should see "iClicker"
+  And I should not see "machine learning expert"
+  And I should not see "Concert ticket in SF"
  
-Scenario: see job posts on the Home page
-  When I go to the home page
-  Then I should see "graphic designer"
-  
-Scenario: not see filtered posts on home page
+Scenario: see filtered job posts on the Home page
   When I go to the home page
   Then I follow "job"
-  And I should see "graphic designer"
-  And I should not see "concert ticket"
+  And I should not see "iClicker"
+  And I should see "machine learning expert"
+  And I should not see "Concert ticket in SF"
   
-Scenario: not see unavailable posts on the home page
+Scenario: see filtered event posts on Home page
   When I go to the home page
-  Then I should not see "CS research assistant"
+  Then I follow "event"
+  And I should not see "iClicker"
+  And I should not see "machine learning expert"
+  And I should see "Concert ticket in SF"
+  
+Scenario: not see unavailable posts on the Home page
+  When I go to the home page
+  Then I should not see "Asian life matters speech"
   

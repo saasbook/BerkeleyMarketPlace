@@ -6,7 +6,7 @@
 
 * CodeClimate test coverage: <a href="https://codeclimate.com/github/rails/rails/coverage"><img src="https://codeclimate.com/github/rails/rails/badges/coverage.svg" /></a>
 
-* Travis CI build status: <a href="https://travis-ci.org/JulieDeng/BerkeleyMarketPlace.svg?branch=master"><img src="https://travis-ci.org/JulieDeng/BerkeleyMarketPlace.svg?branch=master" /></a>
+* Travis CI build status: <a href="https://travis-ci.org/yezhaoqin/BerkeleyMarketPlace.svg?branch=master"><img src="https://travis-ci.org/JulieDeng/BerkeleyMarketPlace.svg?branch=master" /></a>
 
 * Figma: [Berkeley-MarketPlace-MockUp](https://www.figma.com/file/J4KNIQxTTdhG4dIPiRQFAtrc/Berkeley-MarketPlace-MockUp)
 

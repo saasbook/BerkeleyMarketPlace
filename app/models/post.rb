@@ -8,8 +8,10 @@ class Post < ActiveRecord::Base
                       :cloudinary_credentials => Rails.root.join("config/cloudinary.yml"),
                       :path => ':id/:style/:filename',
                       :styles => {
-                              #:thumb => "100x100#",
-                              :small  => "150x150>"}
+                          #:thumb => "100x100#",
+                          :small  => "150x150>"
+                      },
+                      :default_url => "/images/post_default.png"
                       
                       
     validates_attachment :image,

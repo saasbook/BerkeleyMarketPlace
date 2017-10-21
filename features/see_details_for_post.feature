@@ -5,31 +5,25 @@ Feature: buyer can see the detail of a post
   I want to see the detail of a product,
   I can click one post and enter the detail page of the product.
   
-Background: posts in database
- 
-  Given the following posts exist:
-  | title                 | release_time | price | description       | available | author_id | expire_time | category | subcategory |
-  | iPhone 7 for sale     | 2017-10-14   | 500   | In good condition | true      | 1         |             | item     | cell_phone  |
-  | concert ticket        | 2017-10-14   | 50    |                   | true      | 1         | 2017-12-31  | event    |             |
-  | CS research assistant | 2017-9-8     | 0     |                   | false     | 1         | 2017-10-1   | job      |             |
-  | graphic designer      | 2017-9-9     | 0     |                   | true      | 1         | 2018-10-2   | job      |             |
-
   
-Scenario: go from home page to Detail page for one post
+Scenario: go from home page to Detail page for one item
     Given I am on the home page
-    When I follow "iPhone 7 for sale"
-    Then I should be on the details page for "iPhone 7 for sale"
-    And I should see "iPhone 7 for sale"
-    And I should see "2017-10-14"
-    And I should see "500"
-    And I should see "In good condition"
+    When I find one of "iClicker"
+    And I should see "iClicker"
     And I should see "item"
-    And I should see "cell_phone"
+    And I should see "electronics"
     
-Scenario: go from home page to Detail page for one post
+Scenario: go from home page to Detail page for one job
     Given I am on the home page
-    When I follow "graphic designer"
-    Then I should be on the details page for "graphic designer"
-    And I should see "graphic designer"
-    And I should see "0 "
+    When I find one of "machine learning expert"
+    And I should see "machine learning expert"
     And I should see "job"
+    And I should see "computer science"
+    
+    
+Scenario: go from home page to Detail page for one event
+    Given I am on the home page
+    When I find one of "Concert ticket in SF"
+    And I should see "Concert ticket in SF"
+    And I should see "event"
+    And I should see "performance"
