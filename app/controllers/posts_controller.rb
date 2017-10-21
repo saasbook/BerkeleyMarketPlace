@@ -32,7 +32,6 @@ class PostsController < ApplicationController
       render :new
     else
       if @post.save
-        flash[:notice] = "Post for #{@post.title} was successfully created."
         params[:id] = @post.id
         redirect_to show
       # else
