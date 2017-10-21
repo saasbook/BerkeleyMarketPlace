@@ -2,7 +2,7 @@
 
 ## Development Status
 
-* CodeClimate GPA: <a href="https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace"><img src="https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace/gpa.svg" /></a>
+* CodeClimate GPA: <a href="https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace"><img src="https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace/badges/gpa.svg" /></a>
 
 * CodeClimate test coverage: <a href="https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace"><img src="https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace/coverage.svg" /></a>
 
