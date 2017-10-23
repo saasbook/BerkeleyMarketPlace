@@ -76,4 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  Paperclip.options[:image_magick_path] = File.join(Rails.root, "vendor/imagemagick/bin")
+  Paperclip.options[:command_path] = File.join(Rails.root, "vendor/imagemagick/bin")
 end
