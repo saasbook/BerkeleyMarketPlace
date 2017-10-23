@@ -8,7 +8,7 @@
 
 require 'time'
 
-if Rails.env != :production
+if Rails.env !=  "production"
     require 'database_cleaner'
     DatabaseCleaner.clean_with(:truncation)
 end
@@ -133,7 +133,7 @@ end
 
 
 
-if Rails.env != :production
+if Rails.env != "production"
     uid_list = [1]
 else
     uid_list = 1..5
