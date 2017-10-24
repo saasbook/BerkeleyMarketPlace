@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :posts, except: [:destroy]
+  resources :users, except: [:destroy]
+  
   #post "/posts/create", to: :create, controller: 'post'
   post "/posts/new", to:"posts#create"
   post "/posts/create", to: "posts#create"
