@@ -4,9 +4,9 @@
       <div class="col-1"></div>
       <div class="col-10">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<%= posts_path %>">Home</a> 
-            <li class="breadcrumb-item"><a href="<%= filter_path(category: post_info.category) %>"><%= post_info.category %></a> 
-            <li class="breadcrumb-item"><a href="#"><%= post_info.subcategory %></a> 
+            <li class="breadcrumb-item"><%= link_to "Home", posts_path %>
+            <li class="breadcrumb-item"><%= link_to @post.category, filter_path(category: @post.category), remote: true %>
+            <li class="breadcrumb-item"><%= link_to @post.subcategory, filter_path(category: @post.subcategory), remote: true %>
             <li class="breadcrumb-item active"><%= @post.title %>
           </ol>
       </div>
@@ -21,10 +21,10 @@
       
       <div class="col-6">
            <h1><%= @post.title %></h1> 
-           <h3>Price: USD $<%= @post.price %></h3> 
+           <h3>USD $<%= @post.price %></h3> 
            <p><%= @post.category %> / <%= @post.subcategory %> </p> 
            <p><%= if @post.available then 'Available' else 'Not available' end %> (released on: <%= @post.release_time%>) </p> 
-           <a href="mailto:placeholder@berkeley.edu"> Contact: Placeholder (placeholder@berkeley.edu) </a>
+           <a href="mailto:placeholder@berkeley.edu"> Contact: placeholder@berkeley.edu </a>
            <p></p>
            <h3>Description</h3>
            <p><%= @post.description %></p> 
