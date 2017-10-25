@@ -24,7 +24,7 @@
            <h3>USD $<%= @post.price %></h3> 
            <p><%= @post.category %> / <%= @post.subcategory %> </p> 
            <p><%= if @post.available then 'Available' else 'Not available' end %> (released on: <%= @post.release_time%>) </p> 
-           <a href="mailto:placeholder@berkeley.edu"> Contact: placeholder@berkeley.edu </a>
+           <a href="mailto:<%= @user.email %>"> Contact: <%= @user.email %> </a>
            <p></p>
            <h3>Description</h3>
            <p><%= @post.description %></p> 
