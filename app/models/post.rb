@@ -3,6 +3,12 @@ class Post < ActiveRecord::Base
     validates :image, presence: { message: "Please upload an image" }
     validates :price, numericality: { message: "Please enter a valid price." }
     validates :author_id, presence: true
+    validates :description, length: { maximum: 512, message: "%{count} characters is the maximum allowed" }
+    validates :title, length: { maximum: 32, message: "%{count} characters is the maximum allowed" }
+    validates :category, presence: {message: "Please select category"}
+    validates :subcategory, presence: {message: "Please select subcategory"}
+    
+    
     has_attached_file :image,
                       :storage => :cloudinary,
                       :cloudinary_credentials => Rails.root.join("config/cloudinary.yml"),

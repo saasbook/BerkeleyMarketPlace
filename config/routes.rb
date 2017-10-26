@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   root 'application#index'
   
   get "/filter" => 'application#filter', as: 'filter', format: 'js'
+  
+  get "/update_form_subcategory" => 'posts#update_form_subcategory', as: 'update_form_subcategory', format: 'js'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

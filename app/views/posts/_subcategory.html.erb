@@ -1,0 +1,4 @@
+<div id = "subcat_select">
+    <%= select "post", :subcategory, subcategory.map { |c| [c, c] },
+        { include_blank: '- Select -' }, { class: "form-control" }%>
+</div>
