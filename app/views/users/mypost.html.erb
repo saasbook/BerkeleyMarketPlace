@@ -1,0 +1,13 @@
+<div class="container" id="profilepage">
+
+  <div class="row">
+    <div class="col-lg-2">
+      <%=render "users/profilesidebar" %>
+    </div>
+    
+    <div class="col-lg-10">
+      <%= render partial: 'users/mypost_grid', locals: {posts: @myposts} %>
+    </div>
+
+  </div>
+</div>

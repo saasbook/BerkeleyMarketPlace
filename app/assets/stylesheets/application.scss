@@ -2,13 +2,7 @@
 @import "bootstrap";
 
 body {
-  padding-top: 60px;
-}
-
-@media (min-width: 992px) {
-  body {
-    padding-top: 60px;
-  }
+  padding-top: 100px;
 }
 
 #navBarSearchForm input[type=text]{
@@ -44,7 +38,12 @@ body {
 }
 
 #showPost img {
-    width: 300px; /* you can use % */
+    width: 300px;
     height: auto;
     left: 0px;
+}
+
+#flash div {
+    text-align: center;
+    color: red;
 }

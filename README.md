@@ -2,11 +2,11 @@
 
 ## Development Status
 
-* CodeClimate GPA: <a href="https://codeclimate.com/github/rails/rails"><img src="https://codeclimate.com/github/rails/rails/badges/gpa.svg" /></a>
+* CodeClimate GPA:[![Maintainability](https://api.codeclimate.com/v1/badges/705edb2e84f0704b4e90/maintainability)](https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace/maintainability)
 
-* CodeClimate test coverage: <a href="https://codeclimate.com/github/rails/rails/coverage"><img src="https://codeclimate.com/github/rails/rails/badges/coverage.svg" /></a>
+* CodeClimate test coverage: [![Test Coverage](https://api.codeclimate.com/v1/badges/705edb2e84f0704b4e90/test_coverage)](https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace/test_coverage)
 
-* Travis CI build status: <a href="https://travis-ci.org/JulieDeng/BerkeleyMarketPlace.svg?branch=master"><img src="https://travis-ci.org/JulieDeng/BerkeleyMarketPlace.svg?branch=master" /></a>
+* Travis CI build status: <a href="https://travis-ci.org/yezhaoqin/BerkeleyMarketPlace.svg?branch=master"><img src="https://travis-ci.org/yezhaoqin/BerkeleyMarketPlace.svg?branch=master" /></a>
 
 * Figma: [Berkeley-MarketPlace-MockUp](https://www.figma.com/file/J4KNIQxTTdhG4dIPiRQFAtrc/Berkeley-MarketPlace-MockUp)
 

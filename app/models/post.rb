@@ -3,13 +3,20 @@ class Post < ActiveRecord::Base
     validates :image, presence: { message: "Please upload an image" }
     validates :price, numericality: { message: "Please enter a valid price." }
     validates :author_id, presence: true
+    validates :description, length: { maximum: 4096, message: "%{count} characters is the maximum allowed" }
+    validates :title, length: { maximum: 128, message: "%{count} characters is the maximum allowed" }
+    validates :category, presence: {message: "Please select category"}
+    validates :subcategory, presence: {message: "Please select subcategory"}
+    
+    
     has_attached_file :image,
                       :storage => :cloudinary,
                       :cloudinary_credentials => Rails.root.join("config/cloudinary.yml"),
                       :path => ':id/:style/:filename',
                       :styles => {
-                              #:thumb => "100x100#",
-                              :small  => "150x150>"}
+                          :thumb => "200x200#",
+                      },
+                      :default_url => "/images/post_default.png"
                       
                       
     validates_attachment :image,
@@ -18,16 +25,25 @@ class Post < ActiveRecord::Base
     
     @@categories = {
         item: [
-            "textbook",
-            "electronics"
+            "book",
+            "electronics",
+            "music related",
+            "furniture"
         ],
         event: [
             "info session",
-            "performance"
+            "performance",
+            "sports",
+            "speech",
+            "daily life"
         ],
         job: [
             "research assistant",
-            "tutor"
+            "tutor",
+            "computer science",
+            "daily life",
+            "math",
+            "performance"
         ]
     }
     

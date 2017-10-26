@@ -4,6 +4,10 @@ Given /the following posts exist/ do |post_table|
   end
 end
 
+When /I find one of "(.*)"/ do |name|
+  first(:link, name).click
+end
+
 # Then /I should see "(.*)"/ do |item_name|
 #   page.should have_content(item_name)
 # end

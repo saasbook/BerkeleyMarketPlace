@@ -1,136 +1,84 @@
-<%= form_for :post, :method => :post, :html => { :multipart => true, :id => "create_form"} do |f|%>
-  <div
-    <%= f.label :image%>
-    <%= f.file_field :image, id: "Image"%>
-  </div>
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
- 
-  <div>
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
- 
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div>
-    <%= f.label :category %> 
-    <%= f.select :category, Post.get_categories, id: "Category" %>
-  </div>
+</div class="container" id="new">
+<!--<div class="container">-->
+  <%= form_for @post, :method => :post, :html => { :multipart => true } do |f| %>
   
-  <div>
-    <%= f.label :subcategory %> 
-    <div id="subcategories_select">
-      <%= f.select :subcategory, Post.get_all_subcategories, id: "Subcategory" %>
+	<div class="row">
+	  <div class="col-1"></div>
+    
+    <!--image-->
+    <div class="col-4">
+      <div class="form-group">
+        <%= f.label :image %>
+        <img src="/images/post_default.png" class="img-fluid" alt="Responsive image">
+        <%= f.file_field :image, id: "Image", class: "form-control", required: true %>
+      </div>
+    </div>  
+  	<!--image-->
+  	
+  	<div class="col-6">    
+      
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control form-control-lg", required: true, minlength: "1", maxlength: "128" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :price %>
+        <%= f.number_field :price, class: "form-control", required: true,  step: "0.01", min: "0" %>
+      </div>
+      
+      <!--category-->
+      <!--<div class="row">-->
+      <!--  <div class="col-1"></div>-->
+        
+      <!--  <div class="col-5">-->
+          <div class="form-group">
+            <%= f.label :category %> 
+            <%= f.select :category, Post.get_categories.map { |c| [c.to_s, c.to_s] }, { include_blank: '- Select -' }, { class: "form-control", required: true }%>
+          </div>
+        <!--</div>-->
+        
+        <!--<div class="col-5">-->
+          <div class="form-group">
+            <%= f.label :subcategory %> 
+            <div id="updateFormSubcategory">
+              <%= render partial: 'posts/subcategory', locals: {subcategory: @empty_subcategory, current_subcategory: @current_subcategory}  %>
+            </div>
+          </div>
+        <!--</div>-->
+      <!--</div>-->
+      <!--category-->
+      
+      <div class="form-group">
+        <%= f.label :Email %> 
+        <%= f.text_field :author_id, id: "Email", value: @user.email, readonly: true, class: "form-control" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control", required: true, maxlength: "4096", rows:"10", placeholder:"Details of the post" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.submit class:"btn btn-primary" %>
+      </div>
+    
     </div>
   </div>
-
- 
-  <div>
-    <%= f.label :Email %> 
-    <%= f.text_field :author_id, id: "Email", value: "test@email.com", readonly: true%>
-  </div>
-  
-  <%= f.submit %>
-  
-<script>
-  // $('create_form').on('change', '#Category'), function() {
-  // var category_id = $(this).val(); // save the category_id set in the first dropdown
-  // console.log(category_id);
-
-  // $.ajax({
-  //   url: "/post/" + category_id + "/get_subcategories", // a custom route, see routes.rb further down
-  //   type: "GET",
-  //   dataType: "script", // we expect a response in js format
-  //   data: { "category_id": category_id } // the only value we will need to get the subcategories
-  // });
-// };
-
-$('select')
-  .change(function(){
-    if ($("Category").context.forms.create_form[6]["0"].selected) {
-      console.log('item');
-    } else if ($("Category").context.forms.create_form[6]["1"].selected) {
-      console.log('event');
-      str = "<\%=f.select :subcategory, Post.get_event_subcategories, id: \"Subcategory\" \%>";
-      $("Subcategory").select(str);
-    } else if ($("Category").context.forms.create_form[6]["2"].selected) {
-      console.log('job');
-    }
-      
-  })
-  .change();
-  
-</script>
-  
 <% end %>
+</div>
 
 
+<script>
+$('#post_category').change(function() {
 
-<!--<div class="container">-->
-    
-<!--  <div class="row">-->
-<!--    <form method="post", action="create">-->
-        
-<!--      <div class="form-group">-->
-<!--          <label for="post">Upload Image</label>-->
-<!--          <input type="file" id="post_image" name="post[image]" accept="image/png,image/gif,image/jpeg" class="form-control"/>-->
-<!--      </div>-->
-
-<!--      <div class="form-group">-->
-<!--        <label for="post">Product Title</label>-->
-<!--        <input type="text" class="form-control" id="post_title" name="post[title]" placeholder="Enter title">-->
-<!--      </div>-->
-      
-<!--      <div class="form-group">-->
-<!--        <label for="post">Price</label>-->
-<!--        <input type="text" class="form-control" id="post_price" name="post[price]" placeholder="Enter price">-->
-<!--      </div>-->
-
-<!--      <div class="form-group">-->
-<!--        <label for="post">Description</label>-->
-<!--        <textarea class="form-control" id="post_description" name="post[description]"  placeholder="Please enter the details" rows="4"></textarea>-->
-<!--      </div>-->
-
-<!--      <div class="form-group">-->
-<!--        <label for="post">Category</label>-->
-<!--        <select class="selectpicker" id='post_category' name="post[category]">-->
-<!--          <option>item</option>-->
-<!--          <option>event</option>-->
-<!--          <option>other</option>-->
-<!--        </select>-->
-<!--      </div>-->
-
-<!--      <div class="form-group">-->
-<!--        <label for="post">Sub Category</label>-->
-<!--        <select class="selectpicker" id='post_subcategory' name="post[subcategory]">-->
-<!--          <optgroup label="Item">-->
-<!--            <option>Textbook</option>-->
-<!--            <option>Electronics</option>-->
-<!--          </optgroup>-->
-<!--          <optgroup label="Event">-->
-<!--            <option>Info Session</option>-->
-<!--            <option>Research opportunity</option>-->
-<!--          </optgroup>-->
-<!--          <option>other</option>-->
-<!--        </select>-->
-<!--      </div>-->
-
-<!--      <div class="form-group">-->
-<!--        <label for="post" class="col-sm-2 col-form-label">Contact Email</label>-->
-<!--        <div class="col-sm-10">-->
-<!--          <input type="text" readonly class="form-control-plaintext" id="post_author_id" name="post[author_id]" value="email@example.com">-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <button class="btn btn-primary" type="submit" name="commit">Post</button>-->
-
-<!--    </form>-->
-<!--  </div>-->
-<!--</div>-->
+  var category = $(this).val();
+  
+  $.ajax({
+      url: "/update_form_subcategory",
+      type: "GET",
+      data: { "category": category }
+  });
+});
+</script>

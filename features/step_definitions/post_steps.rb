@@ -8,5 +8,5 @@ Then /^(?:|I )should see "(.*)" in the field "(.*)"$/ do |val, field|
 end
 
 Then /^(?:|I )attach the file to "(.*)"$/ do |field|
-    attach_file(field, "app/assets/images/1.jpg")
+    attach_file(field, File.join(Rails.root, "public/images/post_default.png"))
 end

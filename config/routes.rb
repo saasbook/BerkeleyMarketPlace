@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :posts, except: [:destroy]
+  resources :users, except: [:destroy]
+  
   #post "/posts/create", to: :create, controller: 'post'
   post "/posts/new", to:"posts#create"
   post "/posts/create", to: "posts#create"
@@ -10,7 +16,9 @@ Rails.application.routes.draw do
   
   get "/filter" => 'application#filter', as: 'filter', format: 'js'
   
-  get "/get_subcategories" => 'posts#sub_categories', as: 'find_subcategories', format: "js"
+  get "/update_form_subcategory" => 'posts#update_form_subcategory', as: 'update_form_subcategory', format: 'js'
+  
+  get "/user/profile", to:"users#profile"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
