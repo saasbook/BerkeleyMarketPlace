@@ -8,7 +8,8 @@ class PostsController < ApplicationController
   def show 
     id = params[:id]
     @post = Post.find(id)
-    @user = User.find(@post.author_id)
+    @user = User.new(email: "test@berkeley.edu")
+    #@user = User.find(@post.author_id)
     
   end
   
@@ -44,11 +45,10 @@ class PostsController < ApplicationController
       
       render :new
     else
-      if @post.save
-        params[:id] = @post.id
-        redirect_to show
-      end
-    # after Create form post
+      @post.save!
+      params[:id] = @post.id
+      redirect_to show
+      # after Create form post
     end
   end
   
