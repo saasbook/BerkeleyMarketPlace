@@ -16,7 +16,9 @@
 <% if flash[:notice] %>
   <div class="row" id="flash">
 	   <div class="col-12">
-	     <h5><%= flash[:notice][0] %></h5>
+	     <% flash[:notice].each do |s| %>
+          <h5><%= s %></h5>
+        <% end %>
 	   </div>
   </div>
 <% end %>
