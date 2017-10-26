@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def show 
     id = params[:id]
     @post = Post.find(id)
-    @user = User.new(email: "test@berkeley.edu")
+    @user = User.find(@post.author_id)
     #@user = User.find(@post.author_id)
     
   end
@@ -17,14 +17,18 @@ class PostsController < ApplicationController
     @empty_subcategory = ["please select category"]
     @current_subcategory = nil
     @post = Post.new
+    @user = User.find(1) # temporary user placeholder
     # the Create Post page
   end
   
   def create
+    
+    user = User.find(1) # temporary user placeholder
+    
     params[:post][:release_time] = Time.now.getutc
     params[:post][:expire_time] = nil
     params[:post][:available] = true
-    params[:post][:author_id] = 233
+    params[:post][:author_id] = user.id
     @post = Post.new(post_params)
     
     if not @post.valid? # => false
@@ -45,10 +49,8 @@ class PostsController < ApplicationController
       
       render :new
     else
-      @post.save!
-      params[:id] = @post.id
-      redirect_to show
-      # after Create form post
+      @post.save! # should not error, because it is already valid
+      redirect_to action:"show", id: @post.id
     end
   end
   
