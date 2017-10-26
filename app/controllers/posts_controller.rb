@@ -12,6 +12,8 @@ class PostsController < ApplicationController
   
   def new
     @empty_subcategory = ["please select category"]
+    @current_subcategory = nil
+    @post = Post.new
     # the Create Post page
   end
   
@@ -24,28 +26,25 @@ class PostsController < ApplicationController
     
     if not @post.valid? # => false
       @error_message = @post.errors.messages
-      # if @error_message[:image].presence
-      #   flash[:notice] = @error_message[:image]
-      # end
-      # if @error_message[:price].presence
-      #   flash[:notice] = @error_message[:price]
-      # end
       if @error_message.presence
-        puts @error_message.values
+        #puts @error_message.values
         flash[:notice] = @error_message.values
         # for m in @error_message.values do
         #   flash[:notice] = m.joi
         # end
       end
-      @empty_subcategory = ["please select category"]
+      if @post.subcategory
+        @empty_subcategory = Post.get_subcategories(@post.category.to_sym)
+        @current_subcategory = @post.subcategory
+      else
+        @empty_subcategory = ["please select category"]
+      end
+      
       render :new
     else
       if @post.save
         params[:id] = @post.id
         redirect_to show
-      # else
-      #   flash[:notice] = "Error creating new Post!"
-      #   render :new
       end
     # after Create form post
     end

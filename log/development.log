@@ -6400,3 +6400,962 @@ Processing by PostsController#update_form_subcategory as JS
   Rendered posts/_subcategory.html.erb (0.3ms)
   Rendered posts/update_form_subcategory.js.erb (1.0ms)
 Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=event" for 73.231.214.119 at 2017-10-26 04:46:38 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"event"}
+  Rendered posts/_subcategory.html.erb (0.3ms)
+  Rendered posts/update_form_subcategory.js.erb (1.2ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 73.231.214.119 at 2017-10-26 04:47:53 +0000
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 04:47:53.825810' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (16.2ms)
+  Rendered layouts/_posts_grid.html.erb (17.0ms)
+  Rendered application/index.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for 73.231.214.119 at 2017-10-26 04:50:03 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-26 16:49:02 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (2.2ms)
+  [1m[35mPost Load (3.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 16:49:03.144786' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (68.2ms)
+  Rendered layouts/_posts_grid.html.erb (70.1ms)
+  Rendered application/index.html.erb within layouts/application (84.7ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 484ms (Views: 425.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/application.self-25386243e05e8284ac22c10507262851dbed6ff8b64b7c24029477b9718daa2e.js?body=1" for 136.152.142.96 at 2017-10-26 16:49:03 +0000
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 16:49:05 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (1.2ms)
+  Rendered posts/new.html.erb within layouts/application (32.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 102ms (Views: 101.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=event" for 136.152.142.96 at 2017-10-26 16:51:37 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"event"}
+  Rendered posts/_subcategory.html.erb (0.7ms)
+  Rendered posts/update_form_subcategory.js.erb (2.2ms)
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for 136.152.142.96 at 2017-10-26 16:51:49 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TWDkcjgNMDB+y/6Gh8yS8lE+R5von7voCnfwXg724iMCzGz7kH5M1NeLS62Q1kf5KlinvajyxT5BYjsxGCkM+g==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00000001f78ec8 @tempfile=#<Tempfile:/tmp/RackMultipart20171026-1757-ccfcz2.png>, @original_filename="5845e770fb0b0755fa99d7f4.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"5845e770fb0b0755fa99d7f4.png\"\r\nContent-Type: image/png\r\n">, "title"=>"happy", "price"=>"hi", "category"=>"event", "subcategory"=>"sports", "author_id"=>"test@email.com", "description"=>"terrible"}, "commit"=>"Save Post"}
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1757-1quurzj.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1757-1ryemld.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1757-1ryemld.png[0]'
+Command :: convert '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1757-1ryemld.png[0]' -auto-orient -filter Lanczos -resize "200x" -crop "200x200+0+0" +repage '/tmp/f4b26c4c871cca4427e9ed2e585e737c20171026-1757-z1bmbb'
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1757-1ey6cpt.png'
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (34.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 386ms (Views: 127.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/update_form_subcategory?category=item" for 136.152.142.96 at 2017-10-26 16:55:49 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"item"}
+  Rendered posts/_subcategory.html.erb (0.4ms)
+  Rendered posts/update_form_subcategory.js.erb (1.7ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 16:55:53 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E06gMu0XdP4coovPJ/KWCDoit9cthe+lQxo8PFpAoYpc4ii7RWQIGrXiPuQw6EMDQURX8W3okXMID/dTTJ9PUw==", "post"=>{"title"=>"happy", "price"=>"hi", "category"=>"item", "subcategory"=>"electronics", "author_id"=>"test@email.com", "description"=>"terrible"}, "commit"=>"Create Post"}
+  Rendered posts/_subcategory.html.erb (5.5ms)
+  Rendered posts/new.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `map' for "electronics":String
+Did you mean?  tap):
+    1: <div id = "subcat_select">
+    2:     <%= select "post", :subcategory, subcategory.map { |c| [c, c] },
+    3:         { include_blank: '- Select -' }, { class: "form-control" }%>
+    4: </div>
+  app/views/posts/_subcategory.html.erb:2:in `_app_views_posts__subcategory_html_erb__4065453918849063647_69941734242500'
+  app/views/posts/new.html.erb:56:in `block in _app_views_posts_new_html_erb__3896987035942728540_69941738618520'
+  app/views/posts/new.html.erb:12:in `_app_views_posts_new_html_erb__3896987035942728540_69941738618520'
+  app/controllers/posts_controller.rb:42:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 16:56:08 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=event" for 136.152.142.96 at 2017-10-26 16:56:40 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"event"}
+  Rendered posts/_subcategory.html.erb (0.5ms)
+  Rendered posts/update_form_subcategory.js.erb (1.8ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=item" for 136.152.142.96 at 2017-10-26 16:56:42 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"item"}
+  Rendered posts/_subcategory.html.erb (0.4ms)
+  Rendered posts/update_form_subcategory.js.erb (1.4ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=" for 136.152.142.96 at 2017-10-26 16:56:44 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>""}
+  Rendered posts/_subcategory.html.erb (1.8ms)
+  Rendered posts/update_form_subcategory.js.erb (2.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    1: <div id = "subcat_select">
+    2:     <%= select "post", :subcategory, subcategory.map { |c| [c, c] },
+    3:         { include_blank: '- Select -' }, { class: "form-control" }%>
+    4: </div>
+  app/views/posts/_subcategory.html.erb:2:in `_app_views_posts__subcategory_html_erb__4065453918849063647_23736100'
+  app/views/posts/update_form_subcategory.js.erb:2:in `_app_views_posts_update_form_subcategory_js_erb__281813912541356099_23816340'
+  app/controllers/posts_controller.rb:60:in `update_form_subcategory'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (13.7ms)
+
+
+Started GET "/update_form_subcategory?category=item" for 136.152.142.96 at 2017-10-26 16:56:46 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"item"}
+  Rendered posts/_subcategory.html.erb (0.3ms)
+  Rendered posts/update_form_subcategory.js.erb (1.1ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 16:56:49 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mz63yyXs0CGNquNPYM3/61CxR8iHFVHHNhr9Wd7I+qfUkj9CjZ+sxSTqVmR31yrgK9en7sd4LxF9DzY2yBcUfg==", "post"=>{"title"=>"Doge", "price"=>"hihi", "category"=>"item", "subcategory"=>"electronics", "author_id"=>"test@email.com", "description"=>""}, "commit"=>"Create Post"}
+  Rendered posts/_subcategory.html.erb (0.3ms)
+  Rendered posts/new.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=event" for 136.152.142.96 at 2017-10-26 16:57:53 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"event"}
+  Rendered posts/_subcategory.html.erb (0.4ms)
+  Rendered posts/update_form_subcategory.js.erb (1.2ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 16:57:56 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uwzsEejkN1IRJqfjzBbvuZYCfVF2Is3abDd0YhUxBKD0oGSYQJdLtrhmEsjbDDqy7WSddzZPswwnIr8NA+7qeQ==", "post"=>{"title"=>"Doge", "price"=>"hihi", "category"=>"event", "subcategory"=>"info session", "author_id"=>"test@email.com", "description"=>""}, "commit"=>"Create Post"}
+  Rendered posts/_subcategory.html.erb (3.1ms)
+  Rendered posts/new.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `map' for "info session":String
+Did you mean?  tap):
+    1: <div id = "subcat_select">
+    2:     <%= select "post", :subcategory, subcategory.map { |c| [c, c] },
+    3:         { include_blank: '- Select -' }, { class: "form-control" }%>
+    4: </div>
+  app/views/posts/_subcategory.html.erb:2:in `_app_views_posts__subcategory_html_erb__4065453918849063647_69941734242500'
+  app/views/posts/new.html.erb:56:in `block in _app_views_posts_new_html_erb__3896987035942728540_69941709329480'
+  app/views/posts/new.html.erb:12:in `_app_views_posts_new_html_erb__3896987035942728540_69941709329480'
+  app/controllers/posts_controller.rb:42:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.6ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-26 16:59:53 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 16:59:53.968782' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (14.0ms)
+  Rendered layouts/_posts_grid.html.erb (14.7ms)
+  Rendered application/index.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 16:59:55 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.9ms)
+  Rendered posts/new.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/_subcategory.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...ring' || subcategory instanceof String) ? subcategory : subc...
+...                               ^):
+  app/views/posts/_subcategory.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/views/posts/new.html.erb:56:in `block in _app_views_posts_new_html_erb__3896987035942728540_69941709329480'
+  app/views/posts/new.html.erb:12:in `_app_views_posts_new_html_erb__3896987035942728540_69941709329480'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.6ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:00:11 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (17.2ms)
+  Rendered posts/new.html.erb within layouts/application (19.8ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `typeof' for #<#<Class:0x00000002d8d6d0>:0x007f3926d62b88>):
+    1: <div id = "subcat_select">
+    2:     <%= select "post", :subcategory, (typeof subcategory === 'string') ? subcategory : subcategory.map { |c| [c, c] },
+    3:         { include_blank: '- Select -' }, { class: "form-control" }%>
+    4: </div>
+  app/views/posts/_subcategory.html.erb:2:in `_app_views_posts__subcategory_html_erb__4065453918849063647_69941718143940'
+  app/views/posts/new.html.erb:56:in `block in _app_views_posts_new_html_erb__3896987035942728540_69941709329480'
+  app/views/posts/new.html.erb:12:in `_app_views_posts_new_html_erb__3896987035942728540_69941709329480'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.1ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:00:41 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (25.9ms)
+  Rendered posts/new.html.erb within layouts/application (29.9ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `_' for #<#<Class:0x00000002d8d6d0>:0x007f3924f89e40>):
+    1: <div id = "subcat_select">
+    2:     <%= select "post", :subcategory, _.isString(subcategory) ? subcategory : subcategory.map { |c| [c, c] },
+    3:         { include_blank: '- Select -' }, { class: "form-control" }%>
+    4: </div>
+  app/views/posts/_subcategory.html.erb:2:in `_app_views_posts__subcategory_html_erb__4065453918849063647_69941704568180'
+  app/views/posts/new.html.erb:56:in `block in _app_views_posts_new_html_erb__3896987035942728540_69941709329480'
+  app/views/posts/new.html.erb:12:in `_app_views_posts_new_html_erb__3896987035942728540_69941709329480'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.3ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:01:24 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (1.1ms)
+  Rendered posts/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:01:33 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.5ms)
+  Rendered posts/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=event" for 136.152.142.96 at 2017-10-26 17:01:37 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"event"}
+  Rendered posts/_subcategory.html.erb (1.2ms)
+  Rendered posts/update_form_subcategory.js.erb (3.0ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 17:01:44 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x4iOyzUmoStRDnlFQvu8UzP2afoZP2BgP77jnWxKWBqIJAZCnVXdz/hOzG5V4WlYSJCJ3FlSHrZ0qyjyepW2ww==", "post"=>{"title"=>"", "price"=>"hehe", "category"=>"event", "subcategory"=>"info session", "author_id"=>"test@email.com", "description"=>""}, "commit"=>"Create Post"}
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-26 17:02:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.1ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 17:02:21.870344' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (35.7ms)
+  Rendered layouts/_posts_grid.html.erb (36.7ms)
+  Rendered application/index.html.erb within layouts/application (43.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 300ms (Views: 262.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:02:24 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.6ms)
+  Rendered posts/new.html.erb within layouts/application (21.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=item" for 136.152.142.96 at 2017-10-26 17:02:32 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"item"}
+  Rendered posts/_subcategory.html.erb (0.5ms)
+  Rendered posts/update_form_subcategory.js.erb (1.7ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 17:02:36 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rOPF0yI5axD1bygkeFJrc+Jgknez+9pShw51yq+KClTjT01aikoX9FwvnQ9vSL54mQZyUfOWpITMG76luVXkjQ==", "post"=>{"title"=>"Doge", "price"=>"hihi", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com", "description"=>""}, "commit"=>"Create Post"}
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-26 17:04:10 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 17:04:10.543402' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (18.8ms)
+  Rendered layouts/_posts_grid.html.erb (19.4ms)
+  Rendered application/index.html.erb within layouts/application (21.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 72ms (Views: 70.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:04:12 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (28.8ms)
+  Rendered posts/new.html.erb within layouts/application (31.9ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007f2e309c2fd8>:0x007f2e31d99368>):
+    1: <div id = "subcat_select">
+    2:     <%= f.select "post", :subcategory,  subcategory,
+    3:     # subcategory.map { |c| [c, c] },
+    4:         { include_blank: '- Select -' }, { class: "form-control" }%>
+    5: </div>
+  app/views/posts/_subcategory.html.erb:2:in `_app_views_posts__subcategory_html_erb__3822879608808109280_69918190043800'
+  app/views/posts/new.html.erb:56:in `block in _app_views_posts_new_html_erb___3149381170397188340_69918180320760'
+  app/views/posts/new.html.erb:12:in `_app_views_posts_new_html_erb___3149381170397188340_69918180320760'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:05:52 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.8ms)
+  Rendered posts/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=event" for 136.152.142.96 at 2017-10-26 17:06:04 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"event"}
+  Rendered posts/_subcategory.html.erb (0.7ms)
+  Rendered posts/update_form_subcategory.js.erb (1.5ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 17:06:13 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ftlkbPtPam7zL2a6nVSVYBPbHfPnL9Zkg3Fvrl299AExdezlUzwWilpv05GKTkBraL391adCqLLIZKTBS2Ia2A==", "post"=>{"title"=>"er", "price"=>"er", "category"=>"event", "subcategory"=>"performance", "author_id"=>"test@email.com", "description"=>"hiiiii"}, "commit"=>"Create Post"}
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-26 17:06:57 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 17:06:57.564391' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (21.9ms)
+  Rendered layouts/_posts_grid.html.erb (22.6ms)
+  Rendered application/index.html.erb within layouts/application (24.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 55ms (Views: 48.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:06:59 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=event" for 136.152.142.96 at 2017-10-26 17:07:05 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"event"}
+  Rendered posts/_subcategory.html.erb (0.3ms)
+  Rendered posts/update_form_subcategory.js.erb (1.4ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 17:07:08 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wVX98hLlFEMQQpB1sz9IJkxMx6ZFZaniG8EPFTInDTKO+XV7upZop7kCJV6kJZ0tNyongAUI1zRQ1MR6JPjj6w==", "post"=>{"title"=>"hiiiii", "price"=>"er", "category"=>"event", "subcategory"=>"info session", "author_id"=>"test@email.com", "description"=>""}, "commit"=>"Create Post"}
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-26 17:10:00 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 17:10:00.646653' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (22.2ms)
+  Rendered layouts/_posts_grid.html.erb (22.9ms)
+  Rendered application/index.html.erb within layouts/application (25.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 57ms (Views: 48.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:10:06 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 26ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=item" for 136.152.142.96 at 2017-10-26 17:10:40 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"item"}
+  Rendered posts/_subcategory.html.erb (0.5ms)
+  Rendered posts/update_form_subcategory.js.erb (1.8ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 17:10:47 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h64BUD6AyzX56cWJ5bQNVq1iHzwNLcn+0SCHRa5TpzDIAonZlvO30VCpcKLyrthd1gT/Gk1AtyiaNUwquIxJ6Q==", "post"=>{"title"=>"errr", "price"=>"err", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com", "description"=>""}, "commit"=>"Create Post"}
+  Rendered posts/_subcategory.html.erb (0.3ms)
+  Rendered posts/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-26 17:16:29 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 17:16:29.939329' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (20.9ms)
+  Rendered layouts/_posts_grid.html.erb (21.6ms)
+  Rendered application/index.html.erb within layouts/application (23.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 54ms (Views: 47.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:16:32 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting =>
+...", placeholder="title" required);@output_buffer.safe_append='
+...                               ^):
+  app/views/posts/new.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting =>
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:17:48 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 17:18:11 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VAzT8EfBtRzJ2qEsJbIarO3L993m9DYIm48prBlBMscboFt577LJ+GCaFAcyqM+nlq0X+6aZSN7QmuLDD57cHg==", "post"=>{"title"=>"33333333333333333333333333333333333333333333333333333", "price"=>"", "category"=>"", "subcategory"=>"", "author_id"=>"test@email.com", "description"=>""}, "commit"=>"Create Post"}
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-26 17:24:22 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 17:24:22.954877' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (17.4ms)
+  Rendered layouts/_posts_grid.html.erb (18.0ms)
+  Rendered application/index.html.erb within layouts/application (20.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:24:24 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:28:02 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.3ms)
+  Rendered posts/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 17:28:17 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jvZqM1VkpzQycTQ4iOJT2U80D+jTMCw8HvrUmzT2fOHBWuK6/Rfb0JsxgROf+IbSNFLvzpNdUupV7x/0IimSOA==", "post"=>{"title"=>"300000000000000000000000000000", "price"=>"", "category"=>"", "subcategory"=>"", "author_id"=>"test@email.com", "description"=>""}, "commit"=>"Create Post"}
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:30:08 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:73: syntax error, unexpected tIDENTIFIER, expecting ')'
+...: "form-control", rows: "10"， required: true, minlength: "...
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:73: Can't assign to true
+..., rows: "10"， required: true, minlength: "0", maxlength: "...
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:73: syntax error, unexpected ',', expecting ')'
+...required: true, minlength: "0", maxlength: "512" );@output_b...
+...                               ^):
+  app/views/posts/new.html.erb:73: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/posts/new.html.erb:73: Can't assign to true
+  app/views/posts/new.html.erb:73: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.5ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:30:57 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:73: syntax error, unexpected tIDENTIFIER, expecting ')'
+...: "form-control", rows: "10"， required: true, number: "512...
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:73: Can't assign to true
+..., rows: "10"， required: true, number: "512" );@output_buff...
+...                               ^):
+  app/views/posts/new.html.erb:73: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/posts/new.html.erb:73: Can't assign to true
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.8ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:31:39 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:73: syntax error, unexpected tIDENTIFIER, expecting ')'
+...: "form-control", rows: "10"， required: true, maxlength: "...
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:73: Can't assign to true
+..., rows: "10"， required: true, maxlength: "512" );@output_b...
+...                               ^):
+  app/views/posts/new.html.erb:73: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/posts/new.html.erb:73: Can't assign to true
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.8ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:33:41 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:33:44 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=event" for 136.152.142.96 at 2017-10-26 17:35:47 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"event"}
+  Rendered posts/_subcategory.html.erb (0.3ms)
+  Rendered posts/update_form_subcategory.js.erb (1.1ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 17:36:08 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rZldlyqgndq8tBaqHnRhTcqH30uy5J3pNgOKCioeKJniNdUegtPhPhX0o4EJbrRGseE/bfKJ4z99FkFlPMHGQA==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f2e204b2058 @tempfile=#<Tempfile:/tmp/RackMultipart20171026-1936-yh9q54.png>, @original_filename="5845e770fb0b0755fa99d7f4.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"5845e770fb0b0755fa99d7f4.png\"\r\nContent-Type: image/png\r\n">, "title"=>"30000000000000000000000000000000", "price"=>"", "category"=>"event", "subcategory"=>"performance", "author_id"=>"test@email.com", "description"=>"hi"}, "commit"=>"Create Post"}
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1936-172c3lo.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1936-vpibvm.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1936-vpibvm.png[0]'
+Command :: convert '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1936-vpibvm.png[0]' -auto-orient -filter Lanczos -resize "200x" -crop "200x200+0+0" +repage '/tmp/056a6a90e1962afd23bf7e8a1447d07220171026-1936-ysbnvq'
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1936-1360pxq.png'
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 368ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-26 17:37:09 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 17:37:09.629114' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (12.5ms)
+  Rendered layouts/_posts_grid.html.erb (13.1ms)
+  Rendered application/index.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:37:11 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (given 5, expected 1..4)):
+    48:       <!--  <div class="col-5">-->
+    49:           <div class="form-group">
+    50:             <%= f.label :category %> 
+    51:             <%= f.select :category, Post.get_categories.map { |c| [c.to_s, c.to_s] }, { include_blank: '- Select -' }, { class: "form-control" }, required: true%>
+    52:           </div>
+    53:         <!--</div>-->
+    54:         
+  app/views/posts/new.html.erb:51:in `block in _app_views_posts_new_html_erb___3149381170397188340_69918048132280'
+  app/views/posts/new.html.erb:12:in `_app_views_posts_new_html_erb___3149381170397188340_69918048132280'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.3ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:38:47 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/posts/new.html.erb:51: syntax error, unexpected ',', expecting =>
+...s.map { |c| [c.to_s, c.to_s] }, { include_blank: '- Select -...
+...                               ^
+/home/ubuntu/workspace/app/views/posts/new.html.erb:51: syntax error, unexpected ',', expecting ')'
+... include_blank: '- Select -' }, { class: "form-control" });@...
+...                               ^):
+  app/views/posts/new.html.erb:51: syntax error, unexpected ',', expecting =>
+  app/views/posts/new.html.erb:51: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.9ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:39:45 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.8ms)
+  Rendered posts/new.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 41ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:39:57 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.8ms)
+  Rendered posts/new.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=item" for 136.152.142.96 at 2017-10-26 17:40:09 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"item"}
+  Rendered posts/_subcategory.html.erb (1.4ms)
+  Rendered posts/update_form_subcategory.js.erb (3.0ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:41:54 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 44ms (Views: 31.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:49:10 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.3ms)
+  Rendered posts/new.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=event" for 136.152.142.96 at 2017-10-26 17:52:12 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"event"}
+  Rendered posts/_subcategory.html.erb (0.3ms)
+  Rendered posts/update_form_subcategory.js.erb (1.2ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 17:52:19 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qJ8svN5ZECXOb01rc6A+Xd7/NNdX0Iz+lLiTERTgQ3rnM6Q1dipswWcv+EBkuutWpZnU8Re98ijfrVh+Aj+tow==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f2e32ffb218 @tempfile=#<Tempfile:/tmp/RackMultipart20171026-1936-1derwj.png>, @original_filename="5845e770fb0b0755fa99d7f4.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"5845e770fb0b0755fa99d7f4.png\"\r\nContent-Type: image/png\r\n">, "title"=>"hii", "price"=>"er", "category"=>"event", "subcategory"=>"info session", "author_id"=>"test@email.com", "description"=>"hi"}, "commit"=>"Create Post"}
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1936-glwo7k.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1936-1anwksv.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1936-1anwksv.png[0]'
+Command :: convert '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1936-1anwksv.png[0]' -auto-orient -filter Lanczos -resize "200x" -crop "200x200+0+0" +repage '/tmp/6930a014c19082b1f614170fa355d01720171026-1936-1ep4lun'
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-1936-s1c421.png'
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 205ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 136.152.142.96 at 2017-10-26 17:55:12 +0000
+Processing by PostsController#index as HTML
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 17:55:12.577016' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (19.0ms)
+  Rendered layouts/_posts_grid.html.erb (19.6ms)
+  Rendered application/index.html.erb within layouts/application (21.4ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 17:55:14 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.4ms)
+  Rendered posts/new.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=event" for 136.152.142.96 at 2017-10-26 17:55:27 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"event"}
+  Rendered posts/_subcategory.html.erb (0.3ms)
+  Rendered posts/update_form_subcategory.js.erb (1.3ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-26 18:01:54 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered layouts/_sidebar.html.erb (1.4ms)
+  [1m[35mPost Load (5.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 18:01:54.902980' OR expire_time IS NULL)  [["available", "t"]]
+  Rendered layouts/_posts_list.html.erb (76.0ms)
+  Rendered layouts/_posts_grid.html.erb (77.0ms)
+  Rendered application/index.html.erb within layouts/application (84.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 493ms (Views: 455.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 18:01:57 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.7ms)
+  Rendered posts/new.html.erb within layouts/application (36.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 63ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=event" for 136.152.142.96 at 2017-10-26 18:02:08 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"event"}
+  Rendered posts/_subcategory.html.erb (0.6ms)
+  Rendered posts/update_form_subcategory.js.erb (1.8ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 18:03:34 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/update_form_subcategory?category=item" for 136.152.142.96 at 2017-10-26 18:03:44 +0000
+Processing by PostsController#update_form_subcategory as JS
+  Parameters: {"category"=>"item"}
+  Rendered posts/_subcategory.html.erb (0.3ms)
+  Rendered posts/update_form_subcategory.js.erb (1.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 136.152.142.96 at 2017-10-26 18:03:50 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FutP766BJF57v9hzHAddYu23CyQfIudKsRJY0dXmuoxZR8dmBvJYutL/bVgLHYhpltHrAl9PmZz6B5O+wzlUVQ==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007ff10895da70 @tempfile=#<Tempfile:/tmp/RackMultipart20171026-2500-zlmp0s.png>, @original_filename="5845e770fb0b0755fa99d7f4.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"5845e770fb0b0755fa99d7f4.png\"\r\nContent-Type: image/png\r\n">, "title"=>"hi", "price"=>"er", "category"=>"item", "subcategory"=>"book", "author_id"=>"test@email.com", "description"=>"er"}, "commit"=>"Create Post"}
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-2500-s9sc0x.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-2500-11glqks.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-2500-11glqks.png[0]'
+Command :: convert '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-2500-11glqks.png[0]' -auto-orient -filter Lanczos -resize "200x" -crop "200x200+0+0" +repage '/tmp/679f13d9e61c97ded053d0d6a2de89ca20171026-2500-16v1ywj'
+Command :: file -b --mime '/tmp/56b05d2ca42ddc3df8ee63abbd61504820171026-2500-18klv2z.png'
+  Rendered posts/_subcategory.html.erb (0.2ms)
+  Rendered posts/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 245ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 136.152.142.96 at 2017-10-26 18:06:38 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_subcategory.html.erb (0.4ms)
+  Rendered posts/new.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 70ms (Views: 69.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.96 at 2017-10-26 18:06:42 +0000
+Processing by ApplicationController#index as HTML
+  Rendered application/_sidebar.html.erb (1.4ms)
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND (expire_time > '2017-10-26 18:06:42.178074' OR expire_time IS NULL)[0m  [["available", "t"]]
+  Rendered application/_posts_list.html.erb (19.0ms)
+  Rendered application/_posts_grid.html.erb (20.4ms)
+  Rendered application/index.html.erb within layouts/application (24.2ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 48ms (Views: 46.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/filter?category=item" for 136.152.142.96 at 2017-10-26 18:06:43 +0000
+Processing by ApplicationController#filter as JS
+  Parameters: {"category"=>"item"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-26 18:06:43.777661' OR expire_time IS NULL)  [["available", "t"], ["category", "item"]]
+  Rendered application/_posts_list.html.erb (8.5ms)
+  Rendered application/filter.js.erb (10.5ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/filter?category=event" for 136.152.142.96 at 2017-10-26 18:06:44 +0000
+Processing by ApplicationController#filter as JS
+  Parameters: {"category"=>"event"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-26 18:06:44.583847' OR expire_time IS NULL)[0m  [["available", "t"], ["category", "event"]]
+  Rendered application/_posts_list.html.erb (9.7ms)
+  Rendered application/filter.js.erb (11.4ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/filter?category=job" for 136.152.142.96 at 2017-10-26 18:06:45 +0000
+Processing by ApplicationController#filter as JS
+  Parameters: {"category"=>"job"}
+  [1m[35mPost Load (1.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."available" = ? AND "posts"."category" = ? AND (expire_time > '2017-10-26 18:06:45.646194' OR expire_time IS NULL)  [["available", "t"], ["category", "job"]]
+  Rendered application/_posts_list.html.erb (19.2ms)
+  Rendered application/filter.js.erb (20.5ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 1.0ms)
