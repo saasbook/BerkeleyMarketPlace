@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def show 
     id = params[:id]
     @post = Post.find(id)
-    @user = User.new(email: "test@berkeley.edu")
+    @user = User.find(@post.author_id)
     #@user = User.find(@post.author_id)
     
   end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     params[:post][:release_time] = Time.now.getutc
     params[:post][:expire_time] = nil
     params[:post][:available] = true
-    params[:post][:author_id] = 233
+    params[:post][:author_id] = 1 # temporary author_id for all posts
     @post = Post.new(post_params)
     
     if not @post.valid? # => false
@@ -46,9 +46,7 @@ class PostsController < ApplicationController
       render :new
     else
       @post.save!
-      params[:id] = @post.id
-      redirect_to show
-      # after Create form post
+      redirect_to action:"show", id: @post.id
     end
   end
   
