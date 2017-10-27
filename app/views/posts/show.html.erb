@@ -24,7 +24,8 @@
            <h3>USD $<%= @post.price %></h3> 
            <p><%= @post.category %> / <%= @post.subcategory %> </p> 
            <p><%= if @post.available then 'Available' else 'Not available' end %> (released on: <%= @post.release_time%>) </p> 
-           <a href="mailto:<%= @user.email %>"> Contact: <%= @user.email %> </a>
+           <p>Contact: <%= current_user.name %></p>
+           <p>Email: <a href="mailto:<%= current_user.email %>"> <%= current_user.email %> </a></p>
            <p></p>
            <h3>Description</h3>
            <p><%= @post.description %></p> 

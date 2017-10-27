@@ -77,4 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
+  # must use https for login
+  config.force_ssl = true
+  
 end
