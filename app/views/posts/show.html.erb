@@ -4,9 +4,9 @@
       <div class="col-1"></div>
       <div class="col-10">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><%= link_to "Home", posts_path %>
+            <li class="breadcrumb-item"><a href="/">Home</a>
             <li class="breadcrumb-item"><%= link_to @post.category, filter_path(category: @post.category), remote: true %>
-            <li class="breadcrumb-item"><%= link_to @post.subcategory, filter_path(category: @post.subcategory), remote: true %>
+            <li class="breadcrumb-item"><%= link_to @post.subcategory, filter_path(category: @post.category, subcategory: @post.subcategory), remote: true %>
             <li class="breadcrumb-item active"><%= @post.title %>
           </ol>
       </div>
