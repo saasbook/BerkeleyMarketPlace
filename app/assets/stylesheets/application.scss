@@ -1,7 +1,9 @@
 
 @import "bootstrap";
 
-body {
+@import "login";
+
+#pageContent {
   padding-top: 100px;
 }
 
@@ -46,4 +48,10 @@ body {
 #flash div {
     text-align: center;
     color: red;
+}
+
+#login {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }

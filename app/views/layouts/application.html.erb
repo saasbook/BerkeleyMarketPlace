@@ -11,20 +11,29 @@
   <meta name=viewport content="width=device-width, initial-scale=1">
 </head>
 <body>
-<%= render "layouts/header" %>
-
-<% if flash[:notice] %>
-  <div class="row" id="flash">
+  
+  <% if current_user %>  
+  
+  <%= render "layouts/header" %>
+  
+  <% if flash[:notice] %>
+    <div class="row" id="flash">
 	   <div class="col-12">
-	     <% flash[:notice].each do |s| %>
-          <h5><%= s %></h5>
-        <% end %>
+     <% flash[:notice].each do |s| %>
+        <h5><%= s %></h5>
+      <% end %>
 	   </div>
+    </div>
+  <% end %>
+  
+  <div id="pageContent">
+    <%= yield %>
   </div>
-<% end %>
+  <%= render "layouts/footer" %>
+  
+  <% else %> 
+    <%= render "layouts/login" %>
+  <% end %> 
 
-<%= yield %>
-
-<%= render "layouts/footer" %>
 </body>
 </html>
