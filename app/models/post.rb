@@ -79,5 +79,9 @@ class Post < ActiveRecord::Base
     def self.get_all_valid_posts
        self.where(available:true).where("expire_time > ? OR expire_time IS ?", Time.now, nil) 
     end
-
+    
+    def self.get_user_posts author_id
+        self.where(author_id: author_id)
+    end
+    
 end

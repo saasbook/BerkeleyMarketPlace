@@ -1,6 +1,14 @@
-
-</div class="container" id="new">
-<!--<div class="container">-->
+<div class="container">
+  
+  <!--header-->
+  <div class="row">
+	  <div class="col-1"></div>
+	   <div class="col-10">
+	     <h3>Post Something!</h3>
+	   </div>
+  </div>
+  <!--header-->
+  
   <%= form_for @post, :method => :post, :html => { :multipart => true } do |f| %>
   
 	<div class="row">
@@ -10,7 +18,9 @@
     <div class="col-4">
       <div class="form-group">
         <%= f.label :image %>
+        <div id="imagePreview" class="form-group">
         <img src="/images/post_default.png" class="img-fluid" alt="Responsive image">
+        </div>
         <%= f.file_field :image, id: "Image", class: "form-control", required: true %>
       </div>
     </div>  
@@ -79,6 +89,23 @@ $('#post_category').change(function() {
       url: "/update_form_subcategory",
       type: "GET",
       data: { "category": category }
+  });
+});
+
+$(function() {
+  $('#Image').on('change', function(event) {
+    var files = event.target.files;
+    var image = files[0]
+    var reader = new FileReader();
+    reader.onload = function(file) {
+      var img = new Image();
+      console.log(file);
+      img.src = file.target.result.replace("http", "https");
+      img.width = "350";
+      //img.height = "auto";
+      $('#imagePreview').html(img);
+    }
+    reader.readAsDataURL(image);
   });
 });
 </script>

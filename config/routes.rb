@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "/update_form_subcategory" => 'posts#update_form_subcategory', as: 'update_form_subcategory', format: 'js'
   
   get "/user/profile", to:"users#profile"
+  get "/user/mypost", to:"users#mypost"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

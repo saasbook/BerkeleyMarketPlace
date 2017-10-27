@@ -7,11 +7,22 @@
     
     <div class="col-lg-10">
         
+        <%= form_for :user, :method => :post, :html => { :multipart => true } do |f| %>
         <div class="form-group">
             <h4 class="my-4">Profile Image</h1>
-            <p><img src="/images/post_default.png" class="img-fluid" alt="Responsive image" width="200"></p>
-            <p><%= file_field :image, id: "Image", class: "form-control" %></p>
+            <div id="imagePreview" class="form-group">
+              <img src="/images/post_default.png" class="img-fluid" alt="Responsive image" width="350">
+            </div>
+            <div class="form-row">
+              <div class="col-5">
+                <%= f.file_field :image, class: "form-control" %>
+              </div>
+              <div class="col">
+                <%= f.submit "Save", class:"btn btn-primary" %>
+              </div>
+            </div>
         </div>
+        <% end %>
         
         <p></p>
         <h4>Email</h4>
@@ -23,3 +34,24 @@
     </div>
   </div>
 </div>
+
+
+
+<script>
+$(function() {
+  $('#user_image').on('change', function(event) {
+    var files = event.target.files;
+    var image = files[0]
+    var reader = new FileReader();
+    reader.onload = function(file) {
+      var img = new Image();
+      console.log(file);
+      img.src = file.target.result.replace("http", "https");
+      img.width = "350";
+      //img.height = "auto";
+      $('#imagePreview').html(img);
+    }
+    reader.readAsDataURL(image);
+  });
+});
+</script>
