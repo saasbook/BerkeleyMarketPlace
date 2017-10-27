@@ -33,6 +33,8 @@ gem 'sass-rails', '>= 3.2'
 # db cleaner for seed
 gem 'database_cleaner'
 
+gem "omniauth-google-oauth2", "~> 0.2.1"
+
 # web console, temporarily disabled for C9 dev environment
 # group :development do
 #   gem 'web-console', '~> 2.0'

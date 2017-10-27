@@ -1,21 +1,20 @@
 Rails.application.routes.draw do
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-  resources :posts, except: [:destroy]
-  resources :users, except: [:destroy]
   
-  #post "/posts/create", to: :create, controller: 'post'
-  post "/posts/new", to:"posts#create"
-  post "/posts/create", to: "posts#create"
-  # You can have the root of your site routed with "root"
+  # root
   root 'application#index'
+
+  # resources
+  resources :posts, except: [:index, :destroy]
+  resources :users, except: [:destroy]
+  resources :sessions, only: [:create, :destroy]
   
+  # authentication
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get '/logout', to: 'sessions#destroy', as: 'logout'
+  
+  # ajax calls
   get "/filter" => 'application#filter', as: 'filter', format: 'js'
-  
   get "/update_form_subcategory" => 'posts#update_form_subcategory', as: 'update_form_subcategory', format: 'js'
   
   get "/user/profile", to:"users#profile"
