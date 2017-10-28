@@ -1,6 +1,20 @@
 class User < ActiveRecord::Base
   
-    
+  
+  @@superusers = [
+    "yezhaoqin@berkeley.edu",
+    "marketplace@berkeley.edu"
+  ]
+  
+  def superuser?
+    @@superusers.include? email 
+  end
+  
+  def self.superusers
+    @@superusers
+  end
+  
+  
   validates_format_of :email, :with => /\A(.*)@berkeley.edu\z/i
   
   def self.from_omniauth(auth)

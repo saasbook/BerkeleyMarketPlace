@@ -9,8 +9,6 @@ class PostsController < ApplicationController
     id = params[:id]
     @post = Post.find(id)
     @user = User.find(@post.author_id)
-    #@user = User.find(@post.author_id)
-    
   end
   
   def new
@@ -58,6 +56,25 @@ class PostsController < ApplicationController
     puts @selected_subcategory
     respond_to do |format|
       format.js
+    end
+  end
+  
+  def index
+    @categories = Post.get_categories
+    
+    category = params[:category]
+    subcategory = params[:subcategory]
+    
+    posts = Post.get_all_valid_posts
+    
+    if subcategory
+      posts = posts.where("category = ?", category)
+    end
+    
+    if subcategory
+      @posts = posts.where("subcategory = ?", subcategory)
+    else
+      @posts = posts
     end
   end
   
