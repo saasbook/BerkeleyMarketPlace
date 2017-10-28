@@ -58,12 +58,20 @@ class UsersController < ApplicationController
     end
     
     def profile
+        @current_user ||= User.find(session[:user_id]) if session[:user_id]
+        if @current_user.image.url.nil?
+            @profile_img = "/images/post_default.png"
+        else
+            @profile_img = current_user.image.url(:medium)
+        end
     end
     
     def update_profile_pic
-        @profile_pic = params[:image]
-        puts(current_user.image)
-        current_user.update_attribute(:image, params[:image])
+        @profile_pic = params[:user][:image]
+        @current_user ||= User.find(session[:user_id]) if session[:user_id]
+        @current_user.update_attribute(:image, @profile_pic)
+        @current_user.save!
+        redirect_to action:"profile"
     end
     
     def mypost

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025073436) do
+ActiveRecord::Schema.define(version: 20171028212304) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -37,9 +37,17 @@ ActiveRecord::Schema.define(version: 20171025073436) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "email"
+    t.string   "profile_img_file_name"
+    t.string   "profile_img_content_type"
+    t.integer  "profile_img_file_size"
+    t.datetime "profile_img_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

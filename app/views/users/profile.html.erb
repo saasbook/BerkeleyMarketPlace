@@ -9,10 +9,12 @@
         
         <%= form_for :user, :method => :post, :html => { :multipart => true } do |f| %>
         <div class="form-group">
+          
             <h4 class="my-4">Profile Image</h1>
             <div id="imagePreview" class="form-group">
-              <img src="/images/post_default.png" class="img-fluid" alt="Responsive image" width="350">
+              <img><%= image_tag @profile_img, class: "img-fluid", alt: "Responsive image", width:  "350"%></img>  
             </div>
+            
             <div class="form-row">
               <div class="col-4">
                 <%= f.file_field :image, class: "form-control" %>

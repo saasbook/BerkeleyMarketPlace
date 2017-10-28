@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
                     :path => ':id/:style/:filename',
                     :styles => {
                         :thumb => "200x200#",
+                        :medium => "350x350#",
                     },
                     :default_url => "/images/post_default.png"
                       
