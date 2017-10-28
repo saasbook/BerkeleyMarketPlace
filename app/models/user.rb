@@ -3,7 +3,14 @@ class User < ActiveRecord::Base
   
   @@superusers = [
     "yezhaoqin@berkeley.edu",
-    "marketplace@berkeley.edu"
+    "hyy@berkeley.edu",
+    "yqteng@berkeley.edu",
+    "shuyindeng@berkeley.edu",
+    "yaoge@berkeley.edu",
+    "jiazhen.chen@berkeley.edu",
+    "foo@berkeley.edu",
+    "estherouyang@berkeley.edu",
+    "yehaolan@berkeley.edu"
   ]
   
   def superuser?
