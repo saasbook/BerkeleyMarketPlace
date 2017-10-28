@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
     validates_attachment :image,
                      content_type: { content_type: /\Aimage\/.*\z/ },
                      size: { less_than: 1.megabyte }
-    
+        
     @@categories = {
         item: [
             "book",
@@ -53,22 +53,6 @@ class Post < ActiveRecord::Base
         @@categories.keys
     end
     
-    def self.get_all_subcategories
-        # list = []
-        # for k in @@categories.keys
-        #     list += @@categories[k]
-        # end
-        # list
-        @@categories[:item]
-    end
-    
-    def self.get_event_subcategories
-       @@categories[:event] 
-    end
-    
-    def self.get_job_subcategories
-       @@categories[:job] 
-       
     def self.get_empty_subcategory
         @@empty_subcategory
     end
@@ -85,9 +69,8 @@ class Post < ActiveRecord::Base
        self.where(available:true).where("expire_time > ? OR expire_time IS ?", Time.now, nil) 
     end
     
-    def self.get_user_posts author_id
-        self.where(author_id: author_id)
-    end
+#     def self.get_user_posts author_id
+#         self.where(author_id: author_id)
+#     end
 
-end
 end
