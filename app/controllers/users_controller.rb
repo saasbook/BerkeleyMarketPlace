@@ -1,12 +1,7 @@
 class UsersController < ApplicationController
     
     helper_method :check_superuser
-    helper_method :current_user
 
-    def current_user
-        @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    end
-    
     def check_superuser
         if not current_user.superuser?
             flash[:notice] = "You are not allowed to access the page"
@@ -58,7 +53,7 @@ class UsersController < ApplicationController
     end
     
     def profile
-        @current_user ||= User.find(session[:user_id]) if session[:user_id]
+        @current_user = current_user
         if @current_user.image.url.nil?
             @profile_img = "/images/post_default.png"
         else
@@ -68,7 +63,7 @@ class UsersController < ApplicationController
     
     def update_profile_pic
         @profile_pic = params[:user][:image]
-        @current_user ||= User.find(session[:user_id]) if session[:user_id]
+        @current_user = current_user
         @current_user.update_attribute(:image, @profile_pic)
         @current_user.save!
         redirect_to action:"profile"

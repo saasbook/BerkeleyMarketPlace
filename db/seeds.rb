@@ -127,7 +127,7 @@ def generate_user_posts user
 end
 
 def generate_seed_user uid
-    user_info = { id: uid, email: "seed-user%d@berkeley.edu" % uid }
+    user_info = { id: uid, email: "seed-user%d@berkeley.edu" % uid, name: "seed-user %d" % uid  }
     User.create!(user_info)
     return user_info
 end

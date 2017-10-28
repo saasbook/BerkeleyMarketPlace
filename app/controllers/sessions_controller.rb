@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def create
     begin
       user = User.from_omniauth(env["omniauth.auth"])
+      puts "set user_id in session to <%s>" % user.email
       session[:user_id] = user.id
       redirect_to root_path
     rescue
