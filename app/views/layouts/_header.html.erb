@@ -16,6 +16,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/user/profile"><%= current_user.email %></a>
         </li>
+        <% if current_user.superuser? %>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Admin</a>
+          </li>
+        <% end %>
         <li class="nav-item">
           <a class="nav-link" href="/logout">Logout</a>
         </li>

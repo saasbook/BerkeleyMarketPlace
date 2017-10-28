@@ -47,6 +47,8 @@ class Post < ActiveRecord::Base
         ]
     }
     
+    @@empty_subcategory = ["please select subcategory"]
+    
     def self.get_categories
         @@categories.keys
     end
@@ -66,14 +68,17 @@ class Post < ActiveRecord::Base
     
     def self.get_job_subcategories
        @@categories[:job] 
+       
+    def self.get_empty_subcategory
+        @@empty_subcategory
     end
     
     def self.get_subcategories category
-        @@categories[category]
+        @@categories[category.to_sym]
     end
     
     def self.get_vaild_post category
-       self.where(available:true, category: category).where("expire_time > ? OR expire_time IS ?", Time.now, nil) 
+       self.where(available:true, category: category.to_sym).where("expire_time > ? OR expire_time IS ?", Time.now, nil) 
     end
     
     def self.get_all_valid_posts
@@ -83,5 +88,6 @@ class Post < ActiveRecord::Base
     def self.get_user_posts author_id
         self.where(author_id: author_id)
     end
-    
+
+end
 end

@@ -5,8 +5,8 @@
       <div class="col-10">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a>
-            <li class="breadcrumb-item"><%= link_to @post.category, filter_path(category: @post.category), remote: true %>
-            <li class="breadcrumb-item"><%= link_to @post.subcategory, filter_path(category: @post.category, subcategory: @post.subcategory), remote: true %>
+            <li class="breadcrumb-item"><%= link_to @post.category, posts_path(category: @post.category) %>
+            <li class="breadcrumb-item"><%= link_to @post.subcategory, posts_path(category: @post.category, subcategory: @post.subcategory) %>
             <li class="breadcrumb-item active"><%= @post.title %>
           </ol>
       </div>
@@ -24,8 +24,13 @@
            <h3>USD $<%= @post.price %></h3> 
            <p><%= @post.category %> / <%= @post.subcategory %> </p> 
            <p><%= if @post.available then 'Available' else 'Not available' end %> (released on: <%= @post.release_time%>) </p> 
-           <p>Contact: <%= current_user.name %></p>
-           <p>Email: <a href="mailto:<%= current_user.email %>"> <%= current_user.email %> </a></p>
+           <p>Contact: <%= @user.name %></p>
+           <p>Email: <a href="mailto:<%= @user.email %>"> <%= @user.email %> </a></p>
+           <% if current_user.superuser? %>
+             <a class="btn btn-primary btn-l js-scroll-trigger" href="/admin/check_posts">Status</a>
+             <a class="btn btn-primary btn-l js-scroll-trigger" href="/admin/check_posts">Remove</a>
+           <% end %>
+           <a class="btn btn-primary btn-l js-scroll-trigger" href="/admin/check_posts">Add to Wishlist</a>
            <p></p>
            <h3>Description</h3>
            <p><%= @post.description %></p> 
