@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
   
   def new
-    @empty_subcategory = ["please select category"]
+    @empty_subcategory = Post.get_empty_subcategory
     @current_subcategory = nil
     @post = Post.new
     # the Create Post page
@@ -29,17 +29,14 @@ class PostsController < ApplicationController
     if not @post.valid? # => false
       @error_message = @post.errors.messages
       if @error_message.presence
-        #puts @error_message.values
         flash[:notice] = @error_message.values
-        # for m in @error_message.values do
-        #   flash[:notice] = m.joi
-        # end
       end
+      
       if @post.subcategory
         @empty_subcategory = Post.get_subcategories(@post.category.to_sym)
         @current_subcategory = @post.subcategory
       else
-        @empty_subcategory = ["please select category"]
+        @empty_subcategory = Post.get_empty_subcategory
       end
       
       render :new
@@ -52,7 +49,13 @@ class PostsController < ApplicationController
   
   def update_form_subcategory
     category = params[:category]
-    @selected_subcategory = Post.get_subcategories(category.to_sym)
+    
+    if category == ""  # empty string, selected nothing
+      @selected_subcategory = Post.get_empty_subcategory
+    else
+      @selected_subcategory = Post.get_subcategories(category)
+    end
+    
     puts @selected_subcategory
     respond_to do |format|
       format.js
