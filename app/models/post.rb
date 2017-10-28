@@ -22,6 +22,7 @@ class Post < ActiveRecord::Base
     validates_attachment :image,
                      content_type: { content_type: /\Aimage\/.*\z/ },
                      size: { less_than: 1.megabyte }
+
         
     @@categories = {
         item: [
@@ -69,8 +70,8 @@ class Post < ActiveRecord::Base
        self.where(available:true).where("expire_time > ? OR expire_time IS ?", Time.now, nil) 
     end
     
-#     def self.get_user_posts author_id
-#         self.where(author_id: author_id)
-#     end
+    def self.get_user_posts user_id
+        result = self.where(author_id: user_id)
+    end
 
 end

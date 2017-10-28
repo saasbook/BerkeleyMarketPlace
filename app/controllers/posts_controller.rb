@@ -26,6 +26,8 @@ class PostsController < ApplicationController
     params[:post][:author_id] = current_user.id
     @post = Post.new(post_params)
     
+    #puts(current_user.id)
+    
     if not @post.valid? # => false
       @error_message = @post.errors.messages
       if @error_message.presence

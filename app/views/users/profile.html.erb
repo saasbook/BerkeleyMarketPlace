@@ -14,7 +14,7 @@
               <img src="/images/post_default.png" class="img-fluid" alt="Responsive image" width="350">
             </div>
             <div class="form-row">
-              <div class="col-5">
+              <div class="col-4">
                 <%= f.file_field :image, class: "form-control" %>
               </div>
               <div class="col">
@@ -24,14 +24,14 @@
         </div>
         <% end %>
         
-        <p></p>
         <h4>Email</h4>
-        <p>test@berkeley.edu</p> 
+        <p><%= current_user.email %></p> 
         <h4>Current Notification Preference</h4>
         <p>Please check back later.</p> 
         <h4>Subscription</h4>
         <p>Please check back later.</p> 
     </div>
+    
   </div>
 </div>
 

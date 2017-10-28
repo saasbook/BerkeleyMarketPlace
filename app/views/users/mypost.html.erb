@@ -6,7 +6,7 @@
     </div>
     
     <div class="col-lg-10">
-      <%= render partial: 'users/mypost_grid', locals: {posts: @mypost} %>
+      <%= render partial: @view_to_render, locals: {posts: @mypost} %>
     </div>
 
   </div>

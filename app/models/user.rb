@@ -1,5 +1,17 @@
 class User < ActiveRecord::Base
-  
+  has_attached_file :image,
+                    :storage => :cloudinary,
+                    :cloudinary_credentials => Rails.root.join("config/cloudinary.yml"),
+                    :path => ':id/:style/:filename',
+                    :styles => {
+                        :thumb => "200x200#",
+                    },
+                    :default_url => "/images/post_default.png"
+                      
+                      
+  validates_attachment :image,
+                    content_type: { content_type: /\Aimage\/.*\z/ },
+                    size: { less_than: 1.megabyte }  
   
   @@superusers = [
     "yezhaoqin@berkeley.edu",
