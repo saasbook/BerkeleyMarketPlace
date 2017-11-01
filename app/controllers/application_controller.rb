@@ -14,8 +14,6 @@ class ApplicationController < ActionController::Base
   def can_visit_before_login
     (request.path == "/") || (request.path =~ /auth/)
   end
-    
-  
   
   def is_logged_in
     if current_user.nil? && !can_visit_before_login
@@ -47,31 +45,6 @@ class ApplicationController < ActionController::Base
   def index 
     @posts = Post.get_all_valid_posts
     @categories = Post.get_categories
-  end
-  
-  def search
-    @categories = Post.get_categories
-    
-    category = params[:category]
-    subcategory = params[:subcategory]
- 
-    if params.has_key?(:search_terms) #user is trying to search something
-       posts = Post.get_searched_posts(params[:search_terms])
-    else
-       posts = Post.get_all_valid_posts
-    end
-    
-    if subcategory
-      posts = posts.where("category = ?", category)
-    end
-    
-    if subcategory
-      @posts = posts.where("subcategory = ?", subcategory)
-    else
-      @posts = posts
-    end
-    # redirect_to root_path
-    
   end
   
   def filter

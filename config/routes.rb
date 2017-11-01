@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   resources :posts, except: [:destroy]
   resources :users, except: [:destroy]
   resources :sessions, only: [:create, :destroy]
-
-  get '/search' => 'application#search', as: 'search'
-
+  
   # posts
   get 'posts/:id/destroy', to: 'posts#destroy', as: 'post_destroy'
   
