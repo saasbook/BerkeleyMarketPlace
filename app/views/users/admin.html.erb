@@ -1,12 +1,27 @@
 <div class="container" id="homepage">
 
   <div class="row">
-    <div class="col-lg-2">
-      <%=render "users/admin_sidebar" %>
+    <div class="col-2"></div>
+    <div class="col-5">
+      <%= render partial: 'users/user_stats' %>
     </div>
-    
-    <div class="col-lg-10">
-      <%= render partial: 'users/admin_check_application' %>
+    <div class="col-5">
+      <%= render partial: 'users/post_stats' %>
     </div>
   </div>
+  
+  <div class="row">
+    <div class="col-6">
+      <%= render partial: 'graphs/post_condition' %>
+    </div>
+    <div class="col-6">
+      <%= render partial: 'graphs/category_condition' %>
+    </div>
+  </div>
+  
+  <!--<div class="row">-->
+  <!--  <div class="col-2"></div>-->
+    
+  <!--</div>-->
+  
 </div>

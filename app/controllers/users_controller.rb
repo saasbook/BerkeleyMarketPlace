@@ -1,46 +1,7 @@
 class UsersController < ApplicationController
     
-    # used for superuser
     def admin 
         check_superuser
-        # render application monitor by default
-        # redirect_to action: 'admin_check_application'
-    end
-    
-    def admin_check_application
-        
-        respond_to do |format|
-            format.json {
-                render :json => [1,2,3,4,5]
-            }
-        end
-    end
-    
-    def admin_check_users
-        
-        respond_to do |format|
-            format.json {
-                render :json => [1,2,3,4,5]
-            }
-        end
-    end
-    
-    def admin_check_posts
-        
-        respond_to do |format|
-            format.json {
-                render :json => [1,2,3,4,5]
-            }
-        end
-    end
-    
-    def admin_check_subscriptions
-        
-        respond_to do |format|
-            format.json {
-                render :json => [1,2,3,4,5]
-            }
-        end
     end
     
     def profile

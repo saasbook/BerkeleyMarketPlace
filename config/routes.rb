@@ -16,12 +16,11 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get '/logout', to: 'sessions#destroy', as: 'logout'
   
-  # superuser
+  # user
+  get "/user/profile", to:"users#profile"
+  post "/user/profile", to:"users#update_profile_pic"
+  get "/user/mypost", to:"users#mypost"
   get '/admin', to: 'users#admin', as: 'admin'
-  get '/admin/check_application', to: 'users#admin_check_application', format: 'json'
-  get '/admin/check_users', to: 'users#admin_check_users', format: 'json'
-  get '/admin/check_posts', to: 'users#admin_check_posts', format: 'json'
-  get '/admin/check_subscriptions', to: 'users#admin_check_subscriptions', format: 'json'
   
   # ajax calls
   get "/filter" => 'application#filter', as: 'filter', format: 'js'
@@ -32,5 +31,4 @@ Rails.application.routes.draw do
   post "/user/profile", to:"users#update_profile_pic"
   get "/user/mypost", to:"users#mypost"
   get '/user/posts/:id', to: 'posts#show'
-  
 end
