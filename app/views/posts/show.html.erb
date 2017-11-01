@@ -16,7 +16,7 @@
       <div class="col-1"></div>
       
       <div class="col-4">
-        <img><%= image_tag @post.image.url%></img> 
+        <img><%= image_tag safe_url(@post.image.url)%></img> 
       </div>
       
       <div class="col-6">

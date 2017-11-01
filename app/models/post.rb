@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
     validates :price, numericality: { message: "Please enter a valid price." }
     validates :author_id, presence: true
     validates :description, length: { maximum: 4096, message: "%{count} characters is the maximum allowed" }
+    validates :title, presence: true
     validates :title, length: { maximum: 128, message: "%{count} characters is the maximum allowed" }
     validates :category, presence: {message: "Please select category"}
     validates :subcategory, presence: {message: "Please select subcategory"}
@@ -62,7 +63,7 @@ class Post < ActiveRecord::Base
         @@categories[category.to_sym]
     end
     
-    def self.get_vaild_post category
+    def self.get_valid_post category
        self.where(available:true, category: category.to_sym).where("expire_time > ? OR expire_time IS ?", Time.now, nil) 
     end
     
