@@ -17,6 +17,31 @@ class ApplicationController < ActionController::Base
     @categories = Post.get_categories
   end
   
+  def search
+    @categories = Post.get_categories
+    
+    category = params[:category]
+    subcategory = params[:subcategory]
+ 
+    if params.has_key?(:search_terms) #user is trying to search something
+       posts = Post.get_searched_posts(params[:search_terms])
+    else
+       posts = Post.get_all_valid_posts
+    end
+    
+    if subcategory
+      posts = posts.where("category = ?", category)
+    end
+    
+    if subcategory
+      @posts = posts.where("subcategory = ?", subcategory)
+    else
+      @posts = posts
+    end
+    # redirect_to root_path
+    
+  end
+  
   def filter
     category = params[:category]
     if category == "all"
