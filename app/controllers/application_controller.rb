@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception unless Rails.env.test?
   # protect_from_forgery with: :null_session
   
-  helper_method :current_user, :check_superuser
+  helper_method :current_user, :check_superuser, :safe_url
 
   def current_user
     if Rails.env.test?
@@ -18,8 +18,15 @@ class ApplicationController < ActionController::Base
   
   def check_superuser
     if not current_user.superuser?
-      redirect_to controller: 'application', action: 'index', notice: "You are not allowed to access the page"
+      redirect_to("/", flash: { alert: "You are not allowed to access the page" })
     end
+  end
+  
+  def safe_url url
+    if not(url.include? "https")
+      url = url.sub("http", "https")
+    end
+    url
   end
 
   def index 
@@ -32,7 +39,7 @@ class ApplicationController < ActionController::Base
     if category == "all"
       @selected = Post.get_all_valid_posts
     else
-      @selected = Post.get_vaild_post(category)
+      @selected = Post.get_valid_post(category)
     end
     respond_to do |format|
       format.js

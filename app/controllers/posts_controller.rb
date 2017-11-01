@@ -1,5 +1,16 @@
 class PostsController < ApplicationController
   
+  helper_method :safe_url
+
+  def safe_url url
+    if not(url.include? "https")
+      url = url.sub("http", "https")
+    end
+    url
+  end
+  
+  
+  
   def post_params
     params.require(:post).permit(:title, :price, :description, :release_time,
     :expire_time,:author_id, :category, :subcategory, :available, :image)
@@ -105,7 +116,7 @@ class PostsController < ApplicationController
     check_superuser
     id = params[:id]
     Post.destroy(id)
-    redirect_to("/", flash: {notice: "Post #{id} is removed from the database by admin"})
+    redirect_to("/", flash: { notice: "Post #{id} is removed from the database by admin"})
   end
 
 end
