@@ -27,10 +27,9 @@
            <p>Contact: <%= @user.name %></p>
            <p>Email: <a href="mailto:<%= @user.email %>"> <%= @user.email %> </a></p>
            <% if current_user.superuser? %>
-             <a class="btn btn-primary btn-l js-scroll-trigger" href="/admin/check_posts">Status</a>
-             <%= link_to "Remove", post_destroy_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
+             <%= link_to "Remove by Admin", post_destroy_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
            <% end %>
-           <a class="btn btn-primary btn-l js-scroll-trigger" href="/admin/check_posts">Add to Wishlist</a>
+           <a class="btn btn-primary btn-l js-scroll-trigger" href="#">Add to Wishlist</a>
            <p></p>
            <h3>Description</h3>
            <p><%= @post.description %></p> 
