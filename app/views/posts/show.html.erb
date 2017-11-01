@@ -16,7 +16,7 @@
       <div class="col-1"></div>
       
       <div class="col-4">
-        <img><%= image_tag @post.image.url%></img> 
+        <img><%= image_tag safe_url(@post.image.url)%></img> 
       </div>
       
       <div class="col-6">
@@ -27,10 +27,9 @@
            <p>Contact: <%= @user.name %></p>
            <p>Email: <a href="mailto:<%= @user.email %>"> <%= @user.email %> </a></p>
            <% if current_user.superuser? %>
-             <a class="btn btn-primary btn-l js-scroll-trigger" href="/admin/check_posts">Status</a>
-             <a class="btn btn-primary btn-l js-scroll-trigger" href="/admin/check_posts">Remove</a>
+             <%= link_to "Remove by Admin", post_destroy_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
            <% end %>
-           <a class="btn btn-primary btn-l js-scroll-trigger" href="/admin/check_posts">Add to Wishlist</a>
+           <a class="btn btn-primary btn-l js-scroll-trigger" href="#">Add to Wishlist</a>
            <p></p>
            <h3>Description</h3>
            <p><%= @post.description %></p> 

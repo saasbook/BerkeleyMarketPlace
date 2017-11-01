@@ -16,17 +16,24 @@
   
   <%= render "layouts/header" %>
   
-  <% if flash[:notice] %>
-    <div class="row" id="flash">
-	   <div class="col-12">
-     <% flash[:notice].each do |s| %>
-        <h5><%= s %></h5>
-      <% end %>
-	   </div>
-    </div>
-  <% end %>
-  
   <div id="pageContent">
+    
+    <% if flash[:notice] %>
+      <div class="row" id="flash">
+  	   <div class="col-12">
+          <h5><%= flash[:notice] %></h5>
+  	   </div>
+      </div>
+    <% end %>
+    
+    <% if flash[:alert] %>
+      <div class="row" id="flash">
+  	   <div class="col-12">
+          <h5><%= flash[:alert] %></h5>
+  	   </div>
+      </div>
+    <% end %>
+    
     <%= yield %>
   </div>
   <%= render "layouts/footer" %>

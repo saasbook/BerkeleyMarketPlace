@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_attached_file :image,
                     :storage => :cloudinary,
                     :cloudinary_credentials => Rails.root.join("config/cloudinary.yml"),
-                    :path => ':id/:style/:filename',
+                    :path => ':id/user/:style/:filename',
                     :styles => {
                         :thumb => "200x200#",
                         :medium => "350x350#",

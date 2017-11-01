@@ -17,6 +17,10 @@ module NavigationHelpers
       
     when /^the create\s?page$/ then '/posts/new'
 
+    when /^the user\s?page$/ then '/user/profile'
+      
+    when /^the my post\s?page$/ then '/user/mypost'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

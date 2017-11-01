@@ -6,19 +6,19 @@ Feature: view and edit user profile
   
 Scenario: direct to user profile page
   Given I am on the home page
-  When I press "Account"
+  When I press "seed-user 1"
   Then I should be on the user page
-  Then I should see "testuser@berkeley.edu" in the field "Email"
+  Then I should see "seed-user1@berkeley.edu"
 
 Scenario: upload profile image
   Given I am on the user page
-  Then I upload image
+  Then I attach the file to "Profile Image"
   When I press "Save"
-  Then I should see image in the field "Photo"
+  # Then I should have image in the field "Profile Image"
 
 Scenario: check my posts
   Given I am on the user page
-  Then I press "My Posts"
-  Then I should be on the my posts page
+  Then I press "My Post"
+  Then I should be on the my post page
   Then I should see all my posts
   And I should see "Edit" under each post

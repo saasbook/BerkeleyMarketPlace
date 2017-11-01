@@ -1,6 +1,6 @@
 
 @import "bootstrap";
-
+@import "d3_timeseries";
 @import "login";
 
 #pageContent {
@@ -54,4 +54,10 @@
     margin: auto;
     width: 50%;
     padding: 10px;
+}
+
+#adminPage {
+    h2 {
+        margin: 50px 20px;
+    }
 }
