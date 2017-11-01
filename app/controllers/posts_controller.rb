@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   end
   
   
+  
   def post_params
     params.require(:post).permit(:title, :price, :description, :release_time,
     :expire_time,:author_id, :category, :subcategory, :available, :image)

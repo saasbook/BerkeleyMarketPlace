@@ -10,7 +10,7 @@ RSpec.describe PostsController, type: :controller do
 
 
   describe "create action" do
-    current_user = User.superusers[5]
+    #current_user = User.superusers[5]
     #puts(current_user)
     it "creates a new post in database" do
       post :create, post: { 
