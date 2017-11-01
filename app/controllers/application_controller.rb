@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   
   def check_superuser
     if not current_user.superuser?
-      redirect_to controller: 'application', action: 'index', notice: "You are not allowed to access the page"
+      redirect_to("/", flash: { alert: "You are not allowed to access the page" })
     end
   end
   
