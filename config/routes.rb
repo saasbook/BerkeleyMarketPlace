@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :users, except: [:destroy]
   resources :sessions, only: [:create, :destroy]
   
+  get '/search/:search_terms' => 'posts#search'
+  
   # authentication
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')

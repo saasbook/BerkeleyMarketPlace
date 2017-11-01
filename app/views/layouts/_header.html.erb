@@ -5,10 +5,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <form class="form-inline my-2 my-lg-0" id="navBarSearchForm">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search Something!" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go</button>
-      </form>
+
+      <%= form_tag("/search", method: "get") do %>
+        <%= label_tag(:search_terms, "Search here!") %>
+        <%= text_field_tag(:search_terms) %>
+        <%= submit_tag("GO") %>
+      <% end %>
+      
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
           <a class="nav-link" id="create_post" href="/posts/new">Post Now!</a>

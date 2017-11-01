@@ -69,7 +69,7 @@ class PostsController < ApplicationController
     
     category = params[:category]
     subcategory = params[:subcategory]
-    
+ 
     posts = Post.get_all_valid_posts
     
     if subcategory
@@ -83,7 +83,14 @@ class PostsController < ApplicationController
     end
   end
   
-  
+  def search
+    if params.has_key?(:search_terms) #user is trying to search something
+       @posts = Post.get_searched_posts
+    else
+       @posts = Post.get_all_valid_posts
+    end
+  end
+    
   
   def edit
     # the Edit Post page
