@@ -6,10 +6,20 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception unless Rails.env.test?
   # protect_from_forgery with: :null_session
   
-  helper_method :current_user
+  helper_method :current_user, :check_superuser
 
   def current_user
-    @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
+    if Rails.env.test?
+      @current_user = User.find_by_id(1)
+    else
+      @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
+    end
+  end
+  
+  def check_superuser
+    if not current_user.superuser?
+      redirect_to controller: 'application', action: 'index', notice: "You are not allowed to access the page"
+    end
   end
 
   def index 

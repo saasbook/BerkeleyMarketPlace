@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <h3>Statistics</h3>
+            <p>Total registered users: <%= User.count %> </p>
+            <p>Total posts: <%= Post.count %> </p>
+            <p>Total valid posts: <%= Post.get_all_valid_posts.count %> </p>
+            <p>Items: <%= Post.get_vaild_post(:item).count %> </p>
+            <p>Events: <%= Post.get_vaild_post(:event).count %> </p>
+            <p>Jobs: <%= Post.get_vaild_post(:job).count %> </p>
+        </div>
+        <div class="col-5">
+            <p>some plots</p>
+        </div>
+        
+    </div>
+</div>

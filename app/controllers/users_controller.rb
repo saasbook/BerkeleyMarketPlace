@@ -1,14 +1,5 @@
 class UsersController < ApplicationController
     
-    helper_method :check_superuser
-
-    def check_superuser
-        if not current_user.superuser?
-            flash[:notice] = "You are not allowed to access the page"
-            redirect_to controller: 'application', action: 'index'
-        end
-    end
-    
     # used for superuser
     def admin 
         check_superuser

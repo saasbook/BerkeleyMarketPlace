@@ -28,7 +28,7 @@
            <p>Email: <a href="mailto:<%= @user.email %>"> <%= @user.email %> </a></p>
            <% if current_user.superuser? %>
              <a class="btn btn-primary btn-l js-scroll-trigger" href="/admin/check_posts">Status</a>
-             <a class="btn btn-primary btn-l js-scroll-trigger" href="/admin/check_posts">Remove</a>
+             <%= link_to "Remove", post_destroy_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
            <% end %>
            <a class="btn btn-primary btn-l js-scroll-trigger" href="/admin/check_posts">Add to Wishlist</a>
            <p></p>

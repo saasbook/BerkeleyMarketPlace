@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :users, except: [:destroy]
   resources :sessions, only: [:create, :destroy]
   
+  # posts
+  get 'posts/:id/destroy', to: 'posts#destroy', as: 'post_destroy'
+  
   # authentication
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')

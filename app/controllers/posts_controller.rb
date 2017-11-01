@@ -72,7 +72,7 @@ class PostsController < ApplicationController
     
     posts = Post.get_all_valid_posts
     
-    if subcategory
+    if category
       posts = posts.where("category = ?", category)
     end
     
@@ -100,4 +100,12 @@ class PostsController < ApplicationController
       format.js
     end
   end
+  
+  def destroy
+    check_superuser
+    id = params[:id]
+    Post.destroy(id)
+    redirect_to("/", flash: {notice: "Post #{id} is removed from the database by admin"})
+  end
+
 end
