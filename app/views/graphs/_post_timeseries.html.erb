@@ -1,0 +1,40 @@
+<div id="postTimeseries"></div>
+
+
+<script>
+
+d3.select('#postTimeseries').html("");
+
+var releaseData = [];
+<% for hash in Post.get_release_timeseries do %>
+releaseData.push({ date: new Date('<%= hash[:date] %>'), total: <%= hash[:n] %> });
+<% end %>
+
+var itemData = [];
+<% for hash in Post.get_release_timeseries_of_category(:item) do %>
+itemData.push({ date: new Date('<%= hash[:date] %>'), item: <%= hash[:n] %> });
+<% end %>
+
+var eventData = [];
+<% for hash in Post.get_release_timeseries_of_category(:event) do %>
+eventData.push({ date: new Date('<%= hash[:date] %>'), event: <%= hash[:n] %> });
+<% end %>
+
+var jobData = [];
+<% for hash in Post.get_release_timeseries_of_category(:job) do %>
+jobData.push({ date: new Date('<%= hash[:date] %>'), job: <%= hash[:n] %> });
+<% end %>
+
+
+
+var chart = d3.timeseries()
+          .addSerie(releaseData,{x:'date',y:'total'},{color:"#D9661F"})
+          .addSerie(itemData,{x:'date',y:'item'},{color:"#00B0DA"})
+          .addSerie(eventData,{x:'date',y:'event'},{color:"#00A598"})
+          .addSerie(jobData,{x:'date',y:'job'},{color:"#859438"})
+          .yscale.domain([0])
+          .width(900)
+
+chart('#postTimeseries')
+
+</script>

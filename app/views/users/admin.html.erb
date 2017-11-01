@@ -1,5 +1,6 @@
-<div class="container" id="homepage">
-
+<div class="container" id="adminPage">
+  
+  <h2 class="text-center">Statistics Blocks</h2>
   <div class="row">
     <div class="col-2"></div>
     <div class="col-5">
@@ -10,6 +11,7 @@
     </div>
   </div>
   
+  <h2 class="text-center">Pie Charts</h2>
   <div class="row">
     <div class="col-6">
       <%= render partial: 'graphs/post_condition' %>
@@ -19,9 +21,13 @@
     </div>
   </div>
   
-  <!--<div class="row">-->
-  <!--  <div class="col-2"></div>-->
+  <h2 class="text-center">Time Series</h2>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <%= render partial: 'graphs/post_timeseries' %>
+    </div>
     
-  <!--</div>-->
+  </div>
   
 </div>

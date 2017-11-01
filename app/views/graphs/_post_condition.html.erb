@@ -1,11 +1,11 @@
-<div id="userAvailability"></div>
+<div id="postCondition"></div>
 
 <script>
 
 var validCount = <%= Post.get_all_valid_posts.count %>
 var totalCount = <%= Post.count %>
 
-var pie = new d3pie("userAvailability", {
+var pie = new d3pie("postCondition", {
 	"header": {
 		"title": {
 			"text": "Post Availability",
