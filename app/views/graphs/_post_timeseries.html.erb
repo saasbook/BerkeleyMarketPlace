@@ -5,35 +5,42 @@
 
 d3.select('#postTimeseries').html("");
 
-var releaseData = [];
+var data = [];
+var currentDate = new Date();
+var totalCount = 0;
+var itemCount = 0;
+var eventCount = 0;
+var jobCount = 0;
+
 <% for hash in Post.get_release_timeseries do %>
-releaseData.push({ date: new Date('<%= hash[:date] %>'), total: <%= hash[:n] %> });
+var newDate = new Date('<%= hash[:date].to_s %>');
+if (newDate.getTime() == currentDate.getTime()) { 
+  totalCount++; 
+  if ('<%= hash[:category] %>' == "item") { itemCount++; }
+  if ('<%= hash[:category] %>' == "event") { eventCount++; }
+  if ('<%= hash[:category] %>' == "job") { jobCount++; }
+} else {
+  data.push({date: currentDate, total: totalCount, item: itemCount, event: eventCount, job: jobCount});
+  currentDate = newDate;
+  totalCount = 1;
+  if ('<%= hash[:category] %>' == "item") { itemCount = 1; } else { itemCount = 0; }
+  if ('<%= hash[:category] %>' == "event") { eventCount = 1; } else { eventCount = 0; }
+  if ('<%= hash[:category] %>' == "job") { jobCount = 1; } else { jobCount = 0; }
+}
 <% end %>
 
-var itemData = [];
-<% for hash in Post.get_release_timeseries_of_category(:item) do %>
-itemData.push({ date: new Date('<%= hash[:date] %>'), item: <%= hash[:n] %> });
-<% end %>
-
-var eventData = [];
-<% for hash in Post.get_release_timeseries_of_category(:event) do %>
-eventData.push({ date: new Date('<%= hash[:date] %>'), event: <%= hash[:n] %> });
-<% end %>
-
-var jobData = [];
-<% for hash in Post.get_release_timeseries_of_category(:job) do %>
-jobData.push({ date: new Date('<%= hash[:date] %>'), job: <%= hash[:n] %> });
-<% end %>
-
+data.shift();
 
 
 var chart = d3.timeseries()
-          .addSerie(releaseData,{x:'date',y:'total'},{color:"#D9661F"})
-          .addSerie(itemData,{x:'date',y:'item'},{color:"#00B0DA"})
-          .addSerie(eventData,{x:'date',y:'event'},{color:"#00A598"})
-          .addSerie(jobData,{x:'date',y:'job'},{color:"#859438"})
+          .addSerie(data,{x:'date',y:'total'},{color:"#D9661F"})
+          .addSerie(data,{x:'date',y:'item'},{color:"#00B0DA"})
+          .addSerie(data,{x:'date',y:'event'},{color:"#00A598"})
+          .addSerie(data,{x:'date',y:'job'},{color:"#859438"})
           .yscale.domain([0])
           .width(900)
+          
+          
 
 chart('#postTimeseries')
 
