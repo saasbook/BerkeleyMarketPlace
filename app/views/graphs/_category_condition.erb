@@ -2,9 +2,9 @@
 
 <script>
 
-var itemCount = <%= Post.get_vaild_post(:item).count %>
-var eventCount = <%= Post.get_vaild_post(:event).count %>
-var jobCount = <%= Post.get_vaild_post(:job).count %>
+var itemCount = <%= Post.get_valid_post(:item).count %>
+var eventCount = <%= Post.get_valid_post(:event).count %>
+var jobCount = <%= Post.get_valid_post(:job).count %>
 
 
 var pie = new d3pie("categoryCondition", {
