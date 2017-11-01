@@ -74,5 +74,25 @@ class Post < ActiveRecord::Base
     def self.get_user_posts user_id
         result = self.where(author_id: user_id)
     end
+    
+    def self.get_release_timeseries
+        ps = self.select(:release_time).sort.map { |po| po.release_time.change(min:0) }
+        counts = Hash.new(0).tap { |h| ps.each { |po| h[po] += 1 } } 
+        array = []
+        counts.each do |k, v| 
+            array.push({date: k.to_s, n: v})
+        end
+        return array
+    end
+    
+    def self.get_release_timeseries_of_category category
+        ps = self.where("category = ?", category).select(:release_time).sort.map { |po| po.release_time.change(min:0) }
+        counts = Hash.new(0).tap { |h| ps.each { |po| h[po] += 1 } } 
+        array = []
+        counts.each do |k, v| 
+            array.push({date: k.to_s, n: v})
+        end
+        return array
+    end
 
 end

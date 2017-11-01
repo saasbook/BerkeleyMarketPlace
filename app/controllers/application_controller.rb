@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :null_session
   
   helper_method :current_user, :check_superuser, :safe_url
+  
+  before_filter :is_logged_in
+  
+  def is_logged_in
+    if current_user.nil? && request.path != "/"
+      redirect_to("/")
+    end
+  end
 
   def current_user
     if Rails.env.test?
