@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
 
   def index 
     @posts = Post.get_all_valid_posts
+    @paged_posts = Post.get_all_valid_posts.page params[:page]
     @categories = Post.get_categories
   end
   

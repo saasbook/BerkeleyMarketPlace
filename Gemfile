@@ -25,6 +25,9 @@ gem 'paperclip-cloudinary'
 gem 'carrierwave'
 gem 'cloudinary'
 
+# for homepage paging
+gem 'kaminari'
+
 # Bootstrap, can only use latest beta version for this rails version
 # gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap', '~> 4.0.0.beta'

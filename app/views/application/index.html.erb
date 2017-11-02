@@ -6,7 +6,8 @@
     </div>
     
     <div class="col-lg-10">
-      <%= render partial: 'layouts/posts_grid', locals: {posts: @posts} %>
+      <%= render partial: 'layouts/posts_grid', locals: {posts: @paged_posts} %>
+      <%= paginate @paged_posts %>
     </div>
   </div>
 </div>
