@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     id = params[:id]
     @post = Post.find(id)
     @user = User.find(@post.author_id)
+    @release_time_formatted = @post.release_time.strftime("(released %B %d, %Y, %I%p)")
   end
   
   def new
