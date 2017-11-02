@@ -72,14 +72,7 @@ class Post < ActiveRecord::Base
     end
     
     def self.get_searched_posts(search_terms)
-        #search_terms = search_terms.downcase
-        self.where(available:true).where("expire_time > ? OR expire_time IS ?", Time.now, nil).where("title LIKE :s OR category LIKE :s OR subcategory LIKE :s OR description LIKE :s", {:s => "%#{search_terms.downcase}%"})
-        
-        #where("expire_time > ? OR expire_time IS ?", Time.now, nil)
-        #where("title LIKE ?", "%#{search_terms}%")
-        #where("category LIKE ?", "%#{search_terms}%")
-        #where("subcategory LIKE ?", "%#{search_terms}%")
-        #where("description LIKE ?", "%#{search_terms}%")
+        self.where(available:true).where("expire_time > ? OR expire_time IS ?", Time.now, nil).where("title ILIKE :s OR category ILIKE :s OR subcategory ILIKE :s OR description ILIKE :s", {:s => "%#{search_terms.downcase}%"})
     end
     
     def self.get_user_posts user_id
