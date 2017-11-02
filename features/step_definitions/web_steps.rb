@@ -24,6 +24,12 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+Given /^following posts exist/ do |posts_table|
+  posts_table.hashes.each do |post|
+    Post.create post
+  end
+end
+
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
