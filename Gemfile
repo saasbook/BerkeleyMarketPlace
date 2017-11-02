@@ -36,8 +36,7 @@ gem 'database_cleaner'
 # authentication
 gem "omniauth-google-oauth2", "~> 0.2.1"
 
-# plotting
-gem "d3-rails"
+gem 'word_salad'
 
 # web console, temporarily disabled for C9 dev environment
 # group :development do
