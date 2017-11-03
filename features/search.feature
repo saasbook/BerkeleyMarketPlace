@@ -3,6 +3,10 @@ Feature: search posts in search bar
   I want to find relevant items or events
   By searching keywords in search bar
   
+Background:
+  Given I am on the home page
+  Then I login with correct normal email
+  
 Scenario: search for case insensitive substrings of post titles in search bar 
   Given I am on the home page
   When I fill in "search_terms" with "iclicker"

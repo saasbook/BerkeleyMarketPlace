@@ -3,13 +3,18 @@ Feature: create a new post
   As a seller
   So that I can sell my product
   I want to describe my product and post it to the website
+  
+  
+Background:
+  Given I am on the home page
+  Then I login with correct normal email
  
  
 Scenario: direct to create new post with setted email
   Given I am on the home page
   When I follow "Post Now!"
   Then I should be on the create page
-  Then I should see "seed-user1@berkeley.edu" in the field "Email"
+  Then I should see "marketplace.test@berkeley.edu" in the field "Email"
 
 Scenario: create a post
   Given I am on the create page
