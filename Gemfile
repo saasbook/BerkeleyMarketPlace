@@ -36,7 +36,10 @@ gem 'sass-rails', '>= 3.2'
 # db cleaner for seed
 gem 'database_cleaner'
 
+# authentication
 gem "omniauth-google-oauth2", "~> 0.2.1"
+
+gem 'word_salad'
 
 # web console, temporarily disabled for C9 dev environment
 # group :development do

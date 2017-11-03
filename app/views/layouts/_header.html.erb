@@ -14,7 +14,7 @@
           <a class="nav-link" id="create_post" href="/posts/new">Post Now!</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/user/profile"><%= current_user.email %></a>
+          <a class="nav-link" href="/user/profile"><%= current_user.name %></a>
         </li>
         <% if current_user.superuser? %>
           <li class="nav-item">
