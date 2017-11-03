@@ -33,13 +33,12 @@ gem 'kaminari'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'sass-rails', '>= 3.2'
 
-# db cleaner for seed
-gem 'database_cleaner'
-
 # authentication
 gem "omniauth-google-oauth2", "~> 0.2.1"
 
 gem 'word_salad'
+
+gem 'pg', '~> 0.20.0'
 
 # web console, temporarily disabled for C9 dev environment
 # group :development do
@@ -58,15 +57,9 @@ group :development, :test do
 
   gem 'guard-rspec'
 
-  # Use sqlite3 as the database for Active Record
-  # gem 'sqlite3'
-  gem 'pg'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
 group :production do
-  gem 'pg' # for Heroku deployment
   gem 'rails_12factor'
 end

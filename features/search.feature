@@ -11,8 +11,8 @@ Scenario: search for case insensitive substrings of post titles in search bar
   Given I am on the home page
   When I fill in "search_terms" with "iclicker"
   When I press "Go"
-  Then I should see "iClicker1 for sale"
-  And I should not see "concert ticket"
+  Then I should see "iClicker"
+  And I should not see "concert tickets"
   When I fill in "search_terms" with "xbox"
   When I press "Go"
   Then I should see "XBOX"
