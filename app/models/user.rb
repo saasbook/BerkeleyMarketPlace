@@ -24,10 +24,11 @@ class User < ActiveRecord::Base
     "foo@berkeley.edu",
     "estherouyang@berkeley.edu",
     "yehaolan@berkeley.edu"
-  ]
+  ] 
   
   def superuser?
     @@superusers.include? email 
+    
   end
   
   def self.superusers

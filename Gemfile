@@ -25,6 +25,9 @@ gem 'paperclip-cloudinary'
 gem 'carrierwave'
 gem 'cloudinary'
 
+# for homepage paging
+gem 'kaminari'
+
 # Bootstrap, can only use latest beta version for this rails version
 # gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap', '~> 4.0.0.beta'
@@ -36,8 +39,7 @@ gem 'database_cleaner'
 # authentication
 gem "omniauth-google-oauth2", "~> 0.2.1"
 
-# plotting
-gem "d3-rails"
+gem 'word_salad'
 
 # web console, temporarily disabled for C9 dev environment
 # group :development do
