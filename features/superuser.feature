@@ -4,15 +4,18 @@ Feature: login and authentication
   I want to manage all people's posts
   I can delete any post I want
   
-Scenario: prove login as a superuser
-  Given I am on the login page
-  When I logged in 
-  Then I should see 'Admin' button in header
-  
+Scenario: normal user cannot access admin page
+  When I go to the home page
+  Then I login with correct normal email
+  Then I should not see "Admin"
+  Then I go to the admin page
+  Then I should not see "Statistics"
+  And I should see "not allowed to access"
 
-Scenario: delete users' posts in details page
-  Given I am on the details page of 'iClicker'
-  Then I can see a 'Delete' button on the page
-  When I click the 'Delete' button
-  Then The post does not exist in the app
+Scenario: superuser can see admin page
+  When I go to the home page
+  Then I login with correct superuser email
+  Then I should see "Admin"
+  Then I go to the admin page
+  Then I should see "Statistics"
 

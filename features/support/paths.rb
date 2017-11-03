@@ -20,6 +20,8 @@ module NavigationHelpers
     when /^the user\s?page$/ then '/user/profile'
       
     when /^the my post\s?page$/ then '/user/mypost'
+      
+    when /^the admin\s?page$/ then '/admin'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
