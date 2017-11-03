@@ -51,4 +51,7 @@ class User < ActiveRecord::Base
     end
   end
     
+  def self.get_test_user
+    self.first
+  end
 end
