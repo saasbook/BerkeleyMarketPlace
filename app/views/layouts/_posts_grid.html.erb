@@ -1,4 +1,8 @@
 <div class="row" id="posts_grid">
-    <%= render partial: 'layouts/posts_list', locals: {posts: posts}  %>
-    <%= paginate posts %>
+    <div class="row">
+        <%= render partial: 'layouts/posts_list', locals: {posts: posts}  %>
+    </div>
+    <div class="row" id="post_page">
+        <%= paginate posts %>
+    </div>
 </div>
