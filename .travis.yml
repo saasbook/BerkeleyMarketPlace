@@ -4,6 +4,12 @@ rvm:
 before_script:
   - printf "\n" | pecl install imagick
 script: 
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - RAILS_ENV=test bundle exec rake db:create
   - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec cucumber
+  - RAILS_ENV=test bundle exec rake db:test:prepare
+  - RAILS_ENV=test bundle exec rspec
+  - RAILS_ENV=test bundle exec cucumber
+services:
+  - postgresql
