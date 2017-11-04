@@ -10,11 +10,5 @@ RSpec.describe UsersController, type: :controller do
       expect(controller.params[:image]).not_to eq nil
       #controller.params[:image].should eql 'Some Body'
     end  
-    
-    # it 'can update profile picture' do
-    #   post :profile, {:image => Rack::Test::UploadedFile.new('spec/controllers/images/doge.png', 'image/png')}
-    #   expect(response).to redirect_to("/users/profile")
-    # end 
-
   end
 end

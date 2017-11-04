@@ -23,8 +23,6 @@ Scenario: create a post
   And I fill in "Price" with "1"
   And I fill in "Description" with "In good quality"
   When I select "item" from "Category"
-  # And I wait 1 seconds
-  # Then I select "book" from subcategory
   Then I select "please select subcategory" from "Subcategory"
   When I press "Create Post"
   Then I should be on the details page for "Jack Ye"

@@ -81,18 +81,22 @@ class PostsController < ApplicationController
     subcategory = params[:subcategory]
     
     if params[:search_terms]
-      posts = Post.get_searched_posts(params[:search_terms]).page params[:page]
+      posts = Post.get_searched_posts(params[:search_terms])
     else
-      posts = Post.get_all_valid_posts.page params[:page]
+      posts = Post.get_all_valid_posts
     end
     
     if category
-      posts = posts.where("category = ?", category).page params[:page]
+      posts = posts.where("category = ?", category)
     end
     
     if subcategory
-      @posts = posts.where("subcategory = ?", subcategory).page params[:page]
+      posts = posts.where("subcategory = ?", subcategory)
     else
+      posts = posts
+    end
+    
+    if not posts.nil?
       @posts = posts.page params[:page]
     end
   end

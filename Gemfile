@@ -54,7 +54,7 @@ group :development, :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 3.6'
-
+  gem "factory_girl_rails"
   gem 'guard-rspec'
 
   gem 'spring'
