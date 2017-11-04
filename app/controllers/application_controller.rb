@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :check_superuser, :safe_url, :can_visit_before_login
   
   before_filter :is_logged_in
-  
+  skip_after_action :verify_same_origin_request
   
   def can_visit_before_login
     (request.path == "/") || (request.path =~ /auth/)
@@ -39,17 +39,17 @@ class ApplicationController < ActionController::Base
   end
 
   def index 
-    @posts = Post.get_all_valid_posts
-    @paged_posts = Post.get_all_valid_posts.page params[:page]
+    @posts = Post.get_all_valid_posts.page params[:page]
+    # @paged_posts = Post.get_all_valid_posts.page params[:page]
     @categories = Post.get_categories
   end
   
   def filter
     category = params[:category]
     if category == "all"
-      @selected = Post.get_all_valid_posts
+      @selected = Post.get_all_valid_posts.page params[:page]
     else
-      @selected = Post.get_valid_post(category)
+      @selected = Post.get_valid_post(category).page params[:page]
     end
     respond_to do |format|
       format.js

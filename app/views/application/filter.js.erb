@@ -1,3 +1,3 @@
 $("#posts_grid").html(
-    "<%= escape_javascript(render partial: 'layouts/posts_list', locals: { posts: @selected } ) %>"
+    "<%= escape_javascript(render partial: 'layouts/posts_list', locals: { posts: @selected } ) %><%= escape_javascript(paginate @selected, remote: true) %>"
 );
