@@ -34,16 +34,17 @@ RSpec.describe Post, type: :model do
   it "can search by keywords" do
       @posts = Post.get_searched_posts("iclicker")
       @posts.each do |valid_post|
-          expect(valid_post.title).to eq "iClicker1 for sale"
+          expect(valid_post.title).to eq "iClicker 1 for sale"
       end
   end
   
   it "can search by category" do
       @posts = Post.get_searched_posts("event")
-      @posts.each do |valid_post|
-          expect(valid_post.category).to eq "event"
-      end
+      @all_events = Post.get_valid_post(:event)
+      
+      @all_events.each do |valid_post|
+          expect(@posts).to include (valid_post)
+      end      
   end
-  
   
 end

@@ -104,6 +104,10 @@ RSpec.describe PostsController, type: :controller do
   end
   
   describe 'searching certain item' do
+    before :each do
+      session[:user_id] = 1
+    end
+    
     it 'calls the model method that performs search' do
       post :create, post: { 
           :title => 'iClicker1 for sale', 

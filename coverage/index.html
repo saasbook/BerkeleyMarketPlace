@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-04T00:16:50+00:00">2017-11-04T00:16:50+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-04T00:36:33+00:00">2017-11-04T00:36:33+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         16.52
+         16.63
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>30</td>
         <td>30</td>
         <td>0</td>
-        <td>63.1</td>
+        <td>63.0</td>
       </tr>
       
       <tr>
@@ -67,7 +67,7 @@
         <td>65</td>
         <td>48</td>
         <td>17</td>
-        <td>4.9</td>
+        <td>5.2</td>
       </tr>
       
       <tr>
@@ -137,7 +137,7 @@
         <td>30</td>
         <td>30</td>
         <td>0</td>
-        <td>11.0</td>
+        <td>11.1</td>
       </tr>
       
       <tr>
@@ -163,7 +163,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         18.67
+         18.8
        </span>
     </span> hits/line)
   </h2>
@@ -195,7 +195,7 @@
         <td>30</td>
         <td>30</td>
         <td>0</td>
-        <td>63.1</td>
+        <td>63.0</td>
       </tr>
       
       <tr>
@@ -205,7 +205,7 @@
         <td>65</td>
         <td>48</td>
         <td>17</td>
-        <td>4.9</td>
+        <td>5.2</td>
       </tr>
       
       <tr>
@@ -240,7 +240,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         12.32
+         12.38
        </span>
     </span> hits/line)
   </h2>
@@ -272,7 +272,7 @@
         <td>30</td>
         <td>30</td>
         <td>0</td>
-        <td>11.0</td>
+        <td>11.1</td>
       </tr>
       
       <tr>
@@ -586,8 +586,8 @@
           <code class="ruby">  def can_visit_before_login</code>
         </li>
       
-        <li class="covered" data-hits="57" data-linenumber="15">
-          <span class="hits">57</span>
+        <li class="covered" data-hits="55" data-linenumber="15">
+          <span class="hits">55</span>
           
           <code class="ruby">    (request.path == &quot;/&quot;) || (request.path =~ /auth/)</code>
         </li>
@@ -616,8 +616,8 @@
           <code class="ruby">    if current_user.nil? &amp;&amp; !can_visit_before_login</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="20">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="4" data-linenumber="20">
+          <span class="hits">4</span>
           
           <code class="ruby">      redirect_to(&quot;/&quot;)</code>
         </li>
@@ -646,8 +646,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="368" data-linenumber="25">
-          <span class="hits">368</span>
+        <li class="covered" data-hits="369" data-linenumber="25">
+          <span class="hits">369</span>
           
           <code class="ruby">    @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]</code>
         </li>
@@ -947,8 +947,8 @@
           <code class="ruby">  def post_params</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="13">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="13">
+          <span class="hits">12</span>
           
           <code class="ruby">    params.require(:post).permit(:title, :price, :description, :release_time,</code>
         </li>
@@ -1067,32 +1067,32 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="33">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="33">
+          <span class="hits">12</span>
           
           <code class="ruby">    params[:post][:release_time] = Time.now.getutc</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="34">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="34">
+          <span class="hits">12</span>
           
           <code class="ruby">    params[:post][:expire_time] = nil</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="35">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="35">
+          <span class="hits">12</span>
           
           <code class="ruby">    params[:post][:available] = true</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="36">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="36">
+          <span class="hits">12</span>
           
           <code class="ruby">    params[:post][:author_id] = current_user.id</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="37">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="37">
+          <span class="hits">12</span>
           
           <code class="ruby">    @post = Post.new(post_params)</code>
         </li>
@@ -1115,8 +1115,8 @@
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="41">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="41">
+          <span class="hits">12</span>
           
           <code class="ruby">    if not @post.valid? # =&gt; false</code>
         </li>
@@ -1205,14 +1205,14 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="56">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="56">
+          <span class="hits">4</span>
           
           <code class="ruby">      @post.save! # should not error, because it is already valid</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="57">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="57">
+          <span class="hits">4</span>
           
           <code class="ruby">      redirect_to action:&quot;show&quot;, id: @post.id</code>
         </li>
@@ -1337,8 +1337,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="78">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="78">
+          <span class="hits">7</span>
           
           <code class="ruby">    @categories = Post.get_categories</code>
         </li>
@@ -1349,14 +1349,14 @@
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="80">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="80">
+          <span class="hits">7</span>
           
           <code class="ruby">    category = params[:category]</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="81">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="81">
+          <span class="hits">7</span>
           
           <code class="ruby">    subcategory = params[:subcategory]</code>
         </li>
@@ -1367,14 +1367,14 @@
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="83">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="83">
+          <span class="hits">7</span>
           
           <code class="ruby">    if params[:search_terms]</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="84">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="84">
+          <span class="hits">7</span>
           
           <code class="ruby">      posts = Post.get_searched_posts(params[:search_terms])</code>
         </li>
@@ -1403,8 +1403,8 @@
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="89">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="89">
+          <span class="hits">7</span>
           
           <code class="ruby">    if category</code>
         </li>
@@ -1427,8 +1427,8 @@
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="93">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="93">
+          <span class="hits">7</span>
           
           <code class="ruby">    if subcategory</code>
         </li>
@@ -1445,8 +1445,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="96">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="96">
+          <span class="hits">7</span>
           
           <code class="ruby">      @posts = posts</code>
         </li>
@@ -2466,8 +2466,8 @@
           <code class="ruby">    def self.get_categories</code>
         </li>
       
-        <li class="covered" data-hits="78" data-linenumber="55">
-          <span class="hits">78</span>
+        <li class="covered" data-hits="79" data-linenumber="55">
+          <span class="hits">79</span>
           
           <code class="ruby">        @@categories.keys</code>
         </li>
@@ -2538,8 +2538,8 @@
           <code class="ruby">    def self.get_valid_post category</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="67">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="67">
+          <span class="hits">8</span>
           
           <code class="ruby">       self.where(available:true, category: category.to_sym).where(&quot;expire_time &gt; ? OR expire_time IS ?&quot;, Time.now, nil) </code>
         </li>
