@@ -1,7 +1,11 @@
 {
   "Cucumber Features": {
     "coverage": {
+<<<<<<< HEAD
       "/home/ubuntu/workspace/BerkeleyMarketPlace/app/models/post.rb": [
+=======
+      "/home/ubuntu/workspace/app/controllers/application_controller.rb": [
+>>>>>>> [feat] Starting a new feature  edit_post
         1,
         null,
         1,
@@ -38,11 +42,38 @@
         null,
         null,
         null,
+<<<<<<< HEAD
+        null,
+=======
+        null
+      ],
+      "/home/ubuntu/workspace/app/helpers/application_helper.rb": [
+        1,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/app/helpers/posts_helper.rb": [
+        1,
+>>>>>>> [feat] Starting a new feature  edit_post
         null,
         null,
         null,
         null,
-        null,
+<<<<<<< HEAD
+=======
+        null
+      ],
+      "/home/ubuntu/workspace/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/app/models/post.rb": [
+        1,
+>>>>>>> [feat] Starting a new feature  edit_post
         null,
         null,
         null,
@@ -149,7 +180,20 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/ubuntu/workspace/BerkeleyMarketPlace/app/controllers/application_controller.rb": [
+=======
+      "/home/ubuntu/workspace/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        26,
+        26,
+        25,
+        25,
+        25,
+        1,
+        1,
+>>>>>>> [feat] Starting a new feature  edit_post
         1,
         null,
         1,
@@ -160,6 +204,12 @@
         null,
         1,
         null,
+<<<<<<< HEAD
+=======
+        null
+      ],
+      "/home/ubuntu/workspace/app/models/user.rb": [
+>>>>>>> [feat] Starting a new feature  edit_post
         1,
         1,
         null,
@@ -251,7 +301,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/BerkeleyMarketPlace/app/controllers/posts_controller.rb": [
+      "/home/ubuntu/workspace/app/controllers/posts_controller.rb": [
         1,
         null,
         1,
@@ -380,7 +430,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/BerkeleyMarketPlace/app/controllers/users_controller.rb": [
+      "/home/ubuntu/workspace/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -417,6 +467,7 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1510343415
   },
   "RSpec": {
@@ -427,6 +478,34 @@
         1,
         1,
         1,
+=======
+    "timestamp": 1509762658
+  },
+  "RSpec": {
+    "coverage": {
+      "/home/ubuntu/workspace/app/helpers/application_helper.rb": [
+        1,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/app/helpers/posts_helper.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/app/controllers/posts_controller.rb": [
+>>>>>>> [feat] Starting a new feature  edit_post
         1,
         1,
         1,
@@ -510,7 +589,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/ubuntu/workspace/BerkeleyMarketPlace/app/models/user.rb": [
+=======
+      "/home/ubuntu/workspace/app/controllers/application_controller.rb": [
+>>>>>>> [feat] Starting a new feature  edit_post
         1,
         1,
         null,
@@ -549,6 +632,12 @@
         null,
         null,
         null,
+<<<<<<< HEAD
+=======
+        null
+      ],
+      "/home/ubuntu/workspace/app/controllers/sessions_controller.rb": [
+>>>>>>> [feat] Starting a new feature  edit_post
         1,
         null,
         1,
@@ -569,7 +658,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/ubuntu/workspace/BerkeleyMarketPlace/app/helpers/application_helper.rb": [
+=======
+      "/home/ubuntu/workspace/app/controllers/users_controller.rb": [
+>>>>>>> [feat] Starting a new feature  edit_post
         1,
         null,
         null
@@ -628,6 +721,13 @@
         8,
         8,
         null,
+<<<<<<< HEAD
+=======
+        null
+      ],
+      "/home/ubuntu/workspace/app/models/post.rb": [
+        1,
+>>>>>>> [feat] Starting a new feature  edit_post
         null,
         null,
         8,
@@ -737,6 +837,12 @@
         1,
         null,
         null,
+<<<<<<< HEAD
+=======
+        null
+      ],
+      "/home/ubuntu/workspace/app/models/user.rb": [
+>>>>>>> [feat] Starting a new feature  edit_post
         1,
         10,
         1,
@@ -837,6 +943,10 @@
         0
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1510340977
+=======
+    "timestamp": 1509762674
+>>>>>>> [feat] Starting a new feature  edit_post
   }
 }
