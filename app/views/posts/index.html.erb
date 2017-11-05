@@ -6,7 +6,6 @@
     </div>
     
     <div class="col-lg-10">
-      <h2>Found <%= @posts.length %> Posts</h2>
       <%= render partial: 'layouts/posts_grid', locals: {posts: @posts} %>
     </div>
   </div>

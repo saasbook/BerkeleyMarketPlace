@@ -21,7 +21,6 @@ Scenario: search for a word that is not a substring of post titles, nor a catego
   Given I am on the home page
   When I fill in "search_terms" with "RANDOMSTRINGTHATDOESNTEXIST"
   When I press "Go"
-  Then I should see "Found 0 Posts"
   Then I should not see any posts
 
 Scenario: search for nothing and press Go
