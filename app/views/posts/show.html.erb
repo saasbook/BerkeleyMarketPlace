@@ -22,7 +22,7 @@
        <h3>USD $<%= @post.price %></h3> 
        <p style="color:<%= if @post.available then 'green' else 'red' end %>"><%= if @post.available then 'Available' else 'Not available' end %> <%= @release_time_formatted%> </p> 
         
-       <p>Contact: <%= @user.name %>, <a href="mailto:<%= @user.email %>"> <%= @user.email %> </a></p>
+       <p>Contact: <a href="mailto:<%= @user.email %>"> <%= @user.email %> </a></p>
        <% if current_user.superuser? %>
          <%= link_to "Remove by Admin", post_destroy_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
        <% end %>
