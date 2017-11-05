@@ -64,15 +64,15 @@ class Post < ActiveRecord::Base
     end
     
     def self.get_valid_post category
-       self.where(available:true, category: category.to_sym).where("expire_time > ? OR expire_time IS ?", Time.now, nil) 
+       self.where(available: true, category: category.to_sym)
     end
     
     def self.get_all_valid_posts
-        self.where(available:true).where("expire_time > ? OR expire_time IS ?", Time.now, nil) 
+        self.where(available: true)
     end
     
     def self.get_searched_posts(search_terms)
-        self.where(available:true).where("expire_time > ? OR expire_time IS ?", Time.now, nil).where("title ILIKE :s OR category ILIKE :s OR subcategory ILIKE :s OR description ILIKE :s", {:s => "%#{search_terms.downcase}%"})
+        self.where(available: true).where("title ILIKE :s OR category ILIKE :s OR subcategory ILIKE :s OR description ILIKE :s", {:s => "%#{search_terms.downcase}%"})
     end
     
     def self.get_user_posts user_id
