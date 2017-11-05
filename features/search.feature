@@ -27,18 +27,18 @@ Scenario: search for a word that is not a substring of post titles, nor a catego
 Scenario: search for nothing and press Go
   Given I am on the home page
   When I press "Go"
-  Then I should see "USD"
+  Then I should see all posts
 
 Scenario: search category key words in search bar 
   Given I am on the home page
   When I fill in "search_terms" with "item"
   When I press "Go"
-  Then I should see "USD"
+  Then I should see all posts with category "item"
   
 Scenario: search subcategory key words in search bar 
   Given I am on the home page
   When I fill in "search_terms" with "electronics"
   When I press "Go"
-  Then I should see "USD"
+  Then I should see all posts with subcategory "electronics"
   
   

@@ -41,56 +41,48 @@ Then /the post does not exists any more/ do
   expect()
 end
 
-
-
-
 # Then /^I should have image in the field "(.*)"$/ do |field|
 #   file =  File.join(Rails.root, "public/images/post_default.png")
 #   assert file.exists()
 # end
 
+Then("I should see {int} pages of results") do |num_pages|
+    expect(page).to have_link("Last", href: "/posts?page=%s&search_terms=" %num_pages)
+end
 
+Then("I should see {int} results") do |num_results|
+    expect(page).to have_css('div.card', count=num_results)
+end
 
 Then /^(?:|I )should not see any posts$/ do
   page.should have_no_css('div.card')
 end
 
 Then /^(?:|I )should see all posts$/ do
-  Post.all.each do |post|
-    # byebug
-    if post.available == true 
-      if post.expire_time 
-        step %{I should see "#{post.title}"} unless post.expire_time.utc.strftime( "%H%M%S%N" ) < Time.now.utc.strftime( "%H%M%S%N" )
-      else
-        step %{I should see "#{post.title}"}
-      end
-    end
-  end
+  #for each of the posts that satisfy requirements, see it on one of the pages
+  step %{I should see #{Post.all.page.total_pages} pages of results}
 end
 
 Then /^(?:|I )should see all posts with category "(.*)"$/ do |searched_category|
-  Post.all.each do |post|
-    if post.category == searched_category and post.available == true
-      if post.expire_time 
-        step %{I should see "#{post.title}"} unless post.expire_time.utc.strftime( "%H%M%S%N" ) < Time.now.utc.strftime( "%H%M%S%N" )
-      else
-        step %{I should see "#{post.title}"}
-      end
-    end
+  num_from_db = Post.where("category = ? and available = ? and expire_time > ?", searched_category, true, Time.zone.now).count
+  if num_from_db >= Post.page.limit_value
+    num_pages = num_from_db.fdiv(Post.page.limit_value).ceil
+    step %{I should see #{num_pages} pages of results}
+  else
+    step %{I should see #{num_from_db} results}
   end
 end
 
 Then /^(?:|I )should see all posts with subcategory "(.*)"$/ do |searched_subcategory|
-  Post.all.each do |post|
-    if post.subcategory == searched_subcategory and post.available == true 
-      if post.expire_time 
-        step %{I should see "#{post.title}"} unless post.expire_time.utc.strftime( "%H%M%S%N" ) < Time.now.utc.strftime( "%H%M%S%N" )
-      else
-        step %{I should see "#{post.title}"}
-      end
-    end
+  num_from_db = Post.where("category = ? and available = ? and expire_time > ?", searched_subcategory, true, Time.zone.now).count
+  if num_from_db >= Post.page.limit_value
+    num_pages = num_from_db.fdiv(Post.page.limit_value).ceil
+    step %{I should see #{num_pages} pages of results}
+  else
+    step %{I should see #{num_from_db} results}
   end
 end
+
 
 
 
