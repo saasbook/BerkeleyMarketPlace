@@ -24,3 +24,13 @@ Scenario: edit my posts
   Then I should be on the details page
   And I should see "Yunyi Huang" in the field "Title"
   And I should not see "Jack Ye" in the field "Title"
+
+Scenario: mark my posts as unavailable
+  Given I create a test post
+  And I go to the user page
+  And I press "My Post"
+  Then I should see the test post
+  When I press "Set unavailable" for the test post
+  And I press the test post
+  Then I should see "Unavailable"
+  
