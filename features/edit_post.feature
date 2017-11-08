@@ -33,4 +33,3 @@ Scenario: mark my posts as unavailable
   When I press "Set unavailable" for the test post
   And I press the test post
   Then I should see "Unavailable"
-  
