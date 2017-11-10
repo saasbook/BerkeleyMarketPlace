@@ -7,6 +7,7 @@ Feature: login and authentication
 Scenario: normal user cannot access admin page
   When I go to the home page
   Then I login with correct normal email
+  Given there is an item
   Then I should not see "Admin"
   Then I go to the admin page
   Then I should not see "Statistics"
@@ -15,21 +16,23 @@ Scenario: normal user cannot access admin page
 Scenario: superuser can see admin page
   When I go to the home page
   Then I login with correct superuser email
+  Given there is an item
   Then I should see "Admin"
   Then I go to the admin page
   Then I should see "Statistics"
-  
 
 Scenario: superuser can delete post
   When I go to the home page
   Then I login with correct superuser email
-  Then I create a test post
+  Given there is an item
+  Then I go to the details page for "sample item title"
   Then I press "Remove by Admin"
   Then I should see "removed from the database"
   
 Scenario: normal user can delete post
   When I go to the home page
   Then I login with correct normal email
-  Then I create a test post
+  Given there is an item
+  Then I go to the details page for "sample item title"
   Then I should not see "Remove by Admin"
 

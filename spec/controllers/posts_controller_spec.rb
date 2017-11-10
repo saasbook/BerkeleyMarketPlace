@@ -11,135 +11,72 @@ RSpec.describe PostsController, type: :controller do
 
   describe "create action" do
     before :each do
+      create :user
       session[:user_id] = 1
     end
-    #current_user = User.superusers[5]
-    #puts(current_user)
+    
     it "creates a new post in database" do
-      post :create, post: { 
-          :title => 'Sample Post', 
-          :price => '233', 
-          :description => 'Sample Post Description',
-          :category => 'item',
-          :subcategory => 'book',
-          :image => Rack::Test::UploadedFile.new('spec/controllers/images/doge.png', 'image/png')
-      }
+      post :create, post: attributes_for(:item)
       expect(assigns(:post)).to be_a(Post)
     end
     
-    it "won't create the post if it doesn't have title or title exceed length" do
-      post :create, post: { 
-          :price => '233', 
-          :description => 'Sample Post Description',
-          :category => 'item',
-          :subcategory => 'book',
-          :image => Rack::Test::UploadedFile.new('spec/controllers/images/doge.png', 'image/png')
-      }
+    it "won't create the post if it doesn't have title " do
+      post_hash = attributes_for(:item)
+      post_hash.delete(:title)
+      post :create, post: post_hash
       expect(flash[:notice]).to be_present
-      post :create, post: { 
-          :title => 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-          :price => '233', 
-          :description => 'Sample Post Description',
-          :category => 'item',
-          :subcategory => 'book',
-          :image => Rack::Test::UploadedFile.new('spec/controllers/images/doge.png', 'image/png')
-      }
-      expect(flash[:notice]).to be_present
-      
     end
     
-    it "won't create the post if it doesn't have price or price is not number" do
-      post :create, post: { 
-          :title => 'Sample Post', 
-          :description => 'Sample Post Description',
-          :category => 'item',
-          :subcategory => 'book',
-          :image => Rack::Test::UploadedFile.new('spec/controllers/images/doge.png', 'image/png')
-      }
+    it "won't create the post if title exceeds max length" do
+      post_hash = attributes_for(:item)
+      post_hash[:title] = "a" * 10000
+      post :create, post: post_hash
       expect(flash[:notice]).to be_present
-      post :create, post: { 
-          :title => 'Sample Post', 
-          :price => 'hahaha',
-          :description => 'Sample Post Description',
-          :category => 'item',
-          :subcategory => 'book',
-          :image => Rack::Test::UploadedFile.new('spec/controllers/images/doge.png', 'image/png')
-      }
+    end
+    
+    it "won't create the post if it doesn't have price" do
+      post_hash = attributes_for(:item)
+      post_hash.delete(:price)
+      post :create, post: post_hash
+      expect(flash[:notice]).to be_present
+    end
+    
+    it "won't create the post if the price is not a number" do
+      post_hash = attributes_for(:item)
+      post_hash[:price] = "hahahaha"
+      post :create, post: post_hash
       expect(flash[:notice]).to be_present
     end
 
-    it "won't create the post if it doesn't have category or subcategory" do
-      post :create, post: { 
-          :title => 'Sample Post', 
-          :price => '233', 
-          :description => 'Sample Post Description',
-          :image => Rack::Test::UploadedFile.new('spec/controllers/images/doge.png', 'image/png')
-      }
+    it "won't create the post if it doesn't have category" do
+      post_hash = attributes_for(:item)
+      post_hash.delete(:category)
+      post :create, post: post_hash
       expect(flash[:notice]).to be_present
-      post :create, post: { 
-          :title => 'Sample Post', 
-          :price => '233', 
-          :description => 'Sample Post Description',
-          :category => 'item',
-          :image => Rack::Test::UploadedFile.new('spec/controllers/images/doge.png', 'image/png')
-      }
+    end
+    
+    it "won't create the post if it doesn't have subcategory" do
+      post_hash = attributes_for(:item)
+      post_hash.delete(:subcategory)
+      post :create, post: post_hash
       expect(flash[:notice]).to be_present
     end
     
     it "redirects to the show page" do
-
-      post :create, post: { 
-          :title => 'Sample Post', 
-          :price => '233', 
-          :description => 'Sample Post Description',
-          :category => 'item',
-          :subcategory => 'book',
-          :image => Rack::Test::UploadedFile.new('spec/controllers/images/doge.png', 'image/png')
-          #File.new(Rails.root.join('spec','factories','images','doge.png'))
-      }
-      @post = Post.last
-      id = @post.id
-      expect(response).to redirect_to("/posts/" + id.to_s)
+      post :create, post: attributes_for(:item)
+      expect(response).to redirect_to("/posts/" + Post.last.id.to_s)
     end
   end
   
   describe 'searching certain item' do
     before :each do
+      create :user
       session[:user_id] = 1
     end
     
     it 'calls the model method that performs search' do
-      post :create, post: { 
-          :title => 'iClicker1 for sale', 
-          :price => '233', 
-          :description => 'Sample Post Description',
-          :category => 'item',
-          :subcategory => 'electronics',
-          :image => Rack::Test::UploadedFile.new('spec/controllers/images/doge.png', 'image/png')
-      }
-      expect(Post).to receive(:get_searched_posts).with('iclicker')
-      post 'index', {:search_terms => 'iclicker'}
+      expect(Post).to receive(:get_searched_posts).with('sample')
+      post :index, {:search_terms => 'sample'}
     end
-    
-    # it 'selects page for rendering' do
-    #   allow(Post).to receive(:get_searched_posts)
-    #   post :create, post: { 
-    #       :title => 'iClicker1 for sale', 
-    #       :price => '233', 
-    #       :description => 'Sample Post Description',
-    #       :category => 'item',
-    #       :subcategory => 'electronics',
-    #       :image => Rack::Test::UploadedFile.new('spec/controllers/images/doge.png', 'image/png')
-    #   }
-    #   post 'index', {:search_terms => 'iclicker'}
-    #   # expect(response).to redirect_to(root_path)
-    #   expect(response.body).to have_content("iClicker1 for sale")
-    #   # expect(response).to 
-    # end
   end
-
-  
-  
-  
-  
 end
