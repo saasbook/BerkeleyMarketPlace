@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   
   def post_params
     params.require(:post).permit(:title, :price, :description, :release_time,
-    :expire_time,:author_id, :category, :subcategory, :available, :image)
+    :author_id, :category, :subcategory, :available, :image)
   end
   
   def show 
@@ -31,7 +31,6 @@ class PostsController < ApplicationController
   def create
 
     params[:post][:release_time] = Time.now.getutc
-    params[:post][:expire_time] = nil
     params[:post][:available] = true
     params[:post][:author_id] = current_user.id
     @post = Post.new(post_params)
@@ -44,7 +43,7 @@ class PostsController < ApplicationController
         flash[:notice] = @error_message.values
       end
       
-      if @post.subcategory
+      if @post.category && @post.subcategory
         @empty_subcategory = Post.get_subcategories(@post.category.to_sym)
         @current_subcategory = @post.subcategory
       else

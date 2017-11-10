@@ -8,12 +8,13 @@ Feature: view and edit user profile
 Background:
   Given I am on the home page
   Then I login with correct normal email
+  Given there is an item
   
 Scenario: direct to user profile page
   Given I am on the home page
   When I press "Test User"
   Then I should be on the user page
-  Then I should see "marketplace.test@berkeley.edu"
+  Then I should see "cucumber.test@berkeley.edu"
 
 Scenario: upload profile image
   Given I am on the user page

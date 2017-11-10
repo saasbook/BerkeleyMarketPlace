@@ -6,38 +6,39 @@ Feature: search posts in search bar
 Background:
   Given I am on the home page
   Then I login with correct normal email
-  
-Scenario: search for case insensitive substrings of post titles in search bar 
-  Given I am on the home page
-  When I fill in "search_terms" with "iclicker"
-  When I press "Go"
-  Then I should see "iClicker"
-  And I should not see "concert tickets"
-  When I fill in "search_terms" with "xbox"
-  When I press "Go"
-  Then I should see "XBOX"
-  
-Scenario: search for a word that is not a substring of post titles, nor a category/subcategory key word
-  Given I am on the home page
-  When I fill in "search_terms" with "RANDOMSTRINGTHATDOESNTEXIST"
-  When I press "Go"
-  Then I should not see any posts
+  Given there is an item
+  Given there is an event
+  Given there is a job
 
-Scenario: search for nothing and press Go
+Scenario: search by title
   Given I am on the home page
+  When I fill in "search_terms" with "item title"
   When I press "Go"
-  Then I should see all posts
-
-Scenario: search category key words in search bar 
+  Then I should see "sample item title"
+  And I should not see "sample event title"
+  And I should not see "sample job title"
+  
+Scenario: search by description
   Given I am on the home page
-  When I fill in "search_terms" with "item"
+  When I fill in "search_terms" with "item description"
   When I press "Go"
-  Then I should see all posts with category "item"
+  Then I should see "sample item title"
+  And I should not see "sample event title"
+  And I should not see "sample job title"
   
-Scenario: search subcategory key words in search bar 
+  
+Scenario: search case insensitive
   Given I am on the home page
-  When I fill in "search_terms" with "electronics"
+  When I fill in "search_terms" with "ITEM"
   When I press "Go"
-  Then I should see all posts with subcategory "electronics"
+  Then I should see "sample item title"
+  And I should not see "sample event title"
+  And I should not see "sample job title"
   
-  
+Scenario: search subcategory
+  Given I am on the home page
+  When I fill in "search_terms" with "performance"
+  When I press "Go"
+  Then I should not see "sample item title"
+  And I should see "sample event title"
+  And I should not see "sample job title"
