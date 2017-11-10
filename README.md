@@ -43,6 +43,44 @@ Dev screencasts are in this [playlist](https://www.youtube.com/playlist?list=PLW
 ## Development Configurations
 
 
+### Git push to master
+
+
+```bash
+# 1. get to master branch
+git checkout master
+
+# 2. sync the master with remote
+git pull --rebase
+
+# 3. checkout the branch you are working
+git checkout my-feature-branch
+
+# 4. rebase your branch with the latest master
+git rebase master
+
+# 5. go back to master
+git checkout master
+
+# 6. merge master with your branch, no-ff ensures you merge with every new commit in master
+git merge --no-ff my-feature-branch
+
+# 7. push to master now is safe
+git push
+
+# 8. back to your branch to continue the work
+git checkout my-feature-branch
+```
+
+Please do EVERY COMMAND for EVERY COMMIT in your branch that you want to push to master.
+This means that, ONLY push to master if you think your change affact other people's work.
+You can sync with most recent master by performing the first 4 steps of this workflow.
+If you reslove any conflicts, make sure to run server to make sure everything works before push.
+
+You can directly commit to your own branch, push to remote without doing anything above.
+Push to your own remote branch allows you to create a pull request for team members to review.
+
+
 ### ImageMagick on C9 and Heroku
 
 We use `paperclip` gem to support image upload.
