@@ -45,8 +45,10 @@ Dev screencasts are in this [playlist](https://www.youtube.com/playlist?list=PLW
 
 ### Git push to master
 
-
 ```bash
+# 0. commit on your local branch
+git commit -m "xxxxxxxx"
+
 # 1. get to master branch
 git checkout master
 
@@ -56,13 +58,13 @@ git pull --rebase
 # 3. checkout the branch you are working
 git checkout my-feature-branch
 
-# 4. rebase your branch with the latest master
+# 4. rebase your branch with the latest master, most conflicts resloved here
 git rebase master
 
 # 5. go back to master
 git checkout master
 
-# 6. merge master with your branch, no-ff ensures you merge with every new commit in master
+# 6. merge master with your branch, no-ff means no-fast-forward
 git merge --no-ff my-feature-branch
 
 # 7. push to master now is safe
@@ -72,14 +74,17 @@ git push
 git checkout my-feature-branch
 ```
 
-Please do EVERY COMMAND for EVERY COMMIT in your branch that you want to push to master.
-This means that, ONLY push to master if you think your change affact other people's work.
-You can sync with most recent master by performing the first 4 steps of this workflow.
+Please do EVERY COMMAND after EVERY COMMIT in your branch that you want to push to master.
+This means that, ONLY push to master if you think your change affects other people's work or it completes a feature.
+You can sync with most recent master locally by performing the first 4 steps of this workflow.
 If you reslove any conflicts, make sure to run server to make sure everything works before push.
 
-You can directly commit to your own branch, push to remote without doing anything above.
-Push to your own remote branch allows you to create a pull request for team members to review.
+If you sync with master locally and then want to push to your own remote branch, 
+you will have to pull remote and merge in order to force the remote branch to be rebased.
+Otherwise, you can directly commit to your own branch, push to remote without doing anything above.
+Push to your own remote branch allows you to see Travis coverage and create a pull request for team members to review.
 
+The commit message types are in [this link](https://github.com/commitizen/conventional-commit-types/blob/master/index.json).
 
 ### ImageMagick on C9 and Heroku
 
@@ -89,7 +94,7 @@ To install, run `sudo apt-get install imagemagick`
 (also make sure you have run `sudo apt-get update` for this workspace once)
 
 Because ImageMagick is a CLI, it needs to be vendored in Heroku deoloyment. 
-We currently use version `7.0.4` vendored by [this repo](https://github.com/jasonfb/heroku-buildpack-cedar14-imagemagick704)
+We currently use version `7.0.4` vendored by [this repo](https://github.com/jasonfb/heroku-buildpack-cedar14-imagemagick704).
 If developer needs to configure a new Heroku app, make sure to switch to Cedar14 stack before vendoring(the default is 16)
 
 ### PostgresSQL on C9
@@ -97,7 +102,7 @@ If developer needs to configure a new Heroku app, make sure to switch to Cedar14
 Because our app includes search functionalities that relies on PostgresSQL,
 we use PostgresSQL for all stages. This requires developer to install Postgres on C9.
 C9 stops this service after certain amount of time, and developer needs to restart manually.
-Details for first time configuration at [this link](https://github.com/Aerogami/guides/wiki/Cloud9-workspace-setup-with-Rails-and-Postgresql)
+Details for first time configuration at [this link](https://github.com/Aerogami/guides/wiki/Cloud9-workspace-setup-with-Rails-and-Postgresql).
 If the database is not started, you will see some errors related to TCP/IP connection.
 To start the service, run `sudo service postgresql start`.
 For testing stage, `.travis.yml`, `config/database.yml.travis` contains Travis CI test configuration for PostgresSQL
