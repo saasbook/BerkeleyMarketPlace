@@ -14,25 +14,14 @@ class User < ActiveRecord::Base
                     content_type: { content_type: /\Aimage\/.*\z/ },
                     size: { less_than: 1.megabyte }  
   
-  @@superusers = [
-    "yezhaoqin@berkeley.edu",
-    "hyy@berkeley.edu",
-    "yqteng@berkeley.edu",
-    "shuyindeng@berkeley.edu",
-    "yaoge@berkeley.edu",
-    "jiazhen.chen@berkeley.edu",
-    "foo@berkeley.edu",
-    "estherouyang@berkeley.edu",
-    "yehaolan@berkeley.edu"
-  ] 
-  
   def superuser?
-    @@superusers.include? email 
-    
+    admins = User.where(admin:true)
+    admins.exists?(email: email)
   end
   
-  def self.superusers
-    @@superusers
+  def self.get_superuser
+    # User.all
+    @admins = User.where(admin:true)
   end
   
   
