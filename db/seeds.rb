@@ -126,6 +126,25 @@ def generate_seed_user uid
     User.create!(user_info)
 end
 
+# create default admin
+def generate_admin 
+    superusers = [
+    "yezhaoqin@berkeley.edu",
+    "hyy@berkeley.edu",
+    "yqteng@berkeley.edu",
+    "shuyindeng@berkeley.edu",
+    "yaoge@berkeley.edu",
+    "jiazhen.chen@berkeley.edu",
+    "foo@berkeley.edu",
+    "estherouyang@berkeley.edu",
+    "yehaolan@berkeley.edu"
+    ] 
+    
+    superusers.each do |email, uid|
+      User.create!( email: email, admin:true)
+    end
+end
+
 def random_past_time
     rand(5).day.ago - rand(24).hour
 end
@@ -147,8 +166,12 @@ end
     
 for uid in uid_list do
     user = generate_seed_user uid
+    generate_admin
     generate_user_posts user
 end
+
+# user = generate_admin
+# generate_user_posts user
     
 # add a user that uploaded nothing, with id 
 empty_user = { email: "empty@berkeley.edu", name: "empty user" }
