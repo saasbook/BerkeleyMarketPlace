@@ -12,8 +12,10 @@
         <p class="card-text"><%= post_info.category %> / <%= post_info.subcategory %></p>
         <h5><%= link_to "EDIT", "posts/%d/edit" %post_info.id,
            class: "btn btn-primary btn-l js-scroll-trigger" %></h5>
-        <h5><%= link_to "Mark as Sold", "",
-           class: "btn btn-primary btn-l js-scroll-trigger" %></h5>
+        <% if post_info.available? %>
+          <h5><%= link_to "Mark as Sold", "posts/%d/mark_as_sold" %post_info.id,
+             class: "btn btn-primary btn-l js-scroll-trigger" %></h5>
+        <% end %>
       </div>
     </div>
   </div>

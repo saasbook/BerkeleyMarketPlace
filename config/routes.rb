@@ -34,4 +34,5 @@ Rails.application.routes.draw do
   
   # edit
   get "/user/posts/:id/edit", to: "posts#edit"
+  get "/user/posts/:id/mark_as_sold", to: "posts#mark_as_sold"
 end
