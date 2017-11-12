@@ -166,9 +166,10 @@ end
     
 for uid in uid_list do
     user = generate_seed_user uid
-    generate_admin
     generate_user_posts user
 end
+
+generate_admin
 
 # user = generate_admin
 # generate_user_posts user
