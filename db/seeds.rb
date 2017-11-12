@@ -169,8 +169,6 @@ for uid in uid_list do
     generate_user_posts user
 end
 
-generate_admin
-
 # user = generate_admin
 # generate_user_posts user
     
