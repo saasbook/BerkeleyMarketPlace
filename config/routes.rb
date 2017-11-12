@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # resources
   resources :posts, except: [:destroy]
-  resources :users, except: [:destroy]
+  resources :users
   resources :sessions, only: [:create, :destroy]
   
   # posts
