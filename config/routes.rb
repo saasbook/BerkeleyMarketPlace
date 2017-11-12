@@ -31,4 +31,7 @@ Rails.application.routes.draw do
   post "/user/profile", to:"users#update_profile_pic"
   get "/user/mypost", to:"users#mypost"
   get '/user/posts/:id', to: 'posts#show'
+  
+  # edit
+  get "/user/posts/:id/edit", to: "posts#edit"
 end

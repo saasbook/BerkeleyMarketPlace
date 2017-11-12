@@ -26,6 +26,9 @@
        <% if current_user.superuser? %>
          <%= link_to "Remove by Admin", post_destroy_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
        <% end %>
+       <% if current_user.email == @user.email %>
+         <%= link_to "EDIT", "%d/edit" %@post.id, class: "btn btn-primary btn-l js-scroll-trigger" %>
+       <% end %>
        <a class="btn btn-primary btn-l js-scroll-trigger" href="#">Add to Wishlist</a>
        <p></p>
         <h3>Description</h3>
