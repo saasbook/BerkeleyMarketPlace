@@ -19,7 +19,7 @@
       <div class="form-group">
         <%= f.label :image %>
         <div id="imagePreview" class="form-group">
-        <img class="img-fluid", width: "350"><%= image_tag safe_url(@post.image.url)%></img> 
+        <img class="img-fluid"><%= image_tag safe_url(@post.image.url), width:"350"%></img> 
         </div>
         <%= f.file_field :image, id: "Image", class: "form-control" %>
       </div>
