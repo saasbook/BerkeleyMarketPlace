@@ -34,6 +34,8 @@ class Post < ActiveRecord::Base
                   :choose_category,
                 ]
 
+    belongs_to :wishlist
+
     @@categories = {
         item: [
             "book",

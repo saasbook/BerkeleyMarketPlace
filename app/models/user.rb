@@ -14,17 +14,7 @@ class User < ActiveRecord::Base
                     content_type: { content_type: /\Aimage\/.*\z/ },
                     size: { less_than: 1.megabyte }  
   
-  @@superusers = [
-    "yezhaoqin@berkeley.edu",
-    "hyy@berkeley.edu",
-    "yqteng@berkeley.edu",
-    "shuyindeng@berkeley.edu",
-    "yaoge@berkeley.edu",
-    "jiazhen.chen@berkeley.edu",
-    "foo@berkeley.edu",
-    "estherouyang@berkeley.edu",
-    "yehaolan@berkeley.edu"
-  ] 
+  has_one :wishlist
   
   def superuser?
     admins = User.where(admin:true)
