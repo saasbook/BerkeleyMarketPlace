@@ -16,10 +16,10 @@ RSpec.describe User, type: :model do
       expect { User.create!(user_hash) }.to raise_exception
     end
     
-    it "verifies superuser" do 
-      user = create :superuser
-      expect(user.superuser?).to be true
-    end
+    # it "verifies superuser" do 
+    #   user = create :superuser
+    #   expect(user.superuser?).to be true
+    # end
     
   end
   
