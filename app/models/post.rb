@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
-
+    include PgSearch
+    pg_search_scope :search_for_post, :against => {:title => 'A', :category => 'B', :subcategory => 'C', :description => 'D'}, :using => {:tsearch => {:prefix => true}, :dmetaphone => {}, :trigram => {:threshold => 0.1}}
+  
     validates :image, presence: { message: "Please upload an image" }
     validates :price, numericality: { message: "Please enter a valid price." }
     validates :author_id, presence: true
@@ -72,7 +74,7 @@ class Post < ActiveRecord::Base
     end
     
     def self.get_searched_posts(search_terms)
-        self.where(available: true).where("title ILIKE :s OR category ILIKE :s OR subcategory ILIKE :s OR description ILIKE :s", {:s => "%#{search_terms.downcase}%"})
+        self.search_for_post(search_terms)
     end
     
     def self.get_user_posts user_id
