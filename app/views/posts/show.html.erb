@@ -1,0 +1,38 @@
+<div class="container", id="showPost">
+    
+    <div class="row">
+      <div class="col-12">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a>
+            <li class="breadcrumb-item"><%= link_to @post.category, posts_path(category: @post.category) %>
+            <li class="breadcrumb-item"><%= link_to @post.subcategory, posts_path(category: @post.category, subcategory: @post.subcategory) %>
+            <li class="breadcrumb-item active"><%= @post.title %>
+          </ol>
+      </div>
+    </div>
+    
+    <div class="row">
+      
+      <div class="col-lg-4 col-12">
+        <img style="float:left;"><%= image_tag safe_url(@post.image.url)%></img> 
+      </div>
+      
+      <div class="col-lg-8 col-12"style="margin-top:10px;float:left;">
+       <h1><%= @post.title %></h1> 
+       <h3>USD $<%= @post.price %></h3> 
+       <p style="color:<%= if @post.available then 'green' else 'red' end %>"><%= if @post.available then 'Available' else 'Not available' end %> <%= @release_time_formatted%> </p> 
+        
+       <p>Contact: <a href="mailto:<%= @user.email %>"> <%= @user.email %> </a></p>
+       <% if current_user.superuser? %>
+         <%= link_to "Remove by Admin", post_destroy_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
+       <% end %>
+       <a class="btn btn-primary btn-l js-scroll-trigger" href="#">Add to Wishlist</a>
+       <p></p>
+        <h3>Description</h3>
+        <p><%= @post.description %></p> 
+      </div>
+
+    </div>
+    
+</div>
+</div>

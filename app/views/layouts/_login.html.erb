@@ -1,0 +1,17 @@
+<header class="masthead">
+  <div class="header-content">
+    <div class="header-content-inner">
+      <h1 id="homeHeading">Berkeley MarketPlace</h1>
+      <hr>
+      <h3>Marketplace Exclusive to the UC Berkeley Community</h3>
+      <h3>Free & For Sale, Info Sessions, Part-time Jobs</h3>
+      <p>Start by login with your Bmail</p>
+      <% if flash[:notice] %>
+            <h5 style="color:red"><%= flash[:notice] %></h5>
+      <% end %>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" href="/auth/google_oauth2">Login</a>
+    </div>
+  </div>
+</header>
+
+

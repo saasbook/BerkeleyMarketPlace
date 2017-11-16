@@ -1,0 +1,111 @@
+<div class="container">
+  
+  <!--header-->
+  <div class="row">
+	  <div class="col-1"></div>
+	   <div class="col-10">
+	     <h3>Post Something!</h3>
+	   </div>
+  </div>
+  <!--header-->
+  
+  <%= form_for @post, :method => :post, :html => { :multipart => true } do |f| %>
+  
+	<div class="row">
+	  <div class="col-1"></div>
+    
+    <!--image-->
+    <div class="col-4">
+      <div class="form-group">
+        <%= f.label :image %>
+        <div id="imagePreview" class="form-group">
+        <img src="/images/post_default.png" class="img-fluid" alt="Responsive image">
+        </div>
+        <%= f.file_field :image, id: "Image", class: "form-control", required: true %>
+      </div>
+    </div>  
+  	<!--image-->
+  	
+  	<div class="col-6">    
+      
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control form-control-lg", required: true, minlength: "1", maxlength: "128" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :price %>
+        <%= f.number_field :price, class: "form-control", required: true,  step: "0.01", min: "0" %>
+      </div>
+      
+      <!--category-->
+      <!--<div class="row">-->
+      <!--  <div class="col-1"></div>-->
+        
+      <!--  <div class="col-5">-->
+          <div class="form-group">
+            <%= f.label :category %> 
+            <%= f.select :category, Post.get_categories.map { |c| [c.to_s, c.to_s] }, { include_blank: '- Select -' }, { class: "form-control", required: true }%>
+          </div>
+        <!--</div>-->
+        
+        <!--<div class="col-5">-->
+          <div class="form-group">
+            <%= f.label :subcategory %> 
+            <div id="updateFormSubcategory">
+              <%= render partial: 'posts/subcategory', locals: {subcategory: @empty_subcategory, current_subcategory: @current_subcategory}  %>
+            </div>
+          </div>
+        <!--</div>-->
+      <!--</div>-->
+      <!--category-->
+      
+      <div class="form-group">
+        <%= f.label :email %> 
+        <%= f.text_field :author_id, id: "Email", value: current_user.email, readonly: true, class: "form-control" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control", required: true, maxlength: "4096", rows:"10", placeholder:"Details of the post" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.submit class:"btn btn-primary" %>
+      </div>
+    
+    </div>
+  </div>
+<% end %>
+</div>
+
+
+<script>
+$('#post_category').change(function() {
+
+  var category = $(this).val();
+  
+  $.ajax({
+      url: "/update_form_subcategory",
+      type: "GET",
+      data: { "category": category }
+  });
+});
+
+$(function() {
+  $('#Image').on('change', function(event) {
+    var files = event.target.files;
+    var image = files[0]
+    var reader = new FileReader();
+    reader.onload = function(file) {
+      var img = new Image();
+      console.log(file);
+      img.src = file.target.result.replace("http", "https");
+      img.width = "350";
+      //img.height = "auto";
+      $('#imagePreview').html(img);
+    }
+    reader.readAsDataURL(image);
+  });
+});
+</script>
