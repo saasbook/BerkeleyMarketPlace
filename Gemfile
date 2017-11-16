@@ -29,6 +29,9 @@ gem 'cloudinary'
 # for homepage paging
 gem 'kaminari'
 
+# for searching
+gem 'pg_search'
+
 # Bootstrap, can only use latest beta version for this rails version
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'sass-rails', '>= 3.2'
