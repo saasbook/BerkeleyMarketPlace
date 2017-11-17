@@ -2,7 +2,7 @@
     <% posts.each do |post_info| %>
       <div class="col-lg-3 col-md-3 mb-3">
         <div class="card h-100">
-          <%= link_to ("posts/%d" % post_info.id)  do %>
+          <%= link_to post_path(post_info)  do %>
             <%= image_tag post_info.image.url(:thumb), class:"card-img-top" %>
           <% end %>
           <div class="card-body">
