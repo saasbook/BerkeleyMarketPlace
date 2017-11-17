@@ -47,8 +47,4 @@ class User < ActiveRecord::Base
   def self.get_test_user
     self.first
   end
-  
-  def self.has_wish?(post_id)
-    self.wish_posts.exists?(post_id: post_id)
-  end
 end

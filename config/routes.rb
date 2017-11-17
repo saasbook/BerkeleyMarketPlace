@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # resources
   resources :posts, except: [:destroy] do
-    resources :wishs
+    resources :wishs, except: [:destroy]
   end
   resources :users
   resources :sessions, only: [:create, :destroy]
@@ -31,5 +31,8 @@ Rails.application.routes.draw do
   post "/user/profile", to:"users#update_profile_pic"
   get "/user/mypost", to:"users#mypost"
   get "/user/mywishlist", to:"users#mywishlist"
-  
+
+  # wishs
+  get "/posts/:post_id/wishs/:id/delete", to:"wishs#delete", as:"delete_from_wish"
+
 end
