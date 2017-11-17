@@ -97,14 +97,21 @@ Because ImageMagick is a CLI, it needs to be vendored in Heroku deoloyment.
 We currently use version `7.0.4` vendored by [this repo](https://github.com/jasonfb/heroku-buildpack-cedar14-imagemagick704).
 If developer needs to configure a new Heroku app, make sure to switch to Cedar14 stack before vendoring(the default is 16)
 
-### PostgresSQL on C9
+### PostgresSQL on C9 and Heroku
 
 Because our app includes search functionalities that relies on PostgresSQL,
-we use PostgresSQL for all stages. This requires developer to install Postgres on C9.
+we use PostgresSQL for all stages. This requires developer to install Postgres on C9 and also configure Heroku accordingly.
 C9 stops this service after certain amount of time, and developer needs to restart manually.
-Details for first time configuration at [this link](https://github.com/Aerogami/guides/wiki/Cloud9-workspace-setup-with-Rails-and-Postgresql).
-If the database is not started, you will see some errors related to TCP/IP connection.
-To start the service, run `sudo service postgresql start`.
+Details for first time configuration at [this link](https://github.com/Aerogami/guides/wiki/Cloud9-workspace-setup-with-Rails-and-Postgresql),
+and add [search extensions](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04).
+
+In C9, if the database is not started, you will see some errors related to TCP/IP connection.
+To start the service, run 
+
+```bash
+sudo service postgresql start
+```
+
 For testing stage, `.travis.yml`, `config/database.yml.travis` contains Travis CI test configuration for PostgresSQL
 
 
@@ -128,7 +135,7 @@ CodeClimate is currently (AOD 11/10/2017) developing automatic TravisCI coverage
 but it is still in public beta, and is buggy, most of the times it does not work properly following its own [instructions](https://docs.codeclimate.com/v1.0/docs/travis-ci-test-coverage).
 We use its old code reporting tool, but have to restrict the gem version to `0.12.0` for `simplecov`,
 and `1.0.0` for `codeclimate-test-reporter`, 
-and manually report coverage by:
+and report coverage by:
 
 ```bash
 bundle exec rspec

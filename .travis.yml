@@ -12,5 +12,6 @@ script:
   - RAILS_ENV=test bundle exec rake db:test:prepare
   - RAILS_ENV=test bundle exec rspec
   - RAILS_ENV=test bundle exec cucumber
+  - CODECLIMATE_REPO_TOKEN=212e457edd4133bddd12366c7bb0d260cb40e73a4d53f749d4ebff902ad845ee bundle exec codeclimate-test-reporter
 services:
   - postgresql
