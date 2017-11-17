@@ -153,6 +153,10 @@ class Post < ActiveRecord::Base
         ]
     end
     
+    def short_title 
+        title.truncate(32)
+    end
+    
     def self.get_categories
         @@categories.keys
     end
