@@ -57,7 +57,7 @@ Scenario: didn't upload image - sad path
   When I press "Create Post"
   Then I should be on the create page
 
-Scenario: didn't emter number for prices - sad path
+Scenario: didn't enter number for prices - sad path
   Given I am on the create page
   Then I attach the file to "Image"
   And I fill in "Title" with "Doggy Huang2"

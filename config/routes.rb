@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # posts
   get 'posts/:id/destroy', to: 'posts#destroy', as: 'post_destroy'
   get 'search-posts', to: 'posts#search', as: 'post_search'
-  get "posts/:id/mark_as_sold", to: "posts#mark_as_sold"
+  get "posts/:id/mark_as_sold", to: "posts#mark_as_sold", as: 'mark_post_as_sold'
   
   # authentication
   get 'auth/:provider/callback', to: 'sessions#create'

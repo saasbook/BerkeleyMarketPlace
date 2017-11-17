@@ -12,7 +12,6 @@ Background:
   
 Scenario: default to show all posts
   When I go to the home page
-  Then I wait 2 seconds
   Then I should see "sample item"
   And I should see "sample event"
   

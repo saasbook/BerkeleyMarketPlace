@@ -97,7 +97,6 @@ class PostsController < ApplicationController
   
   
   def edit
-    # the Edit Post page
     id = params[:id]
     @post = Post.find(id)
     @avilability = "available"
