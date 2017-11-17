@@ -2,6 +2,7 @@
   "result": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "covered_percent": 84.3
 =======
     "covered_percent": 78.7
@@ -9,5 +10,8 @@
 =======
     "covered_percent": 43.88
 >>>>>>> [build] fix db config for merge with search
+=======
+    "covered_percent": 82.77
+>>>>>>> [feat] merge search feature into new filter module
   }
 }

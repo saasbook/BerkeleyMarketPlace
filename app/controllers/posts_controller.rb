@@ -76,7 +76,7 @@ class PostsController < ApplicationController
   def index
     logger.debug "current filterrific params: %s" % params[:filterrific]
     @filterrific = initialize_filterrific(
-      Post.get_all_valid_posts,
+      Post,
       params[:filterrific] || Post.default_filterrific_values,
       :select_options => {
         sorted_by: Post.options_for_sorted_by,

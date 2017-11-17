@@ -28,6 +28,7 @@ class Post < ActiveRecord::Base
                      
     filterrific :default_filter_params => { search_query: 'iclicker' },
                 :available_filters => [
+                  :is_available,
                   :search_query,
                   :sorted_by,
                   :choose_category,
@@ -59,8 +60,15 @@ class Post < ActiveRecord::Base
     
     @@empty_subcategory = ["please select subcategory"]
     
+    scope :is_available, lambda { | val |
+       if val != "all"
+            available = (val == "true")
+            where(available: available)
+        end
+    }
+    
     scope :search_query, lambda { | query |
-        where(available: true).where("title ILIKE :s OR category ILIKE :s OR subcategory ILIKE :s OR description ILIKE :s", {:s => "%#{query.downcase}%"})
+        get_searched_posts(query)
     }
     
     scope :sorted_by, lambda { |sort_option|
@@ -90,10 +98,19 @@ class Post < ActiveRecord::Base
     
     def self.default_filterrific_values
        {
+           is_available: "true",
            search_query: "",
            sort_by: "",
            choose_category: "all_all"
        } 
+    end
+    
+    def self.options_for_is_available
+        [
+            ["All", "all"],
+            ["Yes", "true"], 
+            ["No", "false"]
+        ]
     end
     
     def self.options_for_choose_category
