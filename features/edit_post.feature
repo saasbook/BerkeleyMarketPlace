@@ -1,3 +1,4 @@
+
 Feature: edit my post
 
     AS a seller
@@ -7,29 +8,43 @@ Feature: edit my post
 Background:
   Given I am on the home page
   Then I login with correct normal email
+  Given there is an item
+  #When I create a test post
+  Given I am on the create page
+  Then I attach the file to "Image"
+  And I fill in "Title" with "Jack Ye"
+  And I fill in "Price" with "1"
+  And I fill in "Description" with "In good quality"
+  When I select "item" from "Category"
+  Then I select "book" from "Subcategory"
+  When I press "Create Post"
+  Then I should be on the details page for "Jack Ye"
 
 Scenario: direct to edit page
-  Given I create a test post
   Then I go to the user page
   Then I press "My Post"
-  Then I should see the test post
-  When I press "Edit" for the test post
-  Then I should be on the edit post page for test post
+  Then I should see "Jack Ye"
+  When I press "EDIT" for my last post
+  Then I should be on the edit page for "Jack Ye"
 
 Scenario: edit my posts
-  Given I am on the edit post page for test post
+  Given I am on the edit page for "Jack Ye"
   Then I should see "Jack Ye" in the field "Title"
   And I fill in "Title" with "Yunyi Huang"
-  When I press "Save Post"
-  Then I should be on the details page
-  And I should see "Yunyi Huang" in the field "Title"
-  And I should not see "Jack Ye" in the field "Title"
+  When I press "Update Post"
+  #Then I should be on the details page
+  And I should see "successfully updated"
+  And I should see "Yunyi Huang"
+  And I should not see "Jack Ye"
 
 Scenario: mark my posts as unavailable
-  Given I create a test post
-  And I go to the user page
+  Given I am on the user page
   And I press "My Post"
-  Then I should see the test post
-  When I press "Set unavailable" for the test post
-  And I press the test post
-  Then I should see "Unavailable"
+  Then I should see "Jack Ye"
+  When I press "Mark as Sold" for my last post
+  Then I should see "successfully marked as sold"
+  Given I am on the user page
+  And I press "My Post"
+  Then I should see "Jack Ye"
+  When I find a post with title "Jack Ye"
+  Then I should see "Not available"

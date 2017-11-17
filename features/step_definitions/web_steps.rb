@@ -234,3 +234,9 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+When /^(?:|I )press "([^"]*)" for my last post$/ do |button|
+  #click_on(button)
+  all('.card').last.click_link(button)
+  #last(".card").click_link(button)
+end
