@@ -28,6 +28,17 @@ class User < ActiveRecord::Base
     @admins = User.where(admin:true)
   end
   
+  @@superusers = [
+    "yezhaoqin@berkeley.edu",
+    "hyy@berkeley.edu",
+    "yqteng@berkeley.edu",
+    "shuyindeng@berkeley.edu",
+    "yaoge@berkeley.edu",
+    "jiazhen.chen@berkeley.edu",
+    "foo@berkeley.edu",
+    "estherouyang@berkeley.edu",
+    "yehaolan@berkeley.edu"
+  ] 
   
   def self.superusers
     @@superusers
