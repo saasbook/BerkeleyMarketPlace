@@ -103,11 +103,39 @@ class PostsController < ApplicationController
   
   def edit
     # the Edit Post page
+    id = params[:id]
+    @post = Post.find(id)
+    @avilability = "available"
+    if @post.available == false
+      @avilability = "unavailable"
+    end
+    
   end
   
   def update
     # the Update Post page
+    id = params[:id]
+    @post = Post.find(id)
+    params[:post][:author_id] = current_user.id
+    if params[:post][:available] == "available"
+      params[:post][:available] = true
+    else
+      params[:post][:available] = false
+    end
+    @post.update_attributes!(post_params)
+    flash[:notice] = "#{@post.title} was successfully updated."
+    redirect_to action:"show", id: @post.id
   end
+  
+  def mark_as_sold
+    id = params[:id]
+    @post = Post.find(id)
+    @post.update_attribute(:available, false)
+    flash[:notice] = "#{@post.title} was successfully marked as sold."
+    redirect_to "/user/mypost"
+  end
+  
+  
   
   def get_subcategories
     #get_subcategories category

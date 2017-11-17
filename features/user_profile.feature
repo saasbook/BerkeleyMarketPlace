@@ -27,3 +27,4 @@ Scenario: check my posts
   Then I should be on the my post page
   Then I should see all my posts
   And I should see "Edit" under each post
+  And I should see "Set unavailable"
