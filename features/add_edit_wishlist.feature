@@ -11,19 +11,24 @@ Background:
 
 
 Scenario: can add a post to wishlist and see it under my wishlist
-  Given I am on the home page
-  When I find one of "Concert tickets in SF"
-  And I press "Add to wishlist"
+  Given there is an item
+  Then I go to the home page
+  #Given I am on the home page
+  #When I find one of "Concert tickets in SF"
+  When I find a post with title "sample item title"
+  And I press "Add to Wishlist"
   And I go to the user page
   And I press "My Wishlist"
-  Then I should see "Concert tickets in SF"
+  Then I should see "sample item title"
 
 Scenario: can remove a post from wishlist
-  Given I am on the home page
-  When I find one of "iClicker"
-  And I press "Add to wishlist"
+  Given there is an item
+  Then I go to the home page
+  When I find a post with title "sample item title"
+  And I press "Add to Wishlist"
+  Then I should see "sample item title"
+  Then I should see "REMOVE FROM WISHLIST"
+  When I press "Remove from Wishlist"
   And I go to the user page
   And I press "My Wishlist"
-  Then I should see "iClicker"
-  When I press "Remove" for the post contains "iClicker"
-  Then I should not see "iClicker"
+  Then I should not see "sample item title"
