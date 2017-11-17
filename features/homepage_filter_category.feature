@@ -32,3 +32,10 @@ Scenario: select all category gives all posts
   And I filter posts using "choose_category" by "All"
   Then I should see "sample item"
   And I should see "sample event"
+  
+  
+Scenario: select subcategory
+  When I go to the home page
+  And I filter posts using "choose_category" by "book"
+  Then I should see "sample item"
+  And I should not see "sample event"
