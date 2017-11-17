@@ -75,10 +75,11 @@ class PostsController < ApplicationController
   end
   
   def index
-    logger.debug "current filterrific params: %s" % params[:filterrific]
+    filterrific_params = Post.complete_filterrific_params(params[:filterrific])
+    logger.debug "current filterrific params: %s" % filterrific_params
     @filterrific = initialize_filterrific(
       Post,
-      params[:filterrific] || Post.default_filterrific_values,
+      filterrific_params,
       :select_options => {
         sorted_by: Post.options_for_sorted_by,
         choose_category: Post.options_for_choose_category,
@@ -93,7 +94,8 @@ class PostsController < ApplicationController
   end
   
   def search
-    redirect_to action: :index, filterrific: {search_query: params[:search_terms]}
+    search_param = { search_query: params[:search_terms] }
+    redirect_to action: :index, filterrific: (Post.complete_filterrific_params search_param)
   end
   
   
