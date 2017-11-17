@@ -18,7 +18,8 @@ require 'capybara/poltergeist'
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(
     app,
-    window_size: [1920, 6000]
+    window_size: [1920, 6000],
+    js_errors:false
   )
 end
 Capybara.default_driver    = :poltergeist
