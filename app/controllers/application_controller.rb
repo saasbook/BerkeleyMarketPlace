@@ -57,16 +57,4 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  def filter
-    category = params[:category]
-    if category == "all"
-      @selected = Post.get_all_valid_posts.page params[:page]
-    else
-      @selected = Post.get_valid_post(category).page params[:page]
-    end
-    respond_to do |format|
-      format.js
-    end
-  end
-  
 end
