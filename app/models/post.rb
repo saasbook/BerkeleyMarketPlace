@@ -39,8 +39,8 @@ class Post < ActiveRecord::Base
                 :available_filters => [
                   :is_available,
                   :search_query,
-                  :sorted_by,
                   :choose_category,
+                  :sorted_by,
                 ]
                 
     has_many :wish_users, :through => :wishs, :source => :user

@@ -5,11 +5,9 @@
     </div>
     
     <div class="col-lg-10" id="results">
-      <%= render partial: 'layouts/posts_grid', locals: {posts: @posts} %>
+      <%= render partial: 'application/posts_grid', locals: {posts: @posts} %>
     </div>
   </div>
-  <div class="row" id="paging">
-    <%= paginate @posts %>
-  </div>
+  <%=render "application/paging" %>
 </div>
 

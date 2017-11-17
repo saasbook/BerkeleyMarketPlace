@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 Kaminari.configure do |config|
-  config.default_per_page = 48
+  config.default_per_page = (Rails.env.production?)?  48 : 8
   # config.max_per_page = nil
   # config.window = 4
   # config.outer_window = 0
