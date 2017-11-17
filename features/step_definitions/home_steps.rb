@@ -73,3 +73,9 @@ When /I logout/ do
   find("a", text: "Logout").trigger("click")
   OmniAuth.config.mock_auth[:google_oauth2] = nil
 end
+
+When /I filter posts using "(.*)" by "(.*)"/ do |filter, option|
+  steps %Q{
+    When I select "#{option}" from "filterrific[#{filter}]"
+  } 
+end

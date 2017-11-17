@@ -30,7 +30,7 @@ module NavigationHelpers
     #     user_profile_path(User.find_by_login($1))
     
     when /^the edit page for "(.*)"/
-      then '/user/posts/%d/edit' % (Post.find_by title: $1).id
+      then '/posts/%d/edit' % (Post.find_by title: $1).id
       
     when /^the details page for "(.*)"/
       then '/posts/%d' % (Post.find_by title: $1).id

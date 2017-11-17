@@ -1,12 +1,10 @@
 <div class="container" id="homepage">
-
   <div class="row">
     <div class="col-lg-2">
-      <%=render "layouts/sidebar" %>
+      <%=render "application/filter_sidebar" %>
     </div>
     
-    <div class="col-lg-10">
+    <div class="col-lg-10" id="results">
       <%= render partial: 'layouts/posts_grid', locals: {posts: @posts} %>
   </div>
-
 </div>

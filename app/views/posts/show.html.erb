@@ -4,8 +4,8 @@
       <div class="col-12">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a>
-            <li class="breadcrumb-item"><%= link_to @post.category, posts_path(category: @post.category) %>
-            <li class="breadcrumb-item"><%= link_to @post.subcategory, posts_path(category: @post.category, subcategory: @post.subcategory) %>
+            <li class="breadcrumb-item"><%= link_to @post.category, root_path(filterrific: {choose_category: @post.category + "_all" }) %>
+            <li class="breadcrumb-item"><%= link_to @post.subcategory, root_path(filterrific: {choose_category: @post.category + "_" + @post.subcategory}) %>
             <li class="breadcrumb-item active"><%= @post.title %>
           </ol>
       </div>
@@ -26,15 +26,14 @@
        <% if current_user.superuser? %>
          <%= link_to "Remove by Admin", post_destroy_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
        <% end %>
-       <% if current_user.email == @user.email %>
-         <%= link_to "EDIT", "%d/edit" %@post.id, class: "btn btn-primary btn-l js-scroll-trigger" %>
+       <% if current_user.id == @post.author_id %>
+         <%= link_to "EDIT", edit_post_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
        <% end %>
        <a class="btn btn-primary btn-l js-scroll-trigger" href="#">Add to Wishlist</a>
        <p></p>
         <h3>Description</h3>
         <p><%= @post.description %></p> 
       </div>
-
     </div>
     
 </div>

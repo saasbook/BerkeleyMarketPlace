@@ -18,28 +18,13 @@ When /^I wait (\d+) seconds?$/ do |seconds|
   sleep seconds.to_i
 end
 
-When /I create a test post/ do 
-  steps %Q{
-    Given I am on the create page
-    Then I attach the file to "Image"
-    And I fill in "Title" with "Jack Ye"
-    And I fill in "Price" with "1"
-    And I fill in "Description" with "In good quality"
-    When I select "item" from "Category"
-    Then I select "please select subcategory" from "Subcategory"
-    When I press "Create Post"
-    Then I should be on the details page for "Jack Ye"
-  }
-end 
-
-When /^I press "([^"])" for the test post$/ do |button|
-  # @post = Post.last
-  # pending
+Then /"(.*)" should contain option "(.*)"/ do |dropdown, option|
+  Rails.logger.debug page.body
+  expect(page).to have_select(dropdown, :with_options => [option])
 end
 
-Then /the post does not exists any more/ do
-  
-  expect()
+Then /"(.*)" should not contain option "(.*)"/ do |dropdown, option|
+  expect(page).not_to have_select(dropdown, :with_options => [option])
 end
 
 Then("I should see {int} pages of results") do |num_pages|

@@ -22,9 +22,9 @@ Background:
   
 Scenario: direct to user profile page
   Given I am on the home page
-  When I press "seed-user 1"
+  When I press "Dashboard"
   Then I should be on the user page
-  Then I should see "seed-user1@berkeley.edu"
+  Then I should see "cucumber.test@berkeley.edu"
 
 Scenario: upload profile image
   Given I am on the user page

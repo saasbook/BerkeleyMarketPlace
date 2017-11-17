@@ -38,10 +38,22 @@ class ApplicationController < ActionController::Base
     url
   end
 
-  def index 
-    @posts = Post.get_all_valid_posts.page params[:page]
-    # @paged_posts = Post.get_all_valid_posts.page params[:page]
-    @categories = Post.get_categories
+  def index
+    logger.debug "current filterrific params: %s" % params[:filterrific]
+    @filterrific = initialize_filterrific(
+      Post,
+      params[:filterrific] || Post.default_filterrific_values,
+      :select_options => {
+        sorted_by: Post.options_for_sorted_by,
+        choose_category: Post.options_for_choose_category,
+      }
+    ) or return
+    @posts = @filterrific.find.page(params[:page])
+  
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def filter

@@ -16,6 +16,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# add haml for templating
+gem 'haml'
+
 # use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -26,7 +29,8 @@ gem 'paperclip-cloudinary'
 gem 'carrierwave'
 gem 'cloudinary'
 
-# for homepage paging
+# for homepage paging, filter, sort
+gem 'filterrific'
 gem 'kaminari'
 
 # for searching

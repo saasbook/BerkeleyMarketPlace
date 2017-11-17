@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   
   # posts
   get 'posts/:id/destroy', to: 'posts#destroy', as: 'post_destroy'
+  get 'search-posts', to: 'posts#search', as: 'post_search'
+  get "posts/:id/mark_as_sold", to: "posts#mark_as_sold", as: 'mark_post_as_sold'
   
   # authentication
   get 'auth/:provider/callback', to: 'sessions#create'
@@ -23,16 +25,6 @@ Rails.application.routes.draw do
   get '/admin', to: 'users#admin', as: 'admin'
   
   # ajax calls
-  get "/filter" => 'application#filter', as: 'filter', format: 'js'
   get "/update_form_subcategory" => 'posts#update_form_subcategory', as: 'update_form_subcategory', format: 'js'
-  
-  # profile
-  get "/user/profile", to:"users#profile"
-  post "/user/profile", to:"users#update_profile_pic"
-  get "/user/mypost", to:"users#mypost"
-  get '/user/posts/:id', to: 'posts#show'
-  
-  # edit
-  get "/user/posts/:id/edit", to: "posts#edit"
-  get "/user/posts/:id/mark_as_sold", to: "posts#mark_as_sold"
+
 end

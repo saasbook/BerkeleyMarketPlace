@@ -74,35 +74,29 @@ class PostsController < ApplicationController
   end
   
   def index
-    @categories = Post.get_categories
-    
-    category = params[:category]
-    subcategory = params[:subcategory]
-    
-    if params[:search_terms]
-      posts = Post.get_searched_posts(params[:search_terms])
-    else
-      posts = Post.get_all_valid_posts
+    logger.debug "current filterrific params: %s" % params[:filterrific]
+    @filterrific = initialize_filterrific(
+      Post,
+      params[:filterrific] || Post.default_filterrific_values,
+      :select_options => {
+        sorted_by: Post.options_for_sorted_by,
+        choose_category: Post.options_for_choose_category,
+      }
+    ) or return
+    @posts = @filterrific.find.page(params[:page])
+  
+    respond_to do |format|
+      format.html
+      format.js
     end
-    
-    if category
-      posts = posts.where("category = ?", category)
-    end
-    
-    if subcategory
-      posts = posts.where("subcategory = ?", subcategory)
-    else
-      posts = posts
-    end
-    
-    if not posts.nil?
-      @posts = posts.page params[:page]
-    end
+  end
+  
+  def search
+    redirect_to action: :index, filterrific: {search_query: params[:search_terms]}
   end
   
   
   def edit
-    # the Edit Post page
     id = params[:id]
     @post = Post.find(id)
     @avilability = "available"

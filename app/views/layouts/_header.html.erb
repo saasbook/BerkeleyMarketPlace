@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <form accept-charset="UTF-8" action="/posts" method="get" class="form-inline my-2 my-lg-0" id="navBarSearchForm">
+      <form accept-charset="UTF-8" action="/search-posts" method="get" class="form-inline my-2 my-lg-0" id="navBarSearchForm">
         <input id="search_terms" name="search_terms" class="form-control mr-sm-2" type="text" placeholder="Search Something!" aria-label="Search">
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Go</button>
       </form>
@@ -14,7 +14,7 @@
           <a class="nav-link" id="create_post" href="/posts/new">Post Now!</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/user/profile"><%= current_user.name %></a>
+          <a class="nav-link" href="/user/profile">Dashboard</a>
         </li>
         <% if current_user.superuser? %>
           <li class="nav-item">

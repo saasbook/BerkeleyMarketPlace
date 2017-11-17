@@ -20,19 +20,19 @@ Scenario: direct to create new post with setted email
   
 Scenario: select a category updates subcategory selections correctly
   When I go to the create page
-  Then "post_subcategory" should contain option "please select subcategory"
+  Then "post_subcategory" should contain option "please select a category first"
   And "post_subcategory" should not contain option "book"
   
   Then I select "item" from "Category"
-  Then "post_subcategory" should not contain option "please select subcategory"
+  Then "post_subcategory" should not contain option "please select a category first"
   And "post_subcategory" should contain option "book"
   
   Then I select "event" from "Category"
-  Then "post_subcategory" should not contain option "please select subcategory"
+  Then "post_subcategory" should not contain option "please select a category first"
   And "post_subcategory" should contain option "performance"
   
   Then I select "- Select -" from "Category"
-  Then "post_subcategory" should contain option "please select subcategory"
+  Then "post_subcategory" should contain option "please select a category first"
   And "post_subcategory" should not contain option "book"
   And "post_subcategory" should not contain option "performance"
 
@@ -57,7 +57,7 @@ Scenario: didn't upload image - sad path
   When I press "Create Post"
   Then I should be on the create page
 
-Scenario: didn't emter number for prices - sad path
+Scenario: didn't enter number for prices - sad path
   Given I am on the create page
   Then I attach the file to "Image"
   And I fill in "Title" with "Doggy Huang2"
