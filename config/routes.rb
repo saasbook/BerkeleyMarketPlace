@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root 'application#index'
 
   # resources
-  resources :posts, except: [:destroy]
+  resources :posts, except: [:destroy] do
+    resources :wishs, except: [:destroy]
+  end
   resources :users
   resources :sessions, only: [:create, :destroy]
   
@@ -19,12 +21,18 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: 'logout'
   
   # user
-  get "/user/profile", to:"users#profile"
-  post "/user/profile", to:"users#update_profile_pic"
-  get "/user/mypost", to:"users#mypost"
   get '/admin', to: 'users#admin', as: 'admin'
   
   # ajax calls
   get "/update_form_subcategory" => 'posts#update_form_subcategory', as: 'update_form_subcategory', format: 'js'
+  
+  # profile
+  get "/user/profile", to:"users#profile"
+  post "/user/profile", to:"users#update_profile_pic"
+  get "/user/mypost", to:"users#mypost"
+  get "/user/mywishlist", to:"users#mywishlist"
+
+  # wishs
+  get "/posts/:post_id/wishs/:id/delete", to:"wishs#delete", as:"delete_from_wish"
 
 end

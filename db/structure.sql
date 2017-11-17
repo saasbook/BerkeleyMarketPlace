@@ -165,6 +165,39 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
+-- Name: wishes; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE wishes (
+    id integer NOT NULL,
+    user_id integer,
+    post_id integer,
+    notification boolean,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: wishes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE wishes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: wishes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE wishes_id_seq OWNED BY wishes.id;
+
+
+--
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -176,6 +209,13 @@ ALTER TABLE ONLY posts ALTER COLUMN id SET DEFAULT nextval('posts_id_seq'::regcl
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY wishes ALTER COLUMN id SET DEFAULT nextval('wishes_id_seq'::regclass);
 
 
 --
@@ -192,6 +232,14 @@ ALTER TABLE ONLY posts
 
 ALTER TABLE ONLY users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: wishes_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY wishes
+    ADD CONSTRAINT wishes_pkey PRIMARY KEY (id);
 
 
 --
@@ -225,9 +273,9 @@ INSERT INTO schema_migrations (version) VALUES ('20171105194148');
 
 INSERT INTO schema_migrations (version) VALUES ('20171112180401');
 
-INSERT INTO schema_migrations (version) VALUES ('20171116213035');
-
 INSERT INTO schema_migrations (version) VALUES ('20171116214206');
+
+INSERT INTO schema_migrations (version) VALUES ('20171116235353');
 
 INSERT INTO schema_migrations (version) VALUES ('20171117043852');
 

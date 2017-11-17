@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     @post = Post.find(id)
     @user = User.find(@post.author_id)
     @release_time_formatted = @post.release_time.strftime("(released %B %d, %Y, %I%p)")
+    @wish = Wish.where(user_id: current_user.id, post_id: @post.id).first
   end
   
   def new
@@ -145,5 +146,6 @@ class PostsController < ApplicationController
     Post.destroy(id)
     redirect_to("/", flash: { notice: "Post #{id} is removed from the database by admin"})
   end
+  
 
 end

@@ -21,7 +21,11 @@ Given /^I created a post with title "(.*)"$/ do |title|
     click_on(button)
 end
 
-And /^(?:|I )should see button "([^"]*)"$/ do |button|
+And /^(?:|I )should see button "(.*)"$/ do |button|
     # page.should have_button(button)
     should have_selector('a', text: button)
+end
+
+When /^(?:|I )press "(.*)" for the post contains "(.*)"$/ do |button, title|
+    # pending
 end

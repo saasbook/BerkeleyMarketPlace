@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     end
     
     def mypost
-        @mypost = Post.get_user_posts(current_user.id)
+        @mypost = current_user.posts
         if @mypost.nil?
             @view_to_render = 'users/empty_post_grid'
         else
@@ -59,5 +59,13 @@ class UsersController < ApplicationController
         end
     end
     
+    def mywishlist
+        @mywishs = current_user.wish_posts
+        if @mywishs.nil?
+            @view_to_render = 'users/empty_post_grid'
+        else
+            @view_to_render = 'users/mywishlist_grid'
+        end
+    end
 end
 

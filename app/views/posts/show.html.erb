@@ -23,13 +23,21 @@
        <p style="color:<%= if @post.available then 'green' else 'red' end %>"><%= if @post.available then 'Available' else 'Not available' end %> <%= @release_time_formatted%> </p> 
         
        <p>Contact: <a href="mailto:<%= @user.email %>"> <%= @user.email %> </a></p>
+       
        <% if current_user.superuser? %>
          <%= link_to "Remove by Admin", post_destroy_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
        <% end %>
+       
        <% if current_user.id == @post.author_id %>
          <%= link_to "EDIT", edit_post_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
        <% end %>
-       <a class="btn btn-primary btn-l js-scroll-trigger" href="#">Add to Wishlist</a>
+
+       <% if not @wish.nil? %>
+           <%= link_to "Remove from Wishlist",  delete_from_wish_path(@post, @wish), class: "btn btn-primary btn-l js-scroll-trigger" %>
+       <% else %>
+           <%= link_to "Add to Wishlist", new_post_wish_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
+       <% end %>
+
        <p></p>
         <h3>Description</h3>
         <p><%= @post.description %></p> 

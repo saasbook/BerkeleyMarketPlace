@@ -54,4 +54,12 @@ ActiveRecord::Schema.define(version: 20171117043923) do
     t.boolean  "admin",                    default: false
   end
 
+  create_table "wishes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.boolean  "notification"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
 end
