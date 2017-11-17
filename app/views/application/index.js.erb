@@ -1,0 +1,7 @@
+<% js = escape_javascript(
+  render(
+    :partial => 'layouts/posts_grid',
+    :locals => { :posts => @posts }
+  )
+) %>
+$("#results").html("<%= js %>");

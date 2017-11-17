@@ -25,8 +25,14 @@ class Post < ActiveRecord::Base
     validates_attachment :image,
                      content_type: { content_type: /\Aimage\/.*\z/ },
                      size: { less_than: 1.megabyte }
+                     
+    filterrific :default_filter_params => { search_query: 'iclicker' },
+                :available_filters => [
+                  :search_query,
+                  :sorted_by,
+                  :choose_category,
+                ]
 
-        
     @@categories = {
         item: [
             "book",
@@ -52,6 +58,65 @@ class Post < ActiveRecord::Base
     }
     
     @@empty_subcategory = ["please select subcategory"]
+    
+    scope :search_query, lambda { | query |
+        where(available: true).where("title ILIKE :s OR category ILIKE :s OR subcategory ILIKE :s OR description ILIKE :s", {:s => "%#{query.downcase}%"})
+    }
+    
+    scope :sorted_by, lambda { |sort_option|
+        # extract the sort direction from the param value.
+        direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
+        case sort_option.to_s
+        when /^release_time/
+          order("release_time #{ direction }")
+        when /^price/
+          order("price #{ direction }")
+        else
+          raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
+        end
+    }
+    
+    scope :choose_category, lambda { |option|
+        category = option.split("_")[0]
+        subcategory = option.split("_")[1]
+        if category != "all"
+            if subcategory == "all"
+                where('category = ?', category)
+            else
+                where('category = ? AND subcategory = ?', category, subcategory)
+            end
+        end
+    }
+    
+    def self.default_filterrific_values
+       {
+           search_query: "",
+           sort_by: "",
+           choose_category: "all_all"
+       } 
+    end
+    
+    def self.options_for_choose_category
+       lst = []
+       lst.push ["All", "all_all"]
+       lst.push ["Items", "item_all"]
+       lst.concat @@categories[:item].map { |v| [("&nbsp;"*4).html_safe + v, "item_" + v] } 
+       lst.push ["Events", "event_all"]
+       lst.concat @@categories[:event].map { |v| [("&nbsp;"*4).html_safe + v,"event_" + v] } 
+       lst.push ["Jobs", "job_all"]
+       lst.concat @@categories[:job].map { |v| [("&nbsp;"*4).html_safe + v,"job_" + v] }
+    end
+    
+    
+      
+    def self.options_for_sorted_by
+        [
+            ['price: lowest first', 'price_asc'],
+            ['price: highest first', 'price_desc'],
+            ['time: latest first', 'release_time_desc'],
+            ['time: oldest first', 'release_time_asc']
+        ]
+    end
     
     def self.get_categories
         @@categories.keys

@@ -32,6 +32,7 @@ end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
+  Rails.logger.debug page.body
 end
 
 When /^(?:|I )press "([^"]*)"$/ do |button|

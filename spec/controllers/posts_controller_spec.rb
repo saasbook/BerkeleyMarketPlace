@@ -75,8 +75,8 @@ RSpec.describe PostsController, type: :controller do
     end
     
     it 'calls the model method that performs search' do
-      expect(Post).to receive(:get_searched_posts).with('sample')
-      post :index, {:search_terms => 'sample'}
+      get :search, {:search_terms => 'searchSample'}
+      expect(response.location).to include("searchSample")
     end
   end
 end

@@ -1,0 +1,25 @@
+
+#filterSidebar
+  = form_for_filterrific @filterrific do |f|
+    .row
+      .col-md-1
+      .col-md-3
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search Posts' }
+          %label Search
+          = f.text_field :search_query,
+                         :class => 'filterrific-periodically-observed form-control'
+      .col-md-3
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
+          %label Sorted by
+          = f.select :sorted_by,
+                      @filterrific.select_options[:sorted_by],
+                      {},
+                      { :class => "form-control" }
+      .col-md-3
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
+          %label Choose category
+          = f.select :choose_category,
+                      @filterrific.select_options[:choose_category],
+                      {},
+                      { :class => "form-control" }
+                  

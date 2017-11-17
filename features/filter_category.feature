@@ -12,23 +12,24 @@ Background:
   
 Scenario: default to show all posts
   When I go to the home page
+  Then I wait 2 seconds
   Then I should see "sample item"
   And I should see "sample event"
   
 Scenario: select item category only gives items
   When I go to the home page
-  Then I switch category to "item"
+  And I filter posts using "choose_category" by "Items"
   Then I should see "sample item"
   And I should not see "sample event"
 
 Scenario: select event category only gives event
   When I go to the home page
-  Then I switch category to "event"
+  And I filter posts using "choose_category" by "Events"
   Then I should not see "sample item"
   And I should see "sample event"
 
 Scenario: select all category gives all posts
   When I go to the home page
-  Then I switch category to "all"
+  And I filter posts using "choose_category" by "All"
   Then I should see "sample item"
   And I should see "sample event"
