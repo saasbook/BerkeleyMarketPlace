@@ -26,6 +26,7 @@ Scenario: direct to user profile page
   Then I should be on the user page
   Then I should see "cucumber.test@berkeley.edu"
 
+
 Scenario: upload profile image
   Given I am on the user page
   Then I attach the file to "Profile Image"
