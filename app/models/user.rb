@@ -14,7 +14,9 @@ class User < ActiveRecord::Base
                     content_type: { content_type: /\Aimage\/.*\z/ },
                     size: { less_than: 1.megabyte }  
   
-  has_one :wishlist
+  has_many :posts, :foreign_key => "author_id"
+  has_many :wish_posts, :through => :wishs, :source => :post
+  has_many :wishs
   
   def superuser?
     admins = User.where(admin:true)
@@ -44,5 +46,9 @@ class User < ActiveRecord::Base
     
   def self.get_test_user
     self.first
+  end
+  
+  def self.has_wish?(post_id)
+    self.wish_posts.exists?(post_id: post_id)
   end
 end

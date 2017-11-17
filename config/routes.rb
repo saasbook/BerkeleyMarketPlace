@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root 'application#index'
 
   # resources
-  resources :posts, except: [:destroy]
+  resources :posts, except: [:destroy] do
+    resources :wishs
+  end
   resources :users
   resources :sessions, only: [:create, :destroy]
   

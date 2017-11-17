@@ -145,5 +145,6 @@ class PostsController < ApplicationController
     Post.destroy(id)
     redirect_to("/", flash: { notice: "Post #{id} is removed from the database by admin"})
   end
+  
 
 end

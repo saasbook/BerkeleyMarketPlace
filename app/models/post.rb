@@ -33,8 +33,10 @@ class Post < ActiveRecord::Base
                   :sorted_by,
                   :choose_category,
                 ]
-
-    belongs_to :wishlist
+                
+    has_many :wish_users, :through => :wishs, :source => :user
+    has_many :wishs
+    belongs_to :user, :foreign_key => "author_id"
 
     @@categories = {
         item: [

@@ -29,7 +29,7 @@
        <% if current_user.id == @post.author_id %>
          <%= link_to "EDIT", edit_post_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
        <% end %>
-       <a class="btn btn-primary btn-l js-scroll-trigger" href="#">Add to Wishlist</a>
+       <%= link_to "Add to Wishlist", new_post_wish_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
        <p></p>
         <h3>Description</h3>
         <p><%= @post.description %></p> 
