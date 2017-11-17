@@ -669,6 +669,8 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
         1,
         1,
@@ -754,6 +756,14 @@
         0,
         null,
         null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        0,
         null,
         null,
         1,
@@ -799,7 +809,7 @@
         null,
         null,
         1,
-        5,
+        3,
         null,
         null,
         1,
@@ -1236,9 +1246,13 @@
       ]
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "timestamp": 1510898376
 =======
     "timestamp": 1510879222
 >>>>>>> [feat] use filterrific as filter to do sorting, filtering and search
+=======
+    "timestamp": 1510886721
+>>>>>>> [build] fix db config for merge with search
   }
 }

@@ -11,12 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-
-ActiveRecord::Schema.define(version: 20171117043923) do
-=======
->>>>>>> [feat] use filterrific as filter to do sorting, filtering and search
-
 ActiveRecord::Schema.define(version: 20171117043923) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"

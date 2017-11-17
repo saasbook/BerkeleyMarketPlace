@@ -46,7 +46,6 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.3, < 2)
       sass (>= 3.5.2)
-    bootstrap-select-rails (1.12.1)
     builder (3.2.3)
     capybara (2.15.4)
       addressable
@@ -310,7 +309,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap (~> 4.0.0.beta)
-  bootstrap-select-rails
   carrierwave
   cloudinary
   codeclimate-test-reporter (~> 1.0.0)
