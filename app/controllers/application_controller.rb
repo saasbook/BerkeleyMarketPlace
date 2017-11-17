@@ -39,10 +39,11 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-    logger.debug "current filterrific params: %s" % params[:filterrific]
+    filterrific_params = Post.complete_filterrific_params(params[:filterrific])
+    logger.debug "current filterrific params: %s" % filterrific_params
     @filterrific = initialize_filterrific(
       Post,
-      params[:filterrific] || Post.default_filterrific_values,
+      filterrific_params,
       :select_options => {
         sorted_by: Post.options_for_sorted_by,
         choose_category: Post.options_for_choose_category,

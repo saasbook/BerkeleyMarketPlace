@@ -25,8 +25,17 @@ class Post < ActiveRecord::Base
     validates_attachment :image,
                      content_type: { content_type: /\Aimage\/.*\z/ },
                      size: { less_than: 1.megabyte }
+    
+    def self.default_filterrific_values
+       {
+           is_available: "true",
+           search_query: "",
+           sorted_by: "",
+           choose_category: "all_all"
+       } 
+    end
                      
-    filterrific :default_filter_params => { search_query: 'iclicker' },
+    filterrific :default_filter_params => default_filterrific_values,
                 :available_filters => [
                   :is_available,
                   :search_query,
@@ -100,13 +109,18 @@ class Post < ActiveRecord::Base
         end
     }
     
-    def self.default_filterrific_values
-       {
-           is_available: "true",
-           search_query: "",
-           sort_by: "",
-           choose_category: "all_all"
-       } 
+    def self.complete_filterrific_params incomplete_params
+        
+        if incomplete_params.nil?
+            return default_filterrific_values
+        end
+        
+        for key in default_filterrific_values.keys do
+            if not incomplete_params.key? key
+                incomplete_params[key] = default_filterrific_values[key]
+            end
+        end
+        return incomplete_params
     end
     
     def self.options_for_is_available
