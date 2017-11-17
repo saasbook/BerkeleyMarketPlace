@@ -5,3 +5,6 @@
   )
 ) %>
 $("#results").html("<%= js %>");
+
+<% page = escape_javascript(paginate @posts) %>
+$("#paging").html("<%= page %>");

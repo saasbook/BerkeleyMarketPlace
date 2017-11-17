@@ -1,7 +1,10 @@
-<% js = escape_javascript(
+<% grid = escape_javascript(
   render(
     :partial => 'layouts/posts_grid',
     :locals => { :posts => @posts }
   )
 ) %>
-$("#results").html("<%= js %>");
+$("#results").html("<%= grid %>");
+
+<% page = escape_javascript(paginate @posts) %>
+$("#paging").html("<%= page %>");
