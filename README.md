@@ -86,7 +86,7 @@ Push to your own remote branch allows you to see Travis coverage and create a pu
 
 The commit message types are in [this link](https://github.com/commitizen/conventional-commit-types/blob/master/index.json).
 
-### ImageMagick on C9 and Heroku
+### ImageMagick on C9
 
 We use `paperclip` gem to support image upload.
 This gem uses ImageMagick CLI tool to validate image and resize.
@@ -97,7 +97,7 @@ Because ImageMagick is a CLI, it needs to be vendored in Heroku deoloyment.
 We currently use version `7.0.4` vendored by [this repo](https://github.com/jasonfb/heroku-buildpack-cedar14-imagemagick704).
 If developer needs to configure a new Heroku app, make sure to switch to Cedar14 stack before vendoring(the default is 16)
 
-### PostgresSQL on C9 and Heroku
+### PostgresSQL on C9 and TravisCI
 
 Because our app includes search functionalities that relies on PostgresSQL,
 we use PostgresSQL for all stages. This requires developer to install Postgres on C9 and also configure Heroku accordingly.
@@ -112,7 +112,8 @@ To start the service, run
 sudo service postgresql start
 ```
 
-For testing stage, `.travis.yml`, `config/database.yml.travis` contains Travis CI test configuration for PostgresSQL
+For testing stage, `.travis.yml`, `config/database.yml.travis` contains Travis CI test configuration for PostgresSQL.
+It overwrites the database configuration to use default postgres user and no password to conduct tests.
 
 
 ### Test Javscript with Rails 4
@@ -141,4 +142,10 @@ and report coverage by:
 bundle exec rspec
 bundle exec cucumber
 CODECLIMATE_REPO_TOKEN=212e457edd4133bddd12366c7bb0d260cb40e73a4d53f749d4ebff902ad845ee bundle exec codeclimate-test-reporter
+```
+
+After running test coverage report in C9 locally, you have to manually kill the server by:
+
+```bash
+kill -9 $(lsof -i:$PORT -t)
 ```
