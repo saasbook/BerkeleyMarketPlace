@@ -58,7 +58,7 @@ class Post < ActiveRecord::Base
         ]
     }
     
-    @@empty_subcategory = ["please select subcategory"]
+    @@empty_subcategory = ["please select a category first"]
     
     scope :is_available, lambda { | val |
        if val != "all"
