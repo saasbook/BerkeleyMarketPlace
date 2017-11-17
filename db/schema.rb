@@ -11,11 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171116214206) do
-=======
-ActiveRecord::Schema.define(version: 20171112180401) do
->>>>>>> [feat] mostly finished the edit function. add portal from both post view and my profile view.
+
+ActiveRecord::Schema.define(version: 20171117043923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
