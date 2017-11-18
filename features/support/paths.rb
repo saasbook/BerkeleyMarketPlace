@@ -15,6 +15,8 @@ module NavigationHelpers
 
     when /^the home\s?page$/ then '/'
       
+    when /^the posts page$/ then '/posts'
+      
     when /^the create\s?page$/ then '/posts/new'
 
     when /^the user\s?page$/ then '/user/profile'
