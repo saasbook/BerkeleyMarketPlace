@@ -78,13 +78,13 @@ When /I filter posts using "(.*)" by "(.*)"/ do |filter, option|
   steps %Q{
     When I select "#{option}" from "filterrific[#{filter}]"
   } 
+  sleep(1)
 end
 
 
 Then /I should see "(.*)" before "(.*)"/ do |text1, text2|
   idx1 = page.body.index(text1)
   idx2 = page.body.index(text2)
-  Rails.logger.debug "index comparison: #{idx1} vs #{idx2}"
   expect(idx1).to be < idx2
   
 end
