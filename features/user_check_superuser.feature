@@ -1,4 +1,5 @@
-Feature: login and authentication 
+# id 152181407
+Feature: check super user
 
   As a superuser,
   I want to manage all people's posts

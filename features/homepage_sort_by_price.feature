@@ -1,4 +1,5 @@
-Feature: buyer can filter by category on homepage
+# id 152579776
+Feature: buyer can sort by price on homepage
  
   As a buyer,
   I want to see cheapest posts,
