@@ -30,7 +30,7 @@ Scenario: direct to user profile page
 
 Scenario: upload profile image
   Given I am on the user page
-  Then I attach the file to "Profile Image"
+  Then I attach the file to "user_image"
   When I press "Save"
   Then I should have image in the field "Profile Image"
 

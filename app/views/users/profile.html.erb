@@ -12,12 +12,12 @@
           
             <h4 class="my-4">Profile Image</h1>
             <div id="imagePreview" class="form-group">
-              <img><%= image_tag @profile_img, class: "img-fluid", alt: "Responsive image", width:  "350"%></img>  
+              <img><%= image_tag @profile_img, id: "Profile Image", class: "img-fluid", alt: "Responsive image", width:  "350"%></img>  
             </div>
             
             <div class="form-row">
               <div class="col-4">
-                <%= f.file_field :image, id: "Profile Image", class: "form-control", required: true %>
+                <%= f.file_field :image, id: "user_image", class: "form-control", required: true %>
 
               </div>
               <div class="col">
