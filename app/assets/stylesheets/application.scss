@@ -4,8 +4,8 @@
 @import "d3_timeseries";
 @import "login";
 
-#pageContent {
-  padding: 50px 50px;
+.container {
+  padding-top: 50px;
 }
 
 .btn-large {
@@ -51,7 +51,17 @@ nav .input-field label {
 }
 
 .card {
-  height: 340px;
+  height: 300px;
+}
+@media #{$medium-and-up} {
+  .card {
+    height: 340px;
+  }
+}
+@media #{$large-and-up} {
+  .card {
+    height: 340px;
+  }
 }
 
 .dropdown-content li > span {
@@ -59,10 +69,13 @@ nav .input-field label {
 }
 
 
+nav .brand-logo {
+  font-size: 1.2rem;
+}
 
-
-
-
+#sidenav-overlay {
+  z-index: 998;
+}
 
 
 
