@@ -1,0 +1,19 @@
+<div class="row">
+  <%= form_for_filterrific @filterrific do |f| %>
+  
+    <div class="input-field col s12">
+      Search
+      <%= f.text_field :search_query, :class => 'filterrific-periodically-observed' %>
+    </div>
+      
+    <div class="input-field col s12">
+      Sorted by
+      <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by], { include_blank: '- None -' }) %>
+    </div>
+    
+    <div class="input-field col s12">
+      Choose category
+      <%= f.select(:choose_category, @filterrific.select_options[:choose_category]) %>
+    </div>
+  <% end %>
+</div>

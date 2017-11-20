@@ -40,15 +40,16 @@
   <li><a href="/logout">Logout</a></li>
 </ul>
 
-
-<nav class="hide-on-large-only">
-  <div class="nav-wrapper">
-    <form class="s12">
-      <div class="input-field">
-        <input id="search" type="search" required>
-        <label class="label-icon" for="search" placeholder="Explore Marketplace" ><i class="material-icons">search</i></label>
-        <i class="material-icons">close</i>
-      </div>
-    </form>
-  </div>
-</nav>
+<div class="navbar-fixed hide-on-large-only">
+  <nav>
+    <div class="nav-wrapper">
+      <form class="s12" action="/search-posts" method="get">
+        <div class="input-field">
+          <input id="search_terms" name="search_terms" type="search" placeholder="Explore Marketplace">
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+</div>
