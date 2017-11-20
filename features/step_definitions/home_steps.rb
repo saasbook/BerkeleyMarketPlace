@@ -75,9 +75,7 @@ When /I logout/ do
 end
 
 When /I filter posts using "(.*)" by "(.*)"/ do |filter, option|
-  steps %Q{
-    When I select "#{option}" from "filterrific[#{filter}]"
-  } 
+  select option, from: "filterrific[#{filter}]", visible: false
   sleep(1)
 end
 

@@ -21,7 +21,7 @@ Scenario: login user to homepage and logout
 Scenario: cannot access any other pages if not logged in
   When I go to the admin page
   Then I should not see "Statistics"
-  And I should see "Start by login"
+  And I should see "LOGIN WITH BMAIL"
   
   
 Scenario: cannot login with non berkeley email

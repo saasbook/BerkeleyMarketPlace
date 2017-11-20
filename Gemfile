@@ -37,7 +37,7 @@ gem 'kaminari'
 gem 'pg_search'
 
 # Bootstrap, can only use latest beta version for this rails version
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'materialize-sass'
 gem 'sass-rails', '>= 3.2'
 
 # authentication

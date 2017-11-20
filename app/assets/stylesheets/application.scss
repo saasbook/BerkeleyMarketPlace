@@ -1,19 +1,74 @@
 
-@import "bootstrap";
+@import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "d3_timeseries";
 @import "login";
 
 #pageContent {
-  padding-top: 100px;
+  padding: 50px 50px;
 }
 
-#navBarSearchForm input[type=text]{
-    width:430px !important;
+.btn-large {
+  background-color: color("berkeley", "base");
+  padding: 0 1rem;
+  &:hover {
+      background-color: color("berkeley", "web-medalist");
+  }
 }
 
-.card p{
-  font-size: 13px;
+.nav-wrapper {
+  // width: 90%;
+  // margin: 0 auto;
+  background-color: color("berkeley", "lawrence");
 }
+
+.page-footer .footer-copyright {
+  background-color: color("berkeley", "lawrence");
+}
+
+input[id="search_terms"] {
+  height: 45px !important;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.search-input{
+  background-color: color("berkeley", "web-background-gray") ;
+  height: 45px !important;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+nav .input-field label {
+    top: -20px;
+    left: 0;
+}
+
+.pagination li.active {
+  background-color: color("berkeley", "lawrence");
+  top: 0;
+  left: 0;
+}
+
+.card {
+  height: 340px;
+}
+
+.dropdown-content li > span {
+  color: color("berkeley", "base");
+}
+
+
+
+
+
+
+
+
+
+
+
+// old css, needs to be rewritten
 
 .btn-file {
     position: relative;
@@ -68,14 +123,4 @@
 
 .breadcrumb {
     background-color: #EEEEEE;
-}
-
-
-#paging {
-    margin: auto; 
-    max-width: 400px;
-}
-
-.card-title {
-    font-size: 18px;
 }
