@@ -1,30 +1,60 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="/">Berkeley MarketPlace</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <form accept-charset="UTF-8" action="/search-posts" method="get" class="form-inline my-2 my-lg-0" id="navBarSearchForm">
-        <input id="search_terms" name="search_terms" class="form-control mr-sm-2" type="text" placeholder="Search Something!" aria-label="Search">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Go</button>
-      </form>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" id="create_post" href="/posts/new">Post Now!</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/user/profile">Dashboard</a>
-        </li>
-        <% if current_user.superuser? %>
-          <li class="nav-item">
-            <a class="nav-link" href="/admin">Admin</a>
-          </li>
-        <% end %>
-        <li class="nav-item">
-          <a class="nav-link" href="/logout">Logout</a>
-        </li>
-      </ul>
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">-->
+<!--  <div class="container">-->
+<!--    <a class="navbar-brand" href="/">Berkeley MarketPlace</a>-->
+<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse" id="navbarResponsive">-->
+<!--      <form accept-charset="UTF-8" action="/search-posts" method="get" class="form-inline my-2 my-lg-0" id="navBarSearchForm">-->
+<!--        <input id="search_terms" name="search_terms" class="form-control mr-sm-2" type="text" placeholder="Search Something!" aria-label="Search">-->
+<!--        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Go</button>-->
+<!--      </form>-->
+<!--      <ul class="navbar-nav ml-auto">-->
+<!--        <li class="nav-item active">-->
+<!--          <a class="nav-link" id="create_post" href="/posts/new">Post Now!</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="/user/profile">Dashboard</a>-->
+<!--        </li>-->
+<!--        -->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="/admin">Admin</a>-->
+<!--          </li>-->
+<!--        -->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="/logout">Logout</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+
+<div class="navbar-fixed">
+  <nav class="berkeley lawrence">
+    <div class="nav-wrapper">
+      <div class="row">
+        <div class="col s3">
+          <ul>
+            <li><a href="/" class="brand-logo">Berkeley Marketplace</a></li>
+          </ul>
+        </div>
+        <div class="col s6">
+          <form class="search-input" action="/search-posts" method="get">
+            <div class="input-field">
+              <input id="search_terms" name="search_terms" type="search" placeholder="Explore Marketplace" />
+            </div>
+          </form>
+        </div>
+        <div class="col s3">
+          <ul>
+            <li><a href="/user/profile">Dashboard</a></li>
+            <% if current_user.superuser? %>
+              <li><a href="/admin">Admin</a></li>
+            <% end %>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>  
     </div>
-  </div>
-</nav>
+  </nav>
+</div>

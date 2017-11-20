@@ -11,9 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require filterrific/filterrific-jquery
+//= require materialize-sprockets
 //= require turbolinks
-//= require popper
-//= require bootstrap
 //= require_tree .
+
+$(document).ready(function(){
+
+    //collpase for mobile button
+    $(".button-collapse").sideNav();
+    $('select').material_select();
+});

@@ -154,7 +154,7 @@ class Post < ActiveRecord::Base
     end
     
     def short_title 
-        title.truncate(32)
+        title.truncate(45)
     end
     
     def self.get_categories

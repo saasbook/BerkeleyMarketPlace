@@ -1,17 +1,33 @@
-<header class="masthead">
-  <div class="header-content">
-    <div class="header-content-inner">
-      <h1 id="homeHeading">Berkeley MarketPlace</h1>
-      <hr>
-      <h3>Marketplace Exclusive to the UC Berkeley Community</h3>
-      <h3>Free & For Sale, Info Sessions, Part-time Jobs</h3>
-      <p>Start by login with your Bmail</p>
-      <% if flash[:notice] %>
-            <h5 style="color:red"><%= flash[:notice] %></h5>
-      <% end %>
-      <a class="btn btn-primary btn-xl js-scroll-trigger" href="/auth/google_oauth2">Login</a>
+<!--<header class="masthead">-->
+<!--  <div class="header-content">-->
+<!--    <div class="header-content-inner">-->
+<!--      <h1 id="homeHeading">Berkeley MarketPlace</h1>-->
+<!--      <hr>-->
+<!--      <h3>Marketplace Exclusive to the UC Berkeley Community</h3>-->
+<!--      <h3>Free & For Sale, Info Sessions, Part-time Jobs</h3>-->
+<!--      <p>Start by login with your Bmail</p>-->
+      
+<!--      <a class="btn btn-primary btn-xl js-scroll-trigger" href="/auth/google_oauth2">Login</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</header>-->
+
+
+<div id="index-banner" class="login">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br><br><br><br><br><br>
+      <h1 class="header center">Berkeley Marketplace</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Marketplace Exclusive to the UC Berkeley Community</h5>
+        <% if flash[:notice] %>
+            <h5 class="header col s12 light"><%= flash[:notice] %></h5>
+        <% end %>
+      </div>
+      <div class="row center">
+        <a href="/auth/google_oauth2" class="btn-large waves-effect waves-light">Login with Bmail</a>
+      </div>
+      <br><br>
     </div>
   </div>
-</header>
-
-
+</div>
