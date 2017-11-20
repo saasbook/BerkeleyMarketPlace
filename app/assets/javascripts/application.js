@@ -17,10 +17,16 @@
 //= require_tree .
 
 $(document).ready(function(){
-    
-    $('select').material_select();
-    
-    $(".button-collapse").sideNav({
-        closeOnClick: true
-    });
+  $('select').material_select();
+  $(".button-collapse").sideNav({
+      closeOnClick: true
+  });
 });
+
+// for turbolink lazy loading
+$(document).on('turbolinks:load', function() {
+  $('select').material_select();
+  $(".button-collapse").sideNav({
+      closeOnClick: true
+  });
+})
