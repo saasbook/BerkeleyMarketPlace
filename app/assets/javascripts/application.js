@@ -21,6 +21,7 @@ $(document).ready(function(){
   $(".button-collapse").sideNav({
       closeOnClick: true
   });
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
 });
 
 // for turbolink lazy loading
@@ -29,4 +30,5 @@ $(document).on('turbolinks:load', function() {
   $(".button-collapse").sideNav({
       closeOnClick: true
   });
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
 })

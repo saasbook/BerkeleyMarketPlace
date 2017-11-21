@@ -9,28 +9,59 @@
 }
 
 .btn-large {
-  background-color: color("berkeley", "base");
+  // background-color: color("berkeley", "base");
   padding: 0 1rem;
   &:hover {
       background-color: color("berkeley", "web-medalist");
   }
 }
 
+nav ul li a {
+  color: $primary-color;
+  &:hover {
+    color: color("berkeley", "web-medalist");
+    background-color: rgba(0,0,0,0);
+  }
+}
+
+.brand-logo img {
+  padding: 1rem 0rem;
+  width: 150px;
+}
+
+nav {
+  background-color: color("berkeley", "white");
+}
+
+nav ul li {
+  margin: 0 -3px;
+}
+
+nav ul a {
+  color: $primary-color;
+}
+
 .nav-wrapper {
-  // width: 90%;
-  // margin: 0 auto;
-  background-color: color("berkeley", "lawrence");
+  width: 90%;
+  margin: 0 auto;
+  color: $primary-color;
+  background-color: color("berkeley", "white");
+  
+}
+
+.nav-wrapper .btn-floating i {
+  color: $primary-color;
+  margin-top: -10px;
 }
 
 .page-footer {
-  background-color: color("berkeley", "lawrence");
+  color: color("berkeley", "base");
+  background-color: color("berkeley", "white");
 }
 
 .page-footer .footer-copyright {
-  background-color: color("berkeley", "lawrence");
+  background-color: color("berkeley", "white");
 }
-
-
 
 input[id="search_terms"] {
   height: 45px !important;
@@ -39,7 +70,8 @@ input[id="search_terms"] {
 }
 
 .search-input{
-  background-color: color("berkeley", "web-background-gray") ;
+  border: 1px solid;
+  background-color: color("berkeley", "white");
   height: 45px !important;
   margin-top: 10px;
   border-radius: 5px;
@@ -51,7 +83,6 @@ nav .input-field label {
 }
 
 .pagination li.active {
-  background-color: color("berkeley", "lawrence");
   top: 0;
   left: 0;
 }
@@ -59,6 +90,7 @@ nav .input-field label {
 .card {
   height: 300px;
 }
+
 @media #{$medium-and-up} {
   .card {
     height: 340px;
@@ -70,8 +102,22 @@ nav .input-field label {
   }
 }
 
-.dropdown-content li > span {
-  color: color("berkeley", "base");
+div#home-carousel {
+  margin-bottom: 50px;
+}
+
+#mobile-search {
+  margin: 0 15px;
+}
+
+#mobile-search input {
+  border: 1px solid;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+#mobile-list li {
+  margin: 10px 2px;
 }
 
 

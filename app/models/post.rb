@@ -146,15 +146,15 @@ class Post < ActiveRecord::Base
       
     def self.options_for_sorted_by
         [
-            ['price: lowest first', 'price_asc'],
-            ['price: highest first', 'price_desc'],
-            ['time: latest first', 'release_time_desc'],
-            ['time: oldest first', 'release_time_asc']
+            ['Low price', 'price_asc'],
+            ['High price', 'price_desc'],
+            ['Latest posts', 'release_time_desc'],
+            ['Oldest posts', 'release_time_asc']
         ]
     end
     
     def short_title 
-        title.truncate(45)
+        title.truncate(40)
     end
     
     def self.get_categories
