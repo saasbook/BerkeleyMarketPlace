@@ -1,21 +1,18 @@
-<div class="row" id="posts_grid">
+<div class="row">
     <% posts.each do |post_info| %>
-      <div class="col-lg-3 col-md-3 mb-3">
-        <div class="card h-100">
-          <%= link_to post_path(post_info)  do %>
-            <%= image_tag post_info.image.url(:thumb), class:"card-img-top" %>
+      <div class="col s6 m4 l3">
+        <div class="card hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+            <%= link_to post_path(post_info)  do%>
+            <%= image_tag safe_url(post_info.image.url(:thumb)), class:"card-img-top" %>
           <% end %>
-          <div class="card-body">
-            <h5 class="card-title">
-              <%= link_to post_info.title, post_path(post_info) %>
-            </h5>
-            <h5>USD $<%= post_info.price %></h5>
-            <p class="card-text"><%= post_info.category %> / <%= post_info.subcategory %></p>
-            <h5><%= link_to "EDIT", edit_post_path(post_info),
-               class: "btn btn-primary btn-l js-scroll-trigger" %></h5>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">$<%= post_info.price %></span>
+            <p><%= link_to post_info.short_title, "posts/%d" % post_info.id %></p>
+            <h5><%= link_to "EDIT", edit_post_path(post_info), class: "btn btn-primary btn-l js-scroll-trigger" %></h5>
             <% if post_info.available? %>
-              <h5><%= link_to "Mark as Sold", mark_post_as_sold_path(post_info),
-                 class: "btn btn-primary btn-l js-scroll-trigger" %></h5>
+                <h5><%= link_to "Mark as Sold", mark_post_as_sold_path(post_info), class: "btn btn-primary btn-l js-scroll-trigger" %></h5>
             <% end %>
           </div>
         </div>
