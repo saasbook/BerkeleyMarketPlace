@@ -1,43 +1,85 @@
-<div class="container" id="profilepage">
+<!--<div class="container" id="profilepage">-->
 
+  <div class = "row">
+    <div class ="col left s12 m12 l12">
+      <h5>Welcome, you are logged in as <span class="user_name"><%= current_user.name %></span> </h5>
+    </div>
+  </div>
+  <div class="divider"></div>
+  
   <div class="row">
-    <div class="col-lg-2">
+    
+    <div class="col s12 m2 l2">
       <%=render "users/profilesidebar" %>
     </div>
     
-    <div class="col-lg-10">
-        
-        <%= form_for :user, :method => :post, :html => { :multipart => true } do |f| %>
-        <div class="form-group">
-          
-            <h4 class="my-4">Profile Image</h1>
-            <div id="imagePreview" class="form-group">
-              <img><%= image_tag @profile_img, id: "Profile Image", class: "img-fluid", alt: "Responsive image", width:  "350"%></img>  
-            </div>
+    <div class="col s12 m10 l10" >
+        <div class="section">
+          <%= form_for :user, :method => :post, :html => { :multipart => true } do |f| %>
+          <div class="form-group">
             
-            <div class="form-row">
-              <div class="col-4">
-                <%= f.file_field :image, id: "user_image", class: "form-control", required: true %>
-
+              <h5 class="sub_header">Profile Image</h5>
+              <div id="imagePreview" class="form-group">
+                <img><%= image_tag @profile_img, id: "Profile Image", class: "img-fluid", alt: "Responsive image", width:  "250"%></img>  
               </div>
-              <div class="col">
-                <%= f.submit "Save", class:"btn btn-primary" %>
+              
+              <div class="form-row">
+                <div class="col-4">
+                  <%= f.file_field :image, id: "user_image", class: "form-control", required: true %>
+                </div>
+                <div class='col-4'>
+                  <%= f.submit "Save", class:"btn btn-primary" %>
+                </div>
               </div>
-            </div>
+          </div>
+          <% end %>
         </div>
-        <% end %>
         
-        <h3>Welcome, you are logged in as <%= current_user.name %></h3>
-        <h4>Email</h4>
-        <p><%= current_user.email %></p> 
-        <h4>Current Notification Preference</h4>
-        <p>Please check back later.</p> 
-        <h4>Subscription</h4>
-        <p>Please check back later.</p> 
+        <div class="divider"></div>
+        <div class="section">
+          <h5 class="sub_header">Email</h5>
+          <p><%= current_user.email %></p> 
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="section">
+          <h5 class="sub_header">Current Notification Preference</h5>
+          <p>Please check back later.</p> 
+          <form action="#">
+            <p>
+              <input type="checkbox" id="test8" disabled="disabled" />
+              <label for="test8">Item</label>
+            </p>
+            <p>
+              <input type="checkbox" id="test8" disabled="disabled" />
+              <label for="test8">Event</label>
+            </p>            
+            <p>
+              <input type="checkbox" id="test8" disabled="disabled" />
+              <label for="test8">Job</label>
+            </p>
+          </form>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="section">
+          <h5 class="sub_header">Subscription</h5>
+          <p>Please check back later.</p> 
+          <div class="switch">
+            <label>
+              Off
+              <input disabled type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+          </div>
+        </div>
     </div>
     
   </div>
-</div>
+<!--</div>-->
 
 
 

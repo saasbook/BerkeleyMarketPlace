@@ -1,13 +1,25 @@
-<div class="container" id="profilepage">
+<!--<div class="container" id="profilepage">-->
+  <div class = "row">
+    <% if @zero_post %>
+      <div class ="col left s12 m12 l12">
+        <h5>You don't have any post yet. Creat a post now!</h5>
+      </div>
+    <% else %>
+      <div class ="col left s12 m12 l12">
+        <h5>Welcome, you are logged in as <span class="user_name"><%= current_user.name %></span> </h5>
+      </div>
+    <% end %>
+  </div>
+  <div class="divider"></div>
 
   <div class="row">
-    <div class="col-lg-2">
+    <div class="col s12 m2 l2">
       <%=render "users/profilesidebar" %>
     </div>
     
-    <div class="col-lg-10">
+    <div class="col s12 m10 l10">
       <%= render partial: @view_to_render, locals: {posts: @mypost} %>
     </div>
 
   </div>
-</div>
+<!--</div>-->
