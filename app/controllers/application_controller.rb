@@ -39,22 +39,82 @@ class ApplicationController < ActionController::Base
   end
 
   def index
+    logger.debug "params to applicaiton#index: #{params}"
+    
     filterrific_params = Post.complete_filterrific_params(params[:filterrific])
-    logger.debug "current filterrific params: %s" % filterrific_params
+    logger.debug "index filterrific params: %s" % filterrific_params
+    
+    @sorted_by = params[:sorted_by]
+    filterrific_params[:sorted_by] = params[:sorted_by]
+    
     @filterrific = initialize_filterrific(
       Post,
       filterrific_params,
       :select_options => {
-        sorted_by: Post.options_for_sorted_by,
-        choose_category: Post.options_for_choose_category,
+        sorted_by: Post.options_for_sorted_by
       }
     ) or return
     @posts = @filterrific.find.page(params[:page])
-  
+    
     respond_to do |format|
       format.html
       format.js
     end
+  end
+  
+  def category
+    
+    logger.debug "params to applicaiton#category: #{params}"
+    
+    filterrific_params = Post.complete_filterrific_params(params[:filterrific])
+    filterrific_params[:choose_category] = Post.all_category_tag_by_id(params[:category_id])
+    
+    logger.debug "category filterrific params: %s" % filterrific_params
+    @sorted_by = params[:sorted_by]
+    filterrific_params[:sorted_by] = params[:sorted_by]
+    
+    @current_category_id = params[:category_id].to_i
+    @filterrific = initialize_filterrific(
+      Post,
+      filterrific_params,
+      :select_options => {
+        sorted_by: Post.options_for_sorted_by
+      }
+    ) or return
+    @posts = @filterrific.find.page(params[:page])
+    
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+  
+  def subcategory
+    
+    filterrific_params = Post.complete_filterrific_params(params[:filterrific])
+    filterrific_params[:choose_category] = Post.category_tag_by_id(params[:category_id], params[:subcategory_id])
+    
+    logger.debug "subcategory filterrific params: %s" % filterrific_params
+    
+    @sorted_by = params[:sorted_by]
+    filterrific_params[:sorted_by] = params[:sorted_by]
+    
+    @current_category_id = params[:category_id].to_i
+    @current_subcategory_id = params[:subcategory_id].to_i
+    @filterrific = initialize_filterrific(
+      Post,
+      filterrific_params,
+      :select_options => {
+        sorted_by: Post.options_for_sorted_by
+      }
+    ) or return
+    @posts = @filterrific.find.page(params[:page])
+    
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    
   end
   
 end

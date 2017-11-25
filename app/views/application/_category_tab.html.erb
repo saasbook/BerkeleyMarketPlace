@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3"><%= link_to "All", root_path, target: "_self" %></li>
+      <% for i in 0...(Post.get_categories.length) %>
+        <li class="tab col s3">
+          <% if @current_category_id == i %>
+            <%= link_to Post.find_category(i), category_path(i), target: "_self", class: "active"  %>
+          <% else %>
+            <%= link_to Post.find_category(i), category_path(i), target: "_self" %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

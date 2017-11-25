@@ -130,8 +130,13 @@ nav .brand-logo {
 }
 
 
+.entry-selected {
+  color: $success-color;
+}
 
-
+div#home-sidebar {
+  padding-left: 30px;
+}
 
 // old css, needs to be rewritten
 
