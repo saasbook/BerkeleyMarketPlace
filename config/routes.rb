@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   
   # category
-  get '/category/:category_id', to: 'application#category', as: 'category'
-  get '/category/:category_id/subcategory/:subcategory_id', to: 'application#subcategory', as: 'subcategory'
+  get '/category/:category_id', to: 'application#index', as: 'category'
+  get '/category/:category_id/subcategory/:subcategory_id', to: 'application#index', as: 'subcategory'
   
   # posts
   get 'posts/:id/destroy', to: 'posts#destroy', as: 'post_destroy'

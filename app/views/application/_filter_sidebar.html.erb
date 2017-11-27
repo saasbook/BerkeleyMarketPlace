@@ -13,7 +13,7 @@
           <% for i in 0...(Post.get_subcategories(Post.find_category(@current_category_id)).length)  %>
           <tr>
             <td>
-              <% if @current_subcategory_id == i %>
+              <% if @current_subcategory_id == i.to_s %>
                 <%= link_to Post.find_subcategory(@current_category_id, i), subcategory_path(@current_category_id, i), class:"entry-selected" %>
               <% else %>
                 <%= link_to Post.find_subcategory(@current_category_id, i), subcategory_path(@current_category_id, i) %>

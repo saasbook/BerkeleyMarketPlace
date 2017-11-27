@@ -18,6 +18,6 @@ Scenario: default to show all posts
   
 Scenario: select item category only gives items
   When I go to the posts page
-  And I filter posts using "choose_category" by "Items"
+  And I filter posts using "choose_category" by "Item"
   Then I should see "sample item"
   And I should not see "sample event"
