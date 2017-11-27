@@ -131,30 +131,62 @@ class Post < ActiveRecord::Base
         ]
     end
     
-    def self.options_for_choose_category
-       lst = []
-       lst.push ["All", "all_all"]
-       lst.push ["Items", "item_all"]
-       lst.concat @@categories[:item].map { |v| [("&nbsp;"*4).html_safe + v, "item_" + v] } 
-       lst.push ["Events", "event_all"]
-       lst.concat @@categories[:event].map { |v| [("&nbsp;"*4).html_safe + v,"event_" + v] } 
-       lst.push ["Jobs", "job_all"]
-       lst.concat @@categories[:job].map { |v| [("&nbsp;"*4).html_safe + v,"job_" + v] }
+    def self.all_categories_tag
+        "all_all"
     end
     
+    def self.all_category_tag category
+       "#{category.to_s}_all" 
+    end
     
+    def self.category_tag category, subcategory
+        "#{category.to_s}_#{subcategory.to_s}"
+    end
+    
+    def self.options_for_choose_category
+        lst = []
+        lst.push ["All", all_categories_tag]
+       
+        for key in @@categories.keys do
+            lst.push [key.to_s.capitalize, all_category_tag(key)]
+            lst.concat @@categories[key].map { |v| [("&nbsp;"*4).html_safe + v, category_tag(key, v)] } 
+        end
+        return lst
+    end
+    
+    def self.options_for_choose_subcategory category
+        lst = []
+        lst.push ["all #{category}s", "#{category}_all"]
+        lst.concat @@categories[category.to_sym].map { |v| [v, category_tag(category, v)] } 
+        return lst
+    end
       
     def self.options_for_sorted_by
         [
             ['Low price', 'price_asc'],
             ['High price', 'price_desc'],
-            ['Latest posts', 'release_time_desc'],
-            ['Oldest posts', 'release_time_asc']
+            ['New posts', 'release_time_desc']
         ]
     end
     
+    def self.find_category category_id
+        @@categories.keys[category_id.to_i].to_s
+    end
+    
+    def self.find_subcategory category_id, subcategory_id
+        @@categories[find_category(category_id).to_sym][subcategory_id.to_i].to_s
+    end
+    
+    def self.all_category_tag_by_id category_id
+       "#{find_category(category_id)}_all" 
+    end
+    
+    def self.category_tag_by_id category_id, subcategory_id
+        "#{find_category(category_id)}_#{find_subcategory(category_id, subcategory_id)}"
+    end
+    
     def short_title 
-        title.truncate(40)
+        title.truncate(35)
     end
     
     def self.get_categories

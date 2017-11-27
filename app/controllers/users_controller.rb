@@ -10,11 +10,24 @@ class UsersController < ApplicationController
     end
     
     
-    def destroy
-        User.find(params[:id]).destroy
+    
+    
+    # def destroy 
+    #     @user = User.find(params[:id])
+    #     @user.update_attribute(:admin, false)
+    #     # User.find(params[:id]).destroy
+    #     flash[:success] = "User deleted"
+    #     redirect_to admin_url
+    # end
+    
+    def show 
+        @user = User.find(params[:id])
+        @user.update_attribute(:admin, false)
+        # User.find(params[:id]).destroy
         flash[:success] = "User deleted"
         redirect_to admin_url
     end
+    
     
     def create
 

@@ -33,6 +33,20 @@ nav {
   background-color: color("berkeley", "white");
 }
 
+nav.clean{
+    background: none;
+    box-shadow: none;
+    border-bottom: 2px solid color("berkeley", "base");
+}
+
+.breadcrumb:before {
+    color: color("berkeley", "base");
+}
+
+.breadcrumb, .breadcrumb:last-child {
+   color: color("berkeley", "base");
+}
+
 nav ul li {
   margin: 0 -3px;
 }
@@ -69,7 +83,7 @@ input[id="search_terms"] {
   border-radius: 5px;
 }
 
-.search-input{
+.search-input {
   border: 1px solid;
   background-color: color("berkeley", "white");
   height: 45px !important;
@@ -130,8 +144,14 @@ nav .brand-logo {
 }
 
 
+.entry-selected {
+  color: $success-color;
+}
 
-
+div#home-sidebar {
+  padding-left: 20px;
+  padding-right: 15px;
+}
 
 // old css, needs to be rewritten
 
@@ -198,4 +218,22 @@ nav .brand-logo {
 .user_name {
     color: color("berkeley", "web-medalist");
     font-weight: 500;
+
+.chip {
+}
+
+.chip img {
+  float: left;
+  max-height:32px;
+  max-width:32px;
+}
+
+#details-card {
+  height:auto;
+}
+
+.card-image img {
+    max-width: 100%;
+    height: auto;
+    left: 0px;
 }

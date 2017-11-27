@@ -20,6 +20,14 @@ class PostsController < ApplicationController
     @user = User.find(@post.author_id)
     @release_time_formatted = @post.release_time.strftime("(released %B %d, %Y, %I%p)")
     @wish = Wish.where(user_id: current_user.id, post_id: @post.id).first
+    
+    @current_user = current_user
+    if @current_user.image.url.nil?
+        @profile_img = "/images/post_default.png"
+    else
+        @profile_img = @current_user.image.url(:medium)
+    end
+
   end
   
   def new

@@ -1,46 +1,80 @@
 <div class="container", id="showPost">
     
-    <div class="row">
-      <div class="col-12">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Home</a>
-            <li class="breadcrumb-item"><%= link_to @post.category, root_path(filterrific: {choose_category: @post.category + "_all" }) %>
-            <li class="breadcrumb-item"><%= link_to @post.subcategory, root_path(filterrific: {choose_category: @post.category + "_" + @post.subcategory}) %>
-            <li class="breadcrumb-item active"><%= @post.title %>
-          </ol>
+
+  
+   <nav class="clean">
+      <div class="nav-wrapper">
+          <div class="col s12">
+            <%= link_to "Home", root_path, class: "breadcrumb" %>
+            <%= link_to @post.category, root_path(filterrific: {choose_category: @post.category + "_all" }), class: "breadcrumb" %>
+            <%= link_to @post.subcategory, root_path(filterrific: {choose_category: @post.category + "_" + @post.subcategory}), class: "breadcrumb" %>
+            <a href="#", class="breadcrumb"><%= @post.title %></a>
+          </div>
       </div>
-    </div>
+   </nav>
+   
+     <br />
+     
+     
     
+
     <div class="row">
-      
-      <div class="col-lg-4 col-12">
-        <img style="float:left;"><%= image_tag safe_url(@post.image.url)%></img> 
+
+      <div class="col s12">
+         <h3><%= @post.title %></h3> 
       </div>
       
-      <div class="col-lg-8 col-12"style="margin-top:10px;float:left;">
-       <h1><%= @post.title %></h1> 
-       <h3>USD $<%= @post.price %></h3> 
-       <p style="color:<%= if @post.available then 'green' else 'red' end %>"><%= if @post.available then 'Available' else 'Not available' end %> <%= @release_time_formatted%> </p> 
+      
+              
+    
+      <div class="col s4 ">
+          <div class="card" id="details-card" style="">
+              
+            <div class="card-content">
+              <div class="chip">
+                <%= image_tag @profile_img, id: "Profile Image", class: "img-fluid", alt: "Responsive image" %>
+                <a href="mailto:<%= @user.email %>"> <%= @user.email %> </a>
+              </div>
+            </div>
+            
+            <div class="card-image">
+              <img><%= image_tag safe_url(@post.image.url)%></img> 
+            </div>
+
+          </div>
+      </div>
+      
+      
+
+     
+      
+      <div class="col s8">
+
+        <div class="card-panel">
+            
+           <h5>USD $<%= @post.price %></h5> 
+           <p style="color:<%= if @post.available then 'green' else 'red' end %>"><%= if @post.available then 'Available' else 'Not available' end %> <%= @release_time_formatted%> </p> 
+         
+           <div class="row">
+               <% if current_user.superuser? %>
+                 <%= link_to "Remove by Admin", post_destroy_path(@post), data: { confirm: "This is irreversible! Are you sure you want to delete this post?" }, class: "btn btn-primary btn-l js-scroll-trigger" %>
+               <% end %>
+               
+               <% if current_user.id == @post.author_id %>
+                 <%= link_to "EDIT", edit_post_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
+               <% end %>
+            
+               <% if not @wish.nil? %>
+                   <%= link_to "Remove from Wishlist",  delete_from_wish_path(@post, @wish), class: "btn btn-primary btn-l js-scroll-trigger" %>
+               <% else %>
+                   <%= link_to "Add to Wishlist", new_post_wish_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
+               <% end %>
+            </div>
+            
+                <p><%= @post.description %></p> 
+          </div>
+          
         
-       <p>Contact: <a href="mailto:<%= @user.email %>"> <%= @user.email %> </a></p>
-       
-       <% if current_user.superuser? %>
-         <%= link_to "Remove by Admin", post_destroy_path(@post), data: { confirm: "This is irreversible! Are you sure you want to delete this post?" }, class: "btn btn-primary btn-l js-scroll-trigger" %>
-       <% end %>
-       
-       <% if current_user.id == @post.author_id %>
-         <%= link_to "EDIT", edit_post_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
-       <% end %>
-
-       <% if not @wish.nil? %>
-           <%= link_to "Remove from Wishlist",  delete_from_wish_path(@post, @wish), class: "btn btn-primary btn-l js-scroll-trigger" %>
-       <% else %>
-           <%= link_to "Add to Wishlist", new_post_wish_path(@post), class: "btn btn-primary btn-l js-scroll-trigger" %>
-       <% end %>
-
-       <p></p>
-        <h3>Description</h3>
-        <p><%= @post.description %></p> 
       </div>
     </div>
     

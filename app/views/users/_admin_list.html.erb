@@ -5,7 +5,7 @@
         <li>
           <%= admin.email %>
           <% if current_user.email != admin.email %> |
-               <%= link_to "delete", admin, method: :delete, data: { confirm: "Are you sure you want to delete %s from admins?" %admin.email }, class:"btn btn-primary" %>
+               <%= link_to "delete", admin, method: :delete,:id => admin.id, data: { confirm: "Are you sure you want to delete %s from admins?" %admin.email }, class:"btn btn-primary" %>
         </li>
     <% end %>
     <% end %>

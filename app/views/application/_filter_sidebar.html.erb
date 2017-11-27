@@ -1,13 +1,55 @@
-<div class="row">
-  <%= form_for_filterrific @filterrific do |f| %>
-    <div class="input-field col s12">
-      Sorted by
-      <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by], { include_blank: '- None -' }) %>
-    </div>
+<div class="row center" id="home-sidebar">
+
+  <% if @current_category_id %>
+    <div class="col s12 m12 l12">
+      <table>
+        <thead>
+          <tr>
+            <th>Subcategory</th>
+          </tr>
+        </thead>
     
-    <div class="input-field col s12">
-      Choose category
-      <%= f.select(:choose_category, @filterrific.select_options[:choose_category]) %>
+        <tbody>
+          <% for i in 0...(Post.get_subcategories(Post.find_category(@current_category_id)).length)  %>
+          <tr>
+            <td>
+              <% if @current_subcategory_id == i %>
+                <%= link_to Post.find_subcategory(@current_category_id, i), subcategory_path(@current_category_id, i), class:"entry-selected" %>
+              <% else %>
+                <%= link_to Post.find_subcategory(@current_category_id, i), subcategory_path(@current_category_id, i) %>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   <% end %>
+  
+  <div class="col s12 m12 l12">
+    <table>
+      <thead>
+        <tr>
+          <th>Sort by</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% for option in Post.options_for_sorted_by do  %>
+          <tr>
+            <td>
+              <% if @sorted_by == option[1] %>
+                <%= link_to option[0], "?sorted_by=" + option[1], class: "entry-selected" %>
+              <% else %>
+                <%= link_to option[0], "?sorted_by=" + option[1] %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  
 </div>
+
+
