@@ -1,17 +1,33 @@
-<div class="col-1"></div>
-<div class="col-4">
-  <ul>
-    <% @admins.each do |admin| %>
-        <li>
-          <%= admin.email %>
-          <% if current_user.email != admin.email %> |
-               <%= link_to "delete", admin, method: :delete,:id => admin.id, data: { confirm: "Are you sure you want to delete %s from admins?" %admin.email }, class:"btn btn-primary" %>
-        </li>
-    <% end %>
-    <% end %>
-  </ul>
+<div class="col s12 m12 l12">
+  <h6 class="sub_header">Delete Admin</h6>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Delete Admin</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @admins.each do |admin| %>
+        <tr>
+          <td><%= admin.email %></td>
+          <td>
+            <% if current_user.email != admin.email %>
+              <%= link_to "delete", admin, method: :delete,:id => admin.id, data: { confirm: "Are you sure you want to delete %s from admins?" %admin.email }, class:"btn btn-primary" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-<div class="col-7">
+
+
+
+<div class="col s12 m12 l12">
+  <div class="divider"></div>
+  <h6 class="sub_header">Add Admin</h6>
   <ul>
     <%= form_for @user, url: {action: "create"} do |f| %>
       <%= f.label :email %> 
@@ -20,3 +36,4 @@
     <% end %>
   </ul>
 </div>
+
