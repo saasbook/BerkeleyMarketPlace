@@ -16,26 +16,27 @@
     
     <!--image-->
     <div class="col s4">
-      <div class="form-group">
+      <div class="input-field">
         <%= f.label :image %>
-        <div id="imagePreview" class="form-group">
+        <div id="imagePreview" class="input-field">
           <img src="/images/post_default.png" class="img-fluid" alt="Responsive image" width=100%>
         </div>
-        <%= f.file_field :image, id: "Image", class: "form-control", required: true %>
+        <%= f.file_field :image, id: "Image", class: "file-field", required: true %>
       </div>
     </div>  
   	<!--image-->
   	
+  	
   	<div class="col s6">    
       
-      <div class="form-group">
+      <div class="input-field">
         <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control form-control-lg", required: true, minlength: "1", maxlength: "128" %>
+        <%= f.text_field :title, class: "", required: true, minlength: "1", maxlength: "128" %>
       </div>
 
-      <div class="form-group">
+      <div class="input-field">
         <%= f.label :price %>
-        <%= f.number_field :price, class: "form-control", required: true,  step: "0.01", min: "0" %>
+        <%= f.number_field :price, class: "", required: true,  step: "0.01", min: "0" %>
       </div>
       
       <!--category-->
@@ -43,35 +44,34 @@
       <!--  <div class="col s1"></div>-->
         
       <!--  <div class="col s5">-->
-          <div class="form-group">
+          <div class="input-field">
+            <%= f.select :category, Post.get_categories.map { |c| [c.to_s, c.to_s] }, { include_blank: '- Select -' }, { class: "", required: true }%>
             <%= f.label :category %> 
-            <%= f.select :category, Post.get_categories.map { |c| [c.to_s, c.to_s] }, { include_blank: '- Select -' }, { class: "form-control", required: true }%>
           </div>
         <!--</div>-->
         
         <!--<div class="col s5">-->
-          <div class="form-group">
-            <%= f.label :subcategory %> 
+          <div class="input-field">
             <div id="updateFormSubcategory">
-              <%= render partial: 'posts/subcategory', locals: {subcategory: @empty_subcategory, current_subcategory: @current_subcategory}  %>
+                 <%= render partial: 'posts/subcategory', locals: {subcategory: @empty_subcategory, current_subcategory: @current_subcategory}  %>
             </div>
           </div>
         <!--</div>-->
       <!--</div>-->
       <!--category-->
       
-      <div class="form-group">
+      <div class="input-field">
         <%= f.label :email %> 
-        <%= f.text_field :author_id, id: "Email", value: current_user.email, readonly: true, class: "form-control" %>
+        <%= f.text_field :author_id, id: "Email", value: current_user.email, readonly: true, class: "" %>
       </div>
       
-      <div class="form-group">
+      <div class="input-field">
         <%= f.label :description %>
-        <%= f.text_area :description, class: "form-control", required: true, maxlength: "4096", rows:"10", placeholder:"Details of the post" %>
+        <%= f.text_area :description, class: "materialize-textarea", required: true, maxlength: "4096", rows:"10", placeholder:"Details of the post" %>
       </div>
       
-      <div class="form-group">
-        <%= f.submit class:"btn btn-primary" %>
+      <div class="input-field">
+        <%= f.submit class:"btn" %>
       </div>
     
     </div>
@@ -80,11 +80,18 @@
 </div>
 
 
-<script>
-$('#post_category').change(function() {
 
-  var category = $(this).val();
+<script>
+
+$(document).ready(function() {
+  $('select').material_select();
+});
   
+$('#post_category').change(function() {
+  $('select').material_select();
+  var category = $(this).val();
+  console.log("selected")
+  console.log(category)
   $.ajax({
       url: "/update_form_subcategory",
       type: "GET",
@@ -101,11 +108,12 @@ $(function() {
       var img = new Image();
       console.log(file);
       img.src = file.target.result.replace("http", "https");
-      img.width = "350";
+      img.width = "300";
       //img.height = "auto";
       $('#imagePreview').html(img);
     }
     reader.readAsDataURL(image);
   });
 });
+
 </script>
