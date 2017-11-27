@@ -2,8 +2,8 @@
   
   <!--header-->
   <div class="row">
-	  <div class="col-1"></div>
-	   <div class="col-10">
+	  <div class="col s1"></div>
+	   <div class="col s10">
 	     <h3>Post Something!</h3>
 	   </div>
   </div>
@@ -12,21 +12,21 @@
   <%= form_for @post, :method => :post, :html => { :multipart => true } do |f| %>
   
 	<div class="row">
-	  <div class="col-1"></div>
+	  <div class="col s1"></div>
     
     <!--image-->
-    <div class="col-4">
+    <div class="col s4">
       <div class="form-group">
         <%= f.label :image %>
         <div id="imagePreview" class="form-group">
-        <img src="/images/post_default.png" class="img-fluid" alt="Responsive image">
+          <img src="/images/post_default.png" class="img-fluid" alt="Responsive image" width=100%>
         </div>
         <%= f.file_field :image, id: "Image", class: "form-control", required: true %>
       </div>
     </div>  
   	<!--image-->
   	
-  	<div class="col-6">    
+  	<div class="col s6">    
       
       <div class="form-group">
         <%= f.label :title %>
@@ -40,16 +40,16 @@
       
       <!--category-->
       <!--<div class="row">-->
-      <!--  <div class="col-1"></div>-->
+      <!--  <div class="col s1"></div>-->
         
-      <!--  <div class="col-5">-->
+      <!--  <div class="col s5">-->
           <div class="form-group">
             <%= f.label :category %> 
             <%= f.select :category, Post.get_categories.map { |c| [c.to_s, c.to_s] }, { include_blank: '- Select -' }, { class: "form-control", required: true }%>
           </div>
         <!--</div>-->
         
-        <!--<div class="col-5">-->
+        <!--<div class="col s5">-->
           <div class="form-group">
             <%= f.label :subcategory %> 
             <div id="updateFormSubcategory">
