@@ -180,7 +180,7 @@ class Post < ActiveRecord::Base
     def self.all_category_tag_by_id category_id
        "#{find_category(category_id)}_all" 
     end
-    
+
     def self.category_tag_by_id category_id, subcategory_id
         "#{find_category(category_id)}_#{find_subcategory(category_id, subcategory_id)}"
     end

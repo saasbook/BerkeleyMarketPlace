@@ -18,25 +18,26 @@ Scenario: default to show all posts
   
 Scenario: select item category only gives items
   When I go to the home page
-  And I filter posts using "choose_category" by "Items"
+  And I follow "item"
   Then I should see "sample item"
   And I should not see "sample event"
 
 Scenario: select event category only gives event
   When I go to the home page
-  And I filter posts using "choose_category" by "Events"
+  And I follow "event"
   Then I should not see "sample item"
   And I should see "sample event"
 
 Scenario: select all category gives all posts
   When I go to the home page
-  And I filter posts using "choose_category" by "All"
+  And I follow "all"
   Then I should see "sample item"
   And I should see "sample event"
   
   
 Scenario: select subcategory
   When I go to the home page
-  And I filter posts using "choose_category" by "book"
+  And I follow "item"
+  And I follow "book"
   Then I should see "sample item"
   And I should not see "sample event"

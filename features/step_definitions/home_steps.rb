@@ -70,7 +70,7 @@ end
 
 
 When /I logout/ do
-  find("a", text: "Logout").trigger("click")
+  first(:link, "Logout").click
   OmniAuth.config.mock_auth[:google_oauth2] = nil
 end
 
@@ -79,10 +79,12 @@ When /I filter posts using "(.*)" by "(.*)"/ do |filter, option|
   sleep(1)
 end
 
+Then /I wait for a while/ do
+  sleep(1)
+end
 
 Then /I should see "(.*)" before "(.*)"/ do |text1, text2|
   idx1 = page.body.index(text1)
   idx2 = page.body.index(text2)
   expect(idx1).to be < idx2
-  
 end

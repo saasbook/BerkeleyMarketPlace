@@ -1,5 +1,0 @@
-<% grid = escape_javascript(render(partial: 'application/posts_grid', locals: { posts: @posts })) %>
-$("#results").html("<%= grid %>");
-
-<% page = escape_javascript(render(partial: "application/paging")) %>
-$("#paging").html("<%= page %>");
