@@ -19,6 +19,17 @@
 <div class="row">
   
   <div class="col s12 m12 l4">
+    <div class="center" id="post-images">
+      <%= image_tag safe_url(@post.image.url), class:"responsive-img" %>
+    </div>
+  </div>
+  
+  <div class="col s12 m12 l4">
+    <h5 class="berkeley-text text-web-medalist">Details about this <%= @post.category %></h5>
+    <p><%= @post.description %></p> 
+  </div>
+  
+  <div class="col s12 m12 l4">
 
     <div class="card-panel center" id="post-choices">
       
@@ -62,19 +73,6 @@
       </div>
       
     </div>
-  </div>
-  
-  <div class="col s12 m12 l8">
-    <div class="center">
-      <div class="carousel">
-        <a class="carousel-item" href="#one"><img><%= image_tag safe_url(@post.image.url)%></img></a>
-        <a class="carousel-item" href="#two"><img><%= image_tag safe_url(@post.image.url)%></img></a>
-        <a class="carousel-item" href="#three"><img><%= image_tag safe_url(@post.image.url)%></img></a>
-      </div>
-    </div>
-    
-    <h5 class="berkeley-text text-web-medalist">Details about this <%= @post.category %></h5>
-    <p><%= @post.description %></p> 
   </div>
       
 </div>
