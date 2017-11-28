@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     if @current_user.image.url.nil?
         @profile_img = "/images/post_default.png"
     else
-        @profile_img = @current_user.image.url(:medium)
+        @profile_img = @user.image.url(:medium)
     end
 
   end
