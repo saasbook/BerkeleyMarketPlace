@@ -110,9 +110,9 @@ class PostsController < ApplicationController
   def edit
     id = params[:id]
     @post = Post.find(id)
-    @avilability = "available"
+    @availability = "available"
     if @post.available == false
-      @avilability = "unavailable"
+      @availability = "unavailable"
     end
     
   end

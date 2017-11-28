@@ -29,3 +29,7 @@ end
 When /^(?:|I )press "(.*)" for the post contains "(.*)"$/ do |button, title|
     # pending
 end
+
+When /^(?:|I )press "([^"]*)" for my last post$/ do |button|
+  all('.card').last.click_link(button)
+end

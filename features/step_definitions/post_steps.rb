@@ -5,7 +5,7 @@ When /^(?:|I )select "(.*)" from "(.*)"$/ do |value, field|
 end
 
 Then /^(?:|I )should see "(.*)" in the field "(.*)"$/ do |val, field|
-    expect(find_field(field).value).to eq val
+    expect(find_field(field, visible: false).value).to eq val
 end
 
 Then /^(?:|I )should not see "(.*)" in the field "(.*)"$/ do |val, field|
