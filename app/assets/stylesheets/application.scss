@@ -26,7 +26,15 @@
   }
 }
 
+a {
+  &:hover {
+    color: color("berkeley", "web-medalist");
+  }
+}
 
+.btn:hover {
+  background-color: color("berkeley", "web-medalist");
+}
 
 nav ul li a {
   color: $primary-color;
@@ -235,10 +243,6 @@ div#post-choices {
 
 #post_page {
     margin-left: 0px;
-}
-
-.breadcrumb {
-    background-color: #EEEEEE;
 }
 
 .sub_header {

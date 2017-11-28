@@ -1,14 +1,8 @@
 <!--<div class="container" id="profilepage">-->
   <div class = "row">
-    <% if @zero_post %>
-      <div class ="col left s12 m12 l12">
-        <h5>You don't have any post in your wishlist yet. Save a post now!</h5>
-      </div>
-    <% else %>
-      <div class ="col left s12 m12 l12">
-        <h5>Welcome, you are logged in as <span class="user_name"><%= current_user.name %></span> </h5>
-      </div>
-    <% end %>
+    <div class ="col left s12 m12 l12">
+      <h5>Welcome, you are logged in as <span class="user_name"><%= current_user.name %></span> </h5>
+    </div>
   </div>
   <div class="divider"></div>
 

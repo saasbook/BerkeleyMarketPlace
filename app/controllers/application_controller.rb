@@ -37,57 +37,6 @@ class ApplicationController < ActionController::Base
     end
     url
   end
-
-  # def index
-  #   logger.debug "params to applicaiton#index: #{params}"
-    
-  #   filterrific_params = Post.complete_filterrific_params(params[:filterrific])
-  #   logger.debug "index filterrific params: %s" % filterrific_params
-    
-  #   @sorted_by = params[:sorted_by]
-  #   filterrific_params[:sorted_by] = params[:sorted_by]
-    
-  #   @filterrific = initialize_filterrific(
-  #     Post,
-  #     filterrific_params,
-  #     :select_options => {
-  #       sorted_by: Post.options_for_sorted_by
-  #     }
-  #   ) or return
-  #   @posts = @filterrific.find.page(params[:page])
-    
-  #   respond_to do |format|
-  #     format.html
-  #     format.js
-  #   end
-  # end
-  
-  # def category
-    
-  #   logger.debug "params to applicaiton#category: #{params}"
-    
-  #   filterrific_params = Post.complete_filterrific_params(params[:filterrific])
-  #   filterrific_params[:choose_category] = Post.all_category_tag_by_id(params[:category_id])
-    
-  #   logger.debug "category filterrific params: %s" % filterrific_params
-  #   @sorted_by = params[:sorted_by]
-  #   filterrific_params[:sorted_by] = params[:sorted_by]
-    
-  #   @current_category_id = params[:category_id].to_i
-  #   @filterrific = initialize_filterrific(
-  #     Post,
-  #     filterrific_params,
-  #     :select_options => {
-  #       sorted_by: Post.options_for_sorted_by
-  #     }
-  #   ) or return
-  #   @posts = @filterrific.find.page(params[:page])
-    
-  #   respond_to do |format|
-  #     format.html
-  #     format.js
-  #   end
-  # end
   
   def index
     
@@ -111,11 +60,6 @@ class ApplicationController < ActionController::Base
     
     @filterrific = initialize_filterrific(Post, filterrific_params) or return
     @posts = @filterrific.find.page(params[:page])
-    
-    respond_to do |format|
-      format.html
-      format.js
-    end
     
   end
   
