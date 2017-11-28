@@ -31,9 +31,7 @@ Scenario: mark my posts as unavailable
   And I press "My Post"
   Then I should see "sample item title"
   When I press "Mark as Sold" for my last post
-  Then I should see "successfully marked as sold"
-  Given I am on the user page
-  And I press "My Post"
-  Then I should see "sample item title"
-  When I find a post with title "sample item title"
-  Then I should see "Not available"
+  Then I should see "sample item title was successfully marked as sold."
+  When I press "EDIT" for my last post
+  Then I should see "unavailable" in the field "post[available]"
+  
