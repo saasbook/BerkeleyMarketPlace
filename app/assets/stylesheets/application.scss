@@ -165,6 +165,25 @@ div#home-sidebar {
   padding-right: 15px;
 }
 
+
+#post-nav {
+  div.nav-wrapper {
+    margin: 0 0;
+  }
+}
+
+div#post-choices {
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#post-choices {
+  .btn, .btn-large, .btn-floating, .btn-large, .btn-flat {
+    font-size: 0.85rem;
+  }
+}
+
 // old css, needs to be rewritten
 
 .btn-file {

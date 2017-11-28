@@ -21,6 +21,7 @@ $(document).on('turbolinks:load', function() {
   $('select').material_select();
   $(".button-collapse").sideNav({closeOnClick: true});
   $('.carousel.carousel-slider').carousel({fullWidth: true});
+  $('.carousel').carousel();
   // $('#category-tab').tabs({onShow: function(current_tab) {
   //   $.ajax({
   //     url: "/",
