@@ -1,5 +1,7 @@
 When /^(?:|I )select "(.*)" from "(.*)"$/ do |value, field|
-  select(value, :from => field)
+  # select(value, :from => field, visible: false)
+  select value, from: field, visible: false
+  sleep(1)
 end
 
 Then /^(?:|I )should see "(.*)" in the field "(.*)"$/ do |val, field|
@@ -20,11 +22,11 @@ end
 
 Then /"(.*)" should contain option "(.*)"/ do |dropdown, option|
   Rails.logger.debug page.body
-  expect(page).to have_select(dropdown, :with_options => [option])
+  expect(page).to have_select(dropdown, :with_options => [option], :visible => false)
 end
 
 Then /"(.*)" should not contain option "(.*)"/ do |dropdown, option|
-  expect(page).not_to have_select(dropdown, :with_options => [option])
+  expect(page).not_to have_select(dropdown, :with_options => [option], :visible => false)
 end
 
 Then("I should see {int} pages of results") do |num_pages|
