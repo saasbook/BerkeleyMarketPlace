@@ -56,15 +56,14 @@ Scenario: didn't upload image - sad path
   And I select "item" from "Category"
   Then I select "book" from "Subcategory"
   When I press "Create Post"
-  Then I should be on the create page
+  Then I should be on the posts page
 
 Scenario: didn't enter number for prices - sad path
   Given I am on the create page
   Then I attach the file to "Image"
   And I fill in "Title" with "Doggy Huang2"
-  And I fill in "Price" with "aha"
   And I fill in "Description" with "In bad quality"
   And I select "item" from "Category"
   Then I select "book" from "Subcategory"
   When I press "Create Post"
-  Then I should be on the create page
+  Then I should be on the posts page
