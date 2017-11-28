@@ -1,4 +1,10 @@
 <div class="row">
+  <% if posts.size == 0 %>
+      <div class="col s12 m12 l12 center berkeley-text">
+        <br><br><br><br><br><br><br><br>
+        <h5>You don't have any post yet. <a href="posts/new">Creat a post now!</a></h5>
+      </div>
+  <% else %>
     <% posts.each do |post_info| %>
       <div class="col s6 m4 l3">
         <div class="card hoverable">
@@ -18,4 +24,5 @@
         </div>
       </div>
     <% end %>
+  <% end %>
 </div>

@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     id = params[:id]
     @post = Post.find(id)
     @user = User.find(@post.author_id)
-    @release_time_formatted = @post.release_time.strftime("(released %B %d, %Y, %I%p)")
+    @release_time_formatted = @post.release_time.strftime("released %B %d, %Y, %I%p")
     @wish = Wish.where(user_id: current_user.id, post_id: @post.id).first
     
     @current_user = current_user

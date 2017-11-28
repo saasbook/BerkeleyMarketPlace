@@ -26,7 +26,15 @@
   }
 }
 
+a {
+  &:hover {
+    color: color("berkeley", "web-medalist");
+  }
+}
 
+.btn:hover {
+  background-color: color("berkeley", "web-medalist");
+}
 
 nav ul li a {
   color: $primary-color;
@@ -165,6 +173,25 @@ div#home-sidebar {
   padding-right: 15px;
 }
 
+
+#post-nav {
+  div.nav-wrapper {
+    margin: 0 0;
+  }
+}
+
+div#post-choices {
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#post-choices {
+  .btn, .btn-large, .btn-floating, .btn-large, .btn-flat {
+    font-size: 0.85rem;
+  }
+}
+
 // old css, needs to be rewritten
 
 .btn-file {
@@ -216,10 +243,6 @@ div#home-sidebar {
 
 #post_page {
     margin-left: 0px;
-}
-
-.breadcrumb {
-    background-color: #EEEEEE;
 }
 
 .sub_header {
