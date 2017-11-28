@@ -1,10 +1,10 @@
-<div class="container">
+<!--<div class="container">-->
   
   <!--header-->
   <div class="row">
-	  <div class="col s1"></div>
-	   <div class="col s10">
-	     <h3>Post Something!</h3>
+	  <!--<div class="col s1"></div>-->
+	   <div class="col s12 m12 l12">
+	     <h5>Post Something!</h5>
 	   </div>
   </div>
   <!--header-->
@@ -12,10 +12,10 @@
   <%= form_for @post, :method => :post, :html => { :multipart => true } do |f| %>
   
 	<div class="row">
-	  <div class="col s1"></div>
+	  <!--<div class="col s1"></div>-->
     
     <!--image-->
-    <div class="col s4">
+    <div class="col s5 m5 l5">
       <div class="input-field">
         <%= f.label :image %>
         <div id="imagePreview" class="input-field">
@@ -26,7 +26,7 @@
     </div>  
   	<!--image-->
   	
-  	<div class="col s6">    
+  	<div class="col s7 m7 l7">    
   	
       <div class="input-field">
         <%= f.label :title %>
@@ -66,7 +66,6 @@
     </div>
   </div>
 <% end %>
-</div>
 
 <script>
 $(document).ready(function() {
@@ -94,8 +93,10 @@ $(function() {
       var img = new Image();
       console.log(file);
       img.src = file.target.result.replace("http", "https");
-      img.width = "300";
-      //img.height = "auto";
+      img.class = "img-fluid";
+      img.alt = "Responsive image";
+      img.style.width = "100%";
+      img.style.height = "auto";
       $('#imagePreview').html(img);
     }
     reader.readAsDataURL(image);

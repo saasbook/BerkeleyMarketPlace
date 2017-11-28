@@ -1,14 +1,14 @@
-<div class="container", id="showPost">
+<!--<div class="container", id="showPost">-->
     
 
   
    <nav class="clean">
-      <div class="nav-wrapper">
+      <div class="nav-wrapper left">
           <div class="col s12">
-            <%= link_to "Home", root_path, class: "breadcrumb" %>
-            <%= link_to @post.category, root_path(filterrific: {choose_category: @post.category + "_all" }), class: "breadcrumb" %>
-            <%= link_to @post.subcategory, root_path(filterrific: {choose_category: @post.category + "_" + @post.subcategory}), class: "breadcrumb" %>
-            <a href="#", class="breadcrumb"><%= @post.title %></a>
+            <%= link_to "home", root_path, class: "breadcrumb white" %>
+            <%= link_to @post.category, root_path(filterrific: {choose_category: @post.category + "_all" }), class: "breadcrumb white" %>
+            <%= link_to @post.subcategory, root_path(filterrific: {choose_category: @post.category + "_" + @post.subcategory}), class: "breadcrumb white" %>
+            <a href="#", class="breadcrumb white"><%= @post.title %></a>
           </div>
       </div>
    </nav>
@@ -21,10 +21,8 @@
     <div class="row">
 
       <div class="col s12">
-         <h3><%= @post.title %></h3> 
+         <h5 class="sub_header"><%= @post.title %></h5> 
       </div>
-      
-      
               
     
       <div class="col s4 ">
@@ -79,4 +77,4 @@
     </div>
     
 </div>
-</div>
+<!--</div>-->

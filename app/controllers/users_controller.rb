@@ -65,20 +65,22 @@ class UsersController < ApplicationController
     
     def mypost
         @mypost = current_user.posts
-        if @mypost.nil?
-            @view_to_render = 'users/empty_post_grid'
+        if @mypost.count > 0
+            @zero_post = false
         else
-            @view_to_render = 'users/mypost_grid'
+            @zero_post = true
         end
+        @view_to_render = 'users/mypost_grid'
     end
     
     def mywishlist
         @mywishs = current_user.wish_posts
-        if @mywishs.nil?
-            @view_to_render = 'users/empty_post_grid'
+        if @mywishs.count > 0
+            @zero_post = false
         else
-            @view_to_render = 'users/mywishlist_grid'
+            @zero_post = true
         end
+        @view_to_render = 'users/mywishlist_grid'
     end
 end
 
