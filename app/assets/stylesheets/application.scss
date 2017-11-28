@@ -8,6 +8,12 @@
   padding-top: 50px;
 }
 
+a {
+  &:hover {
+    color: color("berkeley", "web-medalist");
+  }
+}
+
 .btn-large {
   // background-color: color("berkeley", "base");
   padding: 0 1rem;
@@ -26,14 +32,13 @@
   }
 }
 
-a {
-  &:hover {
-    color: color("berkeley", "web-medalist");
-  }
-}
 
 .btn:hover {
   background-color: color("berkeley", "web-medalist");
+}
+
+a.btn:hover {
+  color: color("berkeley", "web-background-gray");
 }
 
 nav ul li a {
@@ -136,6 +141,21 @@ nav .input-field label {
   }
 }
 
+#mypost .card {
+  height: 320px;
+}
+
+@media #{$medium-and-up} {
+  #mypost .card {
+    height: 360px;
+  }
+}
+@media #{$large-and-up} {
+  #mypost .card {
+    height: 360px;
+  }
+}
+
 div#home-carousel {
   margin-bottom: 50px;
 }
@@ -178,12 +198,6 @@ div#home-sidebar {
   div.nav-wrapper {
     margin: 0 0;
   }
-}
-
-div#post-choices {
-  margin-top: 60px;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 #post-choices {
