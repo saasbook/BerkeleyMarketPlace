@@ -156,6 +156,55 @@ We use exactly the implementation of `omniauth-google-oauth2` introduced in [thi
 It stores the user id in a cookie after hashing. Therefore, a hacker that obtains this cookie does get permanent access to this webiste with that user's identity.
 We prevent this from happening by enforcing SSL to stop replay attack. This idea is discussed in details in [this blog](https://bryanrite.com/ruby-on-rails-cookiestore-security-concerns-lifetime-pass/).
 
+### Materialize CSS for Rails
+
+We use Materialize CSS (Google's CSS template) for this website. 
+This template is designed mainly for a component based Javascript powered website, this does not work very well with Rails.
+We directly use the CSS source code, and add our basic customizations to it. However, the Javascript compoennts are vendored through `materialize-sass` gem.
+In `assets/stylesheets/components/_color.scss`, we coded the colors we use for this website:
+
+```scss
+$berkeley: (
+  "base": #003262,
+  "founders-rock": #3B7EA1,
+  "california-gold": #FDB515,
+  "web-medalist": #C4820E,
+  "wellman-tile": #D9661F,
+  "web-bay-fog": #DDD5C7,
+  "sather-gate": #B9D3B6,
+  "web-background-gray": #EEEEEE,
+  "rose-garden": #EE1F60,
+  "lawrence": #00B0DA,
+  "ion": #CFDD45,
+  "golden-gate": #ED4E33,
+  "web-lap-lane": #00A598,
+  "web-soybean": #859438,
+  "south-hall": #6C3302,
+  "web-pacific": #46535E,
+  "stone-pine": #584F29,
+  "web-gray": #888888,
+  "white": #ffffff,
+);
+
+```
+There are two ways to use these colors:
+
+1. use it as classes
+
+```html
+
+<p class="berkeley-text text-sather-gate">
+    This text is in sather-gate color
+</p>
+
+<div class="berkeley sather-gate">
+    This div will have sather-gate background color
+</div>
+
+```
+
+2. change colors in `application.scss`, lots of examples already inside about how to achieve this.
+
 
 ### Possible Future Refactoring
 
@@ -168,7 +217,7 @@ We prevent this from happening by enforcing SSL to stop replay attack. This idea
 
 ### Possible Future Features
 
-* Notifications of wishlisted posts
+* Notifications of wishlisted posts, news feed for different categories
 
 * More Admin features, better Admin layout (make it similar to Dashboard layout)
 
