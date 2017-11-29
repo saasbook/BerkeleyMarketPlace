@@ -160,7 +160,7 @@ We prevent this from happening by enforcing SSL to stop replay attack. This idea
 
 We use Materialize CSS (Google's CSS template) for this website. 
 This template is designed mainly for a component based Javascript powered website, this does not work very well with Rails.
-We directly use the CSS source code, and add our basic customizations to it. However, the Javascript compoennts are vendored through `materialize-sass` gem.
+We directly use the CSS source code, and add our basic customizations to it. However, the Javascript components are vendored through `materialize-sass` gem.
 In `assets/stylesheets/components/_color.scss`, we coded the colors we use for this website:
 
 ```scss
@@ -203,7 +203,11 @@ There are two ways to use these colors:
 
 ```
 
-2. change colors in `application.scss`, lots of examples already inside about how to achieve this.
+2. change colors in `assets/stylesheets/application.scss`, lots of examples already inside about how to achieve this.
+
+Some Javascript components need to be initialized when the page is loaded. 
+Because we use `turbolinks` to do lazy loading,
+all initializations are in `assets/javascripts/application.js`, and are envoked on `turbolinks:load` event.
 
 
 ### Possible Future Refactoring
