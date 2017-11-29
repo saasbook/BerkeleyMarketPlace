@@ -149,3 +149,27 @@ After running test coverage report in C9 locally, you have to manually kill the 
 ```bash
 kill -9 $(lsof -i:$PORT -t)
 ```
+
+### Security Concerns with Oauth
+
+We use exactly the implementation of `omniauth-google-oauth2` introduced in [this blog](https://richonrails.com/articles/google-authentication-in-ruby-on-rails/).
+It stores the user id in a cookie after hashing. Therefore, a hacker that obtains this cookie does get permanent access to this webiste with that user's identity.
+We prevent this from happening by enforcing SSL to stop replay attack. This idea is discussed in details in [this blog](https://bryanrite.com/ruby-on-rails-cookiestore-security-concerns-lifetime-pass/).
+
+
+### Possible Future Refactoring
+
+* Model item, event and job as subclasses of post
+
+* Externalize categories and subcategories into models (requires implenentation of migration mechanisms when adding/deleting a category)
+
+* Externalize admin from user model to allow multiple levels of access permissions
+
+
+### Possible Future Features
+
+* Notifications of wishlisted posts
+
+* More Admin features, better Admin layout (make it similar to Dashboard layout)
+
+* Guide new users to connect to more social accounts for easy posting to different platforms
