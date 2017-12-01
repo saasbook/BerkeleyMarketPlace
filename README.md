@@ -43,6 +43,27 @@ Dev screencasts are in this [playlist](https://www.youtube.com/playlist?list=PLW
 ## Development Configurations
 
 
+### Third Party Service Accounts
+
+* Google API account needed for authentication at `config/initializers/omniauth.rb`
+
+* Cloundinary account needed for image upload at `config/cloudinary.yml`
+
+
+### Database Seed
+
+We have two seeding modes, `normal` mode seed the database with our selected images, good for demo.
+`funny` mode seed the database with random images, good for development. To seed, run:
+
+```bash
+rake seed:normal
+
+rake seed:funny
+```
+
+In production mode, you will need to manually delete existing database (Enforced by Heroku) before reseeding.
+
+
 ### Git push to master
 
 ```bash

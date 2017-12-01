@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
                       
     validates_attachment :image,
                      content_type: { content_type: /\Aimage\/.*\z/ },
-                     size: { less_than: 1.megabyte }
+                     size: { less_than: 10.megabyte }
     
     def self.default_filterrific_values
        {
