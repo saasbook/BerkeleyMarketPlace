@@ -154,7 +154,7 @@ def future_time
 end
 
 def random_image
-    image_path_list = Dir[File.join(Rails.root, "db/support/*")]
+    image_path_list = Dir[File.join(Rails.root, "db/support/funny/*")]
     File.open(image_path_list.sample)
 end
 

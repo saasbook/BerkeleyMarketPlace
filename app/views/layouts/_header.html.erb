@@ -9,14 +9,14 @@
           </ul>
         </div>
       </div>
-      <div class="col l5 hide-on-med-and-down">
+      <div class="col l4 hide-on-med-and-down">
         <form id="search-form" class="search-input" action="/search-posts" method="get">
           <div class="input-field">
-            <input id="search_terms" name="search_terms" type="search" placeholder="Explore Marketplace" />
+            <input id="search_terms" name="search_terms" type="search" />
           </div>
         </form>
       </div>
-      <div class="col l5 hide-on-med-and-down">
+      <div class="col l6 hide-on-med-and-down">
         <div clas="left">
           <ul>
             <li>
@@ -31,6 +31,7 @@
             
             <li><a href="/posts/new">Post Now!</a></li>
             <li><a href="/user/profile">Dashboard</a></li>
+            <li><a href="/user/mywishlist">Wishlist</a></li>
             <% if current_user.superuser? %>
               <li><a href="/admin">Admin</a></li>
             <% end %>
@@ -50,6 +51,7 @@
   <li><a class="center" href="/">Home</a></li>
   <li><a class="center" href="/posts/new">Post Now!</a></li>
   <li><a class="center" href="/user/profile">Dashboard</a></li>
+  <li><a class="center" href="/user/mywishlist">Wishlist</a></li>
   <% if current_user.superuser? %>
     <li><a class="center" href="/admin">Admin</a></li>
   <% end %>
