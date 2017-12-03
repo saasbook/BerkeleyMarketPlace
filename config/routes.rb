@@ -1,57 +1,34 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-  resource :posts, except: [:index, :destroy]
   
-  # You can have the root of your site routed with "root"
+  # root
   root 'application#index'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  # resources
+  resources :posts, except: [:destroy]
+  resources :users
+  resources :sessions, only: [:create, :destroy]
+  
+  # posts
+  get 'posts/:id/destroy', to: 'posts#destroy', as: 'post_destroy'
+  
+  # authentication
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get '/logout', to: 'sessions#destroy', as: 'logout'
+  
+  # user
+  get "/user/profile", to:"users#profile"
+  post "/user/profile", to:"users#update_profile_pic"
+  get "/user/mypost", to:"users#mypost"
+  get '/admin', to: 'users#admin', as: 'admin'
+  
+  # ajax calls
+  get "/filter" => 'application#filter', as: 'filter', format: 'js'
+  get "/update_form_subcategory" => 'posts#update_form_subcategory', as: 'update_form_subcategory', format: 'js'
+  
+  # profile
+  get "/user/profile", to:"users#profile"
+  post "/user/profile", to:"users#update_profile_pic"
+  get "/user/mypost", to:"users#mypost"
+  get '/user/posts/:id', to: 'posts#show'
 end

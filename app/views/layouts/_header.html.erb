@@ -1,20 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Berkeley MarketPlace</a>
+    <a class="navbar-brand" href="/">Berkeley MarketPlace</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <form class="form-inline my-2 my-lg-0" id="navBarSearchForm">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search Something!" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go</button>
+      <form accept-charset="UTF-8" action="/posts" method="get" class="form-inline my-2 my-lg-0" id="navBarSearchForm">
+        <input id="search_terms" name="search_terms" class="form-control mr-sm-2" type="text" placeholder="Search Something!" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Go</button>
       </form>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/post/new">Post Now!</a>
+          <a class="nav-link" id="create_post" href="/posts/new">Post Now!</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link" href="/user/profile"><%= current_user.name %></a>
+        </li>
+        <% if current_user.superuser? %>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Admin</a>
+          </li>
+        <% end %>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
         </li>
       </ul>
     </div>

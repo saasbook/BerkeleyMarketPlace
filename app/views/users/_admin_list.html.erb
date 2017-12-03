@@ -1,0 +1,22 @@
+<div class="col-1"></div>
+<div class="col-4">
+  <ul>
+    <% @admins.each do |admin| %>
+        <li>
+          <%= admin.email %>
+          <% if current_user.email != admin.email %> |
+               <%= link_to "delete", admin, method: :delete, data: { confirm: "Are you sure you want to delete %s from admins?" %admin.email }, class:"btn btn-primary" %>
+        </li>
+    <% end %>
+    <% end %>
+  </ul>
+</div>
+<div class="col-7">
+  <ul>
+    <%= form_for @user, url: {action: "create"} do |f| %>
+      <%= f.label :email %> 
+      <%= f.text_field :email, class: "form-control", required: true,  id: "Email"%>
+      <%= f.submit "Add Admin", class:"btn btn-primary" %>
+    <% end %>
+  </ul>
+</div>

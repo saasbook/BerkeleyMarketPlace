@@ -3,8 +3,30 @@
 # newer version of cucumber-rails. Consider adding your own code to a new file
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
+require 'simplecov'
+SimpleCov.start 'rails'
+
+ENV['RAILS_ENV'] ||= 'test'
+ENV['RAILS_ENV'] = 'test' if ENV['RAILS_ENV'] == 'development'
+puts "Executing Cucumber using the \"#{ENV['RAILS_ENV']}\" environment."
 
 require 'cucumber/rails'
+require 'factory_bot'
+require 'capybara/cucumber'
+require 'capybara/poltergeist'
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(
+    app,
+    window_size: [1920, 6000]
+  )
+end
+Capybara.default_driver    = :poltergeist
+Capybara.javascript_driver = :poltergeist
+Capybara.server_port = 3000
+
+
+World(FactoryBot::Syntax::Methods)
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -30,11 +52,7 @@ ActionController::Base.allow_rescue = false
 
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
-begin
-  DatabaseCleaner.strategy = :transaction
-rescue NameError
-  raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
-end
+DatabaseCleaner.strategy = :truncation
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:

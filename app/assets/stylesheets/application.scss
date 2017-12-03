@@ -1,14 +1,10 @@
 
 @import "bootstrap";
+@import "d3_timeseries";
+@import "login";
 
-body {
-  padding-top: 60px;
-}
-
-@media (min-width: 992px) {
-  body {
-    padding-top: 60px;
-  }
+#pageContent {
+  padding-top: 100px;
 }
 
 #navBarSearchForm input[type=text]{
@@ -17,4 +13,59 @@ body {
 
 .card p{
   font-size: 13px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}
+
+#showPost img {
+    width: 300px;
+    height: auto;
+    left: 0px;
+}
+
+#flash div {
+    text-align: center;
+    color: red;
+}
+
+#login {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#adminPage {
+    h2 {
+        margin: 50px 20px;
+    }
+}
+
+#post_page {
+    margin-left: 0px;
+}
+
+.breadcrumb {
+    background-color: #EEEEEE;
 }

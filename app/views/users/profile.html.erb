@@ -1,0 +1,60 @@
+<div class="container" id="profilepage">
+
+  <div class="row">
+    <div class="col-lg-2">
+      <%=render "users/profilesidebar" %>
+    </div>
+    
+    <div class="col-lg-10">
+        
+        <%= form_for :user, :method => :post, :html => { :multipart => true } do |f| %>
+        <div class="form-group">
+          
+            <h4 class="my-4">Profile Image</h1>
+            <div id="imagePreview" class="form-group">
+              <img><%= image_tag @profile_img, class: "img-fluid", alt: "Responsive image", width:  "350"%></img>  
+            </div>
+            
+            <div class="form-row">
+              <div class="col-4">
+                <%= f.file_field :image, id: "Profile Image", class: "form-control", required: true %>
+
+              </div>
+              <div class="col">
+                <%= f.submit "Save", class:"btn btn-primary" %>
+              </div>
+            </div>
+        </div>
+        <% end %>
+        
+        <h4>Email</h4>
+        <p><%= current_user.email %></p> 
+        <h4>Current Notification Preference</h4>
+        <p>Please check back later.</p> 
+        <h4>Subscription</h4>
+        <p>Please check back later.</p> 
+    </div>
+    
+  </div>
+</div>
+
+
+
+<script>
+$(function() {
+  $('#user_image').on('change', function(event) {
+    var files = event.target.files;
+    var image = files[0]
+    var reader = new FileReader();
+    reader.onload = function(file) {
+      var img = new Image();
+      console.log(file);
+      img.src = file.target.result.replace("http", "https");
+      img.width = "350";
+      //img.height = "auto";
+      $('#imagePreview').html(img);
+    }
+    reader.readAsDataURL(image);
+  });
+});
+</script>

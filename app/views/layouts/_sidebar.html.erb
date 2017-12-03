@@ -1,16 +1,17 @@
-<div class="col-lg-2">
 
-    <h4 class="my-4">Categories</h1>
-        <div class="list-group">
-        <a href="#" class="list-group-item">Items</a>
-        <a href="#" class="list-group-item">Events</a>
-        <a href="#" class="list-group-item">Jobs</a>
-    </div>
+
+<h4 class="my-4">Categories</h1>
+<div class="list-group">
+    <% for @category in @categories %>
+        <%= link_to @category, filter_path(category: @category), remote: true, 
+         class: "list-group-item" %>
+    <% end %>
+    <%= link_to "all", filter_path(category: "all"), remote: true, 
+         class: "list-group-item" %>
+</div>
     
-    <h4 class="my-4">Sort</h1>
-        <div class="list-group">
-        <a href="#" class="list-group-item">By Price</a>
-        <a href="#" class="list-group-item">By Time</a>
-    </div>
-
+<h4 class="my-4">Sort</h1>
+    <div class="list-group">
+    <a href="#" class="list-group-item">By Price</a>
+    <a href="#" class="list-group-item">By Time</a>
 </div>

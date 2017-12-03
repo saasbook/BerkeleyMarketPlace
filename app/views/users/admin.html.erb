@@ -1,0 +1,42 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<script src="https://cdn.rawgit.com/mcaule/d3-timeseries/839468ac/src/d3_timeseries.js"></script>
+<script src="https://cdn.rawgit.com/benkeen/d3pie/0.1.9/d3pie/d3pie.min.js"></script>
+
+<div class="container" id="adminPage">
+  
+  <h2 class="text-center">Statistics Blocks</h2>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-5">
+      <%= render partial: 'users/user_stats' %>
+    </div>
+    <div class="col-5">
+      <%= render partial: 'users/post_stats' %>
+    </div>
+  </div>
+  
+  <h2 class="text-center">Pie Charts</h2>
+  <div class="row">
+    <div class="col-6">
+      <%= render partial: 'graphs/post_condition' %>
+    </div>
+    <div class="col-6">
+      <%= render partial: 'graphs/category_condition' %>
+    </div>
+  </div>
+  
+  <h2 class="text-center">Time Series</h2>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <%= render partial: 'graphs/post_timeseries' %>
+    </div>
+    
+  </div>
+  
+  <h2 class="text-center">Manage Admin</h2>
+  <div class="row">
+    <%= render partial: 'users/admin_list' %>
+  </div>
+  
+</div>
