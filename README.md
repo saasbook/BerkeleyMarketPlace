@@ -1,6 +1,6 @@
 # Berkeley MarketPlace
-
-[Finished project feature demo video](https://youtu.be/lv7JcJ339H8).
+[full demo video](https://youtu.be/OvxUk3Ufw0A)
+[only features demo video](https://youtu.be/lv7JcJ339H8)
 
 ## Development Status
 
