@@ -1,5 +1,7 @@
 # Berkeley MarketPlace
 
+[Finished project feature demo video](https://youtu.be/lv7JcJ339H8).
+
 ## Development Status
 
 * CodeClimate GPA:[![Maintainability](https://api.codeclimate.com/v1/badges/705edb2e84f0704b4e90/maintainability)](https://codeclimate.com/github/yezhaoqin/BerkeleyMarketPlace/maintainability)
@@ -22,7 +24,6 @@ Berkeley MarketPlace provides a central platform for efficient C2C trading exclu
 Example features include product and event posting, category subscription, keyword search and filtering, personal wishlist, etc.
 This is a brand new project and currently does not have website yet. 
 Customer's description video is [here](https://youtu.be/-ZS0whNV32E).
-Finished project features demo video is [here](https://youtu.be/lv7JcJ339H8).
 
 ## Dev Team Members (Group 5)
 
