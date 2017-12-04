@@ -1,6 +1,7 @@
 # Berkeley MarketPlace
 * [full demo video](https://youtu.be/OvxUk3Ufw0A)
 * [only features demo video](https://youtu.be/lv7JcJ339H8)
+* ![screenshot](https://github.com/yezhaoqin/BerkeleyMarketPlace/blob/master/screenshot.png "Screenshot")
 
 ## Development Status
 
