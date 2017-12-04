@@ -1,7 +1,6 @@
 # Berkeley MarketPlace
-* [full demo video](https://youtu.be/OvxUk3Ufw0A)
-* [only features demo video](https://youtu.be/lv7JcJ339H8)
-* ![screenshot](https://github.com/yezhaoqin/BerkeleyMarketPlace/blob/master/screenshot.png "Screenshot")
+
+![Application Screenshot](public/images/screenshot.png)
 
 ## Development Status
 
@@ -26,21 +25,13 @@ Example features include product and event posting, category subscription, keywo
 This is a brand new project and currently does not have website yet. 
 Customer's description video is [here](https://youtu.be/-ZS0whNV32E).
 
-## Dev Team Members (Group 5)
+## Videos
 
-* Amy Ge
+* [full demo video](https://youtu.be/OvxUk3Ufw0A)
 
-* Ashton Teng
+* [only features demo video](https://youtu.be/lv7JcJ339H8)
 
-* Jack Ye
-
-* Jiazhen Chen
-
-* Shuyin Deng
-
-* Yunyi Huang
-
-Dev screencasts are in this [playlist](https://www.youtube.com/playlist?list=PLWkDTUUZ-qQF8KqvIy4l0qWTI5tY6DiVz)
+* Dev screencasts are in this [playlist](https://www.youtube.com/playlist?list=PLWkDTUUZ-qQF8KqvIy4l0qWTI5tY6DiVz)
 
 
 ## Development Configurations
