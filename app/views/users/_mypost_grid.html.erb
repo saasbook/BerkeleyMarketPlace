@@ -1,0 +1,32 @@
+<div class="row" id="mypost">
+  <% if posts.size == 0 %>
+      <div class="col s12 m12 l12 center berkeley-text">
+        <br><br><br><br><br><br><br><br>
+        <h5>You don't have any post yet. <a href="/posts/new">Creat a post now!</a></h5>
+      </div>
+  <% else %>
+    <% posts.each do |post_info| %>
+      <div class="col s6 m4 l3">
+        <div class="card hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+            <%= link_to post_path(post_info)  do%>
+            <%= image_tag safe_url(post_info.image.url(:thumb)), class:"card-img-top" %>
+          <% end %>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">$<%= post_info.price %></span>
+            <p><%= link_to post_info.short_title, post_path(post_info) %></p>
+            <div class="center">
+              <h6>
+                <%= link_to "EDIT", edit_post_path(post_info), class: "btn btn-primary btn-small js-scroll-trigger" %>
+              <% if post_info.available? %>
+                <%= link_to "Mark as Sold", mark_post_as_sold_path(post_info), class: "btn btn-primary btn-small js-scroll-trigger" %>
+              <% end %>
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

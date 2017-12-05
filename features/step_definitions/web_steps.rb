@@ -24,15 +24,25 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+Given /^following posts exist/ do |posts_table|
+  posts_table.hashes.each do |post|
+    Post.create post
+  end
+end
+
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
+  Rails.logger.debug page.body
 end
 
 When /^(?:|I )press "([^"]*)"$/ do |button|
-  click_button(button)
+  click_on(button, :match => :first)
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
+  Rails.logger.debug "************* %s **************" % link
+  Rails.logger.debug page.body
+  Rails.logger.debug page.driver.cookies
   click_link(link)
 end
 
@@ -48,10 +58,6 @@ When /^(?:|I )fill in the following:$/ do |fields|
   fields.rows_hash.each do |name, value|
     When %{I fill in "#{name}" with "#{value}"}
   end
-end
-
-When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
-  select(value, :from => field)
 end
 
 When /^(?:|I )check "([^"]*)"$/ do |field|
@@ -201,6 +207,15 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
     current_path.should == path_to(page_name)
   else
     assert_equal path_to(page_name), current_path
+  end
+end
+
+Then /^(?:|I )should not be on (.+)$/ do |page_name|
+  current_path = URI.parse(current_url).path
+  if current_path.respond_to? :should
+    current_path.should != path_to(page_name)
+  else
+    assert_not_equal path_to(page_name), current_path
   end
 end
 

@@ -1,91 +1,20 @@
+<%= render "application/carousel" %>
 
+<%= render "application/mobile_search" %>
 
-<div class="container">
+<%= render "application/category_tab" %>
 
-      <div class="row">
+<div class="row">
+  <div class="col s12 m2 l2" id="filterSidebar">
+    <%=render "application/filter_sidebar" %>
+  </div>
+  
+  <div class="col s12 m10 l10" id="results">
+    <%= render partial: 'application/posts_grid', locals: {posts: @posts} %>
+  </div>
+</div>
 
-        <%=render "layouts/sidebar" %>
-        <!-- /.col-lg-3 -->
+<div class="row center" id="paging">
+  <%=render "application/paging" %>
+</div>
 
-        <div class="col-lg-10">
-          
-          <h3>Awesome Items</h3>
-          <div class="row">
-            <% @item_posts.each do |post_info| %>
-            <div class="col-lg-4 col-md-3 mb-3">
-              <div class="card h-100">
-                <img class="card-img-top" src="http://placehold.it/400x400" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <%= link_to post_info.title, "post/%d" % post_info.id %>
-                  </h5>
-                  <h5>USD$ <%= post_info.price %></h5>
-                  <p class="card-text"><%= post_info.category %> / <%= post_info.subcategory %>
-                  <% if post_info.expire_time %>
-                  <br>
-                  Valid until: <%= post_info.expire_time.strftime("%Y/%m/%d %T") %>
-                  <% end %>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <% end %>
-          </div>
-          <!-- /.row -->
-          
-          <h3>Awesome Jobs</h3>
-          <div class="row">
-            <% @job_posts.each do |post_info| %>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/400x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <%= link_to post_info.title, "post/%d" % post_info.id %>
-                  </h4>
-                  <h5>USD$ <%= post_info.price %></h5>
-                  <p class="card-text"><%= post_info.category %> / <%= post_info.subcategory %>
-                  <% if post_info.expire_time %>
-                  <br>
-                  Valid until: <%= post_info.expire_time.strftime("%Y/%m/%d %T") %>
-                  <% end %>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <% end %>
-          </div>
-          <!-- /.row -->
-          
-          <h3>Awesome Events</h3>
-          <div class="row">
-            <% @event_posts.each do |post_info| %>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/400x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <%= link_to post_info.title, "post/%d" % post_info.id %>
-                  </h4>
-                  <h5>USD$ <%= post_info.price %></h5>
-                  <p class="card-text"><%= post_info.category %> / <%= post_info.subcategory %>
-                  <% if post_info.expire_time %>
-                  <br>
-                  Valid until: <%= post_info.expire_time.strftime("%Y/%m/%d %T") %>
-                  <% end %>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <% end %>
-          </div>
-          <!-- /.row -->
-
-        </div>
-        <!-- /.col-lg-9 -->
-
-      </div>
-      <!-- /.row -->
-
-    </div>
-    <!-- /.container -->

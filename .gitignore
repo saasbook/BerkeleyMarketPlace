@@ -1,4 +1,4 @@
 /tmp
-/public
 /log
 /db/*.sqlite3
+/coverage
