@@ -1,20 +1,289 @@
 
-@import "bootstrap";
+@import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "d3_timeseries";
+@import "login";
 
-body {
-  padding-top: 60px;
+.container {
+  padding-top: 50px;
 }
 
-@media (min-width: 992px) {
-  body {
-    padding-top: 60px;
+a {
+  &:hover {
+    color: color("berkeley", "web-medalist");
   }
 }
 
-#navBarSearchForm input[type=text]{
-    width:430px !important;
+.btn-large {
+  // background-color: color("berkeley", "base");
+  padding: 0 1rem;
+  &:hover {
+      background-color: color("berkeley", "web-medalist");
+  }
 }
 
-.card p{
-  font-size: 13px;
+.btn-small {
+  font-size: 10px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 0.5rem;
+  &:hover {
+    background-color: color("berkeley", "web-medalist");
+  }
+}
+
+
+.btn:hover {
+  background-color: color("berkeley", "web-medalist");
+}
+
+a.btn:hover {
+  color: color("berkeley", "web-background-gray");
+}
+
+nav ul li a {
+  color: $primary-color;
+  &:hover {
+    color: color("berkeley", "web-medalist");
+    background-color: rgba(0,0,0,0);
+  }
+}
+
+.brand-logo img {
+  padding: 1.4rem 0rem;
+  width: 150px;
+}
+
+nav {
+  background-color: color("berkeley", "white");
+}
+
+nav.clean{
+    background: none;
+    box-shadow: none;
+    border-bottom: 2px solid color("berkeley", "base");
+}
+
+.breadcrumb:before {
+    color: color("berkeley", "base");
+}
+
+.breadcrumb, .breadcrumb:last-child {
+   color: color("berkeley", "base");
+}
+
+nav ul li {
+  margin: 0 -3px;
+}
+
+nav ul a {
+  color: $primary-color;
+}
+
+.nav-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  color: $primary-color;
+  background-color: color("berkeley", "white");
+  
+}
+
+.nav-wrapper .btn-floating i {
+  color: $primary-color;
+  margin-top: -10px;
+}
+
+.page-footer {
+  color: color("berkeley", "base");
+  background-color: color("berkeley", "white");
+}
+
+.page-footer .footer-copyright {
+  background-color: color("berkeley", "white");
+}
+
+input[id="search_terms"] {
+  height: 40px !important;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.search-input {
+  border: 1px solid;
+  background-color: color("berkeley", "white");
+  height: 40px !important;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+nav .input-field label {
+    top: -20px;
+    left: 0;
+}
+
+.pagination li.active {
+  top: 0;
+  left: 0;
+}
+
+.card {
+  height: 300px;
+}
+
+@media #{$medium-and-up} {
+  .card {
+    height: 340px;
+  }
+}
+@media #{$large-and-up} {
+  .card {
+    height: 340px;
+  }
+}
+
+#mypost .card {
+  height: 320px;
+}
+
+@media #{$medium-and-up} {
+  #mypost .card {
+    height: 360px;
+  }
+}
+@media #{$large-and-up} {
+  #mypost .card {
+    height: 360px;
+  }
+}
+
+div#home-carousel {
+  margin-bottom: 50px;
+}
+
+#mobile-search {
+  margin: 0 15px;
+}
+
+#mobile-search input {
+  border: 1px solid;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+#mobile-list li {
+  margin: 10px 2px;
+}
+
+
+nav .brand-logo {
+  font-size: 1.2rem;
+}
+
+#sidenav-overlay {
+  z-index: 998;
+}
+
+
+.entry-selected {
+  color: $success-color;
+}
+
+div#home-sidebar {
+  padding-left: 20px;
+  padding-right: 15px;
+}
+
+
+#post-nav {
+  div.nav-wrapper {
+    margin: 0 0;
+  }
+}
+
+#post-choices {
+  .btn, .btn-large, .btn-floating, .btn-large, .btn-flat {
+    font-size: 0.85rem;
+  }
+}
+
+// old css, needs to be rewritten
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}
+
+#showPost img {
+    width: 300px;
+    height: auto;
+    left: 0px;
+}
+
+#flash div {
+    text-align: center;
+    color: red;
+}
+
+#login {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#adminPage {
+    h2 {
+        margin: 50px 20px;
+    }
+}
+
+#post_page {
+    margin-left: 0px;
+}
+
+.sub_header {
+    color: color("berkeley", "base");
+    font-weight: 500;
+}
+
+.user_name {
+    color: color("berkeley", "web-medalist");
+    font-weight: 500;
+}
+
+.chip {
+}
+
+.chip img {
+  float: left;
+  max-height:32px;
+  max-width:32px;
+}
+
+#details-card {
+  height:auto;
+}
+
+.card-image img {
+    max-width: 100%;
+    height: auto;
+    left: 0px;
 }

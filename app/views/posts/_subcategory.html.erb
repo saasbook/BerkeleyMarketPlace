@@ -1,0 +1,12 @@
+<div class="input-field">
+    <div id="updateFormSubcategory">
+         <%= select "post", :subcategory, subcategory.map { |c| [c, c] }, { include_blank: '- Select -' , selected: current_subcategory}, { class: "",  required: true}%>
+         <%= label(:post, :subcategory) %>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $('select').material_select();
+});
+</script>

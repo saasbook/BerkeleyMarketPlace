@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: yezhaoqin
+  api_key: '326546956748981'
+  api_secret: lTyna_nB7CjSr1H-_xTbUWWDyr0
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: yezhaoqin
+  api_key: '326546956748981'
+  api_secret: lTyna_nB7CjSr1H-_xTbUWWDyr0
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: yezhaoqin
+  api_key: '326546956748981'
+  api_secret: lTyna_nB7CjSr1H-_xTbUWWDyr0
+  enhance_image_tag: true
+  static_image_support: false

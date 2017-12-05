@@ -38,4 +38,11 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  
+  PAPERCLIP_STORAGE_OPTS = {
+     :styles => { :thumb => '40x40#', :medium => '150x200>', :large => '300x300>' },
+     :convert_options => { :all => '-quality 92' },
+     :processor       => [ :cropper ]
+   }
 end

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col s12 m2 l2">
+    <%=render "posts/filter_sidebar" %>
+  </div>
+  
+  <div class="col s12 m10 l10" id="results">
+    <%= render partial: 'posts/posts_grid', locals: {posts: @posts} %>
+  </div>
+</div>
+
+<%=render "posts/paging" %>
+
+

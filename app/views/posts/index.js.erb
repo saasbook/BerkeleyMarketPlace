@@ -1,0 +1,10 @@
+<% grid = escape_javascript(
+  render(
+    :partial => 'posts/posts_grid',
+    :locals => { :posts => @posts }
+  )
+) %>
+$("#results").html("<%= grid %>");
+
+<% page = escape_javascript(paginate @posts) %>
+$("#paging").html("<%= page %>");

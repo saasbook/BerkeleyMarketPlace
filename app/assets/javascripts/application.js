@@ -11,7 +11,31 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require filterrific/filterrific-jquery
+//= require materialize-sprockets
 //= require turbolinks
 //= require_tree .
 
+// for turbolink lazy loading, replace $(document).ready
+$(document).on('turbolinks:load', function() {
+  $('select').material_select();
+  $(".button-collapse").sideNav({closeOnClick: true});
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
+  $('.carousel').carousel();
+  // $('#category-tab').tabs({onShow: function(current_tab) {
+  //   $.ajax({
+  //     url: "/",
+  //     type: "GET",
+  //     data: {
+  //       filterrific: {
+  //         choose_category: current_tab.selector.substring(1)
+  //       }
+  //     },
+  //     dataType: "script"
+  //   })
+  // }});
+  // $('[id^=home-subcategory]').click(function(data) {
+  //   event.preventDefault();
+  //   console.log(data.currentTarget.id)
+  // })
+})
